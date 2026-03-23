@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #070612;
+  --foreground: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Liquid Glass Card ── */
+.liquid-glass {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 40%,
+    rgba(108, 106, 246, 0.04) 100%
+  );
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+    box-shadow 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+    border-color 0.4s ease;
+}
+
+/* Top-edge highlight — simulates light refracting across glass rim */
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0.06) 30%,
+    transparent 50%,
+    rgba(158, 156, 248, 0.1) 80%,
+    rgba(108, 106, 246, 0.14) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Interior glow — soft radial light pooling in the card */
+.liquid-glass::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -20%;
+  width: 140%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at 30% 0%,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.liquid-glass:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 8px 32px rgba(108, 106, 246, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Shimmer sweep on hover */
+@keyframes glass-shimmer {
+  0% { transform: translateX(-100%) rotate(15deg); }
+  100% { transform: translateX(200%) rotate(15deg); }
+}
+
+.liquid-glass:hover::after {
+  animation: glass-shimmer 0.8s ease-out forwards;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.06) 40%,
+    rgba(158, 156, 248, 0.08) 50%,
+    rgba(255, 255, 255, 0.04) 60%,
+    transparent 100%
+  );
+  width: 60%;
+  height: 140%;
+  top: -20%;
+}

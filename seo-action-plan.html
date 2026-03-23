@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grady Digital — SEO Action Plan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: #1a1a2e;
+    line-height: 1.7;
+    padding: 48px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+  }
+
+  @media print {
+    body { padding: 24px; font-size: 11pt; }
+    .page-break { page-break-before: always; }
+    h2 { page-break-after: avoid; }
+    table, ul, ol { page-break-inside: avoid; }
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+  }
+
+  .date {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 32px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 2px solid #070612;
+    margin: 32px 0;
+  }
+
+  .divider-light {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 24px 0;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #070612;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    color: #333;
+  }
+
+  p {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #444;
+  }
+
+  ul, ol {
+    margin-bottom: 16px;
+    padding-left: 24px;
+  }
+
+  li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #444;
+  }
+
+  li strong {
+    color: #1a1a2e;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    font-size: 13px;
+  }
+
+  th {
+    background: #070612;
+    color: #fff;
+    text-align: left;
+    padding: 10px 14px;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+  }
+
+  tr:nth-child(even) td {
+    background: #f8f8fa;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .badge-critical { background: #fee2e2; color: #991b1b; }
+  .badge-high { background: #fef3c7; color: #92400e; }
+  .badge-medium { background: #dbeafe; color: #1e40af; }
+  .badge-ongoing { background: #e0e7ff; color: #3730a3; }
+
+  .checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #444;
+  }
+
+  .checkbox .box {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .note {
+    background: #f0f0ff;
+    border-left: 3px solid #6c6af6;
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 13px;
+    color: #444;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .footer-doc {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 11px;
+    color: #999;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h1>Grady Digital — SEO Action Plan</h1>
+<p class="subtitle">Everything you need to do after launch to climb Google rankings</p>
+<p class="date">Prepared March 23, 2026</p>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<h2>What's Already Done (In the Codebase)</h2>
+
+<p>These are already built and will go live when you deploy:</p>
+
+<ul>
+  <li><strong>robots.txt</strong> — allows all crawling, blocks /api/, points to sitemap</li>
+  <li><strong>sitemap.xml</strong> — all 11 URLs with priority weights and last-modified dates</li>
+  <li><strong>Canonical URLs</strong> — every page has a self-referencing canonical to prevent duplicate content</li>
+  <li><strong>Schema markup</strong> — Organization, WebSite, Service catalog, FAQPage (10 Q&As), and Article schema on all blog posts</li>
+  <li><strong>OpenGraph + Twitter cards</strong> — proper social sharing metadata on every page</li>
+  <li><strong>Meta titles &amp; descriptions</strong> — keyword-targeted, unique for all 11 pages</li>
+  <li><strong>Semantic HTML</strong> — proper h1/h2 hierarchy, &lt;article&gt;, &lt;time&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;</li>
+  <li><strong>3 SEO blog posts</strong> — full content targeting "AI receptionist for business," "local SEO checklist," and "AI chatbot for small business"</li>
+  <li><strong>Internal linking</strong> — blog posts link to /services and /contact; services link to /contact</li>
+  <li><strong>Mobile-responsive</strong> — all pages built mobile-first with Tailwind CSS</li>
+  <li><strong>Fast page loads</strong> — static site generation, no blocking resources</li>
+</ul>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<h2>Priority Action Plan</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:50px">#</th>
+      <th>Action</th>
+      <th style="width:100px">Priority</th>
+      <th style="width:100px">Timeline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong>Google Search Console</strong> — verify domain &amp; submit sitemap</td>
+      <td><span class="badge badge-critical">Critical</span></td>
+      <td>Day 1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong>Google Business Profile</strong> — claim, complete every field, upload photos</td>
+      <td><span class="badge badge-critical">Critical</span></td>
+      <td>Day 1</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>Google Analytics 4</strong> — install tracking, set up conversion events</td>
+      <td><span class="badge badge-critical">Critical</span></td>
+      <td>Day 1</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>Bing Webmaster Tools</strong> — verify and submit sitemap</td>
+      <td><span class="badge badge-high">High</span></td>
+      <td>Week 1</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong>NAP citations</strong> — list on 10+ directories with identical info</td>
+      <td><span class="badge badge-high">High</span></td>
+      <td>Week 2</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><strong>Add real images</strong> — headshots, project photos with alt text</td>
+      <td><span class="badge badge-high">High</span></td>
+      <td>Week 2</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><strong>Core Web Vitals audit</strong> — run PageSpeed Insights on live site</td>
+      <td><span class="badge badge-high">High</span></td>
+      <td>Week 2</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><strong>Publish 2-4 blog posts/month</strong> — target long-tail keywords</td>
+      <td><span class="badge badge-ongoing">Ongoing</span></td>
+      <td>Monthly</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><strong>Build backlinks</strong> — directories, guest posts, partnerships</td>
+      <td><span class="badge badge-ongoing">Ongoing</span></td>
+      <td>Monthly</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><strong>Google Business Profile posts</strong> — 1 per week minimum</td>
+      <td><span class="badge badge-ongoing">Ongoing</span></td>
+      <td>Weekly</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><strong>Monitor Search Console</strong> — check queries, indexing, CTR</td>
+      <td><span class="badge badge-ongoing">Ongoing</span></td>
+      <td>Weekly</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><strong>Collect client reviews</strong> — on your own Google Business Profile</td>
+      <td><span class="badge badge-ongoing">Ongoing</span></td>
+      <td>Ongoing</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<h2>Detailed Breakdown</h2>
+
+<h3>1. Google Search Console (Day 1)</h3>
+<div class="checkbox"><div class="box"></div><span>Go to <strong>search.google.com/search-console</strong></span></div>
+<div class="checkbox"><div class="box"></div><span>Add property for <strong>gradydigital.com</strong> (use Domain verification if possible)</span></div>
+<div class="checkbox"><div class="box"></div><span>Verify via DNS TXT record (recommended) or HTML file upload</span></div>
+<div class="checkbox"><div class="box"></div><span>Go to Sitemaps > Add <strong>https://gradydigital.com/sitemap.xml</strong></span></div>
+<div class="checkbox"><div class="box"></div><span>Request indexing for your homepage and key pages (/services, /contact, /blog)</span></div>
+<div class="checkbox"><div class="box"></div><span>Check the Coverage report for any errors after 48 hours</span></div>
+
+<div class="note">
+  Google Search Console is the single most important tool for SEO. Without it, you're flying blind. Check it weekly.
+</div>
+
+<hr class="divider-light">
+
+<h3>2. Google Business Profile (Day 1)</h3>
+<div class="checkbox"><div class="box"></div><span>Claim or create your profile at <strong>business.google.com</strong></span></div>
+<div class="checkbox"><div class="box"></div><span><strong>Business name:</strong> "Grady Digital" (exact match, no keyword stuffing)</span></div>
+<div class="checkbox"><div class="box"></div><span><strong>Primary category:</strong> "Internet marketing service" or "Marketing agency"</span></div>
+<div class="checkbox"><div class="box"></div><span><strong>Secondary categories:</strong> "Web designer," "SEO service," "Artificial intelligence company"</span></div>
+<div class="checkbox"><div class="box"></div><span><strong>Description:</strong> Lead with AI agents + local service businesses. 750 chars max. Include city/state.</span></div>
+<div class="checkbox"><div class="box"></div><span><strong>Service area:</strong> List every city, state, or region you serve</span></div>
+<div class="checkbox"><div class="box"></div><span><strong>Hours:</strong> Set accurate hours. List 24/7 if applicable.</span></div>
+<div class="checkbox"><div class="box"></div><span><strong>Phone:</strong> Must match the number on your website exactly</span></div>
+<div class="checkbox"><div class="box"></div><span><strong>Website:</strong> https://gradydigital.com</span></div>
+<div class="checkbox"><div class="box"></div><span><strong>Photos:</strong> Upload 10+ photos (team, workspace, project screenshots, client results)</span></div>
+<div class="checkbox"><div class="box"></div><span><strong>Services:</strong> List every service with descriptions</span></div>
+<div class="checkbox"><div class="box"></div><span><strong>Attributes:</strong> Fill in all applicable (veteran-owned, appointment-based, etc.)</span></div>
+
+<hr class="divider-light">
+
+<h3>3. Google Analytics 4 (Day 1)</h3>
+<div class="checkbox"><div class="box"></div><span>Create a GA4 property at <strong>analytics.google.com</strong></span></div>
+<div class="checkbox"><div class="box"></div><span>Get your Measurement ID (starts with G-)</span></div>
+<div class="checkbox"><div class="box"></div><span>Add the GA4 script to the site (or ask your developer to add it to layout.tsx)</span></div>
+<div class="checkbox"><div class="box"></div><span>Set up conversion events: <strong>form_submit</strong> (contact form), <strong>click</strong> (CTA buttons)</span></div>
+<div class="checkbox"><div class="box"></div><span>Link GA4 to Google Search Console (Settings > Product Links)</span></div>
+<div class="checkbox"><div class="box"></div><span>Create a basic dashboard: sessions, top pages, conversions, traffic sources</span></div>
+
+<hr class="divider-light">
+
+<h3>4. Bing Webmaster Tools (Week 1)</h3>
+<div class="checkbox"><div class="box"></div><span>Go to <strong>bing.com/webmasters</strong></span></div>
+<div class="checkbox"><div class="box"></div><span>Import from Google Search Console (fastest method) or verify manually</span></div>
+<div class="checkbox"><div class="box"></div><span>Submit sitemap</span></div>
+
+<div class="note">
+  Bing powers search results for DuckDuckGo, Yahoo, Alexa, and many AI assistants. It's free traffic with almost zero effort.
+</div>
+
+<hr class="divider-light">
+
+<h3>5. NAP Citations (Week 2)</h3>
+<p>List your business with <strong>identical</strong> Name, Address, Phone on these directories. Same format every time — "123 Main St Suite 4" everywhere, not "123 Main Street, Ste 4" somewhere else.</p>
+
+<div class="checkbox"><div class="box"></div><span>Yelp</span></div>
+<div class="checkbox"><div class="box"></div><span>Facebook Business Page</span></div>
+<div class="checkbox"><div class="box"></div><span>LinkedIn Company Page</span></div>
+<div class="checkbox"><div class="box"></div><span>Better Business Bureau (BBB)</span></div>
+<div class="checkbox"><div class="box"></div><span>Clutch.co</span></div>
+<div class="checkbox"><div class="box"></div><span>DesignRush</span></div>
+<div class="checkbox"><div class="box"></div><span>Crunchbase</span></div>
+<div class="checkbox"><div class="box"></div><span>Apple Maps (via Apple Business Connect)</span></div>
+<div class="checkbox"><div class="box"></div><span>Local Chamber of Commerce</span></div>
+<div class="checkbox"><div class="box"></div><span>Industry-specific directories (e.g., AI tool directories, marketing agency lists)</span></div>
+
+<hr class="divider-light">
+
+<h3>6. Add Real Images (Week 2)</h3>
+<div class="checkbox"><div class="box"></div><span>Add a headshot or team photo to the About page (replace the placeholder)</span></div>
+<div class="checkbox"><div class="box"></div><span>Add project screenshots or client result graphics to case study cards</span></div>
+<div class="checkbox"><div class="box"></div><span>Use <strong>next/image</strong> component with explicit width, height, and descriptive alt text</span></div>
+<div class="checkbox"><div class="box"></div><span>Use WebP format where possible (Next.js does this automatically via next/image)</span></div>
+<div class="checkbox"><div class="box"></div><span>Add a hero poster image for the video (improves LCP and shows content before HLS loads)</span></div>
+
+<hr class="divider-light">
+
+<h3>7. Core Web Vitals Audit (Week 2)</h3>
+<div class="checkbox"><div class="box"></div><span>Run <strong>pagespeed.web.dev</strong> on the live homepage, /services, and /contact</span></div>
+<div class="checkbox"><div class="box"></div><span>Target: LCP &lt; 2.5s, INP &lt; 200ms, CLS &lt; 0.1</span></div>
+<div class="checkbox"><div class="box"></div><span>If LCP is slow: add a poster image to the hero video, preload critical fonts</span></div>
+<div class="checkbox"><div class="box"></div><span>If CLS is high: ensure all images have explicit dimensions</span></div>
+<div class="checkbox"><div class="box"></div><span>Check mobile score separately (Google uses mobile-first indexing)</span></div>
+
+<hr class="divider">
+<div class="page-break"></div>
+
+<!-- ============================================================ -->
+<h2>Ongoing: Content Strategy</h2>
+
+<p>Three blog posts won't rank you. You need volume and consistency. Target <strong>2-4 posts per month</strong>.</p>
+
+<h3>High-Priority Blog Topics</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Target Keyword</th>
+      <th>Search Intent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AI receptionist for HVAC companies</td>
+      <td>AI receptionist HVAC</td>
+      <td>Commercial (bottom of funnel)</td>
+    </tr>
+    <tr>
+      <td>AI receptionist for plumbers</td>
+      <td>AI phone answering plumbing</td>
+      <td>Commercial</td>
+    </tr>
+    <tr>
+      <td>AI receptionist for salons and barber shops</td>
+      <td>AI receptionist salon</td>
+      <td>Commercial</td>
+    </tr>
+    <tr>
+      <td>How to get more Google reviews for your business</td>
+      <td>how to get more Google reviews</td>
+      <td>Informational (top of funnel)</td>
+    </tr>
+    <tr>
+      <td>Missed call text-back: what it is and why it works</td>
+      <td>missed call text back</td>
+      <td>Informational</td>
+    </tr>
+    <tr>
+      <td>How much does an AI receptionist cost?</td>
+      <td>AI receptionist cost / pricing</td>
+      <td>Commercial</td>
+    </tr>
+    <tr>
+      <td>Best website features for contractors</td>
+      <td>contractor website design</td>
+      <td>Informational</td>
+    </tr>
+    <tr>
+      <td>How to reactivate old leads in your CRM</td>
+      <td>lead reactivation campaign</td>
+      <td>Informational</td>
+    </tr>
+    <tr>
+      <td>GoHighLevel vs. HubSpot for local businesses</td>
+      <td>GoHighLevel vs HubSpot</td>
+      <td>Comparison (mid funnel)</td>
+    </tr>
+    <tr>
+      <td>Speed-to-lead: why 60-second follow-up wins</td>
+      <td>speed to lead statistics</td>
+      <td>Informational</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="note">
+  <strong>Industry-specific posts are gold.</strong> "AI receptionist for HVAC" has less competition than "AI receptionist" and the visitor is more likely to convert because the content speaks directly to them.
+</div>
+
+<h3>Blog Post Checklist (for every post)</h3>
+<div class="checkbox"><div class="box"></div><span>Target one primary keyword in the title, H1, URL, and first 100 words</span></div>
+<div class="checkbox"><div class="box"></div><span>Use H2s that match related search queries</span></div>
+<div class="checkbox"><div class="box"></div><span>1,500-2,500 words (match or exceed top-ranking competitors)</span></div>
+<div class="checkbox"><div class="box"></div><span>Include 2-3 internal links to /services, /contact, or other blog posts</span></div>
+<div class="checkbox"><div class="box"></div><span>Write a unique meta description under 160 characters with the primary keyword</span></div>
+<div class="checkbox"><div class="box"></div><span>Use the brand voice: direct, specific, no filler. Write for a business owner, not a marketer.</span></div>
+<div class="checkbox"><div class="box"></div><span>End with a CTA linking to /contact (free audit)</span></div>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<h2>Ongoing: Link Building</h2>
+
+<p>Domain authority is still the strongest ranking factor. Here's how to build links as an agency without a huge budget:</p>
+
+<h3>Realistic Tactics</h3>
+<ol>
+  <li><strong>Agency directories</strong> — Submit to Clutch, DesignRush, GoodFirms, Agency Spotter. Many offer free listings with dofollow links.</li>
+  <li><strong>AI tool directories</strong> — Get listed on sites that catalog AI business tools and services. This space is growing fast and many accept submissions.</li>
+  <li><strong>"Best of" roundups</strong> — Reach out to bloggers who write "best AI tools for small business" or "best marketing agencies for contractors." Pitch your inclusion.</li>
+  <li><strong>Guest posting</strong> — Write for local business blogs, trade publications (HVAC, contracting, salon), or marketing publications. Include a link back to a relevant service or blog post.</li>
+  <li><strong>Local partnerships</strong> — Partner with CRM consultants, bookkeepers, or business coaches who serve the same audience. Cross-link on each other's "partners" or "resources" pages.</li>
+  <li><strong>Sponsor local events</strong> — Chamber of Commerce events, small business meetups, industry conferences. The event page links back to you.</li>
+  <li><strong>Create linkable assets</strong> — The local SEO checklist blog post is a good start. Consider creating a free tool (e.g., "Google Business Profile audit tool" or "missed call cost calculator") that other sites will link to naturally.</li>
+</ol>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<h2>Ongoing: Weekly Monitoring</h2>
+
+<h3>Every Monday (15 minutes)</h3>
+<div class="checkbox"><div class="box"></div><span><strong>Search Console:</strong> Check Performance report. Note which queries are growing. Look for pages stuck at position 8-20 (opportunity to improve and break into page 1).</span></div>
+<div class="checkbox"><div class="box"></div><span><strong>Search Console:</strong> Check Pages report for indexing errors. Fix any "Excluded" or "Error" pages.</span></div>
+<div class="checkbox"><div class="box"></div><span><strong>Google Analytics:</strong> Check traffic trends, top pages, and form submissions.</span></div>
+
+<h3>Every Month (30 minutes)</h3>
+<div class="checkbox"><div class="box"></div><span>Publish a Google Business Profile post (project photo, tip, or promotion)</span></div>
+<div class="checkbox"><div class="box"></div><span>Review which blog posts are getting traffic and which aren't. Update underperforming posts with better content.</span></div>
+<div class="checkbox"><div class="box"></div><span>Check competitor rankings for your target keywords. Adjust content if they're outranking you.</span></div>
+<div class="checkbox"><div class="box"></div><span>Ask recent clients for a Google review on your own profile.</span></div>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<h2>Remaining Code Improvements</h2>
+
+<p>These are things that can be added to the website codebase when you're ready:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>What It Does</th>
+      <th>Impact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Google Analytics 4 script</td>
+      <td>Adds GA4 tracking to every page</td>
+      <td><span class="badge badge-critical">Critical</span></td>
+    </tr>
+    <tr>
+      <td>Hero video poster image</td>
+      <td>Shows a static image while HLS loads, improves LCP score</td>
+      <td><span class="badge badge-high">High</span></td>
+    </tr>
+    <tr>
+      <td>BreadcrumbList schema</td>
+      <td>Enables breadcrumb rich results in Google SERPs</td>
+      <td><span class="badge badge-medium">Medium</span></td>
+    </tr>
+    <tr>
+      <td>RSS feed (/feed.xml)</td>
+      <td>Helps aggregators and Google News discover blog content</td>
+      <td><span class="badge badge-medium">Medium</span></td>
+    </tr>
+    <tr>
+      <td>Cross-linking (services &rarr; blog)</td>
+      <td>Service pages link to relevant blog posts for topical authority</td>
+      <td><span class="badge badge-medium">Medium</span></td>
+    </tr>
+    <tr>
+      <td>next/image for all photos</td>
+      <td>Automatic WebP, lazy loading, responsive sizing</td>
+      <td><span class="badge badge-high">High</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<h2>Key Metrics to Track</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Where to Find It</th>
+      <th>Target</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Indexed pages</td>
+      <td>Search Console &gt; Pages</td>
+      <td>All 11+ pages indexed within 2 weeks</td>
+    </tr>
+    <tr>
+      <td>Organic impressions</td>
+      <td>Search Console &gt; Performance</td>
+      <td>Growing month over month</td>
+    </tr>
+    <tr>
+      <td>Organic clicks</td>
+      <td>Search Console &gt; Performance</td>
+      <td>Growing month over month</td>
+    </tr>
+    <tr>
+      <td>Average position</td>
+      <td>Search Console &gt; Performance</td>
+      <td>Key pages under position 20 within 90 days</td>
+    </tr>
+    <tr>
+      <td>Click-through rate (CTR)</td>
+      <td>Search Console &gt; Performance</td>
+      <td>3-5%+ for branded, 1-3% for non-branded</td>
+    </tr>
+    <tr>
+      <td>Core Web Vitals</td>
+      <td>Search Console &gt; Core Web Vitals</td>
+      <td>All URLs "Good"</td>
+    </tr>
+    <tr>
+      <td>Form submissions</td>
+      <td>Google Analytics &gt; Conversions</td>
+      <td>Track week over week</td>
+    </tr>
+    <tr>
+      <td>Google Business Profile views</td>
+      <td>Google Business Profile dashboard</td>
+      <td>Growing month over month</td>
+    </tr>
+    <tr>
+      <td>Google reviews count &amp; rating</td>
+      <td>Google Business Profile</td>
+      <td>Consistent new reviews monthly, 4.5+ stars</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer-doc">
+  Grady Digital &mdash; SEO Action Plan &mdash; March 2026<br>
+  Open this file in a browser and press Ctrl+P (or Cmd+P) to save as PDF.
+</div>
+
+</body>
+</html>
