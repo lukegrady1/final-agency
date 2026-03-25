@@ -32,12 +32,21 @@ export const metadata: Metadata = {
     title: "Grady Digital — AI Agents & Automation for Local Businesses",
     description:
       "AI receptionists, chatbots, lead follow-up, and websites that bring in calls. Built for HVAC, contractors, salons, and service businesses.",
+    images: [
+      {
+        url: "/grady-digital-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Grady Digital — More Leads, Fewer Missed Calls, Powered by AI",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Grady Digital — AI Agents & Automation for Local Businesses",
     description:
       "AI receptionists, chatbots, lead follow-up, and websites that bring in calls. Built for local service businesses.",
+    images: ["/grady-digital-og.png"],
   },
   robots: {
     index: true,
