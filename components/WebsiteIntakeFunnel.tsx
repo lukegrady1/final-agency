@@ -261,7 +261,7 @@ export default function WebsiteIntakeFunnel() {
     const body = encodeURIComponent(
       `Hi,\n\nA new website intake brief has been submitted.\n\nName: ${formData.firstName} ${formData.lastName}\nBusiness: ${formData.businessName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nGoal: ${formData.primaryGoal}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline}\n\nPlease follow up within 24 hours.`
     );
-    return `mailto:hello@gradydigital.com?subject=${sub}&body=${body}`;
+    return `mailto:luke@gradydigital.com?subject=${sub}&body=${body}`;
   }
 
   // ─── Shared sub-components ───

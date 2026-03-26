@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Hls from "hls.js";
 
 interface HeroVideoProps {
@@ -9,6 +9,7 @@ interface HeroVideoProps {
 
 export default function HeroVideo({ src }: HeroVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -16,8 +17,14 @@ export default function HeroVideo({ src }: HeroVideoProps) {
 
     let hls: Hls | null = null;
 
+    const onPlaying = () => setLoaded(true);
+    video.addEventListener("playing", onPlaying);
+
     if (Hls.isSupported()) {
-      hls = new Hls();
+      hls = new Hls({
+        startLevel: -1,
+        capLevelToPlayerSize: true,
+      });
       hls.loadSource(src);
       hls.attachMedia(video);
     } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
@@ -25,6 +32,7 @@ export default function HeroVideo({ src }: HeroVideoProps) {
     }
 
     return () => {
+      video.removeEventListener("playing", onPlaying);
       if (hls) {
         hls.destroy();
       }
@@ -33,12 +41,20 @@ export default function HeroVideo({ src }: HeroVideoProps) {
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden">
+      {/* Dark background placeholder — prevents LCP from waiting on video */}
+      <div
+        className={`absolute inset-0 bg-[#070612] transition-opacity duration-1000 ${
+          loaded ? "opacity-0" : "opacity-100"
+        }`}
+        style={{ zIndex: 1 }}
+      />
       <video
         ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
+        preload="metadata"
         className="absolute inset-0 h-full w-full object-cover origin-left scale-[1.2]"
         style={{ marginLeft: "200px" }}
       />

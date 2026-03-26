@@ -48,6 +48,11 @@ export const metadata: Metadata = {
       "AI receptionists, chatbots, lead follow-up, and websites that bring in calls. Built for local service businesses.",
     images: ["/grady-digital-og.png"],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
@@ -77,13 +82,40 @@ export default function RootLayout({
     description:
       "AI receptionists, chatbots, lead follow-up, and websites for local service businesses.",
     email: "luke@gradydigital.com",
-    sameAs: [],
+    telephone: "+1-978-798-2870",
+    sameAs: [
+      "https://www.linkedin.com/company/grady-digital",
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       email: "luke@gradydigital.com",
+      telephone: "+1-978-798-2870",
       contactType: "sales",
       availableLanguage: "English",
     },
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Grady Digital",
+    url: "https://gradydigital.com",
+    email: "luke@gradydigital.com",
+    telephone: "+1-978-798-2870",
+    description:
+      "AI receptionists, chatbots, lead follow-up, and websites for local service businesses.",
+    priceRange: "$$",
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
+    serviceType: [
+      "AI Automation",
+      "Web Design",
+      "SEO",
+      "AI Chatbots",
+      "AI Voice Agents",
+    ],
   };
 
   const websiteSchema = {
@@ -101,14 +133,23 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YL00Z9HHH" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-2YL00Z9HHH');
+              window.addEventListener('load', function() {
+                setTimeout(function() {
+                  var s = document.createElement('script');
+                  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-2YL00Z9HHH';
+                  s.async = true;
+                  document.head.appendChild(s);
+                  s.onload = function() {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-2YL00Z9HHH');
+                  };
+                }, 100);
+              });
             `,
           }}
         />
@@ -123,6 +164,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
           }}
         />
       </head>
