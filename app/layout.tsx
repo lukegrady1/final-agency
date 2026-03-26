@@ -89,6 +89,7 @@ export default function RootLayout({
     telephone: "+1-978-798-2870",
     sameAs: [
       "https://www.linkedin.com/company/grady-digital",
+      "https://www.instagram.com/gradydigitalmarketing/",
     ],
     contactPoint: {
       "@type": "ContactPoint",

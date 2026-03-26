@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { Sparkles, ArrowRight } from "lucide-react";
 import BlurIn from "./BlurIn";
-import SplitText from "./SplitText";
 import HeroVideo from "./HeroVideo";
 
 export default function HeroSection() {
@@ -28,36 +27,17 @@ export default function HeroSection() {
               </div>
             </BlurIn>
 
-            {/* HEADING */}
+            {/* HEADING — renders visible immediately for LCP, no animation delay */}
             <h1 className="font-medium leading-tight lg:leading-[1.2] text-4xl md:text-5xl lg:text-6xl text-white">
               <span className="block">
-                <SplitText
-                  text="More Leads, Fewer Missed Calls"
-                  initialDelay={0}
-                  delayBetweenWords={0.08}
-                  duration={0.6}
-                />
+                More Leads, Fewer Missed Calls
               </span>
-              <span>
-                <SplitText
-                  text="Powered by"
-                  initialDelay={0.25}
-                  delayBetweenWords={0.08}
-                  duration={0.6}
-                />
-              </span>{" "}
-              <span className="font-['Playfair_Display'] italic">
-                <SplitText
-                  text="AI."
-                  initialDelay={0.4}
-                  delayBetweenWords={0.08}
-                  duration={0.6}
-                />
-              </span>
+              <span>Powered by </span>
+              <span className="font-['Playfair_Display'] italic">AI.</span>
             </h1>
 
             {/* SUBTITLE */}
-            <BlurIn delay={0.4} duration={0.6}>
+            <BlurIn delay={0.2} duration={0.6}>
               <p className="text-white/80 text-lg font-normal leading-relaxed max-w-xl">
                 AI chatbots that book appointments. Voice agents that answer
                 every call. Websites that turn visitors into customers. We
@@ -67,7 +47,7 @@ export default function HeroSection() {
           </div>
 
           {/* CTA BUTTONS */}
-          <BlurIn delay={0.6} duration={0.6}>
+          <BlurIn delay={0.4} duration={0.6}>
             <div className="flex items-center gap-4 flex-wrap">
               {/* Primary CTA */}
               <Link

@@ -29,3 +29,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generated outputs
+outputs/
+
+# reports
+seo-report-*.pdf

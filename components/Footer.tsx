@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Linkedin, Phone, Mail } from "lucide-react";
+import { Linkedin, Instagram, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -47,6 +47,15 @@ export default function Footer() {
                 className="text-white/40 hover:text-white transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/gradydigitalmarketing/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-white/40 hover:text-white transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="https://g.page/grady-digital"
