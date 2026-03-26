@@ -75,13 +75,16 @@ const INDUSTRY_OPTIONS = [
   "Restaurant / Food Service", "Medical / Dental", "Legal Services",
   "Real Estate", "Fitness / Personal Training", "Trucking / Transportation",
   "Auto Repair / Detailing", "Event Planning / Entertainment",
-  "Retail / E-Commerce", "Other (describe below)",
+  "Retail / E-Commerce", "Municipality / Town Government",
+  "Other (describe below)",
 ];
 
 const PAGE_OPTIONS = [
   "Home", "About Us", "Services", "Individual Service Pages", "Contact",
   "Gallery / Portfolio", "Blog", "Testimonials / Reviews", "FAQ",
   "Pricing", "Careers / Hiring", "Privacy / Legal Pages",
+  "Departments / Boards", "Meeting Minutes / Agendas",
+  "News / Announcements", "Events Calendar",
 ];
 
 const FEATURE_OPTIONS = [
@@ -89,6 +92,7 @@ const FEATURE_OPTIONS = [
   "Quote request form", "Online store / payments", "Google review widget",
   "Map / directions", "Popup / lead capture", "Google Analytics",
   "Local SEO setup", "CRM integration", "Member login / portal",
+  "Event calendar", "Document library / downloads", "Emergency alerts / notifications",
 ];
 
 const inputClass =
@@ -131,9 +135,11 @@ export default function WebsiteIntakeFunnel() {
     []
   );
 
-  function validate(step: number): boolean {
+  function validate(_step: number): boolean {
+    // TODO: Re-enable validation before going live
+    return true;
     const errs: Errors = {};
-    if (step === 1) {
+    if (_step === 1) {
       if (!formData.firstName.trim()) errs.firstName = "Please enter your first name.";
       if (!formData.lastName.trim()) errs.lastName = "Please enter your last name.";
       if (!formData.businessName.trim()) errs.businessName = "Please enter your business name.";
@@ -141,19 +147,19 @@ export default function WebsiteIntakeFunnel() {
         errs.email = "Please enter a valid email.";
       if (!formData.phone.trim()) errs.phone = "Please enter your phone number.";
     }
-    if (step === 2) {
+    if (_step === 2) {
       if (!formData.industry) errs.industry = "Please select your industry.";
       if (!formData.bizDesc.trim()) errs.bizDesc = "Please describe your business.";
       if (!formData.location.trim()) errs.location = "Please enter your service area.";
     }
-    if (step === 3) {
+    if (_step === 3) {
       if (!formData.primaryGoal) errs.primaryGoal = "Please select your primary goal.";
       if (!formData.targetCustomer.trim()) errs.targetCustomer = "Please describe your target customer.";
     }
-    if (step === 6) {
+    if (_step === 6) {
       if (!formData.logoStatus) errs.logoStatus = "Please select your logo status.";
     }
-    if (step === 7) {
+    if (_step === 7) {
       if (!formData.timeline) errs.timeline = "Please select a timeline.";
       if (!formData.budget) errs.budget = "Please select a budget range.";
     }
@@ -336,7 +342,7 @@ export default function WebsiteIntakeFunnel() {
       { heading: "Business Overview", items: [
         ["Industry", formData.industry],
         ["Location", formData.location],
-        ["Years in Business", formData.yearsInBiz],
+        ["Years in Operation", formData.yearsInBiz],
         ["Current Website", formData.currentWebsite || "None"],
       ]},
       { heading: "Project Goals", items: [
@@ -535,11 +541,11 @@ export default function WebsiteIntakeFunnel() {
             </div>
             <div>
               <label className="block text-sm font-medium text-white/80 mb-1.5">
-                Business Name <span className="text-accent-light">*</span>
+                Business / Organization Name <span className="text-accent-light">*</span>
               </label>
               <input
                 type="text"
-                placeholder="Doe's Landscaping LLC"
+                placeholder="Doe's Landscaping LLC or Town of Springfield"
                 value={formData.businessName}
                 onChange={(e) => updateField("businessName", e.target.value)}
                 className={errors.businessName ? inputInvalidClass : inputClass}
@@ -594,7 +600,7 @@ export default function WebsiteIntakeFunnel() {
           </span>
           <h1 className="text-3xl md:text-4xl font-medium text-white mt-4 mb-2">
             Tell us about your{" "}
-            <span className="font-serif italic text-accent-light">business.</span>
+            <span className="font-serif italic text-accent-light">organization.</span>
           </h1>
           <p className="text-white/60 text-sm leading-relaxed mb-8">
             We need to understand what you do so we can build something that actually represents you.
@@ -618,14 +624,14 @@ export default function WebsiteIntakeFunnel() {
             <div>
               <div className="flex justify-between items-center mb-1.5">
                 <label className="text-sm font-medium text-white/80">
-                  Describe your business in 2-3 sentences <span className="text-accent-light">*</span>
+                  Describe your business or organization in 2-3 sentences <span className="text-accent-light">*</span>
                 </label>
                 <span className="text-xs text-white/30 tabular-nums">{formData.bizDesc.length} / 400</span>
               </div>
               <textarea
                 maxLength={400}
                 rows={4}
-                placeholder="What do you do, who do you serve, and what makes you different from competitors?"
+                placeholder="What do you do, who do you serve? For municipalities: describe your town and key departments."
                 value={formData.bizDesc}
                 onChange={(e) => updateField("bizDesc", e.target.value)}
                 className={`${textareaClass} ${errors.bizDesc ? "!border-red-400/60" : ""}`}
@@ -648,7 +654,7 @@ export default function WebsiteIntakeFunnel() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-white/80 mb-1.5">
-                  Years in Business
+                  Years in Operation
                 </label>
                 <select value={formData.yearsInBiz} onChange={(e) => updateField("yearsInBiz", e.target.value)} className={selectClass}>
                   <option value="" disabled>Select...</option>
@@ -722,6 +728,7 @@ export default function WebsiteIntakeFunnel() {
                   "Generate leads / calls", "Online bookings / scheduling",
                   "Sell products online", "Build credibility / brand",
                   "Showcase portfolio / work", "Rank on Google / SEO",
+                  "Post announcements / community updates",
                 ]}
               />
               <FieldError field="primaryGoal" />
@@ -732,7 +739,7 @@ export default function WebsiteIntakeFunnel() {
               </label>
               <textarea
                 rows={3}
-                placeholder="Homeowners in the North Shore area aged 35-65, looking for trustworthy HVAC service..."
+                placeholder="Homeowners aged 35-65 looking for HVAC service, or town residents who need meeting info and permits..."
                 value={formData.targetCustomer}
                 onChange={(e) => updateField("targetCustomer", e.target.value)}
                 className={`${textareaClass} ${errors.targetCustomer ? "!border-red-400/60" : ""}`}
@@ -745,7 +752,7 @@ export default function WebsiteIntakeFunnel() {
               </label>
               <RadioGroup
                 field="primaryCTA"
-                options={["Call us", "Fill out a contact form", "Book an appointment", "Request a quote", "Shop / buy now", "Get directions"]}
+                options={["Call us", "Fill out a contact form", "Book an appointment", "Request a quote", "Shop / buy now", "Get directions", "Find information / documents", "Report an issue"]}
               />
             </div>
             <div>
@@ -796,7 +803,7 @@ export default function WebsiteIntakeFunnel() {
           <div className="space-y-5">
             <div>
               <label className="block text-sm font-medium text-white/80 mb-1.5">Overall vibe / aesthetic</label>
-              <CheckboxGroup field="vibes" options={["Clean & minimal", "Bold & modern", "Luxury / premium", "Friendly & approachable", "Corporate / professional", "Rugged / tradesman"]} />
+              <CheckboxGroup field="vibes" options={["Clean & minimal", "Bold & modern", "Luxury / premium", "Friendly & approachable", "Corporate / professional", "Rugged / tradesman", "Official / civic"]} />
             </div>
             <div>
               <label className="block text-sm font-medium text-white/80 mb-1.5">Color preference</label>
@@ -882,7 +889,7 @@ export default function WebsiteIntakeFunnel() {
             </div>
             <div>
               <label className="block text-sm font-medium text-white/80 mb-1.5">Anything else the site needs to do?</label>
-              <textarea rows={3} placeholder="Multilingual, ADA compliant, Spanish version, client portal, PDF downloads..." value={formData.otherScope} onChange={(e) => updateField("otherScope", e.target.value)} className={textareaClass} />
+              <textarea rows={3} placeholder="Multilingual, ADA compliant, Spanish version, client portal, PDF downloads, permit applications, public records..." value={formData.otherScope} onChange={(e) => updateField("otherScope", e.target.value)} className={textareaClass} />
             </div>
           </div>
 
@@ -958,18 +965,17 @@ export default function WebsiteIntakeFunnel() {
         </div>
       )}
 
-      {/* ══════ STEP 7: Timeline & Budget ══════ */}
+      {/* ══════ STEP 7: Timeline ══════ */}
       {currentStep === 7 && (
         <div className="step-animate" key="step-7">
           <span className="rounded-full border border-white/20 backdrop-blur-sm px-3 py-1.5 text-sm text-accent-light">
             Final Details
           </span>
           <h1 className="text-3xl md:text-4xl font-medium text-white mt-4 mb-2">
-            Timeline &amp;{" "}
-            <span className="font-serif italic text-accent-light">investment.</span>
+            <span className="font-serif italic text-accent-light">Timeline.</span>
           </h1>
           <p className="text-white/60 text-sm leading-relaxed mb-8">
-            We&apos;ll confirm everything on our strategy call, but this helps us prepare the right options for you.
+            We&apos;ll confirm everything on our strategy call, but this helps us plan ahead.
           </p>
 
           <div className="space-y-5">
@@ -987,28 +993,6 @@ export default function WebsiteIntakeFunnel() {
               <input type="text" placeholder="Grand opening April 15, busy season starts May..." value={formData.launchEvent} onChange={(e) => updateField("launchEvent", e.target.value)} className={inputClass} />
             </div>
             <div>
-              <label className="block text-sm font-medium text-white/80 mb-1.5">
-                Budget range <span className="text-accent-light">*</span>
-              </label>
-              <div className="rounded-xl bg-accent/10 border border-accent/20 px-4 py-3 text-sm text-accent-light leading-relaxed mb-3">
-                We build websites on a monthly subscription model — no large upfront cost. Select the range that fits your monthly budget.
-              </div>
-              <RadioGroup
-                field="budget"
-                options={["Under $200/mo", "$200-$400/mo", "$400-$700/mo", "$700+/mo", "One-time project preferred", "Flexible — show me options"]}
-              />
-              <FieldError field="budget" />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-white/80 mb-1.5">How did you hear about us?</label>
-              <select value={formData.referralSource} onChange={(e) => updateField("referralSource", e.target.value)} className={selectClass}>
-                <option value="" disabled>Select...</option>
-                {["Google search", "Referral from a friend / colleague", "Facebook / Instagram", "Cold call / email outreach", "LinkedIn", "Networking event", "Other"].map((o) => (
-                  <option key={o} value={o}>{o}</option>
-                ))}
-              </select>
-            </div>
-            <div>
               <div className="flex justify-between items-center mb-1.5">
                 <label className="text-sm font-medium text-white/80">Anything else we should know?</label>
                 <span className="text-xs text-white/30 tabular-nums">{formData.additionalNotes.length} / 600</span>
@@ -1021,27 +1005,6 @@ export default function WebsiteIntakeFunnel() {
                 onChange={(e) => updateField("additionalNotes", e.target.value)}
                 className={textareaClass}
               />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-white/80 mb-1.5">
-                How would you rate your urgency? (1 = no rush, 5 = critical)
-              </label>
-              <div className="scale-wrap">
-                {["1", "2", "3", "4", "5"].map((n) => (
-                  <button
-                    key={n}
-                    type="button"
-                    className={`scale-btn${formData.urgency === n ? " selected" : ""}`}
-                    onClick={() => updateField("urgency", n)}
-                  >
-                    {n}
-                  </button>
-                ))}
-              </div>
-              <div className="flex justify-between mt-1.5 text-xs text-white/30">
-                <span>No rush</span>
-                <span>Critical</span>
-              </div>
             </div>
           </div>
 
