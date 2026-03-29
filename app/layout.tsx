@@ -177,6 +177,19 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessSchema),
           }}
         />
+        <noscript>
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `
+                [style*="opacity: 0"], [style*="opacity:0"] {
+                  opacity: 1 !important;
+                  transform: none !important;
+                  filter: none !important;
+                }
+              `,
+            }}
+          />
+        </noscript>
       </head>
       <body className={dmSans.className} style={{ backgroundColor: "#070612" }}>
         <Navbar />
