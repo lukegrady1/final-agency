@@ -14,6 +14,339 @@ interface BlogPost {
 }
 
 const posts: Record<string, BlogPost> = {
+  "five-minute-window-speed-to-lead": {
+    title:
+      "The 5-Minute Window: Why Local Service Businesses Lose Jobs Before They Even Know They Had Them",
+    category: "AI Automation",
+    date: "March 29, 2026",
+    isoDate: "2026-03-29",
+    description:
+      "Most local service businesses miss 62% of inbound calls — and 85% of those callers never call back. Here's how the first 5 minutes after a missed call determines whether you win or lose the job.",
+    content: (
+      <>
+        <p>
+          You&apos;re on a job. Hands dirty. Can&apos;t pick up.
+        </p>
+        <p>
+          Your phone rings, goes to voicemail, and the caller hangs up without
+          leaving a message. You find out about it three hours later when you
+          check your missed calls. You try calling back. No answer. You try
+          again the next morning. Still nothing.
+        </p>
+        <p>That lead is gone.</p>
+        <p>
+          Here&apos;s the part most business owners don&apos;t want to sit with: that
+          probably happened two or three more times this week. And the week
+          before that. Based on data from across the home services industry,
+          local contractors miss between 22% and 62% of all inbound calls. For
+          a business where a single job is worth $2,000 to $10,000, the math
+          gets uncomfortable fast.
+        </p>
+        <p>
+          The problem isn&apos;t that you&apos;re bad at running your business. The
+          problem is that your follow-up system wasn&apos;t built for how customers
+          actually behave in 2026.
+        </p>
+
+        <h2>What Happens the Moment Your Call Goes Unanswered</h2>
+        <p>
+          When a potential customer calls you, they&apos;re usually not sitting on
+          their couch with a notepad, patiently waiting for you to call them
+          back at your convenience. They found you on Google, they need
+          something done, and they&apos;re also looking at two or three of your
+          competitors at the same time.
+        </p>
+        <p>
+          Research from MIT, cited in the Harvard Business Review, found that
+          businesses contacting a lead within one hour are nearly seven times
+          more likely to qualify that lead compared to those that wait even a
+          little longer. Wait 24 hours, and your odds drop by more than 60
+          times.
+        </p>
+        <p>
+          Five minutes changes everything. One study found that responding
+          within five minutes increases lead qualification by up to 400%
+          compared to a 30-minute delay. Another puts it even more starkly:
+          waiting longer than six minutes can cost you up to 80% of potential
+          customers.
+        </p>
+        <p>
+          And if you&apos;re counting on voicemail to catch what you miss, the data
+          doesn&apos;t support that. Roughly 80% of callers who hit voicemail hang
+          up without leaving a message. Of those who do leave a message, 67% of
+          people admit they ignore voicemails entirely, especially from numbers
+          they don&apos;t recognize.
+        </p>
+        <p>The caller is not going to wait for you. They&apos;re going to move on.</p>
+
+        <h2>The Revenue Problem Most Owners Don&apos;t Track</h2>
+        <p>
+          A 2025 analysis from Ambs Call Center found the average small business
+          loses about $126,000 per year directly from missed calls. That&apos;s not
+          including lifetime customer value, repeat business, or referrals.
+        </p>
+        <p>
+          Think about what that looks like for a roofing company, an HVAC
+          contractor, or a plumber. If your average job is worth $3,500 and
+          you&apos;re missing 25 calls a month, with even a 30% conversion rate on
+          those calls, you&apos;re leaving about $26,000 on the table every single
+          month.
+        </p>
+        <p>
+          The frustrating part is that most owners know something is off. Leads
+          feel inconsistent. Some months are great, some are dry spells, and
+          it&apos;s hard to figure out why. They blame seasonality, or the economy,
+          or Google changing something. But often the gap is right there in the
+          missed call log.
+        </p>
+
+        <h2>Speed to Lead Is Now a Competitive Differentiator</h2>
+        <p>
+          A few years ago, responding within a few hours was considered fine.
+          Today, consumer expectations have shifted in a way that makes that
+          standard look outdated.
+        </p>
+        <p>
+          According to a 2025 survey, 75% of customers expect a response within
+          five minutes of reaching out. Not an hour. Not before end of business.
+          Five minutes.
+        </p>
+        <p>
+          For a solo operator or a small crew, that&apos;s physically impossible to
+          do manually. You&apos;re either on a job, driving, or dealing with the ten
+          other things that running a business requires. You can&apos;t sit by the
+          phone all day waiting to pounce on every incoming call.
+        </p>
+        <p>
+          That&apos;s exactly why speed-to-lead automation exists. And if you&apos;re not
+          using it, the company down the street probably is.
+        </p>
+
+        <h2>What Actually Fixes This: Missed Call Text-Back</h2>
+        <p>
+          The single fastest win for any local service business that relies on
+          inbound calls is setting up an automatic text message that fires the
+          moment a call goes unanswered.
+        </p>
+        <p>
+          It&apos;s not complicated. When a caller doesn&apos;t get through, they receive
+          a text within 30 to 60 seconds that says something like: &quot;Hey, this
+          is [Business Name], sorry we missed you. What can we help you
+          with?&quot; That&apos;s it. A text message. Simple.
+        </p>
+        <p>But what it does is buy you time.</p>
+        <p>
+          Instead of that caller moving on to the next result on Google,
+          they&apos;re now in a conversation with you. You&apos;re responsive. You caught
+          the lead. And because texting has an open rate north of 95%, they&apos;re
+          almost certainly going to see your message.
+        </p>
+        <p>
+          Businesses using this kind of automated follow-up report significantly
+          lower rates of lost leads and, in many cases, higher conversion rates
+          than they&apos;d gotten from manually calling back hours later.
+        </p>
+        <p>
+          The concept is well-documented, but implementation matters. A few
+          things that separate the setups that work from the ones that don&apos;t:
+        </p>
+        <p>
+          <strong>Response time under 60 seconds.</strong> The longer you wait to
+          send the text, the lower the response rate. Automated systems handle
+          this instantly. Human-managed follow-up almost always takes too long.
+        </p>
+        <p>
+          <strong>Personalization.</strong> A generic message that says &quot;we
+          missed your call&quot; is fine. A message that includes the business
+          name, an offer to help, and a link to book or chat is better.
+        </p>
+        <p>
+          <strong>A clear next step.</strong> Don&apos;t leave the conversation
+          open-ended. Give them something to do: reply with their question,
+          click to schedule, or call back at a specific time.
+        </p>
+
+        <h2>Beyond Text-Back: Building a Full Follow-Up System</h2>
+        <p>
+          Missed call text-back is a good start. The businesses that win
+          consistently over time are the ones with a real system behind it.
+        </p>
+        <p>
+          Here&apos;s what that looks like in practice for a typical local service
+          business:
+        </p>
+        <p>
+          <strong>Day 0 (within 60 seconds of missed call):</strong> Automated
+          text fires immediately. Warm, direct, clear next step.
+        </p>
+        <p>
+          <strong>Day 0 (if no response after 20 minutes):</strong> A follow-up
+          text goes out. Not pushy. Something like: &quot;Still here if you want to
+          chat, otherwise feel free to book online at [link].&quot;
+        </p>
+        <p>
+          <strong>Day 1:</strong> An automated call attempt. If no answer, a
+          short voicemail is left.
+        </p>
+        <p>
+          <strong>Day 2 and Day 4:</strong> Two more light follow-up texts,
+          spaced out. Still friendly, still useful.
+        </p>
+        <p>
+          <strong>Day 7:</strong> One final message closing the loop: &quot;I
+          don&apos;t want to keep bothering you. If you ever need [service],
+          we&apos;re here.&quot;
+        </p>
+        <p>
+          Across seven days, you&apos;ve made six to eight contact attempts without
+          lifting a finger. Most leads either convert or opt out by day two or
+          three. But the ones who were just busy, not uninterested, often come
+          back on day four or five.
+        </p>
+        <p>
+          That&apos;s the difference between a CRM with a follow-up system and a
+          spreadsheet of missed calls sitting in your truck.
+        </p>
+
+        <h2>The AI Layer: When Responses Happen 24/7</h2>
+        <p>
+          If you layer an{" "}
+          <Link href="/blog/ai-receptionist-local-business">
+            AI receptionist
+          </Link>{" "}
+          on top of a follow-up system, you&apos;re covering the other side of the
+          problem: calls that come in after hours, during weekends, or when your
+          whole team is tied up.
+        </p>
+        <p>
+          An AI receptionist doesn&apos;t need a break. It answers every call,
+          handles common questions, qualifies the lead, and can book an
+          appointment directly into your calendar. Callers often can&apos;t tell
+          it&apos;s not a person, and for the ones who can tell, most don&apos;t actually
+          care as long as their question gets answered and they get a
+          confirmation.
+        </p>
+        <p>
+          The setup we build for clients at Grady Digital combines all of this:
+          AI voice for inbound calls, automatic text-back for missed calls, and
+          a multi-day follow-up sequence that runs without anyone having to
+          manage it. The business owner sees leads come in, appointments get
+          booked, and follow-up happen. The system does the work.
+        </p>
+        <p>
+          For HVAC companies and contractors specifically, where calls spike in
+          the morning and late afternoon and taper off into silence after 7 PM,
+          having 24/7 coverage is the difference between capturing an emergency
+          call at 9 PM or losing it to a competitor who has a{" "}
+          <Link href="/blog/ai-chatbot-lessons">chatbot</Link>.
+        </p>
+
+        <h2>Tracking Whether It&apos;s Actually Working</h2>
+        <p>
+          One thing worth mentioning: most businesses that add these systems
+          don&apos;t know how to measure them properly. They set it up, assume
+          it&apos;s working, and never look at the numbers.
+        </p>
+        <p>A few metrics worth watching:</p>
+        <ul>
+          <li>
+            <strong>Text reply rate:</strong> What percentage of your missed
+            call texts get a response? A good system should see 30% to 50%
+            reply rates.
+          </li>
+          <li>
+            <strong>Booking rate from texts:</strong> Of those who reply, how
+            many actually book? This tells you if your text copy and booking
+            flow are doing their job.
+          </li>
+          <li>
+            <strong>Lead response time:</strong> Average time from missed call
+            to first text sent. Should be under 60 seconds.
+          </li>
+          <li>
+            <strong>Cost per booked lead:</strong> If you&apos;re running ads
+            alongside this, you want to know how much it costs you to fill a
+            slot on your calendar.
+          </li>
+        </ul>
+        <p>
+          If you&apos;re not tracking these, you don&apos;t actually know if the system
+          is paying for itself. Most of the time, it is. But the data makes
+          that case far better than gut feel does.
+        </p>
+
+        <h2>What This Means for Your Business in 2026</h2>
+        <p>
+          Local service businesses are competing against each other in a market
+          where Google decides who gets the call.{" "}
+          <Link href="/blog/local-seo-checklist">
+            SEO and Google Business Profile
+          </Link>{" "}
+          get you to the point where the phone rings. After that, what you do in
+          the next five minutes determines whether that ring turns into a booked
+          job.
+        </p>
+        <p>
+          The businesses winning right now have three things in common: they
+          show up in local search results, they answer or respond to every
+          inquiry within minutes, and they have a follow-up system that
+          doesn&apos;t require a human to manage it.
+        </p>
+        <p>
+          That&apos;s not a complicated setup. It&apos;s just a set of systems working
+          together.
+        </p>
+        <p>
+          If you&apos;re still relying on callbacks and hoping leads leave
+          voicemails, you&apos;re fighting a battle with one hand tied behind your
+          back.
+        </p>
+
+        <h2>Ready to See What You&apos;re Missing?</h2>
+        <p>
+          We run free audits for local service businesses where we look at your
+          call handling, your lead capture, and your follow-up process. Most
+          owners walk away from that audit realizing they&apos;re losing more leads
+          than they thought.
+        </p>
+        <p>
+          If you want to know where the gaps are in your setup,{" "}
+          <Link href="/contact">get your free audit here</Link>. No pitch, no
+          obligation, just a clear picture of what&apos;s happening with your leads.
+        </p>
+
+        <hr className="border-white/10 my-12" />
+
+        <p className="text-white/40 text-sm italic">
+          Luke Grady runs Grady Digital, an AI automation and digital marketing
+          agency focused on local service businesses. Grady Digital builds AI
+          receptionists, missed call text-back systems, automated follow-up
+          sequences, and websites for contractors, HVAC companies, and other
+          service businesses across the country.
+        </p>
+
+        <h3>Related Posts</h3>
+        <ul>
+          <li>
+            <Link href="/blog/ai-receptionist-local-business">
+              Why Every Local Service Business Needs an AI Receptionist in 2026
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog/local-seo-checklist">
+              The 5-Step Local SEO Checklist That Actually Moves the Needle
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog/ai-chatbot-lessons">
+              What We Learned Building 20+ AI Chatbots for Small Businesses
+            </Link>
+          </li>
+        </ul>
+      </>
+    ),
+  },
+
   "ai-receptionist-local-business": {
     title:
       "Why Every Local Service Business Needs an AI Receptionist in 2026",
@@ -32,8 +365,10 @@ const posts: Record<string, BlogPost> = {
         <p>
           Not leave a voicemail. Not try again later. They call someone else. And
           for local service businesses — HVAC companies, plumbers, contractors,
-          salons, restaurants — the phone is still where most revenue starts. A
-          missed call is not an inconvenience. It is lost money.
+          salons, restaurants — the phone is still where most revenue starts.{" "}
+          <Link href="/blog/five-minute-window-speed-to-lead">
+            A missed call is not an inconvenience. It is lost money.
+          </Link>
         </p>
         <p>
           That is the problem AI receptionists solve. Not in a theoretical,
@@ -172,6 +507,25 @@ const posts: Record<string, BlogPost> = {
           significant advantage. While your competitor&apos;s phone rings out at
           9pm, yours answers on the first ring.
         </p>
+
+        <h3>Related Posts</h3>
+        <ul>
+          <li>
+            <Link href="/blog/five-minute-window-speed-to-lead">
+              The 5-Minute Window: Why Local Service Businesses Lose Jobs Before They Even Know They Had Them
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog/local-seo-checklist">
+              The 5-Step Local SEO Checklist That Actually Moves the Needle
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog/ai-chatbot-lessons">
+              What We Learned Building 20+ AI Chatbots for Small Businesses
+            </Link>
+          </li>
+        </ul>
       </>
     ),
   },
@@ -378,7 +732,12 @@ const posts: Record<string, BlogPost> = {
         <p>
           The businesses that do this consistently see a measurable lift in
           impressions and calls within 60-90 days. It signals to Google that
-          your profile is active and your business is engaged.
+          your profile is active and your business is engaged. Once those calls
+          start coming in, make sure you have a system to{" "}
+          <Link href="/blog/five-minute-window-speed-to-lead">
+            respond within the first five minutes
+          </Link>{" "}
+          — that is where most leads are won or lost.
         </p>
 
         <h2>What Comes Next</h2>
@@ -397,6 +756,25 @@ const posts: Record<string, BlogPost> = {
           velocity, audit your NAP consistency, and give you a clear picture of
           what is costing you rankings.
         </p>
+
+        <h3>Related Posts</h3>
+        <ul>
+          <li>
+            <Link href="/blog/five-minute-window-speed-to-lead">
+              The 5-Minute Window: Why Local Service Businesses Lose Jobs Before They Even Know They Had Them
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog/ai-receptionist-local-business">
+              Why Every Local Service Business Needs an AI Receptionist in 2026
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog/ai-chatbot-lessons">
+              What We Learned Building 20+ AI Chatbots for Small Businesses
+            </Link>
+          </li>
+        </ul>
       </>
     ),
   },
@@ -536,7 +914,7 @@ const posts: Record<string, BlogPost> = {
         </p>
         <p>
           Even better: pair the chatbot with an{" "}
-          <Link href="/services">
+          <Link href="/blog/five-minute-window-speed-to-lead">
             automated lead follow-up sequence
           </Link>{" "}
           so the lead gets an instant text confirmation regardless of whether the
@@ -616,6 +994,25 @@ const posts: Record<string, BlogPost> = {
           and we will walk through your site and show you exactly where a
           chatbot would have the most impact.
         </p>
+
+        <h3>Related Posts</h3>
+        <ul>
+          <li>
+            <Link href="/blog/five-minute-window-speed-to-lead">
+              The 5-Minute Window: Why Local Service Businesses Lose Jobs Before They Even Know They Had Them
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog/ai-receptionist-local-business">
+              Why Every Local Service Business Needs an AI Receptionist in 2026
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog/local-seo-checklist">
+              The 5-Step Local SEO Checklist That Actually Moves the Needle
+            </Link>
+          </li>
+        </ul>
       </>
     ),
   },

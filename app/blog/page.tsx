@@ -14,6 +14,15 @@ export const metadata: Metadata = {
 const posts = [
   {
     title:
+      "The 5-Minute Window: Why Local Service Businesses Lose Jobs Before They Even Know They Had Them",
+    category: "AI Automation",
+    date: "March 29, 2026",
+    excerpt:
+      "Most local service businesses miss 62% of inbound calls — and 85% of those callers never call back. Here's how the first 5 minutes after a missed call determines whether you win or lose the job.",
+    slug: "five-minute-window-speed-to-lead",
+  },
+  {
+    title:
       "Why Every Local Service Business Needs an AI Receptionist in 2026",
     category: "AI Automation",
     date: "January 15, 2026",
