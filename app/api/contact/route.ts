@@ -38,7 +38,7 @@ export async function POST(request: Request) {
     const resend = getResend();
     if (resend) {
       await resend.emails.send({
-        from: "Grady Digital <notifications@gradydigital.com>",
+        from: "Grady Digital <notifications@send.gradydigital.com>",
         to: "luke@gradydigital.com",
         replyTo: data.email,
         subject: `New Contact: ${data.businessName} — ${data.name}`,
