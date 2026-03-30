@@ -691,12 +691,12 @@ export default function WebsiteIntakeFunnel() {
           <div className="space-y-5">
             <div>
               <label className="block text-sm font-medium text-white/80 mb-1.5">Overall vibe / aesthetic</label>
-              <CheckboxGroup field="vibes" options={["Clean & minimal", "Bold & modern", "Luxury / premium", "Friendly & approachable", "Corporate / professional", "Rugged / tradesman", "Official / civic"]} />
+              <CheckboxGroup field="vibes" options={["Clean & minimal", "Bold & modern", "Luxury / premium", "Friendly & approachable", "Corporate / professional", "Rugged / tradesman", "Official / civic", "Leave it up to us"]} />
             </div>
             <div>
               <label className="block text-sm font-medium text-white/80 mb-1.5">Color preference</label>
               <div className="check-grid three-col">
-                {["Light / white", "Dark / dramatic", "Use my brand colors"].map((opt) => (
+                {["Light / white", "Dark / dramatic", "Use my brand colors", "Leave it up to us"].map((opt) => (
                   <div
                     key={opt}
                     className={`check-card radio-card${formData.colorPref === opt ? " selected" : ""}`}

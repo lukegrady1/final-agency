@@ -11,10 +11,10 @@ const CLIENT_NAME = process.argv[2] || "[CLIENT NAME]";
 const PROJECT_TYPE = process.argv[3] || "Website Build";
 
 // ─── COLORS ───
-const GREEN = "1B4332";
-const GOLD = "C9A84C";
-const LIGHT_GREEN = "E8F0EC";
-const LIGHT_GOLD = "FDF6E3";
+const DEEP_NAVY = "0A0F2E";
+const ACCENT = "6C6AF6";
+const LIGHT_NAVY = "E8EAF6";
+const LIGHT_ACCENT = "F0EFFF";
 const GRAY = "4A5568";
 const WHITE = "FFFFFF";
 const BLACK = "1A202C";
@@ -48,11 +48,11 @@ function sectionHeader(text) {
           bold: true,
           font: "Arial",
           size: 22,
-          color: GREEN,
+          color: DEEP_NAVY,
         }),
       ],
       border: {
-        bottom: { style: BorderStyle.SINGLE, size: 6, color: GOLD },
+        bottom: { style: BorderStyle.SINGLE, size: 6, color: ACCENT },
       },
       spacing: { after: 200 },
     }),
@@ -119,10 +119,10 @@ function overviewTable() {
         children: [
           new TableCell({
             children: [new Paragraph({
-              children: [new TextRun({ text: "CLIENT", font: "Arial", size: 16, bold: true, color: GREEN })],
+              children: [new TextRun({ text: "CLIENT", font: "Arial", size: 16, bold: true, color: DEEP_NAVY })],
             })],
             width: { size: cellWidth, type: WidthType.DXA },
-            shading: { type: ShadingType.CLEAR, fill: LIGHT_GREEN },
+            shading: { type: ShadingType.CLEAR, fill: LIGHT_NAVY },
             borders: noBorders(),
           }),
           new TableCell({
@@ -130,7 +130,7 @@ function overviewTable() {
               children: [new TextRun({ text: CLIENT_NAME, font: "Arial", size: 20, color: BLACK })],
             })],
             width: { size: cellWidth, type: WidthType.DXA },
-            shading: { type: ShadingType.CLEAR, fill: LIGHT_GOLD },
+            shading: { type: ShadingType.CLEAR, fill: LIGHT_ACCENT },
             borders: noBorders(),
           }),
         ],
@@ -139,10 +139,10 @@ function overviewTable() {
         children: [
           new TableCell({
             children: [new Paragraph({
-              children: [new TextRun({ text: "PROJECT TYPE", font: "Arial", size: 16, bold: true, color: GREEN })],
+              children: [new TextRun({ text: "PROJECT TYPE", font: "Arial", size: 16, bold: true, color: DEEP_NAVY })],
             })],
             width: { size: cellWidth, type: WidthType.DXA },
-            shading: { type: ShadingType.CLEAR, fill: LIGHT_GREEN },
+            shading: { type: ShadingType.CLEAR, fill: LIGHT_NAVY },
             borders: noBorders(),
           }),
           new TableCell({
@@ -150,7 +150,7 @@ function overviewTable() {
               children: [new TextRun({ text: PROJECT_TYPE, font: "Arial", size: 20, color: BLACK })],
             })],
             width: { size: cellWidth, type: WidthType.DXA },
-            shading: { type: ShadingType.CLEAR, fill: LIGHT_GOLD },
+            shading: { type: ShadingType.CLEAR, fill: LIGHT_ACCENT },
             borders: noBorders(),
           }),
         ],
@@ -179,29 +179,24 @@ const doc = new Document({
       children: [
         // ── Header Block ──
         new Paragraph({
-          children: [],
-          shading: { type: ShadingType.CLEAR, fill: GREEN },
-          spacing: { before: 0, after: 0 },
-        }),
-        new Paragraph({
           children: [
             new TextRun({ text: "Client Onboarding Form", bold: true, font: "Arial", size: 36, color: WHITE }),
           ],
-          shading: { type: ShadingType.CLEAR, fill: GREEN },
+          shading: { type: ShadingType.CLEAR, fill: DEEP_NAVY },
           spacing: { before: 400, after: 0 },
           indent: { left: convertInchesToTwip(0.5) },
         }),
         new Paragraph({
           children: [
-            new TextRun({ text: `${CLIENT_NAME} | ${PROJECT_TYPE}`, font: "Arial", size: 22, color: "A7C4A0" }),
+            new TextRun({ text: `${CLIENT_NAME} | ${PROJECT_TYPE}`, font: "Arial", size: 22, color: "9E9CF8" }),
           ],
-          shading: { type: ShadingType.CLEAR, fill: GREEN },
+          shading: { type: ShadingType.CLEAR, fill: DEEP_NAVY },
           spacing: { before: 80, after: 400 },
           indent: { left: convertInchesToTwip(0.5) },
         }),
         // Gold accent bar
         new Paragraph({
-          border: { bottom: { style: BorderStyle.SINGLE, size: 12, color: GOLD } },
+          border: { bottom: { style: BorderStyle.SINGLE, size: 12, color: ACCENT } },
           spacing: { after: 300 },
         }),
 
@@ -241,47 +236,7 @@ const doc = new Document({
         divider(),
 
         // ═══════════════════════════════════════
-        // SECTION 2: Email Accounts
-        // ═══════════════════════════════════════
-        ...sectionHeader("Email & Communication"),
-        bullet("Do you need business email accounts set up?", "e.g. info@yourbusiness.com"),
-        inputLine("Email provider (if existing)"),
-        inputLine("Login URL"),
-        inputLine("Username / Email"),
-        inputLine("Password"),
-        bullet("List any email addresses you want created:"),
-        inputLine("Email 1"),
-        inputLine("Email 2"),
-        inputLine("Email 3"),
-
-        divider(),
-
-        // ═══════════════════════════════════════
-        // SECTION 3: Google & Analytics
-        // ═══════════════════════════════════════
-        ...sectionHeader("Google & Analytics Access"),
-        new Paragraph({
-          children: [new TextRun({ text: "We'll set up tracking and search tools. Grant access to luke@gradydigital.com where possible.", font: "Arial", size: 20, color: GRAY, italics: true })],
-          spacing: { after: 200 },
-        }),
-
-        subHeader("Google Business Profile"),
-        bullet("Grant Owner or Manager access to luke@gradydigital.com"),
-        inputLine("Google account email used for GBP"),
-        inputLine("Business Profile name (as it appears on Google)"),
-
-        subHeader("Google Analytics"),
-        bullet("If you already have GA set up, grant Editor access to luke@gradydigital.com"),
-        inputLine("GA Property ID (if known)"),
-
-        subHeader("Google Search Console"),
-        bullet("We'll verify your site and set this up if it doesn't exist"),
-        inputLine("Existing Search Console access? (Yes/No)"),
-
-        divider(),
-
-        // ═══════════════════════════════════════
-        // SECTION 4: Social Media
+        // SECTION 2: Social Media
         // ═══════════════════════════════════════
         ...sectionHeader("Social Media Accounts"),
         new Paragraph({
@@ -300,15 +255,19 @@ const doc = new Document({
         divider(),
 
         // ═══════════════════════════════════════
-        // SECTION 5: Design Assets
+        // SECTION 3: Design Assets
         // ═══════════════════════════════════════
         ...sectionHeader("Design Assets & Branding"),
+        new Paragraph({
+          children: [new TextRun({ text: "If you don't have any of these, or you want us to handle the design, just put N/A.", font: "Arial", size: 20, color: GRAY, italics: true })],
+          spacing: { after: 200 },
+        }),
 
         subHeader("Logo Files"),
         bullet("Please provide your logo in as many formats as possible"),
         bullet("Preferred formats: SVG (vector), PNG (transparent background), AI/EPS"),
         inputLine("How will you send logo files?"),
-        bullet("Delivery options: Email, Google Drive, Dropbox, USB"),
+        bullet("Delivery options: Email or Google Drive"),
 
         subHeader("Brand Colors"),
         inputLine("Primary color (hex code or name)"),
@@ -323,16 +282,16 @@ const doc = new Document({
         subHeader("Photography"),
         bullet("Provide any photos you want used on the site"),
         bullet("Include team headshots, office/storefront photos, project photos"),
-        inputLine("How will you send photos?"),
+        bullet("Please include all pictures in a zip file and email them to us"),
 
         divider(),
 
         // ═══════════════════════════════════════
-        // SECTION 6: Third-Party Integrations
+        // SECTION 4: Third-Party Integrations
         // ═══════════════════════════════════════
         ...sectionHeader("Third-Party Integrations & Tools"),
         new Paragraph({
-          children: [new TextRun({ text: "List any tools or services that need to connect to your website.", font: "Arial", size: 20, color: GRAY, italics: true })],
+          children: [new TextRun({ text: "List any tools or services that need to connect to your website. If you don't use any of these, just put N/A.", font: "Arial", size: 20, color: GRAY, italics: true })],
           spacing: { after: 200 },
         }),
 
@@ -360,7 +319,7 @@ const doc = new Document({
         divider(),
 
         // ═══════════════════════════════════════
-        // SECTION 7: Existing Site (if migrating)
+        // SECTION 5: Existing Site (if migrating)
         // ═══════════════════════════════════════
         ...sectionHeader("Existing Website Access (If Migrating)"),
         new Paragraph({
@@ -381,7 +340,7 @@ const doc = new Document({
         divider(),
 
         // ═══════════════════════════════════════
-        // SECTION 8: Notes
+        // SECTION 6: Notes
         // ═══════════════════════════════════════
         ...sectionHeader("Additional Notes"),
         new Paragraph({
@@ -406,7 +365,7 @@ const doc = new Document({
         }),
         new Paragraph({
           children: [
-            new TextRun({ text: "Grady Digital | hello@gradydigital.com", font: "Arial", size: 16, color: GRAY }),
+            new TextRun({ text: "VC Solutions | keeganzoller@vc-solutions.net", font: "Arial", size: 16, color: GRAY }),
           ],
           alignment: AlignmentType.CENTER,
           spacing: { before: 80 },
