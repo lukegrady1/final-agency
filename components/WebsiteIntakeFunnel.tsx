@@ -140,28 +140,28 @@ export default function WebsiteIntakeFunnel() {
     return true;
     const errs: Errors = {};
     if (_step === 1) {
+      if (!formData.industry) errs.industry = "Please select your industry.";
+      if (!formData.bizDesc.trim()) errs.bizDesc = "Please describe your business.";
+      if (!formData.location.trim()) errs.location = "Please enter your service area.";
+    }
+    if (_step === 2) {
+      if (!formData.primaryGoal) errs.primaryGoal = "Please select your primary goal.";
+      if (!formData.targetCustomer.trim()) errs.targetCustomer = "Please describe your target customer.";
+    }
+    if (_step === 5) {
+      if (!formData.logoStatus) errs.logoStatus = "Please select your logo status.";
+    }
+    if (_step === 6) {
+      if (!formData.timeline) errs.timeline = "Please select a timeline.";
+      if (!formData.budget) errs.budget = "Please select a budget range.";
+    }
+    if (_step === 7) {
       if (!formData.firstName.trim()) errs.firstName = "Please enter your first name.";
       if (!formData.lastName.trim()) errs.lastName = "Please enter your last name.";
       if (!formData.businessName.trim()) errs.businessName = "Please enter your business name.";
       if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
         errs.email = "Please enter a valid email.";
       if (!formData.phone.trim()) errs.phone = "Please enter your phone number.";
-    }
-    if (_step === 2) {
-      if (!formData.industry) errs.industry = "Please select your industry.";
-      if (!formData.bizDesc.trim()) errs.bizDesc = "Please describe your business.";
-      if (!formData.location.trim()) errs.location = "Please enter your service area.";
-    }
-    if (_step === 3) {
-      if (!formData.primaryGoal) errs.primaryGoal = "Please select your primary goal.";
-      if (!formData.targetCustomer.trim()) errs.targetCustomer = "Please describe your target customer.";
-    }
-    if (_step === 6) {
-      if (!formData.logoStatus) errs.logoStatus = "Please select your logo status.";
-    }
-    if (_step === 7) {
-      if (!formData.timeline) errs.timeline = "Please select a timeline.";
-      if (!formData.budget) errs.budget = "Please select a budget range.";
     }
     setErrors(errs);
     return Object.keys(errs).length === 0;
@@ -484,117 +484,9 @@ export default function WebsiteIntakeFunnel() {
         </div>
       </div>
 
-      {/* ══════ STEP 1: Contact Info ══════ */}
+      {/* ══════ STEP 1: Business Overview ══════ */}
       {currentStep === 1 && (
         <div className="step-animate" key="step-1">
-          <span className="rounded-full border border-white/20 backdrop-blur-sm px-3 py-1.5 text-sm text-accent-light">
-            Getting Started
-          </span>
-          <h1 className="text-3xl md:text-4xl font-medium text-white mt-4 mb-2">
-            Let&apos;s start with{" "}
-            <span className="font-serif italic text-accent-light">you.</span>
-          </h1>
-          <p className="text-white/60 text-sm leading-relaxed mb-8">
-            Tell us who you are and how to reach you. This takes about 4 minutes to complete.
-          </p>
-
-          <div className="flex gap-4 mb-8 flex-wrap">
-            <div className="flex items-center gap-2 text-xs text-white/50">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-400" />100% confidential
-            </div>
-            <div className="flex items-center gap-2 text-xs text-white/50">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-400" />No commitment required
-            </div>
-            <div className="flex items-center gap-2 text-xs text-white/50">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-400" />Response within 24 hrs
-            </div>
-          </div>
-
-          <div className="space-y-5">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div>
-                <label className="block text-sm font-medium text-white/80 mb-1.5">
-                  First Name <span className="text-accent-light">*</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Jane"
-                  value={formData.firstName}
-                  onChange={(e) => updateField("firstName", e.target.value)}
-                  className={errors.firstName ? inputInvalidClass : inputClass}
-                />
-                <FieldError field="firstName" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-white/80 mb-1.5">
-                  Last Name <span className="text-accent-light">*</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Doe"
-                  value={formData.lastName}
-                  onChange={(e) => updateField("lastName", e.target.value)}
-                  className={errors.lastName ? inputInvalidClass : inputClass}
-                />
-                <FieldError field="lastName" />
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-white/80 mb-1.5">
-                Business / Organization Name <span className="text-accent-light">*</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Doe's Landscaping LLC or Town of Springfield"
-                value={formData.businessName}
-                onChange={(e) => updateField("businessName", e.target.value)}
-                className={errors.businessName ? inputInvalidClass : inputClass}
-              />
-              <FieldError field="businessName" />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div>
-                <label className="block text-sm font-medium text-white/80 mb-1.5">
-                  Email Address <span className="text-accent-light">*</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="jane@example.com"
-                  value={formData.email}
-                  onChange={(e) => updateField("email", e.target.value)}
-                  className={errors.email ? inputInvalidClass : inputClass}
-                />
-                <FieldError field="email" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-white/80 mb-1.5">
-                  Phone Number <span className="text-accent-light">*</span>
-                </label>
-                <input
-                  type="tel"
-                  placeholder="(555) 000-0000"
-                  value={formData.phone}
-                  onChange={(e) => updateField("phone", e.target.value)}
-                  className={errors.phone ? inputInvalidClass : inputClass}
-                />
-                <FieldError field="phone" />
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-white/80 mb-1.5">
-                Best way to reach you
-              </label>
-              <RadioGroup field="contactPref" options={["Email", "Phone call", "Text message", "Any"]} />
-            </div>
-          </div>
-
-          <NavButtons onNext={nextStep} />
-        </div>
-      )}
-
-      {/* ══════ STEP 2: Business Overview ══════ */}
-      {currentStep === 2 && (
-        <div className="step-animate" key="step-2">
           <span className="rounded-full border border-white/20 backdrop-blur-sm px-3 py-1.5 text-sm text-accent-light">
             About Your Business
           </span>
@@ -603,7 +495,7 @@ export default function WebsiteIntakeFunnel() {
             <span className="font-serif italic text-accent-light">organization.</span>
           </h1>
           <p className="text-white/60 text-sm leading-relaxed mb-8">
-            We need to understand what you do so we can build something that actually represents you.
+            This takes about 4 minutes. We need to understand what you do so we can build something that actually represents you.
           </p>
 
           <div className="space-y-5">
@@ -703,9 +595,9 @@ export default function WebsiteIntakeFunnel() {
         </div>
       )}
 
-      {/* ══════ STEP 3: Project Goals ══════ */}
-      {currentStep === 3 && (
-        <div className="step-animate" key="step-3">
+      {/* ══════ STEP 2: Project Goals ══════ */}
+      {currentStep === 2 && (
+        <div className="step-animate" key="step-2">
           <span className="rounded-full border border-white/20 backdrop-blur-sm px-3 py-1.5 text-sm text-accent-light">
             Project Goals
           </span>
@@ -786,9 +678,9 @@ export default function WebsiteIntakeFunnel() {
         </div>
       )}
 
-      {/* ══════ STEP 4: Design Preferences ══════ */}
-      {currentStep === 4 && (
-        <div className="step-animate" key="step-4">
+      {/* ══════ STEP 3: Design Preferences ══════ */}
+      {currentStep === 3 && (
+        <div className="step-animate" key="step-3">
           <span className="rounded-full border border-white/20 backdrop-blur-sm px-3 py-1.5 text-sm text-accent-light">
             Look &amp; Feel
           </span>
@@ -855,9 +747,9 @@ export default function WebsiteIntakeFunnel() {
         </div>
       )}
 
-      {/* ══════ STEP 5: Scope & Pages ══════ */}
-      {currentStep === 5 && (
-        <div className="step-animate" key="step-5">
+      {/* ══════ STEP 4: Scope & Pages ══════ */}
+      {currentStep === 4 && (
+        <div className="step-animate" key="step-4">
           <span className="rounded-full border border-white/20 backdrop-blur-sm px-3 py-1.5 text-sm text-accent-light">
             Scope of Work
           </span>
@@ -897,9 +789,9 @@ export default function WebsiteIntakeFunnel() {
         </div>
       )}
 
-      {/* ══════ STEP 6: Content & Assets ══════ */}
-      {currentStep === 6 && (
-        <div className="step-animate" key="step-6">
+      {/* ══════ STEP 5: Content & Assets ══════ */}
+      {currentStep === 5 && (
+        <div className="step-animate" key="step-5">
           <span className="rounded-full border border-white/20 backdrop-blur-sm px-3 py-1.5 text-sm text-accent-light">
             Content &amp; Assets
           </span>
@@ -965,11 +857,11 @@ export default function WebsiteIntakeFunnel() {
         </div>
       )}
 
-      {/* ══════ STEP 7: Timeline ══════ */}
-      {currentStep === 7 && (
-        <div className="step-animate" key="step-7">
+      {/* ══════ STEP 6: Timeline ══════ */}
+      {currentStep === 6 && (
+        <div className="step-animate" key="step-6">
           <span className="rounded-full border border-white/20 backdrop-blur-sm px-3 py-1.5 text-sm text-accent-light">
-            Final Details
+            Timeline
           </span>
           <h1 className="text-3xl md:text-4xl font-medium text-white mt-4 mb-2">
             <span className="font-serif italic text-accent-light">Timeline.</span>
@@ -1005,6 +897,114 @@ export default function WebsiteIntakeFunnel() {
                 onChange={(e) => updateField("additionalNotes", e.target.value)}
                 className={textareaClass}
               />
+            </div>
+          </div>
+
+          <NavButtons onNext={nextStep} />
+        </div>
+      )}
+
+      {/* ══════ STEP 7: Contact Info ══════ */}
+      {currentStep === 7 && (
+        <div className="step-animate" key="step-7">
+          <span className="rounded-full border border-white/20 backdrop-blur-sm px-3 py-1.5 text-sm text-accent-light">
+            Almost Done
+          </span>
+          <h1 className="text-3xl md:text-4xl font-medium text-white mt-4 mb-2">
+            Last step — tell us{" "}
+            <span className="font-serif italic text-accent-light">who you are.</span>
+          </h1>
+          <p className="text-white/60 text-sm leading-relaxed mb-8">
+            We&apos;ll use this to send your project brief and schedule your strategy call.
+          </p>
+
+          <div className="flex gap-4 mb-8 flex-wrap">
+            <div className="flex items-center gap-2 text-xs text-white/50">
+              <div className="w-1.5 h-1.5 rounded-full bg-green-400" />100% confidential
+            </div>
+            <div className="flex items-center gap-2 text-xs text-white/50">
+              <div className="w-1.5 h-1.5 rounded-full bg-green-400" />No commitment required
+            </div>
+            <div className="flex items-center gap-2 text-xs text-white/50">
+              <div className="w-1.5 h-1.5 rounded-full bg-green-400" />Response within 24 hrs
+            </div>
+          </div>
+
+          <div className="space-y-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-medium text-white/80 mb-1.5">
+                  First Name <span className="text-accent-light">*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Jane"
+                  value={formData.firstName}
+                  onChange={(e) => updateField("firstName", e.target.value)}
+                  className={errors.firstName ? inputInvalidClass : inputClass}
+                />
+                <FieldError field="firstName" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-white/80 mb-1.5">
+                  Last Name <span className="text-accent-light">*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Doe"
+                  value={formData.lastName}
+                  onChange={(e) => updateField("lastName", e.target.value)}
+                  className={errors.lastName ? inputInvalidClass : inputClass}
+                />
+                <FieldError field="lastName" />
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-white/80 mb-1.5">
+                Business / Organization Name <span className="text-accent-light">*</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Doe's Landscaping LLC or Town of Springfield"
+                value={formData.businessName}
+                onChange={(e) => updateField("businessName", e.target.value)}
+                className={errors.businessName ? inputInvalidClass : inputClass}
+              />
+              <FieldError field="businessName" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-medium text-white/80 mb-1.5">
+                  Email Address <span className="text-accent-light">*</span>
+                </label>
+                <input
+                  type="email"
+                  placeholder="jane@example.com"
+                  value={formData.email}
+                  onChange={(e) => updateField("email", e.target.value)}
+                  className={errors.email ? inputInvalidClass : inputClass}
+                />
+                <FieldError field="email" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-white/80 mb-1.5">
+                  Phone Number <span className="text-accent-light">*</span>
+                </label>
+                <input
+                  type="tel"
+                  placeholder="(555) 000-0000"
+                  value={formData.phone}
+                  onChange={(e) => updateField("phone", e.target.value)}
+                  className={errors.phone ? inputInvalidClass : inputClass}
+                />
+                <FieldError field="phone" />
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-white/80 mb-1.5">
+                Best way to reach you
+              </label>
+              <RadioGroup field="contactPref" options={["Email", "Phone call", "Text message", "Any"]} />
             </div>
           </div>
 
