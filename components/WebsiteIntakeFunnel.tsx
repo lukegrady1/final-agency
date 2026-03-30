@@ -136,8 +136,6 @@ export default function WebsiteIntakeFunnel() {
   );
 
   function validate(_step: number): boolean {
-    // TODO: Re-enable validation before going live
-    return true;
     const errs: Errors = {};
     if (_step === 1) {
       if (!formData.industry) errs.industry = "Please select your industry.";
