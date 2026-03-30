@@ -232,7 +232,6 @@ export default function WebsiteIntakeFunnel() {
       "--- ASSETS ---",
       `Logo: ${formData.logoStatus || "N/A"}`,
       `Photos: ${formData.photoStatus || "N/A"}`,
-      `Copy: ${formData.copyStatus || "N/A"}`,
       `Domain: ${formData.domainName || formData.domainStatus || "N/A"}`,
       `Hosting: ${formData.hostingStatus || "N/A"}`,
       `Testimonials: ${formData.reviewStatus || "N/A"}`,
@@ -360,7 +359,6 @@ export default function WebsiteIntakeFunnel() {
       { heading: "Assets & Content", items: [
         ["Logo", formData.logoStatus],
         ["Photos", formData.photoStatus],
-        ["Copy / Content", formData.copyStatus],
         ["Domain", formData.domainName || formData.domainStatus],
         ["Testimonials", formData.reviewStatus],
       ]},
@@ -815,10 +813,6 @@ export default function WebsiteIntakeFunnel() {
             <div>
               <label className="block text-sm font-medium text-white/80 mb-1.5">Photography / images</label>
               <RadioGroup field="photoStatus" options={["Professional photos ready", "Have phone photos to use", "Stock photos only", "No photos — need sourcing"]} />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-white/80 mb-1.5">Website copy / written content</label>
-              <RadioGroup field="copyStatus" options={["Fully written and ready", "Partially written", "Need full copywriting", "Will provide bullet points only"]} />
             </div>
             <div>
               <label className="block text-sm font-medium text-white/80 mb-1.5">Do you have a domain name?</label>

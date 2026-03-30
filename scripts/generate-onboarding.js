@@ -328,29 +328,7 @@ const doc = new Document({
         divider(),
 
         // ═══════════════════════════════════════
-        // SECTION 6: Content
-        // ═══════════════════════════════════════
-        ...sectionHeader("Content & Copy"),
-        new Paragraph({
-          children: [new TextRun({ text: "If we're writing your copy, we'll use the intake form details. If you're providing content, send it organized by page.", font: "Arial", size: 20, color: GRAY, italics: true })],
-          spacing: { after: 200 },
-        }),
-
-        bullet("Homepage content", "headline, intro, key selling points"),
-        bullet("About page content", "your story, team bios, mission"),
-        bullet("Service descriptions", "one paragraph per service minimum"),
-        bullet("Testimonials / reviews", "with names and permission to use"),
-        bullet("FAQ content", "questions and answers"),
-        bullet("Contact information", "address, phone, email, hours"),
-        bullet("For municipalities: department descriptions, board members, meeting schedules"),
-
-        inputLine("How will you send content?"),
-        inputLine("Content deadline (date you'll have everything to us)"),
-
-        divider(),
-
-        // ═══════════════════════════════════════
-        // SECTION 7: Third-Party Integrations
+        // SECTION 6: Third-Party Integrations
         // ═══════════════════════════════════════
         ...sectionHeader("Third-Party Integrations & Tools"),
         new Paragraph({
@@ -382,7 +360,7 @@ const doc = new Document({
         divider(),
 
         // ═══════════════════════════════════════
-        // SECTION 8: Existing Site (if migrating)
+        // SECTION 7: Existing Site (if migrating)
         // ═══════════════════════════════════════
         ...sectionHeader("Existing Website Access (If Migrating)"),
         new Paragraph({
@@ -403,7 +381,7 @@ const doc = new Document({
         divider(),
 
         // ═══════════════════════════════════════
-        // SECTION 9: Notes
+        // SECTION 8: Notes
         // ═══════════════════════════════════════
         ...sectionHeader("Additional Notes"),
         new Paragraph({

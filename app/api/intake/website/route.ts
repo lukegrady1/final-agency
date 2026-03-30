@@ -139,7 +139,6 @@ function buildEmailHtml(data: Record<string, string>): string {
           ${section("Content & Assets", [
             ["Logo", data.logoStatus],
             ["Photos", data.photoStatus],
-            ["Copy / Content", data.copyStatus],
             ["Domain", data.domainName || data.domainStatus],
             ["Hosting", data.hostingStatus],
             ["Testimonials", data.reviewStatus],
