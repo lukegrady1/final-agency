@@ -144,7 +144,7 @@ function CityPage({
         label={`${service.shortName} in ${city.name}`}
         h1={`${service.name} in ${city.name}, ${city.state}`}
         subheadline={`${service.description} Helping local businesses in ${city.name} get more leads and rank higher on Google.`}
-        trustBar={`Grady Digital · Leominster, MA · Serving ${city.county} and beyond`}
+        trustBar={`Grady Digital · Serving ${city.county} and beyond`}
         breadcrumbs={breadcrumbs}
       />
       <IndustryGrid
@@ -209,7 +209,7 @@ function IndustryPage({
         label={`${service.shortName} for ${industry.shortName}`}
         h1={`${service.name} for ${industry.name}`}
         subheadline={`${service.description} Built specifically for ${industry.name.toLowerCase()} across Central Massachusetts and New England.`}
-        trustBar="Grady Digital · Leominster, MA · Serving New England"
+        trustBar="Grady Digital · Serving New England"
         breadcrumbs={breadcrumbs}
       />
       <Type3Content service={service} industry={industry} />

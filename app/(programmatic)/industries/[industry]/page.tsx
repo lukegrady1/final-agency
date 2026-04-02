@@ -89,7 +89,7 @@ export default async function IndustryHubPage({ params }: PageProps) {
         label={`${industry.shortName} Digital Marketing`}
         h1={`Digital Marketing for ${industry.name}`}
         subheadline={`Running a ${industry.singular} means your time is spent on the job, not online. But your customers are searching online — and if your business isn't showing up, you're leaving work on the table. Grady Digital works exclusively with local service businesses like yours.`}
-        trustBar="Grady Digital · Leominster, MA · Serving New England"
+        trustBar="Grady Digital · Serving New England"
         breadcrumbs={breadcrumbs}
       />
       <Type4Content industry={industry} />

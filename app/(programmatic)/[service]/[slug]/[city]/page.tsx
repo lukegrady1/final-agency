@@ -145,7 +145,7 @@ export default async function ServiceIndustryCityPage({ params }: PageProps) {
         label={`${service.shortName} for ${industry.shortName}`}
         h1={`${service.name} for ${industry.name} in ${city.name}, ${city.state}`}
         subheadline={`More leads. Higher Google rankings. A stronger online presence — built specifically for ${industry.name.toLowerCase()} in ${city.name} and the surrounding ${city.county} area.`}
-        trustBar={`Grady Digital · Leominster, MA · Serving ${city.county} and beyond`}
+        trustBar={`Grady Digital · Serving ${city.county} and beyond`}
         breadcrumbs={breadcrumbs}
       />
       <Type1Content service={service} industry={industry} city={city} />
