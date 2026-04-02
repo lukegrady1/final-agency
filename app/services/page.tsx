@@ -159,16 +159,9 @@ export default function ServicesPage() {
           </h3>
           <div className="flex flex-wrap gap-3">
             {[
+              { name: "Worcester", slug: "worcester-ma" },
               { name: "Leominster", slug: "leominster-ma" },
               { name: "Fitchburg", slug: "fitchburg-ma" },
-              { name: "Worcester", slug: "worcester-ma" },
-              { name: "Gardner", slug: "gardner-ma" },
-              { name: "Athol", slug: "athol-ma" },
-              { name: "Lunenburg", slug: "lunenburg-ma" },
-              { name: "Sterling", slug: "sterling-ma" },
-              { name: "Westminster", slug: "westminster-ma" },
-              { name: "Princeton", slug: "princeton-ma" },
-              { name: "Templeton", slug: "templeton-ma" },
             ].map((city) => (
               <Link
                 key={city.slug}
