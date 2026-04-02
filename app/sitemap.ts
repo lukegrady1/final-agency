@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
+import { services, industries, cities } from "@/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://gradydigital.com";
 
-  return [
+  const corePages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -76,5 +77,58 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+  ];
+
+  const industryHubPages: MetadataRoute.Sitemap = industries.map((i) => ({
+    url: `${baseUrl}/industries/${i.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 1.0,
+  }));
+
+  const type1Pages: MetadataRoute.Sitemap = [];
+  for (const s of services) {
+    for (const i of industries) {
+      for (const c of cities) {
+        type1Pages.push({
+          url: `${baseUrl}/${s.slug}/${i.slug}/${c.slug}`,
+          lastModified: new Date(),
+          changeFrequency: "monthly" as const,
+          priority: 0.9,
+        });
+      }
+    }
+  }
+
+  const type2Pages: MetadataRoute.Sitemap = [];
+  for (const s of services) {
+    for (const c of cities) {
+      type2Pages.push({
+        url: `${baseUrl}/${s.slug}/${c.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+      });
+    }
+  }
+
+  const type3Pages: MetadataRoute.Sitemap = [];
+  for (const s of services) {
+    for (const i of industries) {
+      type3Pages.push({
+        url: `${baseUrl}/${s.slug}/${i.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+      });
+    }
+  }
+
+  return [
+    ...corePages,
+    ...industryHubPages,
+    ...type1Pages,
+    ...type2Pages,
+    ...type3Pages,
   ];
 }
