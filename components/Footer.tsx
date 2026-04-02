@@ -103,9 +103,30 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Industries */}
           <div>
-            <h3 className="text-sm font-medium text-white mb-4">Legal</h3>
+            <h3 className="text-sm font-medium text-white mb-4">
+              Industries
+            </h3>
+            <ul className="flex flex-col gap-2">
+              {[
+                { href: "/industries/hvac", label: "HVAC Companies" },
+                { href: "/industries/plumbers", label: "Plumbing Companies" },
+                { href: "/industries/landscapers", label: "Landscaping Companies" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-white/60 text-sm hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h3 className="text-sm font-medium text-white mb-4 mt-6">
+              Legal
+            </h3>
             <ul className="flex flex-col gap-2">
               <li>
                 <Link

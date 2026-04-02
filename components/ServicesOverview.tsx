@@ -19,6 +19,7 @@ const services = [
     icon: Phone,
     title: "AI Receptionist",
     body: "Never miss another call. Our AI answers your phone, qualifies the lead, and books the appointment — even at 2am. Most callers can't tell it's not a person.",
+    href: "/ai-automation/hvac",
   },
   {
     icon: MessageSquare,
@@ -29,16 +30,19 @@ const services = [
     icon: Zap,
     title: "Lead Follow-Up & Automations",
     body: "New lead comes in? They get a text within 60 seconds. Missed call? Automatic text-back. Old leads sitting in your CRM? We reactivate them. No manual work required.",
+    href: "/ai-automation/plumbers",
   },
   {
     icon: Monitor,
     title: "Web Design & Development",
     body: "Fast, mobile-first websites built to convert visitors into calls and bookings. Custom designs that reflect your brand — not cookie-cutter templates.",
+    href: "/website-design/hvac",
   },
   {
     icon: Search,
     title: "SEO & Google Business Profile",
     body: "Show up when locals search for what you do. We handle your Google Business Profile, on-page SEO, and review strategy so customers find you before your competitors.",
+    href: "/local-seo/hvac",
   },
   {
     icon: BarChart2,
@@ -70,11 +74,8 @@ export default function ServicesOverview() {
       <StaggerParent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service) => {
           const Icon = service.icon;
-          return (
-            <StaggerChild
-              key={service.title}
-              className="liquid-glass p-6"
-            >
+          const content = (
+            <>
               <div className="rounded-xl bg-accent/10 p-2 w-fit">
                 <Icon className="w-8 h-8 text-accent-light" />
               </div>
@@ -84,6 +85,25 @@ export default function ServicesOverview() {
               <p className="text-white/60 text-sm leading-relaxed">
                 {service.body}
               </p>
+              {service.href && (
+                <span className="inline-flex items-center text-accent-light text-sm mt-3 group-hover:text-white transition-colors">
+                  Learn more &rarr;
+                </span>
+              )}
+            </>
+          );
+          return (
+            <StaggerChild
+              key={service.title}
+              className="liquid-glass p-6"
+            >
+              {service.href ? (
+                <Link href={service.href} className="block group">
+                  {content}
+                </Link>
+              ) : (
+                content
+              )}
             </StaggerChild>
           );
         })}
