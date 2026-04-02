@@ -76,7 +76,7 @@ export default async function ServiceIndustryCityPage({ params }: PageProps) {
   const faqItems = [
     {
       question: `How long does ${service.name} take to work for a ${city.name} ${industry.singular}?`,
-      answer: `For most ${industry.name.toLowerCase()} in ${city.name}, you can expect to see early movement in Google rankings within 60\u201390 days of starting ${service.name.toLowerCase()}. Full results \u2014 consistent placement in the local map pack and sustained organic traffic \u2014 typically develop over 4\u20136 months. ${service.name} builds on itself: the longer your ${city.name} ${industry.singular} is active in the program, the stronger your visibility gets and the harder it becomes for competitors to unseat you.`,
+      answer: `For most ${industry.name.toLowerCase()} in ${city.name}, you can expect to see early movement in Google rankings within 60–90 days of starting ${service.name.toLowerCase()}. Full results — consistent placement in the local map pack and sustained organic traffic — typically develop over 4–6 months. ${service.name} builds on itself: the longer your ${city.name} ${industry.singular} is active in the program, the stronger your visibility gets and the harder it becomes for competitors to unseat you.`,
     },
     {
       question: `How much does ${service.name} cost for a ${industry.singular} in ${city.name}?`,
@@ -88,7 +88,7 @@ export default async function ServiceIndustryCityPage({ params }: PageProps) {
     },
     {
       question: `What makes Grady Digital different from other ${service.name.toLowerCase()} agencies serving ${city.name}?`,
-      answer: `Most ${service.name.toLowerCase()} agencies take on any client in any industry. Grady Digital works exclusively with local service businesses \u2014 trades, home services, and similar industries like ${industry.name.toLowerCase()}. That means every tactic, every tool, and every campaign we run for ${city.name} clients is built around what works for service businesses specifically. We're also based right here in Central Massachusetts, so we understand the ${city.name} market in a way that remote agencies simply don't.`,
+      answer: `Most ${service.name.toLowerCase()} agencies take on any client in any industry. Grady Digital works exclusively with local service businesses — trades, home services, and similar industries like ${industry.name.toLowerCase()}. That means every tactic, every tool, and every campaign we run for ${city.name} clients is built around what works for service businesses specifically. We're also based right here in Central Massachusetts, so we understand the ${city.name} market in a way that remote agencies simply don't.`,
     },
   ];
 
@@ -144,8 +144,8 @@ export default async function ServiceIndustryCityPage({ params }: PageProps) {
       <ProgrammaticHero
         label={`${service.shortName} for ${industry.shortName}`}
         h1={`${service.name} for ${industry.name} in ${city.name}, ${city.state}`}
-        subheadline={`More leads. Higher Google rankings. A stronger online presence \u2014 built specifically for ${industry.name.toLowerCase()} in ${city.name} and the surrounding ${city.county} area.`}
-        trustBar={`Grady Digital \u00B7 Leominster, MA \u00B7 Serving ${city.county} and beyond`}
+        subheadline={`More leads. Higher Google rankings. A stronger online presence — built specifically for ${industry.name.toLowerCase()} in ${city.name} and the surrounding ${city.county} area.`}
+        trustBar={`Grady Digital · Leominster, MA · Serving ${city.county} and beyond`}
         breadcrumbs={breadcrumbs}
       />
       <Type1Content service={service} industry={industry} city={city} />
@@ -154,7 +154,7 @@ export default async function ServiceIndustryCityPage({ params }: PageProps) {
         body={`If you're serious about getting more customers in ${city.name} and ${city.county}, let's talk. We'll look at your current online presence, show you exactly where the gaps are, and put together a ${service.name.toLowerCase()} plan built for your ${industry.singular}.`}
       />
       <ProgrammaticFAQ
-        heading={`Frequently Asked Questions \u2014 ${service.name} for ${industry.name} in ${city.name}`}
+        heading={`Frequently Asked Questions — ${service.name} for ${industry.name} in ${city.name}`}
         items={faqItems}
       />
       <InternalLinks

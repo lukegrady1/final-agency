@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!industry) return {};
 
   const title = `Digital Marketing for ${industry.name} | Grady Digital`;
-  const description = `Websites, local SEO, AI automation, and more \u2014 built specifically for ${industry.name.toLowerCase()}. Get more leads and grow your business with Grady Digital.`;
+  const description = `Websites, local SEO, AI automation, and more — built specifically for ${industry.name.toLowerCase()}. Get more leads and grow your business with Grady Digital.`;
 
   return {
     title,
@@ -67,11 +67,11 @@ export default async function IndustryHubPage({ params }: PageProps) {
   const faqItems = [
     {
       question: `What digital marketing services does Grady Digital offer for ${industry.name.toLowerCase()}?`,
-      answer: `We offer a full suite of digital marketing services for ${industry.name.toLowerCase()}: website design, local SEO, Google Business Profile management, AI automation, and more. Each service is built around what works for ${industry.name.toLowerCase()} specifically \u2014 not generic tactics.`,
+      answer: `We offer a full suite of digital marketing services for ${industry.name.toLowerCase()}: website design, local SEO, Google Business Profile management, AI automation, and more. Each service is built around what works for ${industry.name.toLowerCase()} specifically — not generic tactics.`,
     },
     {
       question: `How long does it take to see results for a ${industry.singular}?`,
-      answer: `Most ${industry.name.toLowerCase()} see measurable improvements within 60\u201390 days. Full results \u2014 consistent Google Maps placement, sustained organic traffic, and a reliable lead pipeline \u2014 typically develop over 4\u20136 months. The results compound over time.`,
+      answer: `Most ${industry.name.toLowerCase()} see measurable improvements within 60–90 days. Full results — consistent Google Maps placement, sustained organic traffic, and a reliable lead pipeline — typically develop over 4–6 months. The results compound over time.`,
     },
     {
       question: `How much does digital marketing cost for a ${industry.singular}?`,
@@ -79,7 +79,7 @@ export default async function IndustryHubPage({ params }: PageProps) {
     },
     {
       question: `Why should a ${industry.singular} choose Grady Digital over other agencies?`,
-      answer: `We work exclusively with local service businesses like ${industry.name.toLowerCase()}. We're based in Central Massachusetts, we don't outsource, and you work directly with the person building your system. No account managers, no fluff \u2014 just strategies that work for ${industry.name.toLowerCase()}.`,
+      answer: `We work exclusively with local service businesses like ${industry.name.toLowerCase()}. We're based in Central Massachusetts, we don't outsource, and you work directly with the person building your system. No account managers, no fluff — just strategies that work for ${industry.name.toLowerCase()}.`,
     },
   ];
 
@@ -88,8 +88,8 @@ export default async function IndustryHubPage({ params }: PageProps) {
       <ProgrammaticHero
         label={`${industry.shortName} Digital Marketing`}
         h1={`Digital Marketing for ${industry.name}`}
-        subheadline={`Running a ${industry.singular} means your time is spent on the job, not online. But your customers are searching online \u2014 and if your business isn't showing up, you're leaving work on the table. Grady Digital works exclusively with local service businesses like yours.`}
-        trustBar="Grady Digital \u00B7 Leominster, MA \u00B7 Serving New England"
+        subheadline={`Running a ${industry.singular} means your time is spent on the job, not online. But your customers are searching online — and if your business isn't showing up, you're leaving work on the table. Grady Digital works exclusively with local service businesses like yours.`}
+        trustBar="Grady Digital · Leominster, MA · Serving New England"
         breadcrumbs={breadcrumbs}
       />
       <Type4Content industry={industry} />
@@ -106,7 +106,7 @@ export default async function IndustryHubPage({ params }: PageProps) {
         body={`Let's talk about how digital marketing can help your ${industry.singular} get more leads and outrank the competition. No obligation, no pressure.`}
       />
       <ProgrammaticFAQ
-        heading={`FAQ \u2014 Digital Marketing for ${industry.name}`}
+        heading={`FAQ — Digital Marketing for ${industry.name}`}
         items={faqItems}
       />
     </main>

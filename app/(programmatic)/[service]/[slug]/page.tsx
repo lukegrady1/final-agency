@@ -122,19 +122,19 @@ function CityPage({
   const faqItems = [
     {
       question: `How long does ${service.name.toLowerCase()} take to work in ${city.name}?`,
-      answer: `Most ${city.name} businesses working with Grady Digital see measurable results within 60\u201390 days of starting ${service.name.toLowerCase()}. Full results typically develop over 4\u20136 months. The improvements compound over time as your online presence grows in the ${city.name} market.`,
+      answer: `Most ${city.name} businesses working with Grady Digital see measurable results within 60–90 days of starting ${service.name.toLowerCase()}. Full results typically develop over 4–6 months. The improvements compound over time as your online presence grows in the ${city.name} market.`,
     },
     {
       question: `How much does ${service.name.toLowerCase()} cost for a ${city.name} business?`,
-      answer: `Grady Digital\u2019s ${service.name.toLowerCase()} packages start at a flat monthly rate with no setup surprises. Pricing depends on the scope of your ${city.name} service area and competitive landscape. We don\u2019t lock you into annual contracts. Schedule a free call and we\u2019ll give you a straight number.`,
+      answer: `Grady Digital's ${service.name.toLowerCase()} packages start at a flat monthly rate with no setup surprises. Pricing depends on the scope of your ${city.name} service area and competitive landscape. We don't lock you into annual contracts. Schedule a free call and we'll give you a straight number.`,
     },
     {
       question: `Do I need a new website for ${service.name.toLowerCase()} to work in ${city.name}?`,
-      answer: `Not always. We can often improve your results without rebuilding your site. However, if your current website has serious issues, those will limit how far ${service.name.toLowerCase()} can take you in the ${city.name} market. We\u2019ll audit your site during onboarding and flag anything holding you back.`,
+      answer: `Not always. We can often improve your results without rebuilding your site. However, if your current website has serious issues, those will limit how far ${service.name.toLowerCase()} can take you in the ${city.name} market. We'll audit your site during onboarding and flag anything holding you back.`,
     },
     {
       question: `Why choose Grady Digital for ${service.name.toLowerCase()} in ${city.name}?`,
-      answer: `We work exclusively with local service businesses. Every tactic and campaign we run for ${city.name} clients is built around what works for local services specifically. We\u2019re based in Central Massachusetts, so we understand the ${city.name} market in a way that remote agencies don\u2019t.`,
+      answer: `We work exclusively with local service businesses. Every tactic and campaign we run for ${city.name} clients is built around what works for local services specifically. We're based in Central Massachusetts, so we understand the ${city.name} market in a way that remote agencies don't.`,
     },
   ];
 
@@ -144,7 +144,7 @@ function CityPage({
         label={`${service.shortName} in ${city.name}`}
         h1={`${service.name} in ${city.name}, ${city.state}`}
         subheadline={`${service.description} Helping local businesses in ${city.name} get more leads and rank higher on Google.`}
-        trustBar={`Grady Digital \u00B7 Leominster, MA \u00B7 Serving ${city.county} and beyond`}
+        trustBar={`Grady Digital · Leominster, MA · Serving ${city.county} and beyond`}
         breadcrumbs={breadcrumbs}
       />
       <IndustryGrid
@@ -154,10 +154,10 @@ function CityPage({
       <Type2Content service={service} city={city} />
       <ProgrammaticCTA
         heading={`Ready to Grow Your ${city.name} Business?`}
-        body={`Let\u2019s talk about how ${service.name.toLowerCase()} can help your ${city.name} business get more leads and grow. No obligation, no pressure.`}
+        body={`Let's talk about how ${service.name.toLowerCase()} can help your ${city.name} business get more leads and grow. No obligation, no pressure.`}
       />
       <ProgrammaticFAQ
-        heading={`FAQ \u2014 ${service.name} in ${city.name}, ${city.state}`}
+        heading={`FAQ — ${service.name} in ${city.name}, ${city.state}`}
         items={faqItems}
       />
     </main>
@@ -187,19 +187,19 @@ function IndustryPage({
   const faqItems = [
     {
       question: `How long does ${service.name.toLowerCase()} take to show results for ${industry.name.toLowerCase()}?`,
-      answer: `Most ${industry.name.toLowerCase()} working with Grady Digital see measurable results within 60\u201390 days of starting ${service.name.toLowerCase()}. Full results \u2014 consistent placement in the local map pack and sustained organic traffic \u2014 typically develop over 4\u20136 months. The improvements compound over time as your online presence grows in your service area.`,
+      answer: `Most ${industry.name.toLowerCase()} working with Grady Digital see measurable results within 60–90 days of starting ${service.name.toLowerCase()}. Full results — consistent placement in the local map pack and sustained organic traffic — typically develop over 4–6 months. The improvements compound over time as your online presence grows in your service area.`,
     },
     {
       question: `How much does ${service.name.toLowerCase()} cost for a ${industry.singular}?`,
-      answer: `Grady Digital\u2019s ${service.name.toLowerCase()} packages for ${industry.name.toLowerCase()} start at a flat monthly rate with no setup surprises. Pricing depends on the scope of your service area and competitive landscape. We don\u2019t charge per-keyword or lock you into annual contracts. Schedule a free call and we\u2019ll give you a straight number.`,
+      answer: `Grady Digital's ${service.name.toLowerCase()} packages for ${industry.name.toLowerCase()} start at a flat monthly rate with no setup surprises. Pricing depends on the scope of your service area and competitive landscape. We don't charge per-keyword or lock you into annual contracts. Schedule a free call and we'll give you a straight number.`,
     },
     {
       question: `Does my ${industry.singular} need a new website for ${service.name.toLowerCase()} to work?`,
-      answer: `Not always. We can often improve your ${service.name.toLowerCase()} results without rebuilding from scratch. However, if your current website has serious speed, mobile, or structural issues, those will limit how far ${service.name.toLowerCase()} can take you. We\u2019ll audit your site during onboarding and flag anything holding you back.`,
+      answer: `Not always. We can often improve your ${service.name.toLowerCase()} results without rebuilding from scratch. However, if your current website has serious speed, mobile, or structural issues, those will limit how far ${service.name.toLowerCase()} can take you. We'll audit your site during onboarding and flag anything holding you back.`,
     },
     {
       question: `What makes Grady Digital different from other ${service.name.toLowerCase()} agencies for ${industry.name.toLowerCase()}?`,
-      answer: `We work exclusively with local service businesses like ${industry.name.toLowerCase()}. Every tactic, tool, and campaign we run is built around what works for trades and home services specifically. We\u2019re based in Central Massachusetts, so we understand the local market in a way that remote agencies don\u2019t.`,
+      answer: `We work exclusively with local service businesses like ${industry.name.toLowerCase()}. Every tactic, tool, and campaign we run is built around what works for trades and home services specifically. We're based in Central Massachusetts, so we understand the local market in a way that remote agencies don't.`,
     },
   ];
 
@@ -209,7 +209,7 @@ function IndustryPage({
         label={`${service.shortName} for ${industry.shortName}`}
         h1={`${service.name} for ${industry.name}`}
         subheadline={`${service.description} Built specifically for ${industry.name.toLowerCase()} across Central Massachusetts and New England.`}
-        trustBar="Grady Digital \u00B7 Leominster, MA \u00B7 Serving New England"
+        trustBar="Grady Digital · Leominster, MA · Serving New England"
         breadcrumbs={breadcrumbs}
       />
       <Type3Content service={service} industry={industry} />
@@ -219,10 +219,10 @@ function IndustryPage({
       />
       <ProgrammaticCTA
         heading={`Ready to Grow Your ${industry.shortName} Business?`}
-        body={`Let\u2019s talk about how ${service.name.toLowerCase()} can help your ${industry.singular} get more leads and outrank the competition in your service area.`}
+        body={`Let's talk about how ${service.name.toLowerCase()} can help your ${industry.singular} get more leads and outrank the competition in your service area.`}
       />
       <ProgrammaticFAQ
-        heading={`FAQ \u2014 ${service.name} for ${industry.name}`}
+        heading={`FAQ — ${service.name} for ${industry.name}`}
         items={faqItems}
       />
     </main>
