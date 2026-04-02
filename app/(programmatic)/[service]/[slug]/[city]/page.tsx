@@ -16,15 +16,15 @@ import InternalLinks from "@/components/programmatic/InternalLinks";
 import Type1Content from "./Type1Content";
 
 interface PageProps {
-  params: Promise<{ service: string; industry: string; city: string }>;
+  params: Promise<{ service: string; slug: string; city: string }>;
 }
 
 export function generateStaticParams() {
-  const params: { service: string; industry: string; city: string }[] = [];
+  const params: { service: string; slug: string; city: string }[] = [];
   for (const s of services) {
     for (const i of industries) {
       for (const c of cities) {
-        params.push({ service: s.slug, industry: i.slug, city: c.slug });
+        params.push({ service: s.slug, slug: i.slug, city: c.slug });
       }
     }
   }
@@ -32,7 +32,7 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { service: serviceSlug, industry: industrySlug, city: citySlug } = await params;
+  const { service: serviceSlug, slug: industrySlug, city: citySlug } = await params;
   const service = getServiceBySlug(serviceSlug);
   const industry = getIndustryBySlug(industrySlug);
   const city = getCityBySlug(citySlug);
@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function ServiceIndustryCityPage({ params }: PageProps) {
-  const { service: serviceSlug, industry: industrySlug, city: citySlug } = await params;
+  const { service: serviceSlug, slug: industrySlug, city: citySlug } = await params;
   const service = getServiceBySlug(serviceSlug);
   const industry = getIndustryBySlug(industrySlug);
   const city = getCityBySlug(citySlug);
