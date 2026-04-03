@@ -63,8 +63,8 @@ export default function ContactForm() {
         </h3>
         <p className="text-white/60 mt-3 text-sm leading-relaxed">
           We&apos;ll review your submission and get back to you within 24
-          hours with a personalized audit of your website, Google presence,
-          and lead capture.
+          hours with a personalized breakdown of where AI can save you time,
+          capture more leads, and grow your revenue.
         </p>
         <Link
           href="/"
@@ -289,8 +289,8 @@ export default function ContactForm() {
                 1
               </span>
               <p className="text-sm text-white/60">
-                We review your website, Google presence, and lead capture within
-                24 hours.
+                We analyze your business — how you handle calls, leads,
+                follow-ups, and bookings — within 24 hours.
               </p>
             </li>
             <li className="flex gap-3">
@@ -298,8 +298,8 @@ export default function ContactForm() {
                 2
               </span>
               <p className="text-sm text-white/60">
-                You get a personalized audit showing exactly where you&apos;re
-                losing leads.
+                You get a personalized audit showing where AI systems can
+                save you hours, capture missed leads, and increase revenue.
               </p>
             </li>
             <li className="flex gap-3">
@@ -307,8 +307,8 @@ export default function ContactForm() {
                 3
               </span>
               <p className="text-sm text-white/60">
-                We walk through the findings and recommend what to fix first —
-                no obligation.
+                We walk through the findings and show you what to automate
+                first for the biggest impact — no obligation.
               </p>
             </li>
           </ol>
