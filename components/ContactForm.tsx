@@ -7,28 +7,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2, ArrowRight, ShieldOff, Clock, Phone } from "lucide-react";
 import Link from "next/link";
 
-const serviceOptions = [
-  "AI Receptionist",
-  "AI Website Chatbot",
-  "Lead Follow-Up Automation",
-  "Missed Call Text-Back",
-  "Review & Reputation Automation",
-  "Web Design & Development",
-  "SEO & Google Business Profile",
-  "Not Sure — Help Me Decide",
-] as const;
-
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
   businessName: z.string().min(1, "Business name is required"),
-  email: z.string().email("Please enter a valid email"),
+  email: z.string().email("Please enter a valid email (e.g. name@company.com)"),
   phone: z.string().optional(),
-  website: z.string().optional(),
-  services: z.array(z.string()).optional(),
-  message: z.string().optional(),
-  privacy: z.literal(true, {
-    error: "You must accept the privacy policy",
-  }),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -42,7 +25,6 @@ export default function ContactForm() {
     formState: { errors, isSubmitting },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
-    defaultValues: { services: [] },
   });
 
   const onSubmit = async (data: ContactFormData) => {
@@ -62,9 +44,9 @@ export default function ContactForm() {
           You&apos;re on the list.
         </h3>
         <p className="text-white/60 mt-3 text-sm leading-relaxed">
-          We&apos;ll review your submission and get back to you within 24
-          hours with a personalized breakdown of where AI can save you time,
-          capture more leads, and grow your revenue.
+          We&apos;ll look at your business and get back to you within 24
+          hours with a personalized breakdown of where AI can save you
+          time and bring in more business.
         </p>
         <Link
           href="/"
@@ -87,6 +69,10 @@ export default function ContactForm() {
         onSubmit={handleSubmit(onSubmit)}
         className="lg:col-span-2 space-y-5"
       >
+        <p className="text-white/50 text-sm">
+          Takes about 30 seconds. We&apos;ll handle the rest.
+        </p>
+
         {/* Name + Business */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
@@ -99,6 +85,7 @@ export default function ContactForm() {
             <input
               id="name"
               {...register("name")}
+              autoComplete="name"
               placeholder="John Smith"
               className={inputClass}
             />
@@ -118,6 +105,7 @@ export default function ContactForm() {
             <input
               id="businessName"
               {...register("businessName")}
+              autoComplete="organization"
               placeholder="Smith's HVAC"
               className={inputClass}
             />
@@ -142,6 +130,7 @@ export default function ContactForm() {
               id="email"
               {...register("email")}
               type="email"
+              autoComplete="email"
               placeholder="john@smithshvac.com"
               className={inputClass}
             />
@@ -162,99 +151,12 @@ export default function ContactForm() {
               id="phone"
               {...register("phone")}
               type="tel"
+              autoComplete="tel"
               placeholder="(555) 123-4567"
               className={inputClass}
             />
           </div>
         </div>
-
-        {/* Website */}
-        <div>
-          <label
-            htmlFor="website"
-            className="block text-sm font-medium text-white/80 mb-1.5"
-          >
-            Current Website{" "}
-            <span className="text-white/30 text-xs">(optional)</span>
-          </label>
-          <input
-            id="website"
-            {...register("website")}
-            type="url"
-            placeholder="https://smithshvac.com"
-            className={inputClass}
-          />
-        </div>
-
-        {/* Services */}
-        <fieldset>
-          <legend className="text-sm font-medium text-white/80 mb-3">
-            What are you interested in?{" "}
-            <span className="text-white/30 text-xs">(select all that apply)</span>
-          </legend>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-            {serviceOptions.map((service) => (
-              <label
-                key={service}
-                className="flex items-center gap-2.5 text-sm text-white/70 cursor-pointer rounded-lg px-3 py-2.5 border border-transparent hover:border-white/10 hover:bg-white/[0.02] transition-colors"
-              >
-                <input
-                  type="checkbox"
-                  value={service}
-                  {...register("services")}
-                  className="rounded border-white/20 bg-white/5 text-accent focus:ring-accent/40 w-4 h-4"
-                />
-                {service}
-              </label>
-            ))}
-          </div>
-        </fieldset>
-
-        {/* Message */}
-        <div>
-          <label
-            htmlFor="message"
-            className="block text-sm font-medium text-white/80 mb-1.5"
-          >
-            Anything else we should know?{" "}
-            <span className="text-white/30 text-xs">(optional)</span>
-          </label>
-          <textarea
-            id="message"
-            {...register("message")}
-            rows={3}
-            placeholder="Tell us about your business, your biggest challenge right now, or what you're hoping to achieve..."
-            className={inputClass}
-          />
-        </div>
-
-        {/* Privacy */}
-        <label className="flex items-start gap-2.5 text-sm text-white/50 cursor-pointer">
-          <input
-            type="checkbox"
-            {...register("privacy")}
-            className="mt-0.5 rounded border-white/20 bg-white/5 text-accent focus:ring-accent/40 w-4 h-4"
-          />
-          <span>
-            I agree to the{" "}
-            <Link
-              href="/privacy"
-              className="text-accent-light underline underline-offset-2"
-            >
-              Privacy Policy
-            </Link>{" "}
-            and{" "}
-            <Link
-              href="/terms"
-              className="text-accent-light underline underline-offset-2"
-            >
-              Terms of Service
-            </Link>
-          </span>
-        </label>
-        {errors.privacy && (
-          <p className="text-red-400 text-xs">{errors.privacy.message}</p>
-        )}
 
         {/* Submit */}
         <button
@@ -266,14 +168,21 @@ export default function ContactForm() {
             "Sending..."
           ) : (
             <>
-              Get Your Free Audit
+              Get My Free AI Audit
               <ArrowRight className="w-4 h-4" />
             </>
           )}
         </button>
 
         <p className="text-white/30 text-xs text-center">
-          No spam. No sales calls. Just a free, honest audit.
+          No spam. No sales calls. We&apos;ll just send you the audit.
+          By submitting you agree to our{" "}
+          <Link
+            href="/privacy"
+            className="text-white/40 underline underline-offset-2"
+          >
+            Privacy Policy
+          </Link>.
         </p>
       </form>
 
@@ -289,8 +198,8 @@ export default function ContactForm() {
                 1
               </span>
               <p className="text-sm text-white/60">
-                We analyze your business — how you handle calls, leads,
-                follow-ups, and bookings — within 24 hours.
+                We look at how your business runs right now: calls, leads,
+                follow-ups, bookings. Takes us about 24 hours.
               </p>
             </li>
             <li className="flex gap-3">
@@ -298,8 +207,9 @@ export default function ContactForm() {
                 2
               </span>
               <p className="text-sm text-white/60">
-                You get a personalized audit showing where AI systems can
-                save you hours, capture missed leads, and increase revenue.
+                You get a clear breakdown of where AI can take work off
+                your plate, catch leads you&apos;re missing, and bring in
+                more money.
               </p>
             </li>
             <li className="flex gap-3">
@@ -307,8 +217,8 @@ export default function ContactForm() {
                 3
               </span>
               <p className="text-sm text-white/60">
-                We walk through the findings and show you what to automate
-                first for the biggest impact — no obligation.
+                We walk you through everything and tell you what to
+                automate first. No strings attached.
               </p>
             </li>
           </ol>
@@ -336,7 +246,7 @@ export default function ContactForm() {
           <div className="flex items-start gap-3">
             <Phone className="w-4 h-4 text-accent-light mt-0.5 shrink-0" />
             <div>
-              <p className="text-sm font-medium text-white">Talk to the team</p>
+              <p className="text-sm font-medium text-white">Talk to the builder</p>
               <p className="text-xs text-white/40">
                 No account managers or call centers
               </p>
