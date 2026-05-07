@@ -13,12 +13,12 @@ import StartPricing from "@/components/start/StartPricing";
 import StartCalendar from "@/components/start/StartCalendar";
 
 export const metadata: Metadata = {
-  title: "Start Your Build — Grady Digital",
+  title: "Start Your Build",
   description:
     "Stop losing clients to competitors with better websites. We build and manage AI-powered websites that turn visitors into paying clients.",
   alternates: { canonical: "/start" },
   openGraph: {
-    title: "Start Your Build — Grady Digital",
+    title: "Start Your Build",
     description:
       "We build and manage AI-powered websites that turn visitors into paying clients.",
   },
@@ -36,12 +36,12 @@ const startFAQ = [
   {
     question: "How much does it cost?",
     answer:
-      "Pricing depends on scope — see the tiers above for a starting point, and we'll confirm the right fit on the call. Every site is custom built for businesses that want a real revenue engine, not just a brochure.",
+      "$97/month or $970/year. Every site is custom built for businesses that want a real revenue engine, not just a brochure.",
   },
   {
     question: "How long does it take?",
     answer:
-      "Most sites launch within 2–4 weeks. We move fast because every day without a converting site is leads going to your competitors.",
+      "Your site will be up and running within two weeks. We move fast because every day without a converting site is leads going to your competitors.",
   },
   {
     question: "What if I already have a website?",
@@ -159,8 +159,8 @@ export default function StartPage() {
         </div>
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
           {problems.map((p, i) => (
-            <BlurIn key={i} delay={i * 0.05}>
-              <li className="bg-card border border-card-border rounded-2xl p-5 flex items-start gap-3">
+            <BlurIn key={i} delay={i * 0.05} className={i === problems.length - 1 ? "md:col-span-2 flex justify-center" : ""}>
+              <li className={`bg-card border border-card-border rounded-2xl p-5 flex items-start gap-3${i === problems.length - 1 ? " md:max-w-md w-full" : ""}`}>
                 <span className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs text-white/50 shrink-0">
                   {i + 1}
                 </span>
@@ -284,25 +284,6 @@ export default function StartPage() {
           </p>
         </BlurIn>
 
-        <div className="mt-20">
-          <div className="text-center mb-10">
-            <BlurIn>
-              <SectionLabel>Book your call</SectionLabel>
-            </BlurIn>
-            <BlurIn delay={0.1}>
-              <h3 className="text-2xl md:text-3xl font-medium text-white mt-4">
-                Pick a time that works for you
-              </h3>
-            </BlurIn>
-            <BlurIn delay={0.2}>
-              <p className="text-white/60 text-sm leading-relaxed max-w-xl mx-auto mt-3">
-                15-minute call with Luke. We&apos;ll review your current site,
-                your traffic, and where you&apos;re leaving money on the table.
-              </p>
-            </BlurIn>
-          </div>
-          <StartCalendar />
-        </div>
       </SectionWrapper>
 
       {/* HOW IT WORKS */}
@@ -352,60 +333,63 @@ export default function StartPage() {
         </div>
       </SectionWrapper>
 
+      {/* BOOK A CALL */}
+      <SectionWrapper className="bg-white/[0.02] border-y border-white/[0.08]">
+        <div className="text-center mb-10">
+          <BlurIn>
+            <SectionLabel>Book your call</SectionLabel>
+          </BlurIn>
+          <BlurIn delay={0.1}>
+            <h3 className="text-2xl md:text-3xl font-medium text-white mt-4">
+              Pick a time that works for you
+            </h3>
+          </BlurIn>
+          <BlurIn delay={0.2}>
+            <p className="text-white/60 text-sm leading-relaxed max-w-xl mx-auto mt-3">
+              15-minute call with Luke. We&apos;ll break down what&apos;s
+              not working on your current site, show you a custom mockup
+              of what we&apos;d build for you, and walk through exactly how
+              it drives more leads.
+            </p>
+          </BlurIn>
+        </div>
+        <StartCalendar />
+      </SectionWrapper>
+
       {/* WHO BUILDS YOUR SITE */}
       <SectionWrapper className="bg-white/[0.02] border-y border-white/[0.08]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <BlurIn>
-              <SectionLabel>Who builds your site</SectionLabel>
-            </BlurIn>
-            <BlurIn delay={0.1}>
-              <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-                Built by a software engineer, not just a designer.
-              </h2>
-            </BlurIn>
-            <BlurIn delay={0.2}>
-              <div className="space-y-4 mt-6">
-                <p className="text-white/70 text-base leading-relaxed">
-                  I&apos;m Luke. I spent years building complex systems for
-                  tech companies before turning that engineering precision
-                  toward helping local businesses grow.
-                </p>
-                <p className="text-white/70 text-base leading-relaxed">
-                  Most agencies build pretty pages that don&apos;t convert. I
-                  build websites the same way I build software systems —
-                  every element has a job, and that job is getting you
-                  clients.
-                </p>
-              </div>
-            </BlurIn>
-            <BlurIn delay={0.3}>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full px-5 py-3 bg-foreground text-background font-medium text-sm hover:bg-white/90 transition-colors duration-200 mt-8"
-              >
-                Let&apos;s talk about your site
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </BlurIn>
-          </div>
+        <div className="max-w-3xl mx-auto text-center">
+          <BlurIn>
+            <SectionLabel>Who builds your site</SectionLabel>
+          </BlurIn>
+          <BlurIn delay={0.1}>
+            <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
+              Built by an engineer who thinks like a marketer.
+            </h2>
+          </BlurIn>
           <BlurIn delay={0.2}>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { v: "10+ yrs", l: "engineering experience" },
-                { v: "20+", l: "AI systems shipped" },
-                { v: "No", l: "outsourcing — ever" },
-                { v: "Direct", l: "access to me" },
-              ].map((s) => (
-                <div
-                  key={s.l}
-                  className="bg-card border border-card-border rounded-2xl p-5"
-                >
-                  <div className="text-2xl font-medium text-white">{s.v}</div>
-                  <div className="text-white/60 text-xs mt-1">{s.l}</div>
-                </div>
-              ))}
+            <div className="space-y-4 mt-6">
+              <p className="text-white/70 text-base leading-relaxed">
+                I&apos;m Luke. I&apos;ve helped businesses increase their
+                online visibility, capture more leads, and turn their websites
+                into systems that actually generate revenue.
+              </p>
+              <p className="text-white/70 text-base leading-relaxed">
+                I started Grady Digital because most web designers make pretty
+                pages that don&apos;t convert. I build websites the same way I
+                build software systems — every element has a job, and that job
+                is getting you clients.
+              </p>
             </div>
+          </BlurIn>
+          <BlurIn delay={0.3}>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full px-5 py-3 bg-foreground text-background font-medium text-sm hover:bg-white/90 transition-colors duration-200 mt-8"
+            >
+              Let&apos;s talk about your site
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </BlurIn>
         </div>
       </SectionWrapper>
@@ -435,8 +419,6 @@ export default function StartPage() {
                 Typical agency
               </div>
               {[
-                ["Built by an engineer", true, false],
-                ["AI receptionist + chatbot included", true, false],
                 ["Direct access to founder", true, false],
                 ["Month-to-month, no contracts", true, false],
                 ["Hosting + updates managed", true, true],

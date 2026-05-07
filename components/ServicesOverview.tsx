@@ -2,52 +2,48 @@
 
 import Link from "next/link";
 import {
-  MessageSquare,
-  Phone,
+  Paintbrush,
+  Smartphone,
   Zap,
-  Monitor,
-  Search,
-  BarChart2,
+  Wrench,
+  Code,
+  MessageSquare,
 } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import SectionLabel from "./SectionLabel";
 import BlurIn from "./BlurIn";
 import { StaggerParent, StaggerChild } from "./StaggerParent";
 
-const services = [
+const features = [
   {
-    icon: Phone,
-    title: "AI Receptionist",
-    body: "Never miss another call. Our AI answers your phone, qualifies the lead, and books the appointment — even at 2am. Most callers can't tell it's not a person.",
-    href: "/ai-automation/hvac",
+    icon: Paintbrush,
+    title: "Custom Design",
+    body: "Every site is designed from scratch around your business. No templates, no page builders, no cookie-cutter layouts.",
   },
   {
-    icon: MessageSquare,
-    title: "AI Website Chatbot",
-    body: "Turn website visitors into booked appointments while you're on a job. Answers questions, captures contact info, and fills your calendar automatically.",
+    icon: Smartphone,
+    title: "Mobile-First",
+    body: "Built to look great and load fast on every device. Most of your customers are searching from their phone.",
   },
   {
     icon: Zap,
-    title: "Lead Follow-Up & Automations",
-    body: "New lead comes in? They get a text within 60 seconds. Missed call? Automatic text-back. Old leads sitting in your CRM? We reactivate them. No manual work required.",
-    href: "/ai-automation/plumbers",
+    title: "Built to Convert",
+    body: "Clear calls to action, click-to-call buttons, and layouts designed to turn visitors into leads and bookings.",
   },
   {
-    icon: Monitor,
-    title: "Web Design & Development",
-    body: "Fast, mobile-first websites built to convert visitors into calls and bookings. Custom designs that reflect your brand — not cookie-cutter templates.",
-    href: "/website-design/hvac",
+    icon: Wrench,
+    title: "Fully Managed",
+    body: "Hosting, updates, speed, and security are all handled. You never touch the backend. Need a change? Just ask.",
   },
   {
-    icon: Search,
-    title: "SEO & Google Business Profile",
-    body: "Show up when locals search for what you do. We handle your Google Business Profile, on-page SEO, and review strategy so customers find you before your competitors.",
-    href: "/local-seo/hvac",
+    icon: Code,
+    title: "Engineer-Built",
+    body: "Clean code, fast load times, and a site that actually works. No bloated plugins or drag-and-drop builders.",
   },
   {
-    icon: BarChart2,
-    title: "Review & Reputation Automation",
-    body: "Every completed job triggers an automatic review request. One-click link to Google. Builds your star rating consistently so you rank higher and win more trust.",
+    icon: MessageSquare,
+    title: "Direct Access to Luke",
+    body: "You work directly with the person building your site. No account managers, no middlemen, no runaround.",
   },
 ];
 
@@ -56,54 +52,38 @@ export default function ServicesOverview() {
     <SectionWrapper>
       <div className="text-center mb-16">
         <BlurIn>
-          <SectionLabel>What We Build for You</SectionLabel>
+          <SectionLabel>What You Get</SectionLabel>
         </BlurIn>
         <BlurIn delay={0.1}>
           <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-            Six ways we put your growth on autopilot
+            Everything included for $97/month
           </h2>
         </BlurIn>
         <BlurIn delay={0.2}>
           <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mt-4">
-            AI agents that sell while you sleep, websites that convert, and SEO
-            that gets you found first.
+            A professional website, custom-built and fully managed. No
+            contracts, no hidden fees.
           </p>
         </BlurIn>
       </div>
 
       <StaggerParent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((service) => {
-          const Icon = service.icon;
-          const content = (
-            <>
+        {features.map((feature) => {
+          const Icon = feature.icon;
+          return (
+            <StaggerChild
+              key={feature.title}
+              className="bg-card border border-card-border rounded-2xl p-6"
+            >
               <div className="rounded-xl bg-accent/10 p-2 w-fit">
                 <Icon className="w-8 h-8 text-accent-light" />
               </div>
               <h3 className="text-lg font-medium text-white mt-4 mb-2">
-                {service.title}
+                {feature.title}
               </h3>
               <p className="text-white/60 text-sm leading-relaxed">
-                {service.body}
+                {feature.body}
               </p>
-              {service.href && (
-                <span className="inline-flex items-center text-accent-light text-sm mt-3 group-hover:text-white transition-colors">
-                  Learn more &rarr;
-                </span>
-              )}
-            </>
-          );
-          return (
-            <StaggerChild
-              key={service.title}
-              className="liquid-glass p-6"
-            >
-              {service.href ? (
-                <Link href={service.href} className="block group">
-                  {content}
-                </Link>
-              ) : (
-                content
-              )}
             </StaggerChild>
           );
         })}
@@ -111,10 +91,10 @@ export default function ServicesOverview() {
 
       <div className="text-center mt-12">
         <Link
-          href="/services"
+          href="/work"
           className="text-accent-light text-sm hover:underline"
         >
-          View all services &rarr;
+          See our work &rarr;
         </Link>
       </div>
     </SectionWrapper>

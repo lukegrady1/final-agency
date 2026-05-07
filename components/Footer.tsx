@@ -15,8 +15,8 @@ export default function Footer() {
               Grady Digital
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mt-4">
-              AI receptionists, chatbots, automated follow-up, and websites
-              for local service businesses. No contracts. Real results.
+              Custom, conversion-focused websites built and managed for
+              local service businesses. $97/month, no contracts.
             </p>
 
             {/* Contact links (clickable tel: and mailto:) */}
@@ -85,10 +85,8 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-2">
               {[
-                { href: "/services", label: "Services" },
-                { href: "/blog", label: "Blog" },
+                { href: "/work", label: "Work" },
                 { href: "/about", label: "About" },
-                { href: "/faq", label: "FAQ" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.href}>
@@ -103,28 +101,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Industries */}
           <div>
             <h3 className="text-sm font-medium text-white mb-4">
-              Industries
-            </h3>
-            <ul className="flex flex-col gap-2">
-              {[
-                { href: "/industries/hvac", label: "HVAC Companies" },
-                { href: "/industries/plumbers", label: "Plumbing Companies" },
-                { href: "/industries/landscapers", label: "Landscaping Companies" },
-              ].map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-white/60 text-sm hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <h3 className="text-sm font-medium text-white mb-4 mt-6">
               Legal
             </h3>
             <ul className="flex flex-col gap-2">
@@ -153,10 +131,10 @@ export default function Footer() {
               Ready to grow?
             </h3>
             <Link
-              href="/contact"
+              href="/start"
               className="inline-flex items-center rounded-full px-5 py-3 bg-foreground text-background font-medium text-sm hover:bg-white/90 transition-colors duration-200"
             >
-              Get Your Free Audit
+              Get Started
             </Link>
           </div>
         </div>

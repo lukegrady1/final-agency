@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ShieldOff, Zap, PhoneCall } from "lucide-react";
+import { ShieldOff, Zap, Clock } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import SectionLabel from "./SectionLabel";
 import BlurIn from "./BlurIn";
@@ -15,31 +15,30 @@ export default function AboutSnippet() {
         </BlurIn>
         <BlurIn delay={0.1}>
           <h2 className="text-3xl md:text-4xl font-medium text-white mt-4 leading-tight">
-            We build the systems. You get the customers.
+            Built by an engineer who thinks like a marketer.
           </h2>
         </BlurIn>
         <div className="mt-6 space-y-4">
           <BlurIn delay={0.2}>
             <p className="text-white/60 text-sm leading-relaxed">
-              Most local businesses are losing leads every day — missed calls
-              that go to voicemail, website visitors who leave without booking,
-              and old contacts sitting forgotten in a spreadsheet.
+              Most local businesses either don&apos;t have a website or have one
+              that looks like it was built ten years ago. When a potential
+              customer looks you up and sees an outdated site, they move on. You
+              lose the job before you even had a chance.
             </p>
           </BlurIn>
           <BlurIn delay={0.25}>
             <p className="text-white/60 text-sm leading-relaxed">
-              Grady Digital fixes that. We build AI-powered systems that answer
-              your phone, follow up with leads in seconds, and turn your
-              website into a 24/7 booking machine. No extra staff. No manual
-              work.
+              Grady Digital builds custom, conversion-focused websites for local
+              service businesses. Every site is designed from scratch, fully
+              managed, and built to do one thing: get you more clients.
             </p>
           </BlurIn>
           <BlurIn delay={0.3}>
             <p className="text-white/60 text-sm leading-relaxed">
-              We work with HVAC companies, contractors, salons, restaurants,
-              and service businesses across the country. If your business
-              depends on phone calls and appointments, we can help you get
-              more of both.
+              You work directly with Luke — no account managers, no outsourcing,
+              no runaround. Just a software engineer who builds websites that
+              actually work.
             </p>
           </BlurIn>
         </div>
@@ -48,15 +47,15 @@ export default function AboutSnippet() {
           <div className="flex flex-wrap gap-6 mt-8">
             <div className="flex items-center gap-2 text-sm text-white/80">
               <ShieldOff className="w-4 h-4 text-accent-light" />
-              No Contracts — cancel anytime, month-to-month
+              No Contracts — month-to-month
+            </div>
+            <div className="flex items-center gap-2 text-sm text-white/80">
+              <Clock className="w-4 h-4 text-accent-light" />
+              Live in two weeks
             </div>
             <div className="flex items-center gap-2 text-sm text-white/80">
               <Zap className="w-4 h-4 text-accent-light" />
-              Live in days — most automations running in under a week
-            </div>
-            <div className="flex items-center gap-2 text-sm text-white/80">
-              <PhoneCall className="w-4 h-4 text-accent-light" />
-              Zero missed calls — AI answers your phone 24/7/365
+              Fully managed — we handle everything
             </div>
           </div>
         </BlurIn>

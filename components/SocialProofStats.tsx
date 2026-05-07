@@ -3,11 +3,11 @@
 import { StaggerParent, StaggerChild } from "./StaggerParent";
 
 const stats = [
-  { value: "<60s", label: "average lead response time with our automations" },
-  { value: "0", label: "missed calls when our AI receptionist is on the line" },
-  { value: "2x", label: "more booked jobs within 90 days on average" },
-  { value: "24/7", label: "your AI answers calls, chats, and follows up" },
-  { value: "5–7 days", label: "to get your first automation live" },
+  { value: "$97", label: "per month, fully managed" },
+  { value: "2 weeks", label: "from call to launch" },
+  { value: "0", label: "contracts or setup fees" },
+  { value: "100%", label: "custom — no templates" },
+  { value: "24/7", label: "hosting, updates, and support" },
 ];
 
 export default function SocialProofStats() {
@@ -29,9 +29,6 @@ export default function SocialProofStats() {
             </StaggerChild>
           ))}
         </StaggerParent>
-        <p className="text-white/40 text-xs mt-6 text-center">
-          Results from real client engagements across service businesses
-        </p>
       </div>
     </section>
   );

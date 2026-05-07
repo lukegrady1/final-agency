@@ -22,26 +22,25 @@ export default function HeroSection() {
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 backdrop-blur-sm px-3 py-1.5">
                 <Sparkles className="w-3 h-3 text-white/80" />
                 <span className="text-sm font-medium text-white/80">
-                  AI That Works While You Sleep
+                  Now Booking New Builds
                 </span>
               </div>
             </BlurIn>
 
-            {/* HEADING — renders visible immediately for LCP, no animation delay */}
+            {/* HEADING */}
             <h1 className="font-medium leading-tight lg:leading-[1.2] text-4xl md:text-5xl lg:text-6xl text-white">
               <span className="block">
-                More Leads, Fewer Missed Calls
+                A Professional Website
               </span>
-              <span>Powered by </span>
-              <span className="font-['Playfair_Display'] italic">AI.</span>
+              <span>for </span>
+              <span className="font-['Playfair_Display'] italic">$97/month.</span>
             </h1>
 
             {/* SUBTITLE */}
             <BlurIn delay={0.2} duration={0.6}>
               <p className="text-white/80 text-lg font-normal leading-relaxed max-w-xl">
-                AI chatbots that book appointments. Voice agents that answer
-                every call. Websites that turn visitors into customers. We
-                build the systems — you get the results.
+                Custom-built, conversion-focused websites for local service
+                businesses. Fully managed. No contracts. Live in two weeks.
               </p>
             </BlurIn>
           </div>
@@ -51,19 +50,19 @@ export default function HeroSection() {
             <div className="flex items-center gap-4 flex-wrap">
               {/* Primary CTA */}
               <Link
-                href="/contact"
+                href="/start"
                 className="inline-flex items-center gap-2 rounded-full px-5 py-3 bg-white text-[#070612] font-medium text-sm hover:bg-white/90 transition-colors duration-200"
               >
-                Get Your Free Audit
+                Get Started
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
               {/* Secondary CTA */}
               <Link
-                href="/services"
+                href="/work"
                 className="inline-flex items-center rounded-full px-8 py-3 bg-white/20 backdrop-blur-sm text-white font-medium text-sm hover:bg-white/30 transition-colors duration-200"
               >
-                See What We Build
+                See Our Work
               </Link>
             </div>
           </BlurIn>

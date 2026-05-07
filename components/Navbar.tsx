@@ -7,8 +7,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "/services", label: "Services" },
-  { href: "/blog", label: "Blog" },
+  { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -69,10 +68,10 @@ export default function Navbar() {
 
         <div className="hidden md:block">
           <Link
-            href="/contact"
+            href="/start"
             className="inline-flex items-center rounded-full px-4 py-2 bg-foreground text-background font-medium text-sm hover:bg-white/90 transition-colors duration-200"
           >
-            Free Audit
+            Get Started
           </Link>
         </div>
 
@@ -111,10 +110,10 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                href="/contact"
+                href="/start"
                 className="inline-flex items-center justify-center rounded-full px-4 py-2 bg-foreground text-background font-medium text-sm mt-2"
               >
-                Free Audit
+                Get Started
               </Link>
             </div>
           </motion.div>

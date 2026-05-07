@@ -9,9 +9,9 @@ import HomeFAQ from "@/components/HomeFAQ";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Grady Digital — AI Agents & Automation for Local Businesses",
+  title: { absolute: "Grady Digital — Professional Websites for Local Businesses" },
   description:
-    "AI receptionists, chatbots, lead follow-up, and websites that bring in calls. Built for HVAC, contractors, salons, and service businesses.",
+    "Custom, conversion-focused websites built and managed for local service businesses. $97/month, no contracts, live in two weeks.",
   alternates: { canonical: "/" },
 };
 

@@ -6,21 +6,21 @@ import { StaggerParent, StaggerChild } from "../StaggerParent";
 const testimonials = [
   {
     quote:
-      "Add your testimonial here. Quote a specific result the client got — more bookings, fewer missed calls, ranking improvements.",
-    name: "Client Name",
-    title: "Owner, Business Name",
+      "Luke built us a site that actually looks like us. We went from having nothing online to getting calls from people who found us through our website. Honestly didn't think it would make that kind of difference.",
+    name: "Matt Paharik",
+    title: "Owner, MJP Auto Detailing",
   },
   {
     quote:
-      "Add your testimonial here. Real client words land better than marketing copy — keep them honest and specific.",
-    name: "Client Name",
-    title: "Owner, Business Name",
+      "Before working with Luke, our website was basically a placeholder. Now when people call, they already know what we do and they're ready to book. It's been a game changer for us.",
+    name: "Anthony Reece",
+    title: "Owner, Reece Electric",
   },
   {
     quote:
-      "Add your testimonial here. A short one-liner about how working with Grady Digital changed something concrete.",
-    name: "Client Name",
-    title: "Owner, Business Name",
+      "We were relying on word of mouth for years. Luke put together a professional site that makes us look legit. Now when someone asks for our website, we're actually proud to send it. Worth every penny.",
+    name: "John Grady",
+    title: "Owner, Greater Boston Livery",
   },
 ];
 

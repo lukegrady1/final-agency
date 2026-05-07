@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, Phone, Mail } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionLabel from "@/components/SectionLabel";
 import ContactForm from "@/components/ContactForm";
 import BlurIn from "@/components/BlurIn";
-import { Phone, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Free AI & Growth Audit for Local Businesses",
+  title: "Contact",
   description:
-    "Get a free audit of your business. We'll look at how you handle calls, leads, and follow-ups, then show you where AI can save you hours and bring in more money. No obligation.",
+    "Get in touch about a custom website for your business. $97/month, fully managed, live in two weeks. No obligation.",
   alternates: { canonical: "/contact" },
 };
 
@@ -19,33 +20,29 @@ export default function ContactPage() {
       <section className="pt-40 pb-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <BlurIn>
-            <SectionLabel>Free AI & Growth Audit</SectionLabel>
+            <SectionLabel>Get in Touch</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white mt-4 leading-tight">
-              We&apos;ll show you where AI can do the work for you
+              Let&apos;s build your website
             </h1>
           </BlurIn>
           <BlurIn delay={0.2}>
             <p className="text-white/60 text-lg leading-relaxed max-w-2xl mt-6">
-              Tell us a bit about your business. We&apos;ll look at how you
-              handle calls, leads, follow-ups, and scheduling, then map out
-              where AI systems (receptionists, chatbots, automated workflows)
-              can take that off your plate. We look at your website and SEO
-              too, but most of the real time and money savings come from the
-              AI side.
+              Tell us about your business and we&apos;ll show you what we&apos;d
+              build for you. Custom design, fully managed, live in two weeks.
             </p>
           </BlurIn>
           <BlurIn delay={0.3}>
             <div className="flex flex-wrap gap-4 mt-8">
               <span className="text-sm text-white/60 border border-white/10 rounded-full px-4 py-2">
-                AI that picks up calls, books jobs, and follows up. All day, every day.
+                $97/month — no contracts, no setup fees
               </span>
               <span className="text-sm text-white/60 border border-white/10 rounded-full px-4 py-2">
-                You talk directly to the person who builds your system
+                You talk directly to Luke
               </span>
               <span className="text-sm text-white/60 border border-white/10 rounded-full px-4 py-2">
-                Free audit, no pressure, no commitment
+                No obligation, no pressure
               </span>
             </div>
           </BlurIn>
@@ -77,26 +74,25 @@ export default function ContactPage() {
         <ContactForm />
       </SectionWrapper>
 
-      {/* Google Maps Embed */}
-      <SectionWrapper id="map">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-medium text-white">Find Us</h2>
-          <p className="text-white/60 text-sm mt-2">
-            Serving businesses nationwide from Worcester, MA
-          </p>
-        </div>
-        <div className="rounded-2xl overflow-hidden border border-white/10">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94131.52648153524!2d-71.87974!3d42.2625932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e406585a2a8b0d%3A0x9e137dd87403c8e2!2sWorcester%2C%20MA!5e0!3m2!1sen!2sus!4v1711500000000!5m2!1sen!2sus"
-            width="100%"
-            height="400"
-            style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Grady Digital service area"
-          />
-        </div>
+      {/* CTA to Start page */}
+      <SectionWrapper>
+        <BlurIn>
+          <div className="bg-accent/90 rounded-2xl px-8 py-16 text-center max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-medium text-white">
+              Ready to see pricing and book a call?
+            </h2>
+            <p className="text-white/80 text-sm leading-relaxed max-w-xl mx-auto mt-4">
+              Check out our plans and pick a time to chat with Luke.
+            </p>
+            <Link
+              href="/start"
+              className="inline-flex items-center gap-2 rounded-full px-6 py-3 bg-white text-background font-medium text-sm hover:bg-white/90 transition-colors duration-200 mt-8"
+            >
+              Get Started
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </BlurIn>
       </SectionWrapper>
     </main>
   );

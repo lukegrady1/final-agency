@@ -8,23 +8,23 @@ import BlurIn from "./BlurIn";
 const steps = [
   {
     number: "01",
-    title: "Audit",
-    body: "We review your website, Google presence, and lead capture process. You see exactly where you're losing customers.",
+    title: "Book a Call",
+    body: "We learn about your business, your goals, and what you need from your website.",
   },
   {
     number: "02",
-    title: "Build",
-    body: "We set up your AI agents, website, and automations — starting with whatever drives the most leads fastest.",
+    title: "We Design & Build",
+    body: "Custom site built around your brand. You review it and request any changes before launch.",
   },
   {
     number: "03",
     title: "Launch",
-    body: "Everything goes live after thorough testing. Most automations are running within 5–7 days.",
+    body: "Your site goes live within two weeks. Fast, mobile-friendly, and ready to convert.",
   },
   {
     number: "04",
-    title: "Grow",
-    body: "We track real results — leads, calls, bookings — and keep tuning your system every month.",
+    title: "We Manage It",
+    body: "Hosting, updates, speed, and security — all handled. Need a change? Just ask.",
   },
 ];
 
@@ -33,17 +33,17 @@ export default function ProcessSection() {
     <SectionWrapper>
       <div className="text-center mb-16">
         <BlurIn>
-          <SectionLabel>Our Process</SectionLabel>
+          <SectionLabel>How It Works</SectionLabel>
         </BlurIn>
         <BlurIn delay={0.1}>
           <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-            From audit to booked jobs in weeks, not months
+            From call to launch in two weeks
           </h2>
         </BlurIn>
       </div>
       <StaggerParent className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {steps.map((step, i) => (
-          <StaggerChild key={step.number} className="relative liquid-glass p-6">
+          <StaggerChild key={step.number} className="relative bg-card border border-card-border rounded-2xl p-6">
             <div className="text-5xl font-medium text-white/10">
               {step.number}
             </div>

@@ -1,114 +1,168 @@
 import type { Metadata } from "next";
-import { ShieldOff, Zap, PhoneCall, Bot, Globe, Search } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Paintbrush, Code, Eye, Target, DollarSign, Wrench, Search } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
-import CTABanner from "@/components/CTABanner";
+import SectionLabel from "@/components/SectionLabel";
 import BlurIn from "@/components/BlurIn";
 import { StaggerParent, StaggerChild } from "@/components/StaggerParent";
 
 export const metadata: Metadata = {
-  title: "About Grady Digital — AI Agents for HVAC, Contractors & Service Businesses",
+  title: "About",
   description:
-    "We build AI receptionists, chatbots, automated follow-up, and websites that bring in leads for local service businesses. No contracts, real results.",
+    "Software engineer building professional, conversion-focused websites for local service businesses. No contracts, fully managed, live in two weeks.",
   alternates: { canonical: "/about" },
 };
-
-const whatWeDo = [
-  {
-    icon: Bot,
-    title: "AI Agents",
-    body: "Receptionists and chatbots that answer calls, qualify leads, and book appointments 24/7",
-  },
-  {
-    icon: Globe,
-    title: "Websites That Convert",
-    body: "Fast, mobile-first sites with click-to-call, booking integration, and clear CTAs",
-  },
-  {
-    icon: Search,
-    title: "SEO & Automation",
-    body: "Google Business Profile optimization, automated review requests, and lead follow-up that runs on autopilot",
-  },
-];
 
 export default function AboutPage() {
   return (
     <main>
-      {/* Page Hero */}
-      <section className="pt-40 pb-16">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <BlurIn>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white">
-              About Grady Digital
-            </h1>
-          </BlurIn>
-          <BlurIn delay={0.1}>
-            <p className="text-white/60 text-lg mt-2">
-              AI agents and automation for local service businesses
-            </p>
-          </BlurIn>
-          <BlurIn delay={0.2}>
-            <p className="text-white/80 text-xl leading-relaxed max-w-3xl mt-4">
-              We help HVAC companies, contractors, salons, and service
-              businesses get more leads and book more jobs — with AI that works
-              24/7.
-            </p>
-          </BlurIn>
+      {/* Hero — two column */}
+      <section className="relative pt-40 pb-24 overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-50"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(108,106,246,0.18) 0%, transparent 70%)",
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <BlurIn>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-tight">
+                  Because Businesses Deserve Websites That Actually Work
+                </h1>
+              </BlurIn>
+              <BlurIn delay={0.15}>
+                <p className="text-white/60 text-lg leading-relaxed mt-6">
+                  Most businesses either overpay thousands upfront, or end up
+                  with a template nobody manages. We built Grady Digital to
+                  change that: custom, conversion-focused websites built and
+                  managed for you at a flat monthly rate.
+                </p>
+              </BlurIn>
+            </div>
+            <BlurIn delay={0.2}>
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-card border border-card-border">
+                <Image
+                  src="/site_after.PNG"
+                  alt="Example website build by Grady Digital"
+                  fill
+                  className="object-contain object-center"
+                />
+                <p className="absolute bottom-3 left-0 right-0 text-center text-white/40 text-xs">
+                  Example build preview
+                </p>
+              </div>
+            </BlurIn>
+          </div>
         </div>
       </section>
 
-      {/* Problem */}
+      {/* Who's Behind Grady Digital */}
       <SectionWrapper>
-        <div className="max-w-3xl">
+        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-12 items-start max-w-5xl mx-auto">
           <BlurIn>
-            <h2 className="text-3xl md:text-4xl font-medium text-white">
-              Your customers are calling. Is anyone answering?
-            </h2>
+            <div className="flex flex-col gap-4">
+              <div className="relative w-48 h-48 rounded-2xl overflow-hidden bg-white/5 border border-white/10">
+                <Image
+                  src="/headshot.PNG"
+                  alt="Luke Grady"
+                  fill
+                  className="object-cover object-[center_25%]"
+                />
+              </div>
+            </div>
           </BlurIn>
-          <div className="mt-6 space-y-4">
+          <div>
+            <BlurIn>
+              <SectionLabel>Who&apos;s behind Grady Digital</SectionLabel>
+            </BlurIn>
             <BlurIn delay={0.1}>
-              <p className="text-white/60 text-sm leading-relaxed">
-                Most local businesses lose leads every single day. Calls go to
-                voicemail. Website visitors leave without booking. Old contacts
-                sit forgotten in a spreadsheet. And every missed lead is
-                revenue that goes straight to a competitor.
-              </p>
+              <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
+                Hey, I&apos;m Luke.
+              </h2>
             </BlurIn>
-            <BlurIn delay={0.15}>
-              <p className="text-white/60 text-sm leading-relaxed">
-                Grady Digital was built to fix that. We set up AI receptionists
-                that answer your phone around the clock, chatbots that convert
-                website visitors into appointments, and automated follow-up
-                that texts new leads within 60 seconds.
-              </p>
-            </BlurIn>
-            <BlurIn delay={0.2}>
-              <p className="text-white/60 text-sm leading-relaxed">
-                Pair that with a website designed to convert and a Google
-                presence that actually ranks, and you have a complete system
-                that brings in customers while you focus on doing the work.
-              </p>
-            </BlurIn>
+            <div className="space-y-4 mt-6">
+              <BlurIn delay={0.15}>
+                <p className="text-white/60 text-base leading-relaxed">
+                  I&apos;ve helped businesses increase their online visibility,
+                  capture more leads, and turn their websites into systems that
+                  actually generate revenue. I know what it takes to get people
+                  to stop, trust, and take action. I also know what it costs
+                  when those things are missing from a website.
+                </p>
+              </BlurIn>
+              <BlurIn delay={0.2}>
+                <p className="text-white/60 text-base leading-relaxed">
+                  I started Grady Digital because most business websites I saw
+                  were leaving real money on the table. Not because the owners
+                  weren&apos;t great at what they do. Because their sites
+                  weren&apos;t doing the work. A blurry logo, a missing phone
+                  number, a headline that says nothing. Small things that cost
+                  real customers.
+                </p>
+              </BlurIn>
+              <BlurIn delay={0.25}>
+                <p className="text-white/60 text-base leading-relaxed">
+                  The web is changing fast. Most business owners don&apos;t have
+                  time to keep up with all of it. That&apos;s what Grady Digital
+                  is for. We build and manage your website so it keeps working
+                  for you, no matter how the landscape shifts.
+                </p>
+              </BlurIn>
+            </div>
           </div>
         </div>
       </SectionWrapper>
 
-      {/* What Grady Digital Does */}
-      <SectionWrapper>
-        <StaggerParent className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {whatWeDo.map((item) => {
+      {/* How We Build */}
+      <SectionWrapper className="bg-white/[0.02] border-y border-white/[0.08]">
+        <div className="text-center max-w-3xl mx-auto">
+          <BlurIn>
+            <h2 className="text-3xl md:text-4xl font-medium text-white">
+              Custom design. Clean code. You approve.
+            </h2>
+          </BlurIn>
+          <BlurIn delay={0.1}>
+            <p className="text-white/60 text-base leading-relaxed mt-4">
+              Nothing goes live until you&apos;re happy with it. We walk through
+              the site together and make any final adjustments before launch.
+            </p>
+          </BlurIn>
+        </div>
+        <StaggerParent className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          {[
+            {
+              icon: Paintbrush,
+              title: "Designed for you",
+              body: "Custom layouts and copy built around your business, not a generic template.",
+            },
+            {
+              icon: Code,
+              title: "Engineer-built",
+              body: "Clean code, fast load times, and a site that works on every device.",
+            },
+            {
+              icon: Eye,
+              title: "You approve",
+              body: "Preview your site, request changes, and launch when you're ready.",
+            },
+          ].map((item) => {
             const Icon = item.icon;
             return (
               <StaggerChild
                 key={item.title}
-                className="bg-card border border-card-border rounded-2xl p-6"
+                className="bg-card border border-card-border rounded-2xl p-6 text-center"
               >
-                <div className="rounded-xl bg-accent/10 p-2 w-fit">
-                  <Icon className="w-8 h-8 text-accent-light" />
+                <div className="rounded-xl bg-accent/10 p-3 w-fit mx-auto">
+                  <Icon className="w-6 h-6 text-accent-light" />
                 </div>
-                <h3 className="text-lg font-medium text-white mt-4 mb-2">
+                <h3 className="text-lg font-medium text-white mt-4">
                   {item.title}
                 </h3>
-                <p className="text-white/60 text-sm leading-relaxed">
+                <p className="text-white/60 text-sm leading-relaxed mt-2">
                   {item.body}
                 </p>
               </StaggerChild>
@@ -117,59 +171,80 @@ export default function AboutPage() {
         </StaggerParent>
       </SectionWrapper>
 
-      {/* Why AI */}
+      {/* Our Mission */}
       <SectionWrapper>
-        <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-12">
           <BlurIn>
             <h2 className="text-3xl md:text-4xl font-medium text-white">
-              Why AI? Because your competitors aren&apos;t waiting.
+              Our Mission
             </h2>
           </BlurIn>
-          <BlurIn delay={0.1}>
-            <p className="text-white/60 text-base leading-relaxed mt-6">
-              The same AI technology that Fortune 500 companies use is now
-              available to every local business. The ones that adopt it first
-              will answer more calls, follow up faster, and book more jobs — and
-              the ones that wait will wonder where their customers went.
-            </p>
-          </BlurIn>
-          <BlurIn delay={0.15}>
-            <p className="text-white/60 text-base leading-relaxed mt-4">
-              We build AI systems that are practical and reliable — not science
-              projects. Receptionists that actually answer the phone. Chatbots
-              that actually book appointments. Follow-up sequences that text
-              leads before they have time to call someone else. That&apos;s the
-              standard.
-            </p>
-          </BlurIn>
         </div>
+        <StaggerParent className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              icon: Target,
+              title: "Conversion-Focused",
+              body: "Every site is built to turn visitors into leads, calls, and customers.",
+            },
+            {
+              icon: DollarSign,
+              title: "No Hidden Costs",
+              body: "No contracts. No setup fees. No tech headaches.",
+            },
+            {
+              icon: Wrench,
+              title: "Built and Managed For You",
+              body: "We handle design, development, hosting, and ongoing updates.",
+            },
+            {
+              icon: Search,
+              title: "Built to Be Found",
+              body: "Optimized from day one so customers can find you online.",
+            },
+          ].map((item) => {
+            const Icon = item.icon;
+            return (
+              <StaggerChild
+                key={item.title}
+                className="bg-card border border-card-border rounded-2xl p-6 text-center"
+              >
+                <div className="rounded-xl bg-accent/10 p-3 w-fit mx-auto">
+                  <Icon className="w-6 h-6 text-accent-light" />
+                </div>
+                <h3 className="text-lg font-medium text-white mt-4">
+                  {item.title}
+                </h3>
+                <p className="text-white/60 text-sm leading-relaxed mt-2">
+                  {item.body}
+                </p>
+              </StaggerChild>
+            );
+          })}
+        </StaggerParent>
       </SectionWrapper>
 
-      {/* Proof Points */}
+      {/* CTA Banner */}
       <SectionWrapper>
-        <div className="flex flex-wrap justify-center gap-8">
-          <BlurIn>
-            <div className="flex items-center gap-2 text-sm text-white/80">
-              <ShieldOff className="w-4 h-4 text-accent-light" />
-              No Contracts — month-to-month, cancel anytime
-            </div>
-          </BlurIn>
-          <BlurIn delay={0.1}>
-            <div className="flex items-center gap-2 text-sm text-white/80">
-              <Zap className="w-4 h-4 text-accent-light" />
-              Live in days — most automations running in under a week
-            </div>
-          </BlurIn>
-          <BlurIn delay={0.2}>
-            <div className="flex items-center gap-2 text-sm text-white/80">
-              <PhoneCall className="w-4 h-4 text-accent-light" />
-              Zero missed calls — AI on your phone line 24/7/365
-            </div>
-          </BlurIn>
-        </div>
+        <BlurIn>
+          <div className="bg-accent/90 rounded-2xl px-8 py-16 text-center max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-medium text-white">
+              Professional website. Managed for you.
+            </h2>
+            <p className="text-white/80 text-base leading-relaxed max-w-xl mx-auto mt-4">
+              Book a short call. We&apos;ll build your website and walk through
+              it together. Launch when you&apos;re ready.
+            </p>
+            <Link
+              href="/start"
+              className="inline-flex items-center gap-2 rounded-full px-6 py-3 bg-white text-background font-medium text-sm hover:bg-white/90 transition-colors duration-200 mt-8"
+            >
+              Get Started
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </BlurIn>
       </SectionWrapper>
-
-      <CTABanner />
     </main>
   );
 }

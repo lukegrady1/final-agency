@@ -20,7 +20,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://gradydigital.com"),
   title: {
-    default: "Grady Digital — AI Agents & Automation for Local Businesses",
+    default: "Grady Digital — Professional Websites for Local Businesses",
     template: "%s | Grady Digital",
   },
   description:
@@ -130,11 +130,6 @@ export default function RootLayout({
     "@type": "WebSite",
     name: "Grady Digital",
     url: "https://gradydigital.com",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://gradydigital.com/blog?q={search_term_string}",
-      "query-input": "required name=search_term_string",
-    },
   };
 
   return (

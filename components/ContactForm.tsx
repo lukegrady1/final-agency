@@ -41,18 +41,18 @@ export default function ContactForm() {
       <div className="liquid-glass p-12 text-center max-w-lg mx-auto">
         <CheckCircle2 className="w-16 h-16 text-accent-light mx-auto mb-4" />
         <h3 className="text-2xl font-medium text-white">
-          You&apos;re on the list.
+          Message sent.
         </h3>
         <p className="text-white/60 mt-3 text-sm leading-relaxed">
-          We&apos;ll look at your business and get back to you within 24
-          hours with a personalized breakdown of where AI can save you
-          time and bring in more business.
+          Luke will get back to you within 24 hours. If you&apos;d like
+          to skip the wait and book a call directly, head to the Get
+          Started page.
         </p>
         <Link
-          href="/"
+          href="/start"
           className="inline-flex items-center gap-2 rounded-full px-5 py-3 bg-foreground text-background font-medium text-sm hover:bg-white/90 transition-colors duration-200 mt-8"
         >
-          Back to Home
+          Book a Call
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
@@ -168,14 +168,14 @@ export default function ContactForm() {
             "Sending..."
           ) : (
             <>
-              Get My Free AI Audit
+              Send Message
               <ArrowRight className="w-4 h-4" />
             </>
           )}
         </button>
 
         <p className="text-white/30 text-xs text-center">
-          No spam. No sales calls. We&apos;ll just send you the audit.
+          No spam, no pressure.
           By submitting you agree to our{" "}
           <Link
             href="/privacy"
@@ -198,8 +198,8 @@ export default function ContactForm() {
                 1
               </span>
               <p className="text-sm text-white/60">
-                We look at how your business runs right now: calls, leads,
-                follow-ups, bookings. Takes us about 24 hours.
+                This sends a message directly to Luke. He&apos;ll get
+                back to you within 24 hours.
               </p>
             </li>
             <li className="flex gap-3">
@@ -207,18 +207,11 @@ export default function ContactForm() {
                 2
               </span>
               <p className="text-sm text-white/60">
-                You get a clear breakdown of where AI can take work off
-                your plate, catch leads you&apos;re missing, and bring in
-                more money.
-              </p>
-            </li>
-            <li className="flex gap-3">
-              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-accent/10 text-accent-light text-xs font-medium shrink-0">
-                3
-              </span>
-              <p className="text-sm text-white/60">
-                We walk you through everything and tell you what to
-                automate first. No strings attached.
+                Want to skip the wait?{" "}
+                <Link href="/start" className="text-accent-light hover:underline">
+                  Book a call directly
+                </Link>{" "}
+                on the Get Started page.
               </p>
             </li>
           </ol>
