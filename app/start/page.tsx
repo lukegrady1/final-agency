@@ -128,7 +128,7 @@ export default function StartPage() {
       <SectionWrapper className="!pt-0">
         <div className="text-center mb-10">
           <BlurIn>
-            <SectionLabel>Watch this first</SectionLabel>
+            <SectionLabel>Watch This First</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
@@ -143,7 +143,7 @@ export default function StartPage() {
       <SectionWrapper className="bg-white/[0.02] border-y border-white/[0.08]">
         <div className="text-center mb-12">
           <BlurIn>
-            <SectionLabel>The problem</SectionLabel>
+            <SectionLabel>The Problem</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-white mt-4 max-w-3xl mx-auto">
@@ -177,7 +177,7 @@ export default function StartPage() {
       <SectionWrapper>
         <div className="text-center mb-16">
           <BlurIn>
-            <SectionLabel>The Grady Digital solution</SectionLabel>
+            <SectionLabel>The Grady Digital Solution</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
@@ -228,7 +228,7 @@ export default function StartPage() {
       <SectionWrapper className="bg-white/[0.02] border-y border-white/[0.08]">
         <div className="text-center mb-16">
           <BlurIn>
-            <SectionLabel>What clients say</SectionLabel>
+            <SectionLabel>What Clients Say</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
@@ -243,7 +243,7 @@ export default function StartPage() {
       <SectionWrapper>
         <div className="text-center mb-12">
           <BlurIn>
-            <SectionLabel>The transformation</SectionLabel>
+            <SectionLabel>The Transformation</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
@@ -290,7 +290,7 @@ export default function StartPage() {
       <SectionWrapper>
         <div className="text-center mb-16">
           <BlurIn>
-            <SectionLabel>How it works</SectionLabel>
+            <SectionLabel>How It Works</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
@@ -337,7 +337,7 @@ export default function StartPage() {
       <SectionWrapper className="bg-white/[0.02] border-y border-white/[0.08]">
         <div className="text-center mb-10">
           <BlurIn>
-            <SectionLabel>Book your call</SectionLabel>
+            <SectionLabel>Book Your Call</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
             <h3 className="text-2xl md:text-3xl font-medium text-white mt-4">
@@ -360,7 +360,7 @@ export default function StartPage() {
       <SectionWrapper className="bg-white/[0.02] border-y border-white/[0.08]">
         <div className="max-w-3xl mx-auto text-center">
           <BlurIn>
-            <SectionLabel>Who builds your site</SectionLabel>
+            <SectionLabel>Who Builds Your Site</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
@@ -398,7 +398,7 @@ export default function StartPage() {
       <SectionWrapper>
         <div className="text-center mb-16">
           <BlurIn>
-            <SectionLabel>Why us</SectionLabel>
+            <SectionLabel>Why Us</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
@@ -454,7 +454,7 @@ export default function StartPage() {
       <SectionWrapper className="bg-white/[0.02] border-y border-white/[0.08]">
         <div className="text-center mb-16">
           <BlurIn>
-            <SectionLabel>Common questions</SectionLabel>
+            <SectionLabel>Common Questions</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">

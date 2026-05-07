@@ -42,7 +42,6 @@ export default function CTABanner() {
         <BlurIn delay={0.3}>
           <div className="flex items-center justify-center gap-6 mt-8">
             <span className="text-white/40 text-sm">Fully managed — We handle everything</span>
-            <span className="text-white/40 text-sm">Live in two weeks</span>
           </div>
         </BlurIn>
       </div>

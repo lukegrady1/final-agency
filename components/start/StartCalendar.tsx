@@ -18,8 +18,9 @@ export default function StartCalendar() {
             border: "none",
             minHeight: "720px",
             display: "block",
+            WebkitOverflowScrolling: "touch",
           }}
-          scrolling="no"
+          scrolling="yes"
         />
       </div>
       <Script
