@@ -32,7 +32,7 @@ export default function BeforeAfterSlider({
   return (
     <div
       ref={containerRef}
-      className="relative aspect-[16/10] w-full max-w-5xl mx-auto rounded-2xl overflow-hidden bg-card border border-card-border select-none cursor-ew-resize"
+      className="relative aspect-[16/10] w-full overflow-hidden select-none cursor-ew-resize"
       onMouseMove={(e) => updateFromClientX(e.clientX)}
       onTouchMove={(e) => updateFromClientX(e.touches[0].clientX)}
     >

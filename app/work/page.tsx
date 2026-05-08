@@ -69,33 +69,27 @@ export default function WorkPage() {
       </section>
 
       <SectionWrapper>
-        <div className="text-center mb-10">
-          <BlurIn>
-            <SectionLabel>Featured transformation</SectionLabel>
-          </BlurIn>
-          <BlurIn delay={0.1}>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-              White Springs — before and after
-            </h2>
-          </BlurIn>
-          <BlurIn delay={0.2}>
-            <p className="text-white/60 text-base leading-relaxed max-w-2xl mx-auto mt-4">
-              Drag the slider to see the redesign.
-            </p>
-          </BlurIn>
-        </div>
-        <BlurIn delay={0.3}>
-          <BeforeAfterSlider
-            beforeSrc="/white_springs_before.png"
-            afterSrc="/white_springs_after.png"
-            beforeAlt="White Springs website before Grady Digital redesign"
-            afterAlt="White Springs website after Grady Digital redesign"
-          />
-        </BlurIn>
-      </SectionWrapper>
-
-      <SectionWrapper className="!pt-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <BlurIn>
+            <div className="bg-card border border-card-border rounded-2xl overflow-hidden">
+              <BeforeAfterSlider
+                beforeSrc="/white_springs_before.png"
+                afterSrc="/white_springs_after.png"
+                beforeAlt="White Springs website before Grady Digital redesign"
+                afterAlt="White Springs website after Grady Digital redesign"
+              />
+              <div className="p-6">
+                <h2 className="text-lg font-medium text-white">
+                  White Springs
+                </h2>
+                <p className="text-white/60 text-sm leading-relaxed mt-2">
+                  A complete redesign that transformed an outdated site into a
+                  modern, conversion-focused experience. Drag the slider to
+                  compare.
+                </p>
+              </div>
+            </div>
+          </BlurIn>
           {projects.map((project, i) => (
             <BlurIn key={project.name} delay={i * 0.1}>
               <div className="bg-card border border-card-border rounded-2xl overflow-hidden">
