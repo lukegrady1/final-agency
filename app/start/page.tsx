@@ -102,7 +102,7 @@ export default function StartPage() {
           <BlurIn delay={0.45}>
             <div className="flex items-center justify-center gap-4 flex-wrap mt-10">
               <Link
-                href="/contact"
+                href="#book"
                 className="inline-flex items-center gap-2 rounded-full px-6 py-3 bg-foreground text-background font-medium text-sm hover:bg-white/90 transition-colors duration-200"
               >
                 Book a Free Call
@@ -334,7 +334,7 @@ export default function StartPage() {
       </SectionWrapper>
 
       {/* BOOK A CALL */}
-      <SectionWrapper className="bg-white/[0.02] border-y border-white/[0.08]">
+      <SectionWrapper id="book" className="bg-white/[0.02] border-y border-white/[0.08]">
         <div className="text-center mb-10">
           <BlurIn>
             <SectionLabel>Book Your Call</SectionLabel>
