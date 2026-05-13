@@ -6,11 +6,12 @@ import { Check, ArrowRight } from "lucide-react";
 import BlurIn from "../BlurIn";
 
 const features = [
-  "Custom 5-page conversion website",
+  "Custom conversion website",
   "Mobile-first, fast load times",
   "Hosting + SSL + monthly updates",
-  "Basic SEO + Google Business Profile",
+  "Basic SEO",
   "Lead-capture form + email alerts",
+  "Mobile app to manage leads, calls, and messages in one place",
 ];
 
 export default function StartPricing() {
