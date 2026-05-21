@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionLabel from "@/components/SectionLabel";
 import BlurIn from "@/components/BlurIn";
@@ -15,28 +16,25 @@ export const metadata: Metadata = {
 
 const projects = [
   {
-    name: "Imagine Construction",
-    description:
-      "A professional site that generates calls and estimate requests for a growing construction company.",
-    image: "/site_after.PNG",
-  },
-  {
     name: "MJP Auto Detailing",
     description:
       "A clean, professional site that showcases services and drives bookings for a mobile auto detailing business.",
     image: "/mjp_after.PNG",
+    url: "https://mjpautodetailing.com/",
   },
   {
     name: "Reece Electric",
     description:
       "A modern site built to generate estimate requests and establish credibility for an electrical contractor.",
     image: "/reece_after.PNG",
+    url: "https://reecegroupllc.com/",
   },
   {
     name: "Greater Boston Livery",
     description:
       "A polished site that builds trust and drives ride bookings for a professional car service.",
     image: "/gbl_after.PNG",
+    url: "https://greaterbostonlivery.com/",
   },
 ];
 
@@ -87,12 +85,46 @@ export default function WorkPage() {
                   modern, conversion-focused experience. Drag the slider to
                   compare.
                 </p>
+                <a
+                  href="https://whitespringsfl-us.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-1 text-accent-light text-sm mt-4 hover:gap-2 transition-all"
+                >
+                  Visit live site
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </BlurIn>
+          <BlurIn delay={0.1}>
+            <div className="bg-card border border-card-border rounded-2xl overflow-hidden">
+              <BeforeAfterSlider
+                beforeSrc="/site_before.PNG"
+                afterSrc="/site_after.PNG"
+                beforeAlt="Imagine Construction website before Grady Digital redesign"
+                afterAlt="Imagine Construction website after Grady Digital redesign"
+              />
+              <div className="p-6">
+                <h2 className="text-lg font-medium text-white">
+                  Imagine Construction
+                </h2>
+                <p className="text-white/60 text-sm leading-relaxed mt-2">
+                  A professional site that generates calls and estimate requests
+                  for a growing construction company. Drag the slider to
+                  compare.
+                </p>
               </div>
             </div>
           </BlurIn>
           {projects.map((project, i) => (
             <BlurIn key={project.name} delay={i * 0.1}>
-              <div className="bg-card border border-card-border rounded-2xl overflow-hidden">
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block bg-card border border-card-border rounded-2xl overflow-hidden transition-colors hover:border-white/20"
+              >
                 <div className="relative aspect-[16/10] bg-[#1a1730]">
                   <Image
                     src={project.image}
@@ -108,8 +140,12 @@ export default function WorkPage() {
                   <p className="text-white/60 text-sm leading-relaxed mt-2">
                     {project.description}
                   </p>
+                  <span className="inline-flex items-center gap-1 text-accent-light text-sm mt-4 group-hover:gap-2 transition-all">
+                    Visit live site
+                    <ArrowUpRight className="w-4 h-4" />
+                  </span>
                 </div>
-              </div>
+              </a>
             </BlurIn>
           ))}
         </div>
