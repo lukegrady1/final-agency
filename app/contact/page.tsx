@@ -9,7 +9,7 @@ import BlurIn from "@/components/BlurIn";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch about a custom website for your business. $97/month, fully managed, live in two weeks. No obligation.",
+    "Get in touch about a custom website and SEO for your business. $197/month, fully managed, live in 2–4 weeks. No obligation.",
   alternates: { canonical: "/contact" },
 };
 
@@ -24,19 +24,19 @@ export default function ContactPage() {
           </BlurIn>
           <BlurIn delay={0.1}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white mt-4 leading-tight">
-              Let&apos;s build your website
+              Let&apos;s grow your business
             </h1>
           </BlurIn>
           <BlurIn delay={0.2}>
             <p className="text-white/60 text-lg leading-relaxed max-w-2xl mt-6">
-              Tell us about your business and we&apos;ll show you what we&apos;d
-              build for you. Custom design, fully managed, live in two weeks.
+              Tell us about your business and we&apos;ll show you how a custom
+              website and local SEO can help you get more leads and grow.
             </p>
           </BlurIn>
           <BlurIn delay={0.3}>
             <div className="flex flex-wrap gap-4 mt-8">
               <span className="text-sm text-white/60 border border-white/10 rounded-full px-4 py-2">
-                $97/month — no contracts, no setup fees
+                $197/month — no long-term contracts
               </span>
               <span className="text-sm text-white/60 border border-white/10 rounded-full px-4 py-2">
                 You talk directly to Luke

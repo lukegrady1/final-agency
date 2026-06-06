@@ -20,32 +20,32 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://gradydigital.com"),
   title: {
-    default: "Grady Digital — Professional Websites for Local Businesses",
+    default: "Grady Digital — Websites & SEO for Local Businesses",
     template: "%s | Grady Digital",
   },
   description:
-    "AI receptionists, chatbots, lead follow-up, and websites that bring in calls. Built for HVAC, contractors, salons, and service businesses.",
+    "Custom websites and local SEO built and managed for local businesses. CRM included. $197/month, no long-term contract.",
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Grady Digital",
-    title: "Grady Digital — AI Agents & Automation for Local Businesses",
+    title: "Grady Digital — Websites & SEO for Local Businesses",
     description:
-      "AI receptionists, chatbots, lead follow-up, and websites that bring in calls. Built for HVAC, contractors, salons, and service businesses.",
+      "Custom websites and local SEO built and managed for local businesses. CRM included. $197/month, no long-term contract.",
     images: [
       {
         url: "/grady-digital-og.png",
         width: 1200,
         height: 630,
-        alt: "Grady Digital — More Leads, Fewer Missed Calls, Powered by AI",
+        alt: "Grady Digital — Websites & SEO for Local Businesses",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grady Digital — AI Agents & Automation for Local Businesses",
+    title: "Grady Digital — Websites & SEO for Local Businesses",
     description:
-      "AI receptionists, chatbots, lead follow-up, and websites that bring in calls. Built for local service businesses.",
+      "Custom websites and local SEO built and managed for local businesses. CRM included. $197/month, no long-term contract.",
     images: ["/grady-digital-og.png"],
   },
   icons: {
@@ -86,7 +86,7 @@ export default function RootLayout({
     name: "Grady Digital",
     url: "https://gradydigital.com",
     description:
-      "AI receptionists, chatbots, lead follow-up, and websites for local service businesses.",
+      "Custom websites and local SEO for local businesses. CRM included.",
     email: "luke@gradydigital.com",
     telephone: "+1-978-798-2870",
     sameAs: [
@@ -110,18 +110,17 @@ export default function RootLayout({
     email: "luke@gradydigital.com",
     telephone: "+1-978-798-2870",
     description:
-      "AI receptionists, chatbots, lead follow-up, and websites for local service businesses.",
+      "Custom websites and local SEO for local businesses. CRM included.",
     priceRange: "$$",
     areaServed: {
       "@type": "Country",
       name: "United States",
     },
     serviceType: [
-      "AI Automation",
       "Web Design",
       "SEO",
-      "AI Chatbots",
-      "AI Voice Agents",
+      "Google Business Profile Optimization",
+      "CRM",
     ],
   };
 

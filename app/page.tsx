@@ -9,9 +9,9 @@ import HomeFAQ from "@/components/HomeFAQ";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: { absolute: "Grady Digital — Professional Websites for Local Businesses" },
+  title: { absolute: "Grady Digital — Websites & SEO for Local Businesses" },
   description:
-    "Custom, conversion-focused websites built and managed for local service businesses. $97/month, no contracts, live in two weeks.",
+    "Custom websites and local SEO built and managed for local businesses. CRM included. $197/month, no long-term contract.",
   alternates: { canonical: "/" },
 };
 

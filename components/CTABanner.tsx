@@ -14,13 +14,14 @@ export default function CTABanner() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12 text-center">
         <BlurIn>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white">
-            A professional website for $97/month.
+            A custom website and SEO — $197/month.
           </h2>
         </BlurIn>
         <BlurIn delay={0.1}>
           <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
-            Custom-built, conversion-focused, and fully managed. No contracts,
-            no hassle.
+            Custom website, Google Business Profile optimization, and a CRM
+            to manage your leads — all built and managed for you. One-time
+            $1,000 setup. No long-term contract.
           </p>
         </BlurIn>
         <BlurIn delay={0.2}>

@@ -15,12 +15,12 @@ import StartCalendar from "@/components/start/StartCalendar";
 export const metadata: Metadata = {
   title: "Start Your Build",
   description:
-    "Stop losing clients to competitors with better websites. We build and manage AI-powered websites that turn visitors into paying clients.",
+    "Custom website and local SEO — built and managed for $197/month. CRM included. One-time $1,000 setup. No long-term contract.",
   alternates: { canonical: "/start" },
   openGraph: {
     title: "Start Your Build",
     description:
-      "We build and manage AI-powered websites that turn visitors into paying clients.",
+      "Custom website and local SEO — built and managed for $197/month. CRM included. No long-term contract.",
   },
 };
 
@@ -36,12 +36,12 @@ const startFAQ = [
   {
     question: "How much does it cost?",
     answer:
-      "$97/month or $970/year. Every site is custom built for businesses that want a real revenue engine, not just a brochure.",
+      "$197/month plus a one-time $1,000 setup fee. That includes your custom website, Google Business Profile optimization, SEO, and full CRM access. No long-term contract — cancel anytime.",
   },
   {
     question: "How long does it take?",
     answer:
-      "Your site will be up and running within two weeks. We move fast because every day without a converting site is leads going to your competitors.",
+      "Most projects go live within 2–4 weeks. We move fast because every day without a converting site is leads going to your competitors.",
   },
   {
     question: "What if I already have a website?",
@@ -51,17 +51,17 @@ const startFAQ = [
   {
     question: "Do I have to manage anything?",
     answer:
-      "No. Hosting, updates, security, speed, SEO, and AI agents are all handled. You focus on running your business; we handle the backend.",
+      "No. Hosting, updates, security, speed, SEO, and CRM are all handled. You focus on running your business; we handle the backend.",
   },
   {
     question: "What makes Grady Digital different?",
     answer:
-      "You work directly with a software engineer who builds AI systems — not an account manager who outsources the work. Every design decision is backed by marketing strategy and data.",
+      "You work directly with the person building your system — a software engineer, not an account manager. Every design decision is backed by marketing strategy and data.",
   },
   {
     question: "What kind of businesses do you work with?",
     answer:
-      "Local service businesses where a single new customer is worth hundreds or thousands of dollars — contractors, home services, healthcare, restaurants, salons, and similar.",
+      "Local businesses where a single new customer is worth hundreds or thousands of dollars — contractors, electricians, auto detailers, restaurants, salons, and similar.",
   },
 ];
 
@@ -94,9 +94,9 @@ export default function StartPage() {
           </BlurIn>
           <BlurIn delay={0.3}>
             <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
-              We build and manage AI-powered, conversion-focused websites so
-              you show up on Google, look the part, and turn visitors into
-              paying clients.
+              We build your website and optimize your Google presence so
+              customers find you first and convert into paying clients —
+              fully managed for $197/month.
             </p>
           </BlurIn>
           <BlurIn delay={0.45}>
@@ -118,7 +118,7 @@ export default function StartPage() {
           </BlurIn>
           <BlurIn delay={0.6}>
             <p className="text-white/40 text-xs mt-6">
-              Trusted by growing local service businesses
+              Trusted by growing local businesses
             </p>
           </BlurIn>
         </div>
@@ -195,16 +195,16 @@ export default function StartPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
-              title: "Converts the traffic you already have",
+              title: "Custom website that converts",
               body: "Most sites leak 95% of their visitors. We engineer every page to capture leads from the clicks you're already paying for.",
             },
             {
-              title: "Built for Google + AI search",
-              body: "SEO baked in from day one. Structured data, fast performance, and content strategy.",
+              title: "Google Business Profile & SEO",
+              body: "SEO baked in from day one. Google Business Profile optimization, structured data, and local search strategy.",
             },
             {
               title: "Fully managed for you",
-              body: "Hosting, updates, security, speed optimization. All handled. You never touch the backend.",
+              body: "Hosting, updates, security, speed optimization — all handled. You also get access to a CRM to manage leads and messages in one place.",
             },
           ].map((item, i) => (
             <BlurIn key={item.title} delay={i * 0.1}>
@@ -272,8 +272,7 @@ export default function StartPage() {
           </BlurIn>
           <BlurIn delay={0.2}>
             <p className="text-white/60 text-base leading-relaxed max-w-2xl mx-auto mt-4">
-              Month-to-month. Cancel anytime. Pick the plan that fits where
-              your business is right now.
+              One plan. Month-to-month. Cancel anytime.
             </p>
           </BlurIn>
         </div>
@@ -313,7 +312,7 @@ export default function StartPage() {
             {
               n: "03",
               t: "We manage everything",
-              b: "Hosting, updates, speed, SEO, AI agents. All handled. You focus on closing deals.",
+              b: "Hosting, updates, speed, SEO, CRM. All handled. You focus on closing deals.",
             },
           ].map((step, i) => (
             <BlurIn key={step.n} delay={i * 0.1}>
@@ -421,6 +420,7 @@ export default function StartPage() {
               {[
                 ["Direct access to founder", true, false],
                 ["Month-to-month, no contracts", true, false],
+                ["CRM included", true, false],
                 ["Hosting + updates managed", true, true],
                 ["Long onboarding & retainers", false, true],
                 ["Hands-off after launch", false, true],

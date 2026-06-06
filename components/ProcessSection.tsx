@@ -19,7 +19,7 @@ const steps = [
   {
     number: "03",
     title: "Launch",
-    body: "Your site goes live within two weeks. Fast, mobile-friendly, and ready to convert.",
+    body: "Your site goes live within 2–4 weeks. Fast, mobile-friendly, and ready to convert.",
   },
   {
     number: "04",
@@ -37,7 +37,7 @@ export default function ProcessSection() {
         </BlurIn>
         <BlurIn delay={0.1}>
           <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-            From call to launch in two weeks
+            From call to launch in 2–4 weeks
           </h2>
         </BlurIn>
       </div>

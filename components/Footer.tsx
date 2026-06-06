@@ -15,8 +15,8 @@ export default function Footer() {
               Grady Digital
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mt-4">
-              Custom, conversion-focused websites built and managed for
-              local service businesses. $97/month, no contracts.
+              Custom websites and local SEO built and managed for local
+              businesses. CRM included. $197/month, no long-term contract.
             </p>
 
             {/* Contact links (clickable tel: and mailto:) */}
@@ -85,6 +85,7 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-2">
               {[
+                { href: "/services", label: "Services" },
                 { href: "/work", label: "Work" },
                 { href: "/about", label: "About" },
                 { href: "/contact", label: "Contact" },
@@ -147,7 +148,7 @@ export default function Footer() {
             &copy; 2026 Grady Digital
           </span>
           <span className="text-white/40 text-xs">
-            AI agents &amp; automation for local businesses.
+            Websites &amp; SEO for local businesses.
           </span>
         </div>
       </div>

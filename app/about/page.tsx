@@ -10,7 +10,7 @@ import { StaggerParent, StaggerChild } from "@/components/StaggerParent";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Software engineer building professional, conversion-focused websites for local service businesses. No contracts, fully managed, live in two weeks.",
+    "Software engineer building custom websites and local SEO for local businesses. No long-term contracts, fully managed, live in 2–4 weeks.",
   alternates: { canonical: "/about" },
 };
 
@@ -190,7 +190,7 @@ export default function AboutPage() {
             {
               icon: DollarSign,
               title: "No Hidden Costs",
-              body: "No contracts. No setup fees. No tech headaches.",
+              body: "No long-term contracts. Transparent pricing. No tech headaches.",
             },
             {
               icon: Wrench,

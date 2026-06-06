@@ -7,7 +7,7 @@ import {
   Zap,
   Wrench,
   Code,
-  MessageSquare,
+  Search,
 } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import SectionLabel from "./SectionLabel";
@@ -17,13 +17,13 @@ import { StaggerParent, StaggerChild } from "./StaggerParent";
 const features = [
   {
     icon: Paintbrush,
-    title: "Custom Design",
-    body: "Every site is designed from scratch around your business. No templates, no page builders, no cookie-cutter layouts.",
+    title: "Custom Website",
+    body: "Designed from scratch around your business, mobile-first, built to convert. Fully managed hosting, updates, and support.",
   },
   {
-    icon: Smartphone,
-    title: "Mobile-First",
-    body: "Built to look great and load fast on every device. Most of your customers are searching from their phone.",
+    icon: Search,
+    title: "Google Business Profile & SEO",
+    body: "We optimize your local and organic search presence so customers find you before your competitors.",
   },
   {
     icon: Zap,
@@ -37,13 +37,13 @@ const features = [
   },
   {
     icon: Code,
-    title: "Engineer-Built",
-    body: "Clean code, fast load times, and a site that actually works. No bloated plugins or drag-and-drop builders.",
-  },
-  {
-    icon: MessageSquare,
     title: "Direct Access to Luke",
     body: "You work directly with the person building your site. No account managers, no middlemen, no runaround.",
+  },
+  {
+    icon: Smartphone,
+    title: "CRM Included",
+    body: "Every plan includes access to a lead and messaging app to manage calls, texts, and customer interactions in one place.",
   },
 ];
 
@@ -56,13 +56,14 @@ export default function ServicesOverview() {
         </BlurIn>
         <BlurIn delay={0.1}>
           <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-            Everything included for $97/month
+            Everything included for $197/month
           </h2>
         </BlurIn>
         <BlurIn delay={0.2}>
           <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mt-4">
-            A professional website, custom-built and fully managed. No
-            contracts, no hidden fees.
+            A custom website and local SEO strategy built to get you found
+            on Google and convert visitors into leads — plus a CRM to manage
+            it all.
           </p>
         </BlurIn>
       </div>

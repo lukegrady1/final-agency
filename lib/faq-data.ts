@@ -1,13 +1,13 @@
 export const faqItems = [
   {
-    question: "How much does a website cost?",
+    question: "How much does it cost?",
     answer:
-      "$97/month or $970/year. That includes the custom design, development, hosting, updates, speed optimization, and ongoing management. No setup fees, no hidden costs.",
+      "$197/month plus a one-time $1,000 setup fee. That includes a custom website, Google Business Profile optimization, SEO, full CRM access, hosting, updates, and ongoing management. No long-term contracts.",
   },
   {
     question: "How long does it take to build?",
     answer:
-      "Your site will be up and running within two weeks. We move fast because every day without a professional website is potential clients going to your competitors.",
+      "Most projects go live within 2–4 weeks. We move fast because every day without a professional website is potential clients going to your competitors.",
   },
   {
     question: "Is there a long-term contract?",
@@ -27,7 +27,7 @@ export const faqItems = [
   {
     question: "What kind of businesses do you work with?",
     answer:
-      "Local service businesses \u2014 contractors, electricians, auto detailers, restaurants, salons, car services, and similar industries. If you rely on local customers, we can help.",
+      "Local businesses \u2014 contractors, electricians, auto detailers, restaurants, salons, car services, and similar industries. If you rely on local customers, we can help.",
   },
   {
     question: "What makes Grady Digital different?",

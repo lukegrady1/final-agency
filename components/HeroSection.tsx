@@ -30,17 +30,19 @@ export default function HeroSection() {
             {/* HEADING */}
             <h1 className="font-medium leading-tight lg:leading-[1.2] text-4xl md:text-5xl lg:text-6xl text-white">
               <span className="block">
-                A Professional Website
+                More leads, better rankings,
               </span>
-              <span>for </span>
-              <span className="font-['Playfair_Display'] italic">$97/month.</span>
+              <span>one place to </span>
+              <span className="font-['Playfair_Display'] italic">manage it all.</span>
             </h1>
 
             {/* SUBTITLE */}
             <BlurIn delay={0.2} duration={0.6}>
               <p className="text-white/80 text-lg font-normal leading-relaxed max-w-xl">
-                Custom-built, conversion-focused websites for local service
-                businesses. Fully managed. No contracts. Live in two weeks.
+                We build your website and optimize your Google presence so
+                customers find you first and convert into paying clients.
+                Fully managed for $197/month. One-time $1,000 setup. No
+                long-term contract.
               </p>
             </BlurIn>
           </div>

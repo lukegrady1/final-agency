@@ -10,7 +10,7 @@ import CTABanner from "@/components/CTABanner";
 export const metadata: Metadata = {
   title: "Our Work",
   description:
-    "Websites we've built for local service businesses. See our work.",
+    "Websites we've built for local businesses. See our work.",
   alternates: { canonical: "/work" },
 };
 
