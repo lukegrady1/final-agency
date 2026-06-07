@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import BlurIn from "./BlurIn";
 import HeroVideo from "./HeroVideo";
 
@@ -15,18 +15,8 @@ export default function HeroSection() {
 
       <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col gap-12">
-          {/* Top group: badge + heading + subtitle */}
+          {/* Top group: heading + subtitle */}
           <div className="flex flex-col gap-6">
-            {/* BADGE */}
-            <BlurIn delay={0} duration={0.6}>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 backdrop-blur-sm px-3 py-1.5">
-                <Sparkles className="w-3 h-3 text-white/80" />
-                <span className="text-sm font-medium text-white/80">
-                  Now Booking New Builds
-                </span>
-              </div>
-            </BlurIn>
-
             {/* HEADING */}
             <h1 className="font-medium leading-tight lg:leading-[1.2] text-4xl md:text-5xl lg:text-6xl text-white">
               <span className="block">
@@ -41,8 +31,7 @@ export default function HeroSection() {
               <p className="text-white/80 text-lg font-normal leading-relaxed max-w-xl">
                 We build your website and run your Google presence so customers
                 find you first and turn into paying clients. One plan, $297 a
-                month. No setup fee. Your first month gets you built and live,
-                and you can cancel anytime.
+                month. No setup fee.
               </p>
             </BlurIn>
           </div>
