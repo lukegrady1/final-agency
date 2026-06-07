@@ -42,9 +42,16 @@ export default function FAQAccordion({ items = faqItems }: FAQAccordionProps) {
                 transition={{ duration: 0.2 }}
                 className="overflow-hidden"
               >
-                <p className="text-white/60 text-sm leading-relaxed pb-5">
-                  {item.answer}
-                </p>
+                <div className="pb-5 space-y-3">
+                  {item.answer.split("\n\n").map((paragraph, i) => (
+                    <p
+                      key={i}
+                      className="text-white/60 text-sm leading-relaxed"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </motion.div>
             )}
           </AnimatePresence>

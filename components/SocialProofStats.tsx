@@ -3,11 +3,11 @@
 import { StaggerParent, StaggerChild } from "./StaggerParent";
 
 const stats = [
-  { value: "$197/mo", label: "website + SEO, fully managed" },
-  { value: "2–4 weeks", label: "from call to launch" },
-  { value: "100%", label: "custom — no templates" },
-  { value: "24/7", label: "hosting, updates, and support" },
-  { value: "CRM", label: "included with every plan" },
+  { value: "$297/mo", label: "everything included" },
+  { value: "10 days", label: "to live, or your next month is free" },
+  { value: "100%", label: "custom, no templates" },
+  { value: "Reviews + SEO", label: "and social, handled monthly" },
+  { value: "1 Inbox", label: "all your leads in one place" },
 ];
 
 export default function SocialProofStats() {

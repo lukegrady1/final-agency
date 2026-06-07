@@ -10,7 +10,7 @@ import { StaggerParent, StaggerChild } from "@/components/StaggerParent";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Software engineer building custom websites and local SEO for local businesses. No long-term contracts, fully managed, live in 2–4 weeks.",
+    "Software engineer building websites, Google presence, reviews, and SEO for local businesses. One plan, $297/month, no setup fee, live in 10 business days.",
   alternates: { canonical: "/about" },
 };
 

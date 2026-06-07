@@ -13,14 +13,14 @@ import StartPricing from "@/components/start/StartPricing";
 import StartCalendar from "@/components/start/StartCalendar";
 
 export const metadata: Metadata = {
-  title: "Start Your Build",
+  title: "Start Your Build — One Plan, $297/Month",
   description:
-    "Custom website and local SEO — built and managed for $197/month. CRM included. One-time $1,000 setup. No long-term contract.",
+    "Custom website, Google presence, reviews, SEO, and an all-in-one inbox for your leads, built and managed for $297/month. No setup fee. Live in 10 business days, cancel anytime.",
   alternates: { canonical: "/start" },
   openGraph: {
     title: "Start Your Build",
     description:
-      "Custom website and local SEO — built and managed for $197/month. CRM included. No long-term contract.",
+      "Custom website, Google presence, reviews, SEO, and an all-in-one inbox for your leads, built and managed for $297/month. No setup fee. Live in 10 business days, cancel anytime.",
   },
 };
 
@@ -36,12 +36,17 @@ const startFAQ = [
   {
     question: "How much does it cost?",
     answer:
-      "$197/month plus a one-time $1,000 setup fee. That includes your custom website, Google Business Profile optimization, SEO, and full CRM access. No long-term contract — cancel anytime.",
+      "It's $297 a month, one plan, everything included. There's no setup fee. Your first month covers building your site and getting you live. No long-term contract, cancel anytime.",
+  },
+  {
+    question: "Is there a setup fee?",
+    answer:
+      "No. Your first month's $297 covers building your site and getting you live. No big check upfront.",
   },
   {
     question: "How long does it take?",
     answer:
-      "Most projects go live within 2–4 weeks. We move fast because every day without a converting site is leads going to your competitors.",
+      "Your site is live within 10 business days of you signing up and getting me what I need. If I miss that, your next month is free.",
   },
   {
     question: "What if I already have a website?",
@@ -51,7 +56,7 @@ const startFAQ = [
   {
     question: "Do I have to manage anything?",
     answer:
-      "No. Hosting, updates, security, speed, SEO, and CRM are all handled. You focus on running your business; we handle the backend.",
+      "No. Hosting, updates, security, speed, SEO, Google Business Profile posting, social cross-posting, reviews, and your lead inbox are all handled. You focus on running your business; I handle the backend.",
   },
   {
     question: "What makes Grady Digital different?",
@@ -94,9 +99,9 @@ export default function StartPage() {
           </BlurIn>
           <BlurIn delay={0.3}>
             <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
-              We build your website and optimize your Google presence so
-              customers find you first and convert into paying clients —
-              fully managed for $197/month.
+              We build your website and run your Google presence so customers
+              find you first and turn into paying clients. One plan, $297 a
+              month, no setup fee.
             </p>
           </BlurIn>
           <BlurIn delay={0.45}>
@@ -195,16 +200,16 @@ export default function StartPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
-              title: "Custom website that converts",
-              body: "Most sites leak 95% of their visitors. We engineer every page to capture leads from the clicks you're already paying for.",
+              title: "A website that turns clicks into calls",
+              body: "Most websites lose nearly every visitor who lands on them. We build every page to do one job: turn the people who find you into phone calls and booked jobs.",
             },
             {
-              title: "Google Business Profile & SEO",
-              body: "SEO baked in from day one. Google Business Profile optimization, structured data, and local search strategy.",
+              title: "Get found on Google, trusted on social",
+              body: "We set up and post to your Google listing, share it to Instagram, Facebook, and YouTube, bring in more 5-star reviews and reply to them, and work on your SEO so you keep showing up when people search.",
             },
             {
-              title: "Fully managed for you",
-              body: "Hosting, updates, security, speed optimization — all handled. You also get access to a CRM to manage leads and messages in one place.",
+              title: "Everything managed for you",
+              body: "Hosting, updates, security, and speed, all handled. You also get an all-in-one inbox where every call, text, and lead lands in one place.",
             },
           ].map((item, i) => (
             <BlurIn key={item.title} delay={i * 0.1}>
@@ -301,7 +306,7 @@ export default function StartPage() {
           {[
             {
               n: "01",
-              t: "Book a 15-minute call",
+              t: "Book a 30-minute call",
               b: "We learn about your business, your goals, and what's not working with your current site (or lack of one).",
             },
             {
@@ -312,7 +317,7 @@ export default function StartPage() {
             {
               n: "03",
               t: "We manage everything",
-              b: "Hosting, updates, speed, SEO, CRM. All handled. You focus on closing deals.",
+              b: "Hosting, updates, speed, SEO, your lead inbox. All handled. You focus on closing deals.",
             },
           ].map((step, i) => (
             <BlurIn key={step.n} delay={i * 0.1}>
@@ -345,10 +350,9 @@ export default function StartPage() {
           </BlurIn>
           <BlurIn delay={0.2}>
             <p className="text-white/60 text-sm leading-relaxed max-w-xl mx-auto mt-3">
-              15-minute call with Luke. We&apos;ll break down what&apos;s
-              not working on your current site, show you a custom mockup
-              of what we&apos;d build for you, and walk through exactly how
-              it drives more leads.
+              30-minute call with Luke. We&apos;ll do an audit of your current
+              site and Google page, show you a roadmap of what we&apos;d do,
+              and show you exactly how it&apos;ll bring you more leads.
             </p>
           </BlurIn>
         </div>
@@ -383,7 +387,7 @@ export default function StartPage() {
           </BlurIn>
           <BlurIn delay={0.3}>
             <Link
-              href="/contact"
+              href="#book"
               className="inline-flex items-center gap-2 rounded-full px-5 py-3 bg-foreground text-background font-medium text-sm hover:bg-white/90 transition-colors duration-200 mt-8"
             >
               Let&apos;s talk about your site
@@ -420,7 +424,7 @@ export default function StartPage() {
               {[
                 ["Direct access to founder", true, false],
                 ["Month-to-month, no contracts", true, false],
-                ["CRM included", true, false],
+                ["All-in-one inbox included", true, false],
                 ["Hosting + updates managed", true, true],
                 ["Long onboarding & retainers", false, true],
                 ["Hands-off after launch", false, true],

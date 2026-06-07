@@ -20,33 +20,24 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://gradydigital.com"),
   title: {
-    default: "Grady Digital — Websites & SEO for Local Businesses",
+    default: "Grady Digital — Websites, SEO & Reviews for Local Businesses",
     template: "%s | Grady Digital",
   },
   description:
-    "Custom websites and local SEO built and managed for local businesses. CRM included. $197/month, no long-term contract.",
+    "Custom website, Google Business Profile, reviews, SEO, and an all-in-one inbox for your leads, built and managed for local businesses. One plan, $297/month, no setup fee, cancel anytime.",
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Grady Digital",
-    title: "Grady Digital — Websites & SEO for Local Businesses",
+    title: "Grady Digital — Websites, SEO & Reviews for Local Businesses",
     description:
-      "Custom websites and local SEO built and managed for local businesses. CRM included. $197/month, no long-term contract.",
-    images: [
-      {
-        url: "/grady-digital-og.png",
-        width: 1200,
-        height: 630,
-        alt: "Grady Digital — Websites & SEO for Local Businesses",
-      },
-    ],
+      "Custom website, Google Business Profile, reviews, SEO, and an all-in-one inbox for your leads, built and managed for local businesses. One plan, $297/month, no setup fee, cancel anytime.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grady Digital — Websites & SEO for Local Businesses",
+    title: "Grady Digital — Websites, SEO & Reviews for Local Businesses",
     description:
-      "Custom websites and local SEO built and managed for local businesses. CRM included. $197/month, no long-term contract.",
-    images: ["/grady-digital-og.png"],
+      "Custom website, Google Business Profile, reviews, SEO, and an all-in-one inbox for your leads, built and managed for local businesses. One plan, $297/month, no setup fee, cancel anytime.",
   },
   icons: {
     icon: [
@@ -86,7 +77,7 @@ export default function RootLayout({
     name: "Grady Digital",
     url: "https://gradydigital.com",
     description:
-      "Custom websites and local SEO for local businesses. CRM included.",
+      "Custom websites, local SEO, reviews, and Google presence management for local businesses. All-in-one inbox to manage leads included.",
     email: "luke@gradydigital.com",
     telephone: "+1-978-798-2870",
     sameAs: [
@@ -110,7 +101,7 @@ export default function RootLayout({
     email: "luke@gradydigital.com",
     telephone: "+1-978-798-2870",
     description:
-      "Custom websites and local SEO for local businesses. CRM included.",
+      "Custom websites, local SEO, reviews, and Google presence management for local businesses. All-in-one inbox to manage leads included.",
     priceRange: "$$",
     areaServed: {
       "@type": "Country",
@@ -120,7 +111,9 @@ export default function RootLayout({
       "Web Design",
       "SEO",
       "Google Business Profile Optimization",
-      "CRM",
+      "Review Management",
+      "Social Media Posting",
+      "Lead Management Inbox",
     ],
   };
 
@@ -129,6 +122,54 @@ export default function RootLayout({
     "@type": "WebSite",
     name: "Grady Digital",
     url: "https://gradydigital.com",
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "The Growth System",
+    serviceType:
+      "Website, Local SEO, Reviews & Google Business Profile Management",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Grady Digital",
+      url: "https://gradydigital.com",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
+    description:
+      "One plan for local businesses: a custom website, Google Business Profile optimization with posting and cross-posting to Instagram, Facebook, and YouTube, review growth and responses, ongoing SEO, and an all-in-one inbox to manage leads. Built and managed for you, live in 10 business days, no setup fee.",
+    offers: {
+      "@type": "Offer",
+      url: "https://gradydigital.com/start",
+      availability: "https://schema.org/InStock",
+      price: "297",
+      priceCurrency: "USD",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "297",
+        priceCurrency: "USD",
+        unitCode: "MON",
+        unitText: "month",
+      },
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "The Growth System",
+      itemListElement: [
+        "Custom conversion website",
+        "Google Business Profile optimization and posting",
+        "Social cross-posting to Instagram, Facebook, and YouTube",
+        "Review growth, responses, and removal of old negative reviews",
+        "Ongoing local and organic SEO",
+        "All-in-one inbox to manage leads, calls, and texts",
+      ].map((name) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name },
+      })),
+    },
   };
 
   return (
@@ -165,6 +206,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(serviceSchema),
           }}
         />
         <script

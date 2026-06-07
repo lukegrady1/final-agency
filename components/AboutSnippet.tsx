@@ -29,8 +29,9 @@ export default function AboutSnippet() {
           </BlurIn>
           <BlurIn delay={0.25}>
             <p className="text-white/60 text-sm leading-relaxed">
-              Grady Digital builds custom websites and optimizes your Google
-              presence — everything a local business needs to get found
+              Grady Digital builds your website and runs your Google presence,
+              posts and cross-posts to social, brings in better reviews, and
+              handles your SEO. Everything a local business needs to get found
               online and turn visitors into paying clients.
             </p>
           </BlurIn>
@@ -51,7 +52,7 @@ export default function AboutSnippet() {
             </div>
             <div className="flex items-center gap-2 text-sm text-white/80">
               <Clock className="w-4 h-4 text-accent-light" />
-              Live in 2–4 weeks
+              Live in 10 business days, or your next month is free
             </div>
             <div className="flex items-center gap-2 text-sm text-white/80">
               <Zap className="w-4 h-4 text-accent-light" />

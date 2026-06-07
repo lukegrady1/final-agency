@@ -8,9 +8,9 @@ import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Our Work",
+  title: "Our Work — Local Business Websites We've Built",
   description:
-    "Websites we've built for local businesses. See our work.",
+    "Real websites we've designed and built for local service businesses. See before-and-after results and live client sites.",
   alternates: { canonical: "/work" },
 };
 

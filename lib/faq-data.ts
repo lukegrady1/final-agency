@@ -2,17 +2,27 @@ export const faqItems = [
   {
     question: "How much does it cost?",
     answer:
-      "$197/month plus a one-time $1,000 setup fee. That includes a custom website, Google Business Profile optimization, SEO, full CRM access, hosting, updates, and ongoing management. No long-term contracts.",
+      "It's $297 a month, one plan, everything included. There's no setup fee. Your first month covers building your site and getting you live. No long-term contract, cancel anytime.",
+  },
+  {
+    question: "Is there a setup fee?",
+    answer:
+      "No. Your first month's $297 covers building your site and getting you live. No big check upfront.",
   },
   {
     question: "How long does it take to build?",
     answer:
-      "Most projects go live within 2–4 weeks. We move fast because every day without a professional website is potential clients going to your competitors.",
+      "Your site is live within 10 business days of you signing up and getting me what I need. If I miss that, your next month is free.",
   },
   {
     question: "Is there a long-term contract?",
     answer:
-      "No. We work month-to-month. If you're not happy, cancel anytime \u2014 no questions asked. We'd rather earn your business every month than lock you into a contract.",
+      "No. I work month-to-month. If you're not happy, cancel anytime, no questions asked. I'd rather earn your business every month than lock you into a contract.",
+  },
+  {
+    question: "Why a monthly rate instead of a big upfront fee?",
+    answer:
+      "Because it keeps me honest. When an agency charges you a few thousand dollars upfront, they get paid whether or not anything works after that. Once they've got the check, there's nothing making them show up again. That's how people end up ghosted with a website they can't even update.\n\nMy model only works if you stick around. I get paid a little each month, which means I only keep getting paid if you keep getting value out of it. So every single month I'm actually working to earn it, improving your site, posting, bringing in reviews, handling your SEO. I want to work with you for the next 5 to 10 years, and the only way that happens is if I keep delivering. We're on the same side.",
   },
   {
     question: "What if I already have a website?",
@@ -22,7 +32,7 @@ export const faqItems = [
   {
     question: "Do I have to manage anything?",
     answer:
-      "No. Hosting, updates, security, and speed are all handled. You focus on running your business. If you need a change, just text or call and we'll take care of it.",
+      "No. Your website, hosting, updates, security, speed, SEO, Google Business Profile posting, social cross-posting, and reviews are all handled. You focus on running your business. If you need a change, just text or call and I'll take care of it.",
   },
   {
     question: "What kind of businesses do you work with?",
@@ -32,7 +42,7 @@ export const faqItems = [
   {
     question: "What makes Grady Digital different?",
     answer:
-      "You work directly with the person building your site \u2014 a software engineer, not an account manager. No outsourcing, no middlemen. Every site is custom-coded, not a template.",
+      "You work directly with the person building your site, a software engineer, not an account manager. No outsourcing, no middlemen. Every site is custom-coded, not a template, and I keep working on it every month: your reviews, your Google posting, your social, and your SEO.",
   },
   {
     question: "Will my site work on phones?",
@@ -47,6 +57,6 @@ export const faqItems = [
   {
     question: "How do I get started?",
     answer:
-      "Book a free 15-minute call. We'll talk about your business, show you a mockup of what we'd build, and walk you through how it works. No obligation, no pressure.",
+      "Book a free 30-minute call. We'll audit your current site and Google page, show you a roadmap of what we'd do, and show you exactly how it'll bring you more leads. No obligation, no pressure.",
   },
 ];

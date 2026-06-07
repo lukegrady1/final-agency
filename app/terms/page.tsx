@@ -5,7 +5,7 @@ import SectionWrapper from "@/components/SectionWrapper";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Terms of service for Grady Digital web design, SEO, and CRM services.",
+    "Terms of service for Grady Digital web design, Google Business Profile, reviews, social, SEO, and lead management services.",
   alternates: { canonical: "/terms" },
 };
 
@@ -15,7 +15,7 @@ export default function TermsPage() {
       <SectionWrapper className="pt-40">
         <article className="prose prose-invert max-w-3xl mx-auto">
           <h1>Service Agreement</h1>
-          <p className="text-white/40 text-sm">Last updated: June 1, 2026</p>
+          <p className="text-white/40 text-sm">Last updated: June 7, 2026</p>
 
           <p>
             This Service Agreement (the &ldquo;Agreement&rdquo;) is between
@@ -27,35 +27,45 @@ export default function TermsPage() {
           <h2>1. Services Provided</h2>
           <p>
             The Provider will design, build, host, and maintain a custom website
-            for the Client, optimize the Client&apos;s Google Business Profile
-            and local SEO presence, and provide access to an all-in-one CRM for
-            managing leads, calls, and messages. This includes all hosting,
-            ongoing maintenance, and standard upkeep at no additional cost
-            beyond the fees described in Section 2.
+            for the Client; optimize and regularly post to the Client&apos;s
+            Google Business Profile and cross-post to the Client&apos;s
+            Instagram, Facebook, and YouTube; work to grow the Client&apos;s
+            reviews, respond to reviews, and seek removal of old negative
+            reviews where possible; provide ongoing local and organic SEO; and
+            provide access to an all-in-one inbox for managing leads, calls, and
+            messages. This includes all hosting, ongoing maintenance, and
+            standard upkeep at no additional cost beyond the fees described in
+            Section 2.
           </p>
 
           <h2>2. Fees</h2>
           <p>
-            The fee for the service is <strong>$197 per month</strong>, billed
-            on a recurring basis, plus a <strong>one-time $1,000 setup
-            fee</strong> due at the start of the engagement. The monthly fee
-            covers the website, hosting, maintenance, SEO, CRM access, and the
-            revisions described in Section 4.
+            The fee for the service is <strong>$297 per month</strong>, billed
+            on a recurring basis. <strong>There is no setup fee.</strong> The
+            first month&apos;s payment covers building the website and getting
+            it live. The monthly fee covers the website, hosting, maintenance,
+            Google Business Profile management and posting, social
+            cross-posting, review management, SEO, all-in-one inbox access, and
+            the revisions described in Section 4.
           </p>
           <p>
             If a recurring payment fails, the Client has seven (7) days to
             update their payment information and bring the balance current. If
             payment is not resolved within that period, the website may be taken
-            offline and CRM access may be suspended until payment is brought
+            offline and inbox access may be suspended until payment is brought
             current.
           </p>
 
           <h2>3. Timeline</h2>
           <p>
-            The website will be live within two to four (2–4) weeks of the
+            The website will be live within ten (10) business days of the
             Client signing up and providing the necessary information and
-            content. In many cases, builds are completed before the four-week
-            mark.
+            content. If the Provider does not have the website live within ten
+            (10) business days, the Client&apos;s next month will be applied as
+            a free account credit. This is a delivery-speed credit only. It is
+            not a refund, the subscription continues, and it does not
+            constitute a guarantee of any business results, which are addressed
+            in Section 10.
           </p>
 
           <h2>4. Revisions and Updates</h2>
@@ -104,7 +114,7 @@ export default function TermsPage() {
               has the right to use them.
             </li>
             <li>
-              Maintain an active subscription to keep the website and CRM
+              Maintain an active subscription to keep the website and inbox
               access live.
             </li>
             <li>
@@ -163,7 +173,7 @@ export default function TermsPage() {
             The Client may cancel the subscription at any time. Upon
             cancellation, billing will stop at the end of the current billing
             cycle and the website will be taken offline as described in
-            Section 5. The one-time setup fee is non-refundable.
+            Section 5.
           </p>
 
           <h2>13. Governing Law</h2>

@@ -3,11 +3,11 @@
 import Link from "next/link";
 import {
   Paintbrush,
-  Smartphone,
-  Zap,
-  Wrench,
-  Code,
-  Search,
+  MapPin,
+  Star,
+  TrendingUp,
+  MessageSquare,
+  UserRound,
 } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import SectionLabel from "./SectionLabel";
@@ -18,32 +18,32 @@ const features = [
   {
     icon: Paintbrush,
     title: "Custom Website",
-    body: "Designed from scratch around your business, mobile-first, built to convert. Fully managed hosting, updates, and support.",
+    body: "A fast, professional website built around your business that looks great on phones. It turns the people who find you into phone calls and booked jobs, instead of letting them click away to a competitor.",
   },
   {
-    icon: Search,
-    title: "Google Business Profile & SEO",
-    body: "We optimize your local and organic search presence so customers find you before your competitors.",
+    icon: MapPin,
+    title: "Google Business Profile & Social",
+    body: "Your Google Business Profile is the listing with your photos, hours, reviews, and call button that shows up on Google Maps and search. We set it up the right way and post to it every week, then share those posts to your Instagram, Facebook, and YouTube so you show up everywhere customers look.",
   },
   {
-    icon: Zap,
-    title: "Built to Convert",
-    body: "Clear calls to action, click-to-call buttons, and layouts designed to turn visitors into leads and bookings.",
+    icon: Star,
+    title: "More and Better Reviews",
+    body: "Reviews are what convince a stranger to pick you over the next business. We help you bring in more of them, reply to every one for you, and work to get old unfair ones taken down.",
   },
   {
-    icon: Wrench,
-    title: "Fully Managed",
-    body: "Hosting, updates, speed, and security are all handled. You never touch the backend. Need a change? Just ask.",
+    icon: TrendingUp,
+    title: "Get Found on Google (SEO)",
+    body: "SEO just means showing up when people search Google for what you do. We work on it every month so you climb the results and customers find you before they find your competitors.",
   },
   {
-    icon: Code,
+    icon: MessageSquare,
+    title: "All Your Leads in One Inbox",
+    body: "An all-in-one inbox is one place where every call, text, and lead from your website lands, so nothing slips through the cracks. It's included, and we set it up for you.",
+  },
+  {
+    icon: UserRound,
     title: "Direct Access to Luke",
-    body: "You work directly with the person building your site. No account managers, no middlemen, no runaround.",
-  },
-  {
-    icon: Smartphone,
-    title: "CRM Included",
-    body: "Every plan includes access to a lead and messaging app to manage calls, texts, and customer interactions in one place.",
+    body: "You work with the person who actually builds and runs your site. No account managers, no middlemen, no being passed around.",
   },
 ];
 
@@ -56,14 +56,14 @@ export default function ServicesOverview() {
         </BlurIn>
         <BlurIn delay={0.1}>
           <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-            Everything included for $197/month
+            Everything included for $297 a month
           </h2>
         </BlurIn>
         <BlurIn delay={0.2}>
           <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mt-4">
-            A custom website and local SEO strategy built to get you found
-            on Google and convert visitors into leads — plus a CRM to manage
-            it all.
+            A custom website, your Google presence posted and cross-posted,
+            a steady stream of better reviews, ongoing SEO, and an all-in-one
+            inbox to manage it all. Built and managed for you.
           </p>
         </BlurIn>
       </div>

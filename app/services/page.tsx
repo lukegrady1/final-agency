@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Paintbrush, Search, Smartphone, ArrowRight } from "lucide-react";
+import { Paintbrush, MapPin, Star, TrendingUp, Smartphone, ArrowRight } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionLabel from "@/components/SectionLabel";
 import BlurIn from "@/components/BlurIn";
@@ -9,9 +9,9 @@ import ProcessSection from "@/components/ProcessSection";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Website, Local SEO, Reviews & Lead Inbox in One Plan",
   description:
-    "Custom websites and Google Business Profile optimization & SEO — built and managed for local businesses. CRM included. $197/month.",
+    "One plan for local businesses: custom website, Google Business Profile, reviews, social, SEO, and an all-in-one inbox for your leads. Built and managed for you. $297/month, no setup fee.",
   alternates: { canonical: "/services" },
 };
 
@@ -20,24 +20,48 @@ const pillars = [
     icon: Paintbrush,
     title: "Custom Website",
     description:
-      "Designed from scratch around your business, mobile-first, built to convert. Fully managed hosting, updates, and support.",
+      "A fast, professional website built around your business and made to look great on phones, where most of your customers are. It is designed to turn visitors into phone calls and booked jobs.",
     bullets: [
-      "Custom design — no templates, no page builders",
-      "Mobile-first, sub-second load times",
-      "Clear CTAs, click-to-call, and booking integration",
-      "Hosting, SSL, updates, and security all handled",
+      "Built custom for you, not a copy-paste template",
+      "Loads fast and works perfectly on phones",
+      "Clear buttons to call, message, or book you",
+      "Hosting, security, and updates all handled for you",
     ],
   },
   {
-    icon: Search,
-    title: "Google Business Profile & SEO",
+    icon: MapPin,
+    title: "Google Business Profile & Social",
     description:
-      "We optimize your local and organic search presence so customers find you before your competitors.",
+      "Your Google Business Profile is the listing on Google Maps and search with your photos, hours, reviews, and a call button. It is often the first thing a customer sees, so we keep it active and looking sharp.",
     bullets: [
-      "Full Google Business Profile optimization",
-      "On-page and technical SEO",
-      "Local content and keyword strategy",
-      "Monthly reporting on rankings and traffic",
+      "We set up and fine-tune your Google listing",
+      "We post to it every week to keep it active",
+      "Those posts go to your Instagram, Facebook, and YouTube too",
+      "You stay visible everywhere customers look",
+    ],
+  },
+  {
+    icon: Star,
+    title: "More and Better Reviews",
+    description:
+      "Reviews are what convince a stranger to choose you over the next business. We help you get more of them and handle your reputation for you.",
+    bullets: [
+      "We help you bring in more 5-star reviews",
+      "We reply to every review for you",
+      "We work to remove old unfair reviews where possible",
+      "A stronger reputation that earns more trust and calls",
+    ],
+  },
+  {
+    icon: TrendingUp,
+    title: "Get Found on Google (SEO)",
+    description:
+      "SEO simply means showing up when people search Google for what you do. We work on it every month so you move up the results and more of those searchers land on you.",
+    bullets: [
+      "We tune your site so Google understands it",
+      "We target the words your customers actually search",
+      "Ongoing work every month, not a one-time fix",
+      "A simple monthly report on how you're climbing",
     ],
   },
 ];
@@ -65,9 +89,11 @@ export default function ServicesPage() {
           </BlurIn>
           <BlurIn delay={0.2}>
             <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
-              Custom websites and local SEO built and managed for local
-              businesses. CRM included with every plan. $197/month plus a
-              one-time $1,000 setup fee.
+              One plan, not a menu. For $297 a month you get the whole system:
+              a custom website, your Google Business Profile posted and
+              cross-posted to social, a steady stream of better reviews,
+              ongoing SEO, and an all-in-one inbox to manage it all. Built and managed for
+              you, live in 10 business days, no setup fee.
             </p>
           </BlurIn>
         </div>
@@ -110,7 +136,7 @@ export default function ServicesPage() {
           })}
         </StaggerParent>
 
-        {/* CRM — included */}
+        {/* Inbox — included */}
         <BlurIn delay={0.2}>
           <div className="max-w-4xl mx-auto mt-6 bg-card border border-card-border rounded-2xl p-6 flex items-start gap-5">
             <div className="rounded-xl bg-accent/10 p-3 shrink-0">
@@ -118,12 +144,13 @@ export default function ServicesPage() {
             </div>
             <div>
               <h3 className="text-lg font-medium text-white">
-                CRM Included
+                All Your Leads in One Inbox
               </h3>
               <p className="text-white/60 text-sm leading-relaxed mt-1">
-                Every plan includes access to a lead and messaging app to
-                manage calls, texts, and customer interactions in one place —
-                on web and mobile.
+                An all-in-one inbox is one place where every call, text, and
+                lead from your website lands, so nothing slips through the
+                cracks. Your plan includes it on web and phone, and we set it
+                up for you.
               </p>
             </div>
           </div>

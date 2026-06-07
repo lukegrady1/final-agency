@@ -16,8 +16,10 @@ export default function Footer() {
               Grady Digital
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mt-4">
-              Custom websites and local SEO built and managed for local
-              businesses. CRM included. $197/month, no long-term contract.
+              Custom website, Google presence, reviews, SEO, and an all-in-one
+            inbox, built
+              and managed for local businesses. One plan, $297/month, no setup
+              fee.
             </p>
 
             <div className="flex flex-col gap-2 mt-4">
@@ -87,7 +89,6 @@ export default function Footer() {
                 { href: "/services", label: "Services" },
                 { href: "/work", label: "Work" },
                 { href: "/about", label: "About" },
-                { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -186,8 +187,10 @@ export default function Footer() {
           </div>
 
           <p className="text-white/60 text-sm leading-relaxed">
-            Custom websites and local SEO built and managed for local
-            businesses. $197/month, no long-term contract.
+            Custom website, Google presence, reviews, SEO, and an all-in-one
+            inbox, built
+            and managed for local businesses. One plan, $297/month, no setup
+            fee.
           </p>
 
           {/* Links — inline rows */}
@@ -196,7 +199,6 @@ export default function Footer() {
               { href: "/services", label: "Services" },
               { href: "/work", label: "Work" },
               { href: "/about", label: "About" },
-              { href: "/contact", label: "Contact" },
               { href: "/privacy", label: "Privacy" },
               { href: "/terms", label: "Terms" },
             ].map((link) => (
