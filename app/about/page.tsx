@@ -8,9 +8,17 @@ import BlurIn from "@/components/BlurIn";
 import { StaggerParent, StaggerChild } from "@/components/StaggerParent";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: { absolute: "About Grady Digital — Local Business Web Design & SEO" },
   description:
     "Software engineer building websites, Google presence, reviews, and SEO for local businesses. One plan, $297/month, no setup fee, live in 10 business days.",
+  keywords: [
+    "about Grady Digital",
+    "local business web designer",
+    "small business website design",
+    "local SEO expert",
+    "Google Business Profile",
+    "software engineer web design",
+  ],
   alternates: { canonical: "/about" },
 };
 

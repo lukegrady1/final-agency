@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "Terms of service for Grady Digital web design, Google Business Profile, reviews, social, SEO, and lead management services.",
+  keywords: [
+    "Grady Digital terms of service",
+    "terms of service",
+    "service agreement",
+    "web design terms",
+  ],
   alternates: { canonical: "/terms" },
 };
 

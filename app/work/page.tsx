@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   title: "Our Work — Local Business Websites We've Built",
   description:
     "Real websites we've designed and built for local service businesses. See before-and-after results and live client sites.",
+  keywords: [
+    "local business website portfolio",
+    "small business web design examples",
+    "service business websites",
+    "website redesign before and after",
+    "local SEO results",
+    "Grady Digital work",
+  ],
   alternates: { canonical: "/work" },
 };
 
@@ -55,7 +63,7 @@ export default function WorkPage() {
           </BlurIn>
           <BlurIn delay={0.1}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight text-white mt-6">
-              Sites we&apos;ve built
+              Local business websites we&apos;ve built
             </h1>
           </BlurIn>
           <BlurIn delay={0.2}>

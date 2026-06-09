@@ -9,9 +9,19 @@ import ProcessSection from "@/components/ProcessSection";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Website, Local SEO, Reviews & Lead Inbox in One Plan",
+  title: "Website, Local SEO, Reviews & Leads in One Plan",
   description:
     "One plan for local businesses: custom website, Google Business Profile, reviews, social, SEO, and an all-in-one inbox for your leads. Built and managed for you. $297/month, no setup fee.",
+  keywords: [
+    "local business website design",
+    "local SEO services",
+    "Google Business Profile optimization",
+    "online reviews management",
+    "social media management",
+    "lead management inbox",
+    "small business marketing plan",
+    "Grady Digital",
+  ],
   alternates: { canonical: "/services" },
 };
 

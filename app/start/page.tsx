@@ -16,6 +16,16 @@ export const metadata: Metadata = {
   title: "Start Your Build — One Plan, $297/Month",
   description:
     "Custom website, Google presence, reviews, SEO, and an all-in-one inbox for your leads, built and managed for $297/month. No setup fee. Live in 10 business days, cancel anytime.",
+  keywords: [
+    "get a business website",
+    "local business website design",
+    "local SEO services",
+    "Google Business Profile setup",
+    "online reviews",
+    "lead management",
+    "$297 website plan",
+    "Grady Digital",
+  ],
   alternates: { canonical: "/start" },
   openGraph: {
     title: "Start Your Build",

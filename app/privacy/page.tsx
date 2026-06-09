@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "How Grady Digital collects, uses, and protects your personal information. Read our privacy policy.",
+  keywords: [
+    "Grady Digital privacy policy",
+    "privacy policy",
+    "data protection",
+    "personal information",
+  ],
   alternates: { canonical: "/privacy" },
 };
 

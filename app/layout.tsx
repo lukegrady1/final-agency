@@ -25,6 +25,16 @@ export const metadata: Metadata = {
   },
   description:
     "Custom website, Google Business Profile, reviews, SEO, and an all-in-one inbox for your leads, built and managed for local businesses. One plan, $297/month, no setup fee, cancel anytime.",
+  keywords: [
+    "local business website design",
+    "small business web design",
+    "local SEO",
+    "Google Business Profile optimization",
+    "online reviews management",
+    "lead management",
+    "website and SEO plan",
+    "Grady Digital",
+  ],
   openGraph: {
     type: "website",
     locale: "en_US",
