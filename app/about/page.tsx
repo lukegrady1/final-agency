@@ -54,7 +54,7 @@ export default function AboutPage() {
             <BlurIn delay={0.2}>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-card border border-card-border">
                 <Image
-                  src="/site_after.PNG"
+                  src="/site_after.webp"
                   alt="Example website build by Grady Digital"
                   fill
                   className="object-contain object-center"
@@ -75,7 +75,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-4">
               <div className="relative w-48 h-48 rounded-2xl overflow-hidden bg-white/5 border border-white/10">
                 <Image
-                  src="/headshot.PNG"
+                  src="/headshot.webp"
                   alt="Luke Grady"
                   fill
                   className="object-cover object-[center_25%]"

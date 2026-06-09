@@ -27,21 +27,21 @@ const projects = [
     name: "MJP Auto Detailing",
     description:
       "A clean, professional site that showcases services and drives bookings for a mobile auto detailing business.",
-    image: "/mjp_after.PNG",
+    image: "/mjp_after.webp",
     url: "https://mjpautodetailing.com/",
   },
   {
     name: "Reece Electric",
     description:
       "A modern site built to generate estimate requests and establish credibility for an electrical contractor.",
-    image: "/reece_after.PNG",
+    image: "/reece_after.webp",
     url: "https://reecegroupllc.com/",
   },
   {
     name: "Greater Boston Livery",
     description:
       "A polished site that builds trust and drives ride bookings for a professional car service.",
-    image: "/gbl_after.PNG",
+    image: "/gbl_after.webp",
     url: "https://greaterbostonlivery.com/",
   },
 ];
@@ -79,8 +79,8 @@ export default function WorkPage() {
           <BlurIn>
             <div className="bg-card border border-card-border rounded-2xl overflow-hidden">
               <BeforeAfterSlider
-                beforeSrc="/white_springs_before.png"
-                afterSrc="/white_springs_after.png"
+                beforeSrc="/white_springs_before.webp"
+                afterSrc="/white_springs_after.webp"
                 beforeAlt="White Springs website before Grady Digital redesign"
                 afterAlt="White Springs website after Grady Digital redesign"
               />
@@ -108,8 +108,8 @@ export default function WorkPage() {
           <BlurIn delay={0.1}>
             <div className="bg-card border border-card-border rounded-2xl overflow-hidden">
               <BeforeAfterSlider
-                beforeSrc="/site_before.PNG"
-                afterSrc="/site_after.PNG"
+                beforeSrc="/site_before.webp"
+                afterSrc="/site_after.webp"
                 beforeAlt="Imagine Construction website before Grady Digital redesign"
                 afterAlt="Imagine Construction website after Grady Digital redesign"
               />

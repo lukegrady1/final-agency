@@ -11,22 +11,22 @@ const projects = [
   {
     name: "Imagine Construction",
     type: "General Contractor",
-    image: "/site_after.PNG",
+    image: "/site_after.webp",
   },
   {
     name: "MJP Auto Detailing",
     type: "Auto Detailing",
-    image: "/mjp_after.PNG",
+    image: "/mjp_after.webp",
   },
   {
     name: "Reece Electric",
     type: "Electrical Contractor",
-    image: "/reece_after.PNG",
+    image: "/reece_after.webp",
   },
   {
     name: "Greater Boston Livery",
     type: "Car Service",
-    image: "/gbl_after.PNG",
+    image: "/gbl_after.webp",
   },
 ];
 

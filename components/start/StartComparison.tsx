@@ -27,7 +27,7 @@ export default function StartComparison() {
         {/* BEFORE — left side */}
         <div className="absolute inset-0 bg-[#1a1730]">
           <Image
-            src="/site_before.PNG"
+            src="/site_before.webp"
             alt="Client website before Grady Digital redesign"
             fill
             className="object-contain object-center"
@@ -41,7 +41,7 @@ export default function StartComparison() {
         >
           <div className="absolute inset-0 bg-[#1a1730]">
             <Image
-              src="/site_after.PNG"
+              src="/site_after.webp"
               alt="Client website after Grady Digital redesign"
               fill
               className="object-contain object-center"
