@@ -27,6 +27,9 @@ export default function Navbar() {
     setMobileOpen(false);
   }, [pathname]);
 
+  // Post-booking confirmation page is a distraction-free funnel — no nav.
+  if (pathname === "/booked") return null;
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
