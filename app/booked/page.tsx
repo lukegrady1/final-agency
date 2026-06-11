@@ -267,6 +267,46 @@ export default function BookedPage() {
         </BlurIn>
       </SectionWrapper>
 
+      {/* SECTION 3.5 — STEP 3: SHOW UP READY */}
+      <SectionWrapper className="!pt-0">
+        <div className="max-w-2xl mx-auto text-center">
+          <BlurIn>
+            <SectionLabel>Step 3</SectionLabel>
+          </BlurIn>
+          <BlurIn delay={0.2}>
+            <h2 className="font-display italic text-3xl md:text-4xl text-white mt-6">
+              Show Up Ready
+            </h2>
+          </BlurIn>
+          <BlurIn delay={0.3}>
+            <p className="text-white/60 text-base leading-relaxed mt-4">
+              By the time we talk, you&apos;ll already know exactly how I&apos;d
+              get you found and booking more jobs. Come with your questions and
+              we&apos;ll lock in the plan.
+            </p>
+          </BlurIn>
+          <BlurIn delay={0.4}>
+            <a
+              href="https://mail.google.com/mail/u/0/#search/from:luke@gradydigital.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-4 bg-accent text-white font-medium text-base hover:bg-accent-light transition-colors duration-200 mt-8 shadow-lg shadow-accent/20"
+            >
+              <Mail className="w-4 h-4" />
+              Check Your Email
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </BlurIn>
+          <BlurIn delay={0.5}>
+            <p className="text-white/40 text-sm mt-6">
+              Look for an email from{" "}
+              <span className="text-white/60">luke@gradydigital.com</span> with
+              your calendar invite and call link.
+            </p>
+          </BlurIn>
+        </div>
+      </SectionWrapper>
+
       {/* SECTION 4 — FAQ */}
       <SectionWrapper className="bg-white/[0.02] border-y border-white/[0.08]">
         <div className="text-center mb-12">
@@ -470,20 +510,6 @@ export default function BookedPage() {
             </div>
           </BlurIn>
           <BlurIn delay={0.4}>
-            <div className="flex items-start gap-3 bg-accent/[0.06] border border-accent/30 rounded-2xl p-6 mt-6 text-left">
-              <Mail className="w-5 h-5 text-accent-light shrink-0 mt-0.5" />
-              <p className="text-white/80 text-sm leading-relaxed">
-                <span className="text-white font-medium">
-                  Check your email.
-                </span>{" "}
-                Look for a message from{" "}
-                <span className="text-white">luke@gradydigital.com</span> with
-                your calendar invite and call link. Add it now so it doesn&apos;t
-                get buried.
-              </p>
-            </div>
-          </BlurIn>
-          <BlurIn delay={0.5}>
             <div className="mt-8">
               <p className="text-white/70 text-sm">Talk soon,</p>
               <p className="text-white font-medium mt-1">
