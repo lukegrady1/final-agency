@@ -5,7 +5,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   Check,
-  CheckCircle2,
   Mail,
   MessageSquare,
   Globe,
@@ -19,7 +18,6 @@ import SectionLabel from "@/components/SectionLabel";
 import BlurIn from "@/components/BlurIn";
 import FAQAccordion from "@/components/FAQAccordion";
 import BookedHero from "@/components/booked/BookedHero";
-import WelcomeVideo from "@/components/booked/WelcomeVideo";
 
 export const metadata: Metadata = {
   title: "You're Booked — Your Roadmap Call",
@@ -32,21 +30,6 @@ export const metadata: Metadata = {
 // Merchynt white-label GBP audit tool. Make sure each submission is sent to
 // you before the call.
 const AUDIT_URL = "https://audit.seo.gradydigital.com";
-
-const videoBullets = [
-  {
-    label: "What we'll do",
-    body: "Go through your Google presence and map out exactly what to fix.",
-  },
-  {
-    label: "What you'll leave with",
-    body: "A clear plan to get found and book more jobs.",
-  },
-  {
-    label: "What it costs",
-    body: "One flat plan — $297/mo, built and managed for you.",
-  },
-];
 
 const faqItems = [
   {
@@ -172,45 +155,6 @@ export default function BookedPage() {
         <BookedHero />
       </Suspense>
 
-      {/* SECTION 2 — STEP 1: WATCH THIS FIRST */}
-      <SectionWrapper className="!pt-0">
-        <div className="text-center mb-8">
-          <BlurIn>
-            <SectionLabel>Step 1</SectionLabel>
-          </BlurIn>
-          <BlurIn delay={0.1}>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-              Watch this first{" "}
-              <span className="text-white/40">(60 seconds)</span>
-            </h2>
-          </BlurIn>
-          <BlurIn delay={0.2}>
-            <p className="text-white/60 text-base leading-relaxed max-w-2xl mx-auto mt-4">
-              A quick hello, and exactly what I&apos;ll cover on your Roadmap
-              Call.
-            </p>
-          </BlurIn>
-        </div>
-        <WelcomeVideo />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto mt-8">
-          {videoBullets.map((bullet, i) => (
-            <BlurIn key={bullet.label} delay={i * 0.1}>
-              <div className="bg-card border border-card-border rounded-2xl p-5 h-full">
-                <div className="flex items-center gap-2 text-accent-light">
-                  <CheckCircle2 className="w-4 h-4 shrink-0" />
-                  <span className="text-sm font-medium text-white">
-                    {bullet.label}
-                  </span>
-                </div>
-                <p className="text-white/60 text-sm leading-relaxed mt-2">
-                  {bullet.body}
-                </p>
-              </div>
-            </BlurIn>
-          ))}
-        </div>
-      </SectionWrapper>
-
       {/* SECTION 3 — STEP 2: RUN YOUR FREE AUDIT (centerpiece) */}
       <SectionWrapper className="!pt-0">
         <BlurIn>
@@ -224,7 +168,7 @@ export default function BookedPage() {
             />
             <div className="relative text-center">
               <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-3 py-1.5 text-xs text-accent-light font-medium">
-                Step 2 — Do this before our call
+                Step 1 — Do this before our call
               </span>
               <h2 className="text-3xl md:text-4xl font-medium text-white mt-5">
                 Run your free Google Profile audit
@@ -267,11 +211,11 @@ export default function BookedPage() {
         </BlurIn>
       </SectionWrapper>
 
-      {/* SECTION 3.5 — STEP 3: SHOW UP READY */}
+      {/* SECTION 3.5 — STEP 2: SHOW UP READY */}
       <SectionWrapper className="!pt-0">
         <div className="max-w-2xl mx-auto text-center">
           <BlurIn>
-            <SectionLabel>Step 3</SectionLabel>
+            <SectionLabel>Step 2</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.2}>
             <h2 className="font-display italic text-3xl md:text-4xl text-white mt-6">
@@ -481,8 +425,7 @@ export default function BookedPage() {
           </BlurIn>
           <BlurIn delay={0.2}>
             <p className="text-white/70 text-base leading-relaxed mt-5">
-              You&apos;ve got two quick things done: you&apos;ve met me, and
-              (once you run the audit) we&apos;ll both have your real numbers in
+              Once you run the audit, we&apos;ll both have your real numbers in
               hand. That means our call won&apos;t be a generic chat — it&apos;ll
               be a plan built specifically for your business. I&apos;m looking
               forward to it.
@@ -495,8 +438,7 @@ export default function BookedPage() {
               </p>
               <ul className="space-y-3">
                 {[
-                  "Watched the welcome video",
-                  "Ran your free Google Business Profile audit (Step 2 — do this if you haven't!)",
+                  "Ran your free Google Business Profile audit (Step 1 — do this if you haven't!)",
                   "Added the call to your calendar",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
