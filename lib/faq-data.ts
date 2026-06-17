@@ -2,12 +2,17 @@ export const faqItems = [
   {
     question: "How much does it cost?",
     answer:
-      "It's $297 a month, one plan, everything included. There's no setup fee. Your first month covers building your site and getting you live. No long-term contract, cancel anytime.",
+      "There are two plans. The Website plan is $97 a month — a custom website, hosting, and an all-in-one inbox where every call, text, and lead lands in one place. The Growth System is $297 a month and adds everything that gets you found and chosen: your Google Business Profile set up and posted to, social cross-posting, more and better reviews, and ongoing SEO. Both have no setup fee and no contract, and you can cancel anytime. Most businesses pick the Growth System, because a website on its own doesn't bring in new customers.",
+  },
+  {
+    question: "What's the difference between the Website plan and the Growth System?",
+    answer:
+      "The $97 Website plan gets you a fast custom website with hosting and a single inbox for your leads — great if you just need to look professional online and capture the calls you already get. The $297 Growth System does that plus the work that actually brings in new customers: it gets your Google Business Profile found, posts to it and your social every week, grows your reviews, and works on your SEO every month. The website makes you look good; the Growth System makes the phone ring.",
   },
   {
     question: "Is there a setup fee?",
     answer:
-      "No. Your first month's $297 covers building your site and getting you live. No big check upfront.",
+      "No. On either plan, your first month covers building your site and getting you live. No big check upfront.",
   },
   {
     question: "How long does it take to build?",

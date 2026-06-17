@@ -13,9 +13,9 @@ import StartPricing from "@/components/start/StartPricing";
 import StartCalendar from "@/components/start/StartCalendar";
 
 export const metadata: Metadata = {
-  title: "Start Your Build — One Plan, $297/Month",
+  title: "Start Your Build — Plans from $97/Month",
   description:
-    "Custom website, Google presence, reviews, SEO, and an all-in-one inbox for your leads, built and managed for $297/month. No setup fee. Live in 10 business days, cancel anytime.",
+    "A custom website from $97/month, or the full growth system with Google presence, reviews, SEO, and an all-in-one inbox for $297/month. No setup fee. Live in 10 business days, cancel anytime.",
   keywords: [
     "get a business website",
     "local business website design",
@@ -23,14 +23,14 @@ export const metadata: Metadata = {
     "Google Business Profile setup",
     "online reviews",
     "lead management",
-    "$297 website plan",
+    "$97 website plan",
     "Grady Digital",
   ],
   alternates: { canonical: "/start" },
   openGraph: {
     title: "Start Your Build",
     description:
-      "Custom website, Google presence, reviews, SEO, and an all-in-one inbox for your leads, built and managed for $297/month. No setup fee. Live in 10 business days, cancel anytime.",
+      "A custom website from $97/month, or the full growth system with Google presence, reviews, SEO, and an all-in-one inbox for $297/month. No setup fee. Live in 10 business days, cancel anytime.",
   },
 };
 
@@ -46,12 +46,12 @@ const startFAQ = [
   {
     question: "How much does it cost?",
     answer:
-      "It's $297 a month, one plan, everything included. There's no setup fee. Your first month covers building your site and getting you live. No long-term contract, cancel anytime.",
+      "Two plans. The Website plan is $97 a month — a custom website, hosting, and an all-in-one inbox for your leads. The Growth System is $297 a month and adds everything that gets you found and chosen: your Google Business Profile posted and cross-posted, more and better reviews, and ongoing SEO. Both have no setup fee, no contract, and you can cancel anytime. Most businesses go with the Growth System because the website alone doesn't bring in new customers.",
   },
   {
     question: "Is there a setup fee?",
     answer:
-      "No. Your first month's $297 covers building your site and getting you live. No big check upfront.",
+      "No. On either plan, your first month covers building your site and getting you live. No big check upfront.",
   },
   {
     question: "How long does it take?",
@@ -110,7 +110,7 @@ export default function StartPage() {
           <BlurIn delay={0.3}>
             <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
               We build your website and run your Google presence so customers
-              find you first and turn into paying clients. One plan, $297 a
+              find you first and turn into paying clients. Plans start at $97 a
               month, no setup fee.
             </p>
           </BlurIn>
@@ -287,7 +287,7 @@ export default function StartPage() {
           </BlurIn>
           <BlurIn delay={0.2}>
             <p className="text-white/60 text-base leading-relaxed max-w-2xl mx-auto mt-4">
-              One plan. Month-to-month. Cancel anytime.
+              Two plans. Month-to-month. Cancel anytime.
             </p>
           </BlurIn>
         </div>

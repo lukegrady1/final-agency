@@ -32,27 +32,40 @@ export default function TermsPage() {
 
           <h2>1. Services Provided</h2>
           <p>
-            The Provider will design, build, host, and maintain a custom website
-            for the Client; optimize and regularly post to the Client&apos;s
-            Google Business Profile and cross-post to the Client&apos;s
-            Instagram, Facebook, and YouTube; work to grow the Client&apos;s
-            reviews, respond to reviews, and seek removal of old negative
-            reviews where possible; provide ongoing local and organic SEO; and
-            provide access to an all-in-one inbox for managing leads, calls, and
-            messages. This includes all hosting, ongoing maintenance, and
-            standard upkeep at no additional cost beyond the fees described in
-            Section 2.
+            The Provider offers two subscription plans. The services provided
+            depend on the plan the Client selects:
           </p>
+          <ul>
+            <li>
+              <strong>Website plan:</strong> The Provider will design, build,
+              host, and maintain a custom website for the Client, and provide
+              access to an all-in-one inbox for managing leads, calls, and
+              messages. This includes all hosting, ongoing maintenance, and
+              standard upkeep at no additional cost beyond the fees described in
+              Section 2.
+            </li>
+            <li>
+              <strong>The Growth System:</strong> Everything in the Website plan,
+              plus the Provider will optimize and regularly post to the
+              Client&apos;s Google Business Profile and cross-post to the
+              Client&apos;s Instagram, Facebook, and YouTube; work to grow the
+              Client&apos;s reviews, respond to reviews, and seek removal of old
+              negative reviews where possible; and provide ongoing local and
+              organic SEO.
+            </li>
+          </ul>
 
           <h2>2. Fees</h2>
           <p>
-            The fee for the service is <strong>$297 per month</strong>, billed
-            on a recurring basis. <strong>There is no setup fee.</strong> The
-            first month&apos;s payment covers building the website and getting
-            it live. The monthly fee covers the website, hosting, maintenance,
-            Google Business Profile management and posting, social
-            cross-posting, review management, SEO, all-in-one inbox access, and
-            the revisions described in Section 4.
+            The fee for the service is <strong>$97 per month</strong> for the
+            Website plan, or <strong>$297 per month</strong> for the Growth
+            System, billed on a recurring basis.{" "}
+            <strong>There is no setup fee on either plan.</strong> The first
+            month&apos;s payment covers building the website and getting it live.
+            The monthly fee covers the services included in the Client&apos;s
+            selected plan as described in Section 1, along with hosting,
+            maintenance, all-in-one inbox access, and the revisions described in
+            Section 4.
           </p>
           <p>
             If a recurring payment fails, the Client has seven (7) days to

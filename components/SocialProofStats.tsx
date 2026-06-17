@@ -3,7 +3,7 @@
 import { StaggerParent, StaggerChild } from "./StaggerParent";
 
 const stats = [
-  { value: "$297/mo", label: "everything included" },
+  { value: "From $97/mo", label: "no setup fee, cancel anytime" },
   { value: "10 days", label: "to live, or your next month is free" },
   { value: "100%", label: "custom, no templates" },
   { value: "Reviews + SEO", label: "and social, handled monthly" },

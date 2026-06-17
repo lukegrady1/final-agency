@@ -10,7 +10,7 @@ import { StaggerParent, StaggerChild } from "@/components/StaggerParent";
 export const metadata: Metadata = {
   title: { absolute: "About Grady Digital — Local Business Web Design & SEO" },
   description:
-    "Software engineer building websites, Google presence, reviews, and SEO for local businesses. One plan, $297/month, no setup fee, live in 10 business days.",
+    "Software engineer building websites, Google presence, reviews, and SEO for local businesses. Plans from $97/month, no setup fee, live in 10 business days.",
   keywords: [
     "about Grady Digital",
     "local business web designer",

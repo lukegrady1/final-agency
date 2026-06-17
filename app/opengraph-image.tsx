@@ -69,7 +69,7 @@ export default function Image() {
               color: "rgba(255,255,255,0.72)",
             }}
           >
-            One plan, $297/month. No setup fee. Cancel anytime.
+            Plans from $97/month. No setup fee. Cancel anytime.
           </div>
         </div>
 

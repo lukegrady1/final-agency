@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     absolute: "Grady Digital — Websites, SEO & Reviews for Local Businesses",
   },
   description:
-    "Custom website, Google Business Profile, reviews, SEO, and an all-in-one inbox for your leads, built and managed for local businesses. One plan, $297/month, no setup fee, cancel anytime.",
+    "Custom website, Google Business Profile, reviews, SEO, and an all-in-one inbox for your leads, built and managed for local businesses. Plans from $97/month, no setup fee, cancel anytime.",
   keywords: [
     "local business website design",
     "small business web design",

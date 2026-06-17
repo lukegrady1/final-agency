@@ -30,7 +30,7 @@ export default function HeroSection() {
             <BlurIn delay={0.2} duration={0.6}>
               <p className="text-white/80 text-lg font-normal leading-relaxed max-w-xl">
                 We build your website and run your Google presence so customers
-                find you first and turn into paying clients. One plan, $297 a
+                find you first and turn into paying clients. Plans start at $97 a
                 month. No setup fee.
               </p>
             </BlurIn>

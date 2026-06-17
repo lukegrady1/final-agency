@@ -45,7 +45,7 @@ const faqItems = [
   {
     question: "How much does it cost?",
     answer:
-      "One flat plan — $297 a month. Custom website, your Google profile, reviews, SEO, and one inbox for all your leads. No setup fee, cancel anytime. I'll break it all down on the call.",
+      "Two plans. The Website plan is $97 a month — a custom website with one inbox for all your leads. The Growth System is $297 a month and adds your Google profile, reviews, and SEO, so you actually get found and chosen. Both have no setup fee and you can cancel anytime. I'll help you pick the right one on the call.",
   },
   {
     question: "How much work is this for me?",
@@ -60,7 +60,7 @@ const faqItems = [
   {
     question: "What if I already have a website?",
     answer:
-      "I rebuild it from the ground up. Everything runs on my own system in the backend — your site, Google profile, reviews, SEO, and lead inbox all connected in one place — so it's built right and fully managed. That's included in the same plan.",
+      "I rebuild it from the ground up. Everything runs on my own system in the backend — your site, Google profile, reviews, SEO, and lead inbox all connected in one place — so it's built right and fully managed. The rebuild is included either way.",
   },
 ];
 
@@ -384,12 +384,14 @@ export default function BookedPage() {
           </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-              Everything&apos;s included — one plan, $297/mo
+              The full Growth System — $297/mo
             </h2>
           </BlurIn>
           <BlurIn delay={0.2}>
             <p className="text-white/60 text-base leading-relaxed max-w-2xl mx-auto mt-4">
-              No setup fee. Cancel anytime.
+              Everything below, built and managed for you. Just need the website
+              and lead inbox? That&apos;s the Website plan at $97/mo. No setup
+              fee on either, cancel anytime.
             </p>
           </BlurIn>
         </div>

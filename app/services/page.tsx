@@ -9,9 +9,9 @@ import ProcessSection from "@/components/ProcessSection";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Website, Local SEO, Reviews & Leads in One Plan",
+  title: "Website, Local SEO, Reviews & Leads — Two Simple Plans",
   description:
-    "One plan for local businesses: custom website, Google Business Profile, reviews, social, SEO, and an all-in-one inbox for your leads. Built and managed for you. $297/month, no setup fee.",
+    "A custom website with an all-in-one lead inbox from $97/month, or the full Growth System — Google Business Profile, reviews, social, and SEO — for $297/month. Built and managed for you, no setup fee.",
   keywords: [
     "local business website design",
     "local SEO services",
@@ -29,6 +29,7 @@ const pillars = [
   {
     icon: Paintbrush,
     title: "Custom Website",
+    plan: "Both plans",
     description:
       "A fast, professional website built around your business and made to look great on phones, where most of your customers are. It is designed to turn visitors into phone calls and booked jobs.",
     bullets: [
@@ -41,6 +42,7 @@ const pillars = [
   {
     icon: MapPin,
     title: "Google Business Profile & Social",
+    plan: "Growth System",
     description:
       "Your Google Business Profile is the listing on Google Maps and search with your photos, hours, reviews, and a call button. It is often the first thing a customer sees, so we keep it active and looking sharp.",
     bullets: [
@@ -53,6 +55,7 @@ const pillars = [
   {
     icon: Star,
     title: "More and Better Reviews",
+    plan: "Growth System",
     description:
       "Reviews are what convince a stranger to choose you over the next business. We help you get more of them and handle your reputation for you.",
     bullets: [
@@ -65,6 +68,7 @@ const pillars = [
   {
     icon: TrendingUp,
     title: "Get Found on Google (SEO)",
+    plan: "Growth System",
     description:
       "SEO simply means showing up when people search Google for what you do. We work on it every month so you move up the results and more of those searchers land on you.",
     bullets: [
@@ -99,11 +103,12 @@ export default function ServicesPage() {
           </BlurIn>
           <BlurIn delay={0.2}>
             <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
-              One plan, not a menu. For $297 a month you get the whole system:
-              a custom website, your Google Business Profile posted and
-              cross-posted to social, a steady stream of better reviews,
-              ongoing SEO, and an all-in-one inbox to manage it all. Built and managed for
-              you, live in 10 business days, no setup fee.
+              Two simple plans. The Website plan is $97 a month: a custom
+              website with hosting and an all-in-one inbox for your leads. The
+              Growth System is $297 a month and adds the whole growth engine —
+              your Google Business Profile posted and cross-posted to social, a
+              steady stream of better reviews, and ongoing SEO. Built and
+              managed for you, live in 10 business days, no setup fee.
             </p>
           </BlurIn>
         </div>
@@ -122,9 +127,20 @@ export default function ServicesPage() {
                 <div className="rounded-xl bg-accent/10 p-3 w-fit">
                   <Icon className="w-7 h-7 text-accent-light" />
                 </div>
-                <h2 className="text-xl font-medium text-white mt-5">
-                  {pillar.title}
-                </h2>
+                <div className="flex items-center gap-3 mt-5 flex-wrap">
+                  <h2 className="text-xl font-medium text-white">
+                    {pillar.title}
+                  </h2>
+                  <span
+                    className={`rounded-full px-2.5 py-0.5 text-xs font-medium border ${
+                      pillar.plan === "Both plans"
+                        ? "border-white/20 text-white/60"
+                        : "border-accent/40 bg-accent/10 text-accent-light"
+                    }`}
+                  >
+                    {pillar.plan}
+                  </span>
+                </div>
                 <p className="text-white/60 text-sm leading-relaxed mt-3">
                   {pillar.description}
                 </p>
@@ -153,13 +169,18 @@ export default function ServicesPage() {
               <Smartphone className="w-6 h-6 text-accent-light" />
             </div>
             <div>
-              <h3 className="text-lg font-medium text-white">
-                All Your Leads in One Inbox
-              </h3>
+              <div className="flex items-center gap-3 flex-wrap">
+                <h3 className="text-lg font-medium text-white">
+                  All Your Leads in One Inbox
+                </h3>
+                <span className="rounded-full px-2.5 py-0.5 text-xs font-medium border border-white/20 text-white/60">
+                  Both plans
+                </span>
+              </div>
               <p className="text-white/60 text-sm leading-relaxed mt-1">
                 An all-in-one inbox is one place where every call, text, and
                 lead from your website lands, so nothing slips through the
-                cracks. Your plan includes it on web and phone, and we set it
+                cracks. Both plans include it on web and phone, and we set it
                 up for you.
               </p>
             </div>

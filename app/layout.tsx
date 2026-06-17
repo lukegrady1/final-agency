@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Grady Digital",
   },
   description:
-    "Custom website, Google Business Profile, reviews, SEO, and an all-in-one inbox for your leads, built and managed for local businesses. One plan, $297/month, no setup fee, cancel anytime.",
+    "Custom website, Google Business Profile, reviews, SEO, and an all-in-one inbox for your leads, built and managed for local businesses. Plans from $97/month, no setup fee, cancel anytime.",
   keywords: [
     "local business website design",
     "small business web design",
@@ -41,13 +41,13 @@ export const metadata: Metadata = {
     siteName: "Grady Digital",
     title: "Grady Digital — Websites, SEO & Reviews for Local Businesses",
     description:
-      "Custom website, Google Business Profile, reviews, SEO, and an all-in-one inbox for your leads, built and managed for local businesses. One plan, $297/month, no setup fee, cancel anytime.",
+      "Custom website, Google Business Profile, reviews, SEO, and an all-in-one inbox for your leads, built and managed for local businesses. Plans from $97/month, no setup fee, cancel anytime.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Grady Digital — Websites, SEO & Reviews for Local Businesses",
     description:
-      "Custom website, Google Business Profile, reviews, SEO, and an all-in-one inbox for your leads, built and managed for local businesses. One plan, $297/month, no setup fee, cancel anytime.",
+      "Custom website, Google Business Profile, reviews, SEO, and an all-in-one inbox for your leads, built and managed for local businesses. Plans from $97/month, no setup fee, cancel anytime.",
   },
   icons: {
     icon: [
@@ -150,21 +150,39 @@ export default function RootLayout({
       name: "United States",
     },
     description:
-      "One plan for local businesses: a custom website, Google Business Profile optimization with posting and cross-posting to Instagram, Facebook, and YouTube, review growth and responses, ongoing SEO, and an all-in-one inbox to manage leads. Built and managed for you, live in 10 business days, no setup fee.",
-    offers: {
-      "@type": "Offer",
-      url: "https://gradydigital.com/start",
-      availability: "https://schema.org/InStock",
-      price: "297",
-      priceCurrency: "USD",
-      priceSpecification: {
-        "@type": "UnitPriceSpecification",
+      "Two plans for local businesses. The Website plan ($97/month) is a custom website with hosting and an all-in-one inbox to manage leads. The Growth System ($297/month) adds Google Business Profile optimization with posting and cross-posting to Instagram, Facebook, and YouTube, review growth and responses, and ongoing SEO. Built and managed for you, live in 10 business days, no setup fee.",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Website",
+        url: "https://gradydigital.com/start",
+        availability: "https://schema.org/InStock",
+        price: "97",
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "97",
+          priceCurrency: "USD",
+          unitCode: "MON",
+          unitText: "month",
+        },
+      },
+      {
+        "@type": "Offer",
+        name: "The Growth System",
+        url: "https://gradydigital.com/start",
+        availability: "https://schema.org/InStock",
         price: "297",
         priceCurrency: "USD",
-        unitCode: "MON",
-        unitText: "month",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "297",
+          priceCurrency: "USD",
+          unitCode: "MON",
+          unitText: "month",
+        },
       },
-    },
+    ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "The Growth System",

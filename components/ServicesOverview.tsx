@@ -56,14 +56,15 @@ export default function ServicesOverview() {
         </BlurIn>
         <BlurIn delay={0.1}>
           <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-            Everything included for $297 a month
+            The full Growth System, $297 a month
           </h2>
         </BlurIn>
         <BlurIn delay={0.2}>
           <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mt-4">
             A custom website, your Google presence posted and cross-posted,
             a steady stream of better reviews, ongoing SEO, and an all-in-one
-            inbox to manage it all. Built and managed for you.
+            inbox to manage it all. Built and managed for you. Just need the
+            website and inbox? That&apos;s the Website plan at $97 a month.
           </p>
         </BlurIn>
       </div>

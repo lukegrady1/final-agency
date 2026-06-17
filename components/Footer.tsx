@@ -18,7 +18,7 @@ export default function Footer() {
             <p className="text-white/60 text-sm leading-relaxed mt-4">
               Custom website, Google presence, reviews, SEO, and an all-in-one
             inbox, built
-              and managed for local businesses. One plan, $297/month, no setup
+              and managed for local businesses. Plans from $97/month, no setup
               fee.
             </p>
 
@@ -189,7 +189,7 @@ export default function Footer() {
           <p className="text-white/60 text-sm leading-relaxed">
             Custom website, Google presence, reviews, SEO, and an all-in-one
             inbox, built
-            and managed for local businesses. One plan, $297/month, no setup
+            and managed for local businesses. Plans from $97/month, no setup
             fee.
           </p>
 

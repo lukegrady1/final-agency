@@ -14,14 +14,14 @@ export default function CTABanner() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12 text-center">
         <BlurIn>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white">
-            One plan. $297 a month.
+            Two plans. From $97 a month.
           </h2>
         </BlurIn>
         <BlurIn delay={0.1}>
           <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
-            A custom website, your Google presence, reviews, SEO, and an
-            all-in-one inbox for your leads, all built and managed for you. No
-            setup fee, cancel anytime.
+            A custom website with one inbox for your leads at $97/month, or the
+            full Growth System — Google presence, reviews, and SEO too — at
+            $297/month. Built and managed for you. No setup fee, cancel anytime.
           </p>
         </BlurIn>
         <BlurIn delay={0.2}>
