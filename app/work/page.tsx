@@ -125,6 +125,26 @@ export default function WorkPage() {
               </div>
             </div>
           </BlurIn>
+          <BlurIn delay={0.2}>
+            <div className="bg-card border border-card-border rounded-2xl overflow-hidden">
+              <BeforeAfterSlider
+                beforeSrc="/garabedian_before.webp"
+                afterSrc="/garabedian_after.webp"
+                beforeAlt="Garabedian Plumbing & Heating website before Grady Digital redesign"
+                afterAlt="Garabedian Plumbing & Heating website after Grady Digital redesign"
+              />
+              <div className="p-6">
+                <h2 className="text-lg font-medium text-white">
+                  Garabedian Plumbing &amp; Heating
+                </h2>
+                <p className="text-white/60 text-sm leading-relaxed mt-2">
+                  A century-old, family-owned plumbing and heating company gets a
+                  bold, modern site built to win local jobs. Drag the slider to
+                  compare.
+                </p>
+              </div>
+            </div>
+          </BlurIn>
           {projects.map((project, i) => (
             <BlurIn key={project.name} delay={i * 0.1}>
               <a

@@ -6,7 +6,6 @@ import SectionLabel from "@/components/SectionLabel";
 import BlurIn from "@/components/BlurIn";
 import CTABanner from "@/components/CTABanner";
 import FAQAccordion from "@/components/FAQAccordion";
-import StartVSL from "@/components/start/StartVSL";
 import StartTestimonials from "@/components/start/StartTestimonials";
 import StartComparison from "@/components/start/StartComparison";
 import StartPricing from "@/components/start/StartPricing";
@@ -139,19 +138,41 @@ export default function StartPage() {
         </div>
       </section>
 
-      {/* VSL */}
+      {/* THE SHORT VERSION */}
       <SectionWrapper className="!pt-0">
-        <div className="text-center mb-10">
+        <div className="max-w-3xl mx-auto text-center">
           <BlurIn>
-            <SectionLabel>Watch This First</SectionLabel>
+            <SectionLabel>The Short Version</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
               How we build websites that actually generate clients
             </h2>
           </BlurIn>
+          <BlurIn delay={0.2}>
+            <div className="space-y-4 mt-6 text-left">
+              <p className="text-white/70 text-base leading-relaxed">
+                Most local business websites are online brochures. They look
+                fine, but they don&apos;t bring in work. We build the opposite:
+                a site engineered around one job — turning the people who find
+                you into phone calls and booked jobs.
+              </p>
+              <p className="text-white/70 text-base leading-relaxed">
+                Then we make sure people actually find you. We set up and post
+                to your Google Business Profile, bring in more 5-star reviews,
+                and work on your SEO so you keep showing up when customers
+                search. Every call, text, and lead lands in one inbox so nothing
+                slips through.
+              </p>
+              <p className="text-white/70 text-base leading-relaxed">
+                You don&apos;t manage any of it. Hosting, updates, speed,
+                security, and search are all handled for you — month to month,
+                no contract. You run your business; I run the system that brings
+                you customers.
+              </p>
+            </div>
+          </BlurIn>
         </div>
-        <StartVSL />
       </SectionWrapper>
 
       {/* THE PROBLEM */}
