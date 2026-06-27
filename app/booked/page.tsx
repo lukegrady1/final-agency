@@ -45,7 +45,7 @@ const faqItems = [
   {
     question: "How much does it cost?",
     answer:
-      "Two plans. The Website plan is $97 a month — a custom website with one inbox for all your leads. The Growth System is $297 a month and adds your Google profile, reviews, and SEO, so you actually get found and chosen. Both have no setup fee and you can cancel anytime. I'll help you pick the right one on the call.",
+      "Three plans. The Website plan is $97 a month — a custom website with one inbox for all your leads. Website + Reviews is $147 a month — the most popular pick — and adds a review engine that fills your Google profile with 5-star reviews. The Growth System is $297 a month and adds your Google profile posting and SEO on top, so you actually get found and chosen. All three have no setup fee and you can cancel anytime. I'll help you pick the right one on the call.",
   },
   {
     question: "How much work is this for me?",
@@ -389,9 +389,11 @@ export default function BookedPage() {
           </BlurIn>
           <BlurIn delay={0.2}>
             <p className="text-white/60 text-base leading-relaxed max-w-2xl mx-auto mt-4">
-              Everything below, built and managed for you. Just need the website
-              and lead inbox? That&apos;s the Website plan at $97/mo. No setup
-              fee on either, cancel anytime.
+              Everything below, built and managed for you. Want the website plus
+              a 5-star review engine? That&apos;s Website + Reviews at $147/mo,
+              the most popular pick. Just need the website and lead inbox?
+              That&apos;s the Website plan at $97/mo. No setup fee on any plan,
+              cancel anytime.
             </p>
           </BlurIn>
         </div>

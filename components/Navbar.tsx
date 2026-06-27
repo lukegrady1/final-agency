@@ -30,13 +30,28 @@ export default function Navbar() {
   // Post-booking confirmation page is a distraction-free funnel — no nav.
   if (pathname === "/booked") return null;
 
+  // /grow uses a light theme — flip the nav to dark-on-light there.
+  const isLight = pathname === "/grow";
+
+  const barClass = scrolled
+    ? isLight
+      ? "bg-white/80 backdrop-blur-md border-b border-black/10"
+      : "bg-[rgba(7,6,18,0.85)] backdrop-blur-md border-b border-white/10"
+    : "bg-transparent";
+
+  const logoClass = isLight ? "text-[#0c0b1e]" : "text-white";
+  const linkActive = isLight ? "text-[#0c0b1e] font-medium" : "text-white font-medium";
+  const linkIdle = isLight
+    ? "text-[#0c0b1e]/60 hover:text-[#0c0b1e]"
+    : "text-white/70 hover:text-white";
+  const ctaClass = isLight
+    ? "bg-[#0c0b1e] text-white hover:bg-[#0c0b1e]/90"
+    : "bg-foreground text-background hover:bg-white/90";
+  const iconClass = isLight ? "text-[#0c0b1e]" : "text-white";
+
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[rgba(7,6,18,0.85)] backdrop-blur-md border-b border-white/10"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${barClass}`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
         <Link
@@ -47,7 +62,7 @@ export default function Navbar() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
           }}
-          className="font-['Playfair_Display'] italic text-xl text-white"
+          className={`font-['Playfair_Display'] italic text-xl ${logoClass}`}
         >
           Grady Digital
         </Link>
@@ -59,9 +74,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={`text-sm transition-colors ${
-                pathname === link.href
-                  ? "text-white font-medium"
-                  : "text-white/70 hover:text-white"
+                pathname === link.href ? linkActive : linkIdle
               }`}
             >
               {link.label}
@@ -72,7 +85,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Link
             href="/start"
-            className="inline-flex items-center rounded-full px-4 py-2 bg-foreground text-background font-medium text-sm hover:bg-white/90 transition-colors duration-200"
+            className={`inline-flex items-center rounded-full px-4 py-2 font-medium text-sm transition-colors duration-200 ${ctaClass}`}
           >
             Get Started
           </Link>
@@ -80,7 +93,7 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-white"
+          className={`md:hidden ${iconClass}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -96,7 +109,11 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden overflow-hidden bg-[rgba(7,6,18,0.95)] backdrop-blur-md border-b border-white/10"
+            className={`md:hidden overflow-hidden backdrop-blur-md border-b ${
+              isLight
+                ? "bg-white/95 border-black/10"
+                : "bg-[rgba(7,6,18,0.95)] border-white/10"
+            }`}
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -104,9 +121,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={`text-sm transition-colors ${
-                    pathname === link.href
-                      ? "text-white font-medium"
-                      : "text-white/70 hover:text-white"
+                    pathname === link.href ? linkActive : linkIdle
                   }`}
                 >
                   {link.label}
@@ -114,7 +129,7 @@ export default function Navbar() {
               ))}
               <Link
                 href="/start"
-                className="inline-flex items-center justify-center rounded-full px-4 py-2 bg-foreground text-background font-medium text-sm mt-2"
+                className={`inline-flex items-center justify-center rounded-full px-4 py-2 font-medium text-sm mt-2 ${ctaClass}`}
               >
                 Get Started
               </Link>

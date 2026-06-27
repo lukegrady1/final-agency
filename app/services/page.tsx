@@ -9,9 +9,9 @@ import ProcessSection from "@/components/ProcessSection";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Website, Local SEO, Reviews & Leads — Two Simple Plans",
+  title: "Website, Local SEO, Reviews & Leads — Three Simple Plans",
   description:
-    "A custom website with an all-in-one lead inbox from $97/month, or the full Growth System — Google Business Profile, reviews, social, and SEO — for $297/month. Built and managed for you, no setup fee.",
+    "A custom website with an all-in-one lead inbox from $97/month, Website + Reviews with a 5-star review engine at $147/month, or the full Growth System — Google Business Profile, social, and SEO — for $297/month. Built and managed for you, no setup fee.",
   keywords: [
     "local business website design",
     "local SEO services",
@@ -29,7 +29,7 @@ const pillars = [
   {
     icon: Paintbrush,
     title: "Custom Website",
-    plan: "Both plans",
+    plan: "All plans",
     description:
       "A fast, professional website built around your business and made to look great on phones, where most of your customers are. It is designed to turn visitors into phone calls and booked jobs.",
     bullets: [
@@ -55,7 +55,7 @@ const pillars = [
   {
     icon: Star,
     title: "More and Better Reviews",
-    plan: "Growth System",
+    plan: "Website + Reviews",
     description:
       "Reviews are what convince a stranger to choose you over the next business. We help you get more of them and handle your reputation for you.",
     bullets: [
@@ -103,12 +103,14 @@ export default function ServicesPage() {
           </BlurIn>
           <BlurIn delay={0.2}>
             <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
-              Two simple plans. The Website plan is $97 a month: a custom
-              website with hosting and an all-in-one inbox for your leads. The
-              Growth System is $297 a month and adds the whole growth engine —
-              your Google Business Profile posted and cross-posted to social, a
-              steady stream of better reviews, and ongoing SEO. Built and
-              managed for you, live in 10 business days, no setup fee.
+              Three simple plans. The Website plan is $97 a month: a custom
+              website with hosting and an all-in-one inbox for your leads.
+              Website + Reviews is $147 a month — the most popular pick — and
+              adds a review engine that fills your Google profile with 5-star
+              reviews. The Growth System is $297 a month and adds the rest of
+              the growth engine on top — your Google Business Profile posted and
+              cross-posted to social, and ongoing SEO. Built and managed for
+              you, live in 10 business days, no setup fee.
             </p>
           </BlurIn>
         </div>
@@ -133,7 +135,7 @@ export default function ServicesPage() {
                   </h2>
                   <span
                     className={`rounded-full px-2.5 py-0.5 text-xs font-medium border ${
-                      pillar.plan === "Both plans"
+                      pillar.plan === "All plans"
                         ? "border-white/20 text-white/60"
                         : "border-accent/40 bg-accent/10 text-accent-light"
                     }`}
@@ -174,13 +176,13 @@ export default function ServicesPage() {
                   All Your Leads in One Inbox
                 </h3>
                 <span className="rounded-full px-2.5 py-0.5 text-xs font-medium border border-white/20 text-white/60">
-                  Both plans
+                  All plans
                 </span>
               </div>
               <p className="text-white/60 text-sm leading-relaxed mt-1">
                 An all-in-one inbox is one place where every call, text, and
                 lead from your website lands, so nothing slips through the
-                cracks. Both plans include it on web and phone, and we set it
+                cracks. All plans include it on web and phone, and we set it
                 up for you.
               </p>
             </div>

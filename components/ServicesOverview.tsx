@@ -63,8 +63,10 @@ export default function ServicesOverview() {
           <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mt-4">
             A custom website, your Google presence posted and cross-posted,
             a steady stream of better reviews, ongoing SEO, and an all-in-one
-            inbox to manage it all. Built and managed for you. Just need the
-            website and inbox? That&apos;s the Website plan at $97 a month.
+            inbox to manage it all. Built and managed for you. Most businesses
+            start with Website + Reviews at $147 a month — a website plus a
+            5-star review engine. Just need the website and inbox? That&apos;s
+            the Website plan at $97 a month.
           </p>
         </BlurIn>
       </div>

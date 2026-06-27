@@ -45,12 +45,12 @@ const startFAQ = [
   {
     question: "How much does it cost?",
     answer:
-      "Two plans. The Website plan is $97 a month — a custom website, hosting, and an all-in-one inbox for your leads. The Growth System is $297 a month and adds everything that gets you found and chosen: your Google Business Profile posted and cross-posted, more and better reviews, and ongoing SEO. Both have no setup fee, no contract, and you can cancel anytime. Most businesses go with the Growth System because the website alone doesn't bring in new customers.",
+      "Three plans. The Website plan is $97 a month — a custom website, hosting, and an all-in-one inbox for your leads. Most businesses go with Website + Reviews at $147 a month: it adds a review engine that fills your Google profile with 5-star reviews, which is what actually earns the trust and wins the call. The Growth System is $297 a month and adds everything that gets you found and chosen on top: your Google Business Profile posted and cross-posted, plus ongoing SEO. All three have no setup fee, no contract, and you can cancel anytime.",
   },
   {
     question: "Is there a setup fee?",
     answer:
-      "No. On either plan, your first month covers building your site and getting you live. No big check upfront.",
+      "No. On any plan, your first month covers building your site and getting you live. No big check upfront.",
   },
   {
     question: "How long does it take?",
@@ -308,7 +308,7 @@ export default function StartPage() {
           </BlurIn>
           <BlurIn delay={0.2}>
             <p className="text-white/60 text-base leading-relaxed max-w-2xl mx-auto mt-4">
-              Two plans. Month-to-month. Cancel anytime.
+              Three plans. Month-to-month. Cancel anytime.
             </p>
           </BlurIn>
         </div>

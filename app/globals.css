@@ -122,3 +122,189 @@ body {
   height: 140%;
   top: -20%;
 }
+
+/* ── /grow page — multi-color motion primitives ── */
+
+/* Live status pulse dot */
+@keyframes grow-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+.grow-pulse {
+  animation: grow-pulse 1.8s ease-in-out infinite;
+}
+
+/* Gentle float for badges/toasts */
+@keyframes grow-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.grow-float {
+  animation: grow-float 4s ease-in-out infinite;
+}
+.grow-float-slow {
+  animation: grow-float 6s ease-in-out infinite;
+}
+
+/* Panning conic/linear gradient for borders + text */
+@keyframes grow-gradient-pan {
+  to { background-position: 200% center; }
+}
+.grow-gradient-text {
+  background: linear-gradient(
+    100deg,
+    #5b59f0 0%,
+    #0e9aab 30%,
+    #9333ea 62%,
+    #d97706 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: grow-gradient-pan 6s linear infinite;
+  /* Italic glyphs overshoot the box; pad so background-clip doesn't crop them.
+     box-decoration-break: clone applies that padding to EACH wrapped line, so a
+     word at a soft line-break (e.g. "local" above "market.") isn't cut off. */
+  padding-right: 0.12em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Slow rotation for concentric ring backdrop */
+@keyframes grow-spin {
+  to { transform: rotate(360deg); }
+}
+.grow-spin-slow {
+  animation: grow-spin 40s linear infinite;
+}
+
+/* Rank tile pop-in used by the map-pack grid */
+@keyframes grow-rank-pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  60% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.grow-rank-pop {
+  animation: grow-rank-pop 0.5s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+
+/* Flywheel dash flow */
+@keyframes grow-dash {
+  to { stroke-dashoffset: -1000; }
+}
+.grow-dash {
+  stroke-dasharray: 10 14;
+  animation: grow-dash 24s linear infinite;
+}
+
+/* ── Aurora atmosphere ── */
+
+/* Drifting color orbs — placed absolutely, blurred, slow organic motion */
+@keyframes aurora-drift-a {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(6%, -8%, 0) scale(1.12); }
+  66% { transform: translate3d(-5%, 5%, 0) scale(0.94); }
+}
+@keyframes aurora-drift-b {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-8%, 6%, 0) scale(1.15); }
+}
+.aurora-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(72px);
+  opacity: 0.4;
+  pointer-events: none;
+  will-change: transform;
+}
+.aurora-orb-a { animation: aurora-drift-a 22s ease-in-out infinite; }
+.aurora-orb-b { animation: aurora-drift-b 28s ease-in-out infinite; }
+
+/* Fine grain overlay for depth — sits above backgrounds, below content */
+.grain-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Animated gradient border ring (used on featured cards) */
+@keyframes grow-border-pan {
+  to { background-position: 200% center; }
+}
+
+/* ── Reveal system (robust, CSS + IntersectionObserver via Reveal.tsx) ── */
+
+/* Hidden default. Hero variant animates on load; scroll variant on .in-view. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  will-change: opacity, transform;
+}
+[data-reveal].in-view,
+[data-reveal-load] {
+  animation: grow-reveal 0.7s cubic-bezier(0.19, 1, 0.22, 1) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+[data-reveal-load] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+@keyframes grow-reveal {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scale-in variant (mockups, tiles) */
+[data-reveal="scale"] { transform: scale(0.92); }
+[data-reveal="scale"].in-view {
+  animation: grow-reveal-scale 0.7s cubic-bezier(0.19, 1, 0.22, 1) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+@keyframes grow-reveal-scale {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Bar-grow for chart columns — fills when its Reveal ancestor enters view */
+@keyframes grow-bar {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+.grow-chart-bar {
+  transform-origin: bottom;
+  transform: scaleY(0);
+}
+[data-reveal].in-view .grow-chart-bar {
+  animation-name: grow-bar;
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  animation-fill-mode: forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .grow-chart-bar { transform: scaleY(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grow-pulse,
+  .grow-float,
+  .grow-float-slow,
+  .grow-gradient-text,
+  .grow-spin-slow,
+  .grow-rank-pop,
+  .grow-dash,
+  .aurora-orb-a,
+  .aurora-orb-b {
+    animation: none;
+  }
+  [data-reveal],
+  [data-reveal-load] {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
