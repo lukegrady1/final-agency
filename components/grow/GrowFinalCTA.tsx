@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 
 export default function GrowFinalCTA() {
   return (
-    <section className="relative overflow-hidden grain-overlay py-28 lg:py-40 border-t border-black/[0.06]">
+    <section className="relative overflow-hidden grain-overlay py-28 lg:py-40 border-t border-black/10">
       {/* Concentric rings backdrop */}
       <div aria-hidden className="absolute inset-0 -z-10 grid place-items-center">
         <div className="grow-spin-slow">

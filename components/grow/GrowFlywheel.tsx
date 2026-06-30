@@ -14,7 +14,7 @@ const steps = [
 
 export default function GrowFlywheel() {
   return (
-    <section className="relative overflow-hidden grain-overlay py-24 lg:py-32">
+    <section className="relative overflow-hidden grain-overlay py-24 lg:py-32 border-t border-black/10">
       <AuroraBackdrop tone="violet" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12">

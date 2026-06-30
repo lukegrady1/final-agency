@@ -107,7 +107,17 @@ export default function GrowHero() {
 
           {/* Right: animated mockup */}
           <div className="relative">
-            <GrowProfileMockup />
+            <div
+              style={{
+                transform:
+                  "perspective(2000px) rotateY(-9deg) rotateX(3deg) rotate(3deg)",
+                transformStyle: "preserve-3d",
+                filter:
+                  "drop-shadow(0 35px 55px rgba(12,11,30,0.22)) drop-shadow(0 12px 24px rgba(12,11,30,0.14))",
+              }}
+            >
+              <GrowProfileMockup />
+            </div>
           </div>
         </div>
       </div>

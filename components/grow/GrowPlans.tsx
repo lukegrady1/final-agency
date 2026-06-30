@@ -108,7 +108,7 @@ export default function GrowPlans() {
   return (
     <section
       id="plans"
-      className="relative overflow-hidden grain-overlay py-24 lg:py-32 border-t border-black/[0.06] bg-gradient-to-b from-[#f3effb] to-[#f4f5fb]"
+      className="relative overflow-hidden grain-overlay py-24 lg:py-32 border-t border-black/10 bg-gradient-to-b from-[#f3effb] to-[#f4f5fb]"
     >
       <AuroraBackdrop tone="violet" />
 

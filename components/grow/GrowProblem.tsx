@@ -1,7 +1,4 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-import { Star, TrendingUp, ArrowDown } from "lucide-react";
+import { Search, Star } from "lucide-react";
 import AuroraBackdrop from "./AuroraBackdrop";
 
 const stories = [
@@ -43,216 +40,176 @@ const stories = [
   },
 ];
 
-const ranks = [
-  { pos: 1, name: "Competitor with momentum", rating: "4.9", reviews: 214, you: false },
-  { pos: 2, name: "Another local business", rating: "4.7", reviews: 138, you: false },
-  { pos: 3, name: "Another local business", rating: "4.6", reviews: 96, you: false },
-  { pos: 7, name: "Your business", rating: "4.2", reviews: 47, you: true },
-];
-
-// Scroll distance (in vh) the page travels per point while the section is pinned.
-const STEP_VH = 60;
+function Pin({
+  n,
+  color,
+  className,
+}: {
+  n: number;
+  color: string;
+  className?: string;
+}) {
+  return (
+    <div className={`absolute -translate-x-1/2 -translate-y-full ${className ?? ""}`}>
+      <div
+        className="grid place-items-center w-9 h-9 text-white text-sm font-bold shadow-lg shadow-[#0c0b1e]/20 ring-2 ring-white/70"
+        style={{
+          backgroundColor: color,
+          borderRadius: "50% 50% 50% 0",
+          transform: "rotate(-45deg)",
+        }}
+      >
+        <span style={{ transform: "rotate(45deg)" }}>{n}</span>
+      </div>
+    </div>
+  );
+}
 
 export default function GrowProblem() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [step, setStep] = useState(0);
-  // Default OFF so the first paint (incl. SSR/mobile) is the safe stacked
-  // layout. The effect upgrades to pinned only on large, non-reduced-motion
-  // viewports — avoiding a layout-shift flash on mobile.
-  const [pinned, setPinned] = useState(false);
-
-  useEffect(() => {
-    const reduceMq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const wideMq = window.matchMedia("(min-width: 1024px)");
-    const N = stories.length;
-    let raf = 0;
-    let teardown: (() => void) | null = null;
-
-    const update = () => {
-      raf = 0;
-      const sec = sectionRef.current;
-      if (!sec) return;
-      const rect = sec.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const total = rect.height - vh; // pinned scroll distance
-      const scrolled = Math.min(Math.max(-rect.top, 0), total);
-      const progress = total > 0 ? scrolled / total : 0; // 0..1
-      const cont = progress * (N - 1); // 0 .. N-1
-      cardRefs.current.forEach((el, i) => {
-        if (!el) return;
-        const d = i - cont;
-        const op = Math.max(0, 1 - Math.abs(d) * 1.6);
-        const scale = 1 - Math.min(Math.abs(d) * 0.05, 0.1);
-        el.style.opacity = op.toFixed(3);
-        el.style.transform = `translateY(calc(-50% + ${(d * 42).toFixed(1)}px)) scale(${scale.toFixed(3)})`;
-        el.style.pointerEvents = Math.abs(d) < 0.5 ? "auto" : "none";
-      });
-      const s = Math.round(cont);
-      setStep((prev) => (prev === s ? prev : s));
-    };
-    const onScroll = () => {
-      if (!raf) raf = requestAnimationFrame(update);
-    };
-
-    // Re-evaluate whenever the breakpoint / motion preference changes, so the
-    // section reacts to resizes and orientation changes — not just first mount.
-    const apply = () => {
-      teardown?.();
-      teardown = null;
-      const enable = !reduceMq.matches && wideMq.matches;
-      setPinned(enable);
-      if (enable) {
-        window.addEventListener("scroll", onScroll, { passive: true });
-        window.addEventListener("resize", onScroll, { passive: true });
-        teardown = () => {
-          window.removeEventListener("scroll", onScroll);
-          window.removeEventListener("resize", onScroll);
-        };
-        update();
-      } else {
-        // Clear any inline styles the pinned mode left behind.
-        cardRefs.current.forEach((el) => {
-          if (el) {
-            el.style.opacity = "1";
-            el.style.transform = "none";
-            el.style.pointerEvents = "";
-          }
-        });
-      }
-    };
-
-    apply();
-    wideMq.addEventListener("change", apply);
-    reduceMq.addEventListener("change", apply);
-    return () => {
-      wideMq.removeEventListener("change", apply);
-      reduceMq.removeEventListener("change", apply);
-      teardown?.();
-      if (raf) cancelAnimationFrame(raf);
-    };
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative"
-      style={
-        pinned
-          ? { height: `calc(100vh + ${(stories.length - 1) * STEP_VH}vh)` }
-          : undefined
-      }
-    >
-      <div
-        className={`relative grain-overlay ${
-          pinned
-            ? "sticky top-0 h-screen overflow-hidden flex items-center"
-            : "py-24"
-        }`}
-      >
+    <section className="relative">
+      <div className="relative grain-overlay py-24 lg:py-32">
         <AuroraBackdrop tone="cyan" />
 
         <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-12">
-          {/* Header */}
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[#0e8090]">
-              <span className="w-6 h-px bg-cyan" />
-              The problem
-            </span>
-            <h2 className="mt-4 text-4xl sm:text-5xl font-medium tracking-tight leading-[1.05] text-[#0c0b1e]">
-              Your next customer is{" "}
-              <span className="grow-gradient-text font-display italic">
-                already searching.
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* Left: header + map comparison */}
+            <div>
+              <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[#0e8090]">
+                <span className="w-6 h-px bg-cyan" />
+                The problem
               </span>
-            </h2>
-            <p className="mt-5 text-[#0c0b1e]/60 text-lg leading-relaxed">
-              The only question is whether Google sends them to you — or to the
-              competitor with more reviews, a stronger profile, and a head
-              start.
-            </p>
-          </div>
-
-          <div className="mt-12 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Map comparison */}
-            <div className="relative rounded-3xl border border-black/[0.07] bg-white shadow-2xl shadow-[#0c0b1e]/10 p-6">
-              <div
-                aria-hidden
-                className="absolute -inset-px rounded-3xl -z-10 opacity-70 blur-xl"
-                style={{
-                  background:
-                    "radial-gradient(60% 60% at 30% 0%, rgba(52,211,224,0.35), transparent 70%)",
-                }}
-              />
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold uppercase tracking-wide text-[#0c0b1e]/40">
-                  Local results · near you
+              <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.05] text-[#0c0b1e]">
+                Your next customer is{" "}
+                <span className="grow-gradient-text font-display italic">
+                  already searching.
                 </span>
-                <span className="inline-flex items-center gap-1 text-xs font-medium text-[#0e8090]">
-                  <TrendingUp className="w-3.5 h-3.5" />
-                  Live ranking
-                </span>
-              </div>
+              </h2>
+              <p className="mt-6 text-[#0c0b1e]/60 text-lg leading-relaxed max-w-md">
+                The only question is whether Google sends them to you — or to the
+                competitor with more reviews, a stronger profile, and a head
+                start.
+              </p>
 
-              <div className="mt-5 space-y-2.5">
-                {ranks.map((r) => (
-                  <div
-                    key={r.pos}
-                    className={`flex items-center gap-3 rounded-2xl border p-3 ${
-                      r.you
-                        ? "border-amber/40 bg-amber/10"
-                        : "border-black/[0.06] bg-black/[0.02]"
-                    }`}
+              {/* Search → map → ranking card */}
+              <div className="relative mt-10 rounded-[28px] border border-black/[0.07] bg-white shadow-2xl shadow-[#0c0b1e]/10 p-5 sm:p-6">
+                <div
+                  aria-hidden
+                  className="absolute -inset-px rounded-[28px] -z-10 opacity-70 blur-xl"
+                  style={{
+                    background:
+                      "radial-gradient(60% 60% at 30% 0%, rgba(52,211,224,0.35), transparent 70%)",
+                  }}
+                />
+
+                {/* Search bar */}
+                <div className="flex items-center gap-2.5 rounded-full border border-black/10 bg-white px-4 py-3 shadow-sm">
+                  <Search className="w-4 h-4 text-[#0c0b1e]/40 shrink-0" />
+                  <span className="text-[#0c0b1e] text-sm font-medium">
+                    best local service near me
+                  </span>
+                </div>
+
+                {/* Map */}
+                <div className="relative mt-4 h-48 sm:h-52 rounded-2xl overflow-hidden border border-black/[0.05] bg-gradient-to-br from-[#eef1fb] to-[#f7f8fc]">
+                  <svg
+                    aria-hidden
+                    viewBox="0 0 400 220"
+                    preserveAspectRatio="xMidYMid slice"
+                    className="absolute inset-0 w-full h-full"
                   >
-                    <span
-                      className={`grid place-items-center w-8 h-8 rounded-lg text-sm font-bold shrink-0 ${
-                        r.you
-                          ? "bg-amber text-[#1a1206]"
-                          : r.pos === 1
-                            ? "bg-gradient-to-br from-cyan to-accent text-white"
-                            : "bg-black/[0.05] text-[#0c0b1e]/50"
-                      }`}
-                    >
-                      {r.pos}
+                    {[70, 130, 190].map((baseY, r) => (
+                      <g key={r} fill="rgba(86,110,180,0.10)">
+                        {Array.from({ length: 11 }).map((_, i) => {
+                          const w = 44;
+                          const x = i * w - 22 + (r % 2) * 22;
+                          const h = 30;
+                          return (
+                            <polygon
+                              key={i}
+                              points={`${x},${baseY} ${x + w / 2},${baseY - h} ${x + w},${baseY}`}
+                            />
+                          );
+                        })}
+                      </g>
+                    ))}
+                    {/* Road */}
+                    <line
+                      x1="-30"
+                      y1="240"
+                      x2="430"
+                      y2="20"
+                      stroke="rgba(12,11,30,0.06)"
+                      strokeWidth="22"
+                      strokeLinecap="round"
+                    />
+                    <line
+                      x1="-30"
+                      y1="240"
+                      x2="430"
+                      y2="20"
+                      stroke="rgba(255,255,255,0.85)"
+                      strokeWidth="3"
+                      strokeDasharray="2 11"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+
+                  <Pin n={3} color="#9aa3b2" className="left-[28%] top-[44%]" />
+                  <Pin n={2} color="#ef7a4f" className="left-[74%] top-[40%]" />
+                  <Pin n={1} color="#3878ff" className="left-1/2 top-[66%]" />
+                </div>
+
+                {/* Ranking rows */}
+                <div className="mt-5">
+                  <div className="flex items-center gap-3.5">
+                    <span className="grid place-items-center w-11 h-11 rounded-xl bg-black/[0.04] text-[#0c0b1e] text-base font-bold shrink-0">
+                      1
                     </span>
-                    <div className="min-w-0 flex-1">
-                      <div
-                        className={`text-sm font-medium truncate ${
-                          r.you ? "text-[#0c0b1e]" : "text-[#0c0b1e]/80"
-                        }`}
-                      >
-                        {r.name}
+                    <div className="min-w-0">
+                      <div className="text-[#0c0b1e] font-bold truncate">
+                        Competitor with momentum
                       </div>
-                      <div className="flex items-center gap-1 text-xs text-[#0c0b1e]/45">
-                        <Star className="w-3 h-3 fill-amber text-amber" />
-                        {r.rating} · {r.reviews} reviews
+                      <div className="flex items-center gap-1 text-sm text-[#0c0b1e]/45 mt-0.5">
+                        4.9
+                        <Star className="w-3.5 h-3.5 fill-[#0c0b1e]/45 text-[#0c0b1e]/45" />
+                        · 214 reviews
                       </div>
                     </div>
-                    {r.you && (
-                      <ArrowDown className="w-4 h-4 text-[#b45309] shrink-0" />
-                    )}
                   </div>
-                ))}
-              </div>
 
-              <p className="mt-5 text-sm font-medium text-[#0c0b1e]/70">
-                Every search you miss can become somebody else&apos;s phone call.
-              </p>
+                  <div className="my-3 h-px bg-black/[0.07]" />
+
+                  <div className="flex items-center gap-3.5 opacity-50">
+                    <span className="grid place-items-center w-11 h-11 rounded-xl bg-black/[0.04] text-[#0c0b1e]/60 text-base font-bold shrink-0">
+                      7
+                    </span>
+                    <div className="min-w-0">
+                      <div className="text-[#0c0b1e]/70 font-bold truncate">
+                        Your business
+                      </div>
+                      <div className="flex items-center gap-1 text-sm text-[#0c0b1e]/45 mt-0.5">
+                        4.2
+                        <Star className="w-3.5 h-3.5 fill-[#0c0b1e]/45 text-[#0c0b1e]/45" />
+                        · 47 reviews
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footer line */}
+                <p className="mt-5 text-sm font-bold text-[#e0492f]">
+                  Every missed search can become somebody else&apos;s phone call.
+                </p>
+              </div>
             </div>
 
-            {/* Stepped story cards */}
-            <div
-              className={pinned ? "relative h-[300px]" : "space-y-5"}
-            >
-              {stories.map((s, i) => (
+            {/* Story cards — all shown together */}
+            <div className="space-y-5">
+              {stories.map((s) => (
                 <div
                   key={s.n}
-                  ref={(el) => {
-                    cardRefs.current[i] = el;
-                  }}
-                  style={pinned ? { willChange: "opacity, transform" } : undefined}
-                  className={`rounded-3xl border border-black/[0.07] bg-white p-7 shadow-xl ${s.glow} ${
-                    pinned ? "absolute top-1/2 left-0 right-0" : ""
-                  }`}
+                  className={`rounded-3xl border border-black/[0.07] bg-white p-7 shadow-xl ${s.glow}`}
                 >
                   <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide">
                     <span className={`w-2 h-2 rounded-full ${s.dot}`} />
@@ -270,24 +227,6 @@ export default function GrowProblem() {
               ))}
             </div>
           </div>
-
-          {/* Progress rail (pinned only) */}
-          {pinned && (
-            <div className="mt-12 flex items-center justify-center gap-2">
-              {stories.map((s, i) => (
-                <span
-                  key={s.n}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    i === step
-                      ? `w-8 ${s.dot}`
-                      : i < step
-                        ? "w-2 bg-[#0c0b1e]/30"
-                        : "w-2 bg-[#0c0b1e]/12"
-                  }`}
-                />
-              ))}
-            </div>
-          )}
         </div>
       </div>
     </section>

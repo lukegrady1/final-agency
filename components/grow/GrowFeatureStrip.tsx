@@ -33,7 +33,7 @@ const items = [
 
 export default function GrowFeatureStrip() {
   return (
-    <section className="border-y border-black/[0.07] bg-white/50 backdrop-blur-sm">
+    <section className="border-y border-black/10 bg-white/50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-black/[0.07]">
           {items.map(({ icon: Icon, title, label, color, ring }) => (

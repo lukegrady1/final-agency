@@ -39,7 +39,7 @@ function Card({
 
 export default function GrowUnderHood() {
   return (
-    <section className="relative overflow-hidden grain-overlay py-24 lg:py-32 border-t border-black/[0.06]">
+    <section className="relative overflow-hidden grain-overlay py-24 lg:py-32 border-t border-black/10">
       <AuroraBackdrop tone="indigo" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
