@@ -36,7 +36,7 @@ export default function BeforeAfterSlider({
       onMouseMove={(e) => updateFromClientX(e.clientX)}
       onTouchMove={(e) => updateFromClientX(e.touches[0].clientX)}
     >
-      <div className="absolute inset-0 bg-[#1a1730]">
+      <div className="absolute inset-0 bg-[#f4f5fb]">
         <Image
           src={beforeSrc}
           alt={beforeAlt}
@@ -49,7 +49,7 @@ export default function BeforeAfterSlider({
         className="absolute inset-0"
         style={{ clipPath: `inset(0 0 0 ${position}%)` }}
       >
-        <div className="absolute inset-0 bg-[#1a1730]">
+        <div className="absolute inset-0 bg-[#f4f5fb]">
           <Image
             src={afterSrc}
             alt={afterAlt}
@@ -60,18 +60,18 @@ export default function BeforeAfterSlider({
       </div>
 
       <div
-        className="absolute top-0 bottom-0 w-px bg-white/80 pointer-events-none"
+        className="absolute top-0 bottom-0 w-0.5 bg-white shadow-[0_0_0_1px_rgba(12,11,30,0.12)] pointer-events-none"
         style={{ left: `${position}%` }}
       >
-        <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white text-background flex items-center justify-center shadow-lg">
+        <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white text-[#0c0b1e] flex items-center justify-center shadow-lg border border-black/10">
           <span className="text-xs font-bold">⇄</span>
         </div>
       </div>
 
-      <div className="absolute top-4 left-4 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 px-3 py-1.5 text-xs uppercase tracking-wider text-white font-medium">
+      <div className="absolute top-4 left-4 rounded-full bg-white/80 backdrop-blur-sm border border-black/10 px-3 py-1.5 text-xs uppercase tracking-wider text-[#0c0b1e]/70 font-medium shadow-sm">
         Before
       </div>
-      <div className="absolute top-4 right-4 rounded-full bg-accent/80 backdrop-blur-sm border border-accent-light/30 px-3 py-1.5 text-xs uppercase tracking-wider text-white font-medium">
+      <div className="absolute top-4 right-4 rounded-full bg-gradient-to-r from-cyan via-accent to-violet backdrop-blur-sm border border-white/20 px-3 py-1.5 text-xs uppercase tracking-wider text-white font-medium shadow-sm">
         After
       </div>
     </div>

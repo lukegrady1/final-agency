@@ -57,8 +57,9 @@ export default function GrowHero() {
               className="mt-6 text-[#0c0b1e]/60 text-lg leading-relaxed max-w-md"
             >
               I help local service businesses earn more 5-star reviews, climb the
-              Google map pack, and turn nearby searches into real phone calls —
-              without adding another job to your week.
+              Google map pack, and turn nearby searches into real phone calls
+              from people ready to hire — without adding another job to your
+              week.
             </p>
 
             <div

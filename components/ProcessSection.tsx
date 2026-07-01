@@ -36,23 +36,23 @@ export default function ProcessSection() {
           <SectionLabel>How It Works</SectionLabel>
         </BlurIn>
         <BlurIn delay={0.1}>
-          <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
+          <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
             From call to launch in 10 business days
           </h2>
         </BlurIn>
       </div>
       <StaggerParent className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {steps.map((step, i) => (
-          <StaggerChild key={step.number} className="relative bg-card border border-card-border rounded-2xl p-6">
-            <div className="text-5xl font-medium text-white/10">
+          <StaggerChild key={step.number} className="relative bg-white border border-black/[0.08] rounded-2xl p-6 shadow-sm">
+            <div className="text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-br from-black/[0.12] to-black/[0.04]">
               {step.number}
             </div>
-            <h3 className="text-lg font-medium text-white mt-2">
+            <h3 className="text-lg font-medium text-[#0c0b1e] mt-2">
               {step.title}
             </h3>
-            <p className="text-sm text-white/60 mt-2">{step.body}</p>
+            <p className="text-sm text-[#0c0b1e]/60 mt-2">{step.body}</p>
             {i < steps.length - 1 && (
-              <span className="hidden md:block absolute top-6 -right-3 text-2xl text-white/20">
+              <span className="hidden md:block absolute top-6 -right-3 text-2xl text-[#0c0b1e]/20">
                 &rarr;
               </span>
             )}

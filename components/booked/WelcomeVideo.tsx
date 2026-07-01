@@ -7,7 +7,7 @@ export default function WelcomeVideo() {
   return (
     <BlurIn>
       <div className="relative max-w-3xl mx-auto">
-        <div className="relative aspect-video rounded-2xl overflow-hidden bg-card border border-card-border">
+        <div className="relative aspect-video rounded-2xl overflow-hidden bg-white border border-black/10 shadow-sm">
           <iframe
             src={LOOM_EMBED_SRC}
             title="Welcome video from Luke at Grady Digital"

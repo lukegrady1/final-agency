@@ -8,7 +8,7 @@ const GHL_BOOKING_URL =
 export default function StartCalendar() {
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="rounded-2xl overflow-hidden border border-card-border bg-card">
+      <div className="rounded-2xl overflow-hidden border border-black/[0.08] bg-white shadow-sm">
         <iframe
           src={GHL_BOOKING_URL}
           id="S3cuYzCyg7EtEtcdTkz8_grady_start_calendar"
