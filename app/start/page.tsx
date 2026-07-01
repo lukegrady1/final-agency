@@ -10,6 +10,7 @@ import StartTestimonials from "@/components/start/StartTestimonials";
 import StartComparison from "@/components/start/StartComparison";
 import StartPricing from "@/components/start/StartPricing";
 import StartCalendar from "@/components/start/StartCalendar";
+import AuroraBackdrop from "@/components/grow/AuroraBackdrop";
 
 export const metadata: Metadata = {
   title: "Start Your Build — Plans from $97/Month",
@@ -45,7 +46,7 @@ const startFAQ = [
   {
     question: "How much does it cost?",
     answer:
-      "Three plans. The Website plan is $97 a month — a custom website, hosting, and an all-in-one inbox for your leads. Most businesses go with Website + Reviews at $147 a month: it adds a review engine that fills your Google profile with 5-star reviews, which is what actually earns the trust and wins the call. The Growth System is $297 a month and adds everything that gets you found and chosen on top: your Google Business Profile posted and cross-posted, plus ongoing SEO. All three have no setup fee, no contract, and you can cancel anytime.",
+      "Three plans. The Website plan is $97 a month — a custom website, hosting, and an all-in-one inbox for your leads. Most businesses go with The Reputation System at $147 a month: it adds a review engine that fills your Google profile with 5-star reviews, which is what actually earns the trust and wins the call. The Growth System is $297 a month and adds everything that gets you found and chosen on top: your Google Business Profile posted and cross-posted, plus ongoing SEO. All three have no setup fee, no contract, and you can cancel anytime.",
   },
   {
     question: "Is there a setup fee?",
@@ -81,33 +82,27 @@ const startFAQ = [
 
 export default function StartPage() {
   return (
-    <main className="bg-background text-foreground">
+    <main className="bg-[#f4f5fb] text-[#0c0b1e]">
       {/* HERO */}
-      <section className="relative pt-40 pb-24 lg:pb-32 overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-50"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(108,106,246,0.18) 0%, transparent 70%)",
-          }}
-        />
+      <section className="relative pt-40 pb-24 lg:pb-32 overflow-hidden grain-overlay">
+        <AuroraBackdrop tone="indigo-cyan" />
         <div className="relative max-w-5xl mx-auto px-6 lg:px-12 text-center">
           <BlurIn>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 backdrop-blur-sm px-3 py-1.5 text-xs text-white/80">
-              <Sparkles className="w-3.5 h-3.5 text-accent-light" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 backdrop-blur-sm px-3 py-1.5 text-xs text-[#0c0b1e]/70 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-accent" />
               Now booking new builds
             </span>
           </BlurIn>
           <BlurIn delay={0.15}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight lg:leading-[1.1] text-white mt-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight lg:leading-[1.1] text-[#0c0b1e] tracking-tight mt-6">
               Stop losing clients to competitors with{" "}
-              <span className="font-display italic text-accent-light">
+              <span className="grow-gradient-text font-display italic">
                 better websites.
               </span>
             </h1>
           </BlurIn>
           <BlurIn delay={0.3}>
-            <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
+            <p className="text-[#0c0b1e]/70 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
               We build your website and run your Google presence so customers
               find you first and turn into paying clients. Plans start at $97 a
               month, no setup fee.
@@ -117,21 +112,21 @@ export default function StartPage() {
             <div className="flex items-center justify-center gap-4 flex-wrap mt-10">
               <Link
                 href="#book"
-                className="inline-flex items-center gap-2 rounded-full px-6 py-3 bg-foreground text-background font-medium text-sm hover:bg-white/90 transition-colors duration-200"
+                className="group inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-medium text-sm text-white bg-gradient-to-r from-cyan via-accent to-violet hover:opacity-90 transition-opacity shadow-lg shadow-accent/25"
               >
                 Book a Free Call
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
               <Link
                 href="#pricing"
-                className="inline-flex items-center rounded-full px-6 py-3 bg-white/10 backdrop-blur-sm text-white font-medium text-sm hover:bg-white/20 transition-colors duration-200"
+                className="inline-flex items-center rounded-full px-6 py-3.5 font-medium text-sm text-[#0c0b1e] border border-black/10 bg-white hover:bg-black/[0.03] hover:border-black/20 transition-colors shadow-sm"
               >
                 See Pricing
               </Link>
             </div>
           </BlurIn>
           <BlurIn delay={0.6}>
-            <p className="text-white/40 text-xs mt-6">
+            <p className="text-[#0c0b1e]/40 text-xs mt-6">
               Trusted by growing local businesses
             </p>
           </BlurIn>
@@ -145,26 +140,30 @@ export default function StartPage() {
             <SectionLabel>The Short Version</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-              How we build websites that actually generate clients
+            <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
+              How we build websites that actually generate{" "}
+              <span className="grow-gradient-text font-display italic">
+                clients
+              </span>
             </h2>
           </BlurIn>
           <BlurIn delay={0.2}>
             <div className="space-y-4 mt-6 text-left">
-              <p className="text-white/70 text-base leading-relaxed">
+              <p className="text-[#0c0b1e]/70 text-base leading-relaxed">
                 Most local business websites are online brochures. They look
                 fine, but they don&apos;t bring in work. We build the opposite:
                 a site engineered around one job — turning the people who find
                 you into phone calls and booked jobs.
               </p>
-              <p className="text-white/70 text-base leading-relaxed">
+              <p className="text-[#0c0b1e]/70 text-base leading-relaxed">
                 Then we make sure people actually find you. We set up and post
                 to your Google Business Profile, bring in more 5-star reviews,
-                and work on your SEO so you keep showing up when customers
-                search. Every call, text, and lead lands in one inbox so nothing
-                slips through.
+                and work on your SEO so you rank higher and keep showing up when
+                customers search for what you do. Those are ready-to-hire leads
+                with real intent, not tire-kickers. Every call, text, and lead
+                lands in one inbox so nothing slips through.
               </p>
-              <p className="text-white/70 text-base leading-relaxed">
+              <p className="text-[#0c0b1e]/70 text-base leading-relaxed">
                 You don&apos;t manage any of it. Hosting, updates, speed,
                 security, and search are all handled for you — month to month,
                 no contract. You run your business; I run the system that brings
@@ -176,18 +175,22 @@ export default function StartPage() {
       </SectionWrapper>
 
       {/* THE PROBLEM */}
-      <SectionWrapper className="bg-white/[0.02] border-y border-white/[0.08]">
+      <SectionWrapper className="bg-white/50 backdrop-blur-sm border-y border-black/10">
         <div className="text-center mb-12">
           <BlurIn>
             <SectionLabel>The Problem</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mt-4 max-w-3xl mx-auto">
-              Your website is costing you money right now
+            <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4 max-w-3xl mx-auto">
+              Your website is costing you{" "}
+              <span className="grow-gradient-text font-display italic">
+                money
+              </span>{" "}
+              right now
             </h2>
           </BlurIn>
           <BlurIn delay={0.2}>
-            <p className="text-white/60 text-base leading-relaxed max-w-2xl mx-auto mt-4">
+            <p className="text-[#0c0b1e]/60 text-base leading-relaxed max-w-2xl mx-auto mt-4">
               Every day your site isn&apos;t converting, someone else is getting
               the clients that should be calling you.
             </p>
@@ -196,11 +199,11 @@ export default function StartPage() {
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
           {problems.map((p, i) => (
             <BlurIn key={i} delay={i * 0.05} className={i === problems.length - 1 ? "md:col-span-2 flex justify-center" : ""}>
-              <li className={`bg-card border border-card-border rounded-2xl p-5 flex items-start gap-3${i === problems.length - 1 ? " md:max-w-md w-full" : ""}`}>
-                <span className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs text-white/50 shrink-0">
+              <li className={`bg-white border border-black/[0.08] shadow-sm rounded-2xl p-5 flex items-start gap-3${i === problems.length - 1 ? " md:max-w-md w-full" : ""}`}>
+                <span className="w-7 h-7 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-xs font-medium text-accent shrink-0">
                   {i + 1}
                 </span>
-                <span className="text-white/80 text-sm leading-relaxed">
+                <span className="text-[#0c0b1e]/80 text-sm leading-relaxed">
                   {p}
                 </span>
               </li>
@@ -216,12 +219,15 @@ export default function StartPage() {
             <SectionLabel>The Grady Digital Solution</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-              We build it. We manage it. You close deals.
+            <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
+              We build it. We manage it. You{" "}
+              <span className="grow-gradient-text font-display italic">
+                close deals.
+              </span>
             </h2>
           </BlurIn>
           <BlurIn delay={0.2}>
-            <p className="text-white/60 text-base leading-relaxed max-w-2xl mx-auto mt-4">
+            <p className="text-[#0c0b1e]/60 text-base leading-relaxed max-w-2xl mx-auto mt-4">
               You&apos;re already getting traffic — from Google, referrals,
               social, ads. The problem is your site isn&apos;t turning those
               visitors into paying customers. We fix that.
@@ -236,7 +242,7 @@ export default function StartPage() {
             },
             {
               title: "Get found on Google, trusted on social",
-              body: "We set up and post to your Google listing, share it to Instagram, Facebook, and YouTube, bring in more 5-star reviews and reply to them, and work on your SEO so you keep showing up when people search.",
+              body: "We set up and post to your Google listing, share it to Instagram, Facebook, and YouTube, bring in more 5-star reviews and reply to them, and work on your SEO so you rank higher and get found by customers who are ready to hire, not just browsing.",
             },
             {
               title: "Everything managed for you",
@@ -244,14 +250,14 @@ export default function StartPage() {
             },
           ].map((item, i) => (
             <BlurIn key={item.title} delay={i * 0.1}>
-              <div className="bg-card border border-card-border rounded-2xl p-6 h-full">
-                <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent-light">
+              <div className="bg-white border border-black/[0.08] shadow-sm rounded-2xl p-6 h-full">
+                <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent">
                   <Check className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-medium text-white mt-4">
+                <h3 className="text-lg font-medium text-[#0c0b1e] mt-4">
                   {item.title}
                 </h3>
-                <p className="text-white/60 text-sm leading-relaxed mt-2">
+                <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-2">
                   {item.body}
                 </p>
               </div>
@@ -261,14 +267,17 @@ export default function StartPage() {
       </SectionWrapper>
 
       {/* TESTIMONIALS */}
-      <SectionWrapper className="bg-white/[0.02] border-y border-white/[0.08]">
+      <SectionWrapper className="bg-white/50 backdrop-blur-sm border-y border-black/10">
         <div className="text-center mb-16">
           <BlurIn>
             <SectionLabel>What Clients Say</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-              Don&apos;t take our word for it. Hear it from them.
+            <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
+              Don&apos;t take our word for it. Hear it from{" "}
+              <span className="grow-gradient-text font-display italic">
+                them.
+              </span>
             </h2>
           </BlurIn>
         </div>
@@ -282,12 +291,16 @@ export default function StartPage() {
             <SectionLabel>The Transformation</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-              See the difference Grady Digital makes
+            <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
+              See the{" "}
+              <span className="grow-gradient-text font-display italic">
+                difference
+              </span>{" "}
+              Grady Digital makes
             </h2>
           </BlurIn>
           <BlurIn delay={0.2}>
-            <p className="text-white/60 text-base leading-relaxed max-w-2xl mx-auto mt-4">
+            <p className="text-[#0c0b1e]/60 text-base leading-relaxed max-w-2xl mx-auto mt-4">
               Drag the slider to see the before and after.
             </p>
           </BlurIn>
@@ -296,25 +309,28 @@ export default function StartPage() {
       </SectionWrapper>
 
       {/* PRICING */}
-      <SectionWrapper id="pricing" className="bg-white/[0.02] border-y border-white/[0.08]">
+      <SectionWrapper id="pricing" className="bg-white/50 backdrop-blur-sm border-y border-black/10">
         <div className="text-center mb-16">
           <BlurIn>
             <SectionLabel>Pricing</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-              Simple, no-contract pricing
+            <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
+              Simple, no-contract{" "}
+              <span className="grow-gradient-text font-display italic">
+                pricing
+              </span>
             </h2>
           </BlurIn>
           <BlurIn delay={0.2}>
-            <p className="text-white/60 text-base leading-relaxed max-w-2xl mx-auto mt-4">
+            <p className="text-[#0c0b1e]/60 text-base leading-relaxed max-w-2xl mx-auto mt-4">
               Three plans. Month-to-month. Cancel anytime.
             </p>
           </BlurIn>
         </div>
         <StartPricing />
         <BlurIn delay={0.3}>
-          <p className="text-center text-white/40 text-xs mt-8">
+          <p className="text-center text-[#0c0b1e]/40 text-xs mt-8">
             Not sure if it&apos;s a fit? Book a free call below — no pressure.
           </p>
         </BlurIn>
@@ -328,8 +344,12 @@ export default function StartPage() {
             <SectionLabel>How It Works</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-              Three steps to a site that sells for you
+            <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
+              Three steps to a site that{" "}
+              <span className="grow-gradient-text font-display italic">
+                sells
+              </span>{" "}
+              for you
             </h2>
           </BlurIn>
         </div>
@@ -352,14 +372,14 @@ export default function StartPage() {
             },
           ].map((step, i) => (
             <BlurIn key={step.n} delay={i * 0.1}>
-              <div className="bg-card border border-card-border rounded-2xl p-6 h-full">
-                <span className="text-5xl font-medium text-white/10">
+              <div className="bg-white border border-black/[0.08] shadow-sm rounded-2xl p-6 h-full">
+                <span className="text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-br from-black/[0.14] to-black/[0.04]">
                   {step.n}
                 </span>
-                <h3 className="text-lg font-medium text-white mt-2">
+                <h3 className="text-lg font-medium text-[#0c0b1e] mt-2">
                   {step.t}
                 </h3>
-                <p className="text-white/60 text-sm leading-relaxed mt-2">
+                <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-2">
                   {step.b}
                 </p>
               </div>
@@ -369,18 +389,26 @@ export default function StartPage() {
       </SectionWrapper>
 
       {/* BOOK A CALL */}
-      <SectionWrapper id="book" className="bg-white/[0.02] border-y border-white/[0.08]">
+      <SectionWrapper
+        id="book"
+        className="relative overflow-hidden grain-overlay bg-white/50 backdrop-blur-sm border-y border-black/10"
+      >
+        <AuroraBackdrop tone="indigo-cyan" />
         <div className="text-center mb-10">
           <BlurIn>
             <SectionLabel>Book Your Call</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
-            <h3 className="text-2xl md:text-3xl font-medium text-white mt-4">
-              Pick a time that works for you
+            <h3 className="text-2xl md:text-3xl font-medium text-[#0c0b1e] tracking-tight mt-4">
+              Pick a time that{" "}
+              <span className="grow-gradient-text font-display italic">
+                works
+              </span>{" "}
+              for you
             </h3>
           </BlurIn>
           <BlurIn delay={0.2}>
-            <p className="text-white/60 text-sm leading-relaxed max-w-xl mx-auto mt-3">
+            <p className="text-[#0c0b1e]/60 text-sm leading-relaxed max-w-xl mx-auto mt-3">
               30-minute call with Luke. We&apos;ll do an audit of your current
               site and Google page, show you a roadmap of what we&apos;d do,
               and show you exactly how it&apos;ll bring you more leads.
@@ -391,24 +419,27 @@ export default function StartPage() {
       </SectionWrapper>
 
       {/* WHO BUILDS YOUR SITE */}
-      <SectionWrapper className="bg-white/[0.02] border-y border-white/[0.08]">
+      <SectionWrapper className="bg-white/50 backdrop-blur-sm border-y border-black/10">
         <div className="max-w-3xl mx-auto text-center">
           <BlurIn>
             <SectionLabel>Who Builds Your Site</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-              Built by an engineer who thinks like a marketer.
+            <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
+              Built by an engineer who thinks like a{" "}
+              <span className="grow-gradient-text font-display italic">
+                marketer.
+              </span>
             </h2>
           </BlurIn>
           <BlurIn delay={0.2}>
             <div className="space-y-4 mt-6">
-              <p className="text-white/70 text-base leading-relaxed">
+              <p className="text-[#0c0b1e]/70 text-base leading-relaxed">
                 I&apos;m Luke. I&apos;ve helped businesses increase their
                 online visibility, capture more leads, and turn their websites
                 into systems that actually generate revenue.
               </p>
-              <p className="text-white/70 text-base leading-relaxed">
+              <p className="text-[#0c0b1e]/70 text-base leading-relaxed">
                 I started Grady Digital because most web designers make pretty
                 pages that don&apos;t convert. I build websites the same way I
                 build software systems — every element has a job, and that job
@@ -419,10 +450,10 @@ export default function StartPage() {
           <BlurIn delay={0.3}>
             <Link
               href="#book"
-              className="inline-flex items-center gap-2 rounded-full px-5 py-3 bg-foreground text-background font-medium text-sm hover:bg-white/90 transition-colors duration-200 mt-8"
+              className="group inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-medium text-sm text-white bg-gradient-to-r from-cyan via-accent to-violet hover:opacity-90 transition-opacity shadow-lg shadow-accent/25 mt-8"
             >
               Let&apos;s talk about your site
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </BlurIn>
         </div>
@@ -435,21 +466,24 @@ export default function StartPage() {
             <SectionLabel>Why Us</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-              Grady Digital vs. the typical agency
+            <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
+              Grady Digital vs. the typical{" "}
+              <span className="grow-gradient-text font-display italic">
+                agency
+              </span>
             </h2>
           </BlurIn>
         </div>
         <BlurIn>
-          <div className="max-w-4xl mx-auto bg-card border border-card-border rounded-2xl overflow-hidden">
+          <div className="max-w-4xl mx-auto bg-white border border-black/[0.08] shadow-sm rounded-2xl overflow-hidden">
             <div className="grid grid-cols-3 text-sm">
-              <div className="px-6 py-4 border-b border-card-border text-white/60">
+              <div className="px-6 py-4 border-b border-black/[0.08] text-[#0c0b1e]/60">
                 Feature
               </div>
-              <div className="px-6 py-4 border-b border-l border-card-border text-accent-light font-medium">
+              <div className="px-6 py-4 border-b border-l border-black/[0.08] text-accent font-medium">
                 Grady Digital
               </div>
-              <div className="px-6 py-4 border-b border-l border-card-border text-white/60">
+              <div className="px-6 py-4 border-b border-l border-black/[0.08] text-[#0c0b1e]/60">
                 Typical agency
               </div>
               {[
@@ -461,21 +495,21 @@ export default function StartPage() {
                 ["Hands-off after launch", false, true],
               ].map((row, i) => (
                 <div className="contents" key={i}>
-                  <div className="px-6 py-4 border-b border-card-border text-white/80">
+                  <div className="px-6 py-4 border-b border-black/[0.08] text-[#0c0b1e]/80">
                     {row[0]}
                   </div>
-                  <div className="px-6 py-4 border-b border-l border-card-border">
+                  <div className="px-6 py-4 border-b border-l border-black/[0.08]">
                     {row[1] ? (
-                      <Check className="w-5 h-5 text-accent-light" />
+                      <Check className="w-5 h-5 text-accent" />
                     ) : (
-                      <X className="w-5 h-5 text-white/30" />
+                      <X className="w-5 h-5 text-[#0c0b1e]/30" />
                     )}
                   </div>
-                  <div className="px-6 py-4 border-b border-l border-card-border">
+                  <div className="px-6 py-4 border-b border-l border-black/[0.08]">
                     {row[2] ? (
-                      <Check className="w-5 h-5 text-white/50" />
+                      <Check className="w-5 h-5 text-[#0c0b1e]/50" />
                     ) : (
-                      <X className="w-5 h-5 text-white/30" />
+                      <X className="w-5 h-5 text-[#0c0b1e]/30" />
                     )}
                   </div>
                 </div>
@@ -486,14 +520,17 @@ export default function StartPage() {
       </SectionWrapper>
 
       {/* FAQ */}
-      <SectionWrapper className="bg-white/[0.02] border-y border-white/[0.08]">
+      <SectionWrapper className="bg-white/50 backdrop-blur-sm border-y border-black/10">
         <div className="text-center mb-16">
           <BlurIn>
             <SectionLabel>Common Questions</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
-            <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-              Everything you need to know
+            <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
+              Everything you need to{" "}
+              <span className="grow-gradient-text font-display italic">
+                know
+              </span>
             </h2>
           </BlurIn>
         </div>

@@ -6,6 +6,7 @@ import SectionWrapper from "@/components/SectionWrapper";
 import SectionLabel from "@/components/SectionLabel";
 import BlurIn from "@/components/BlurIn";
 import { StaggerParent, StaggerChild } from "@/components/StaggerParent";
+import AuroraBackdrop from "@/components/grow/AuroraBackdrop";
 
 export const metadata: Metadata = {
   title: { absolute: "About Grady Digital — Local Business Web Design & SEO" },
@@ -22,28 +23,80 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
 };
 
+const buildCards = [
+  {
+    icon: Paintbrush,
+    title: "Designed for you",
+    body: "Custom layouts and copy built around your business, not a generic template.",
+    ring: "border-accent/20 bg-accent/10",
+    color: "text-accent",
+  },
+  {
+    icon: Code,
+    title: "Engineer-built",
+    body: "Clean code, fast load times, and a site that works on every device.",
+    ring: "border-cyan/30 bg-cyan/10",
+    color: "text-[#0e8090]",
+  },
+  {
+    icon: Eye,
+    title: "You approve",
+    body: "Preview your site, request changes, and launch when you're ready.",
+    ring: "border-violet/30 bg-violet/10",
+    color: "text-[#8b3fd6]",
+  },
+];
+
+const missionCards = [
+  {
+    icon: Target,
+    title: "Conversion-Focused",
+    body: "Every site is built to turn visitors into leads, calls, and customers.",
+    ring: "border-accent/20 bg-accent/10",
+    color: "text-accent",
+  },
+  {
+    icon: DollarSign,
+    title: "No Hidden Costs",
+    body: "No long-term contracts. Transparent pricing. No tech headaches.",
+    ring: "border-cyan/30 bg-cyan/10",
+    color: "text-[#0e8090]",
+  },
+  {
+    icon: Wrench,
+    title: "Built and Managed For You",
+    body: "We handle design, development, hosting, and ongoing updates.",
+    ring: "border-amber/30 bg-amber/10",
+    color: "text-[#b45309]",
+  },
+  {
+    icon: Search,
+    title: "Built to Be Found",
+    body: "Optimized from day one so customers can find you online.",
+    ring: "border-violet/30 bg-violet/10",
+    color: "text-[#8b3fd6]",
+  },
+];
+
 export default function AboutPage() {
   return (
-    <main>
+    <main className="bg-[#f4f5fb] text-[#0c0b1e] overflow-x-clip">
       {/* Hero — two column */}
-      <section className="relative pt-40 pb-24 overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-50"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(108,106,246,0.18) 0%, transparent 70%)",
-          }}
-        />
+      <section className="relative pt-40 pb-24 overflow-hidden grain-overlay">
+        <AuroraBackdrop tone="indigo-cyan" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <BlurIn>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-tight">
-                  Because Businesses Deserve Websites That Actually Work
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#0c0b1e] tracking-tight leading-tight">
+                  Because Businesses Deserve Websites That{" "}
+                  <span className="grow-gradient-text font-display italic">
+                    actually work.
+                  </span>
                 </h1>
               </BlurIn>
               <BlurIn delay={0.15}>
-                <p className="text-white/60 text-lg leading-relaxed mt-6">
+                <p className="text-[#0c0b1e]/60 text-lg leading-relaxed mt-6">
                   Most businesses either overpay thousands upfront, or end up
                   with a template nobody manages. We built Grady Digital to
                   change that: custom, conversion-focused websites built and
@@ -52,14 +105,20 @@ export default function AboutPage() {
               </BlurIn>
             </div>
             <BlurIn delay={0.2}>
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-card border border-card-border">
+              <div
+                className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-white border border-black/[0.08] shadow-sm"
+                style={{
+                  filter:
+                    "drop-shadow(0 24px 44px rgba(12,11,30,0.14))",
+                }}
+              >
                 <Image
                   src="/site_after.webp"
                   alt="Example website build by Grady Digital"
                   fill
                   className="object-contain object-center"
                 />
-                <p className="absolute bottom-3 left-0 right-0 text-center text-white/40 text-xs">
+                <p className="absolute bottom-3 left-0 right-0 text-center text-[#0c0b1e]/40 text-xs">
                   Example build preview
                 </p>
               </div>
@@ -73,7 +132,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-12 items-start max-w-5xl mx-auto">
           <BlurIn>
             <div className="flex flex-col gap-4">
-              <div className="relative w-48 h-48 rounded-2xl overflow-hidden bg-white/5 border border-white/10">
+              <div className="relative w-48 h-48 rounded-2xl overflow-hidden bg-white border border-black/10 shadow-sm">
                 <Image
                   src="/headshot.webp"
                   alt="Luke Grady"
@@ -88,13 +147,13 @@ export default function AboutPage() {
               <SectionLabel>Who&apos;s behind Grady Digital</SectionLabel>
             </BlurIn>
             <BlurIn delay={0.1}>
-              <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
+              <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
                 Hey, I&apos;m Luke.
               </h2>
             </BlurIn>
             <div className="space-y-4 mt-6">
               <BlurIn delay={0.15}>
-                <p className="text-white/60 text-base leading-relaxed">
+                <p className="text-[#0c0b1e]/60 text-base leading-relaxed">
                   I&apos;ve helped businesses increase their online visibility,
                   capture more leads, and turn their websites into systems that
                   actually generate revenue. I know what it takes to get people
@@ -103,7 +162,7 @@ export default function AboutPage() {
                 </p>
               </BlurIn>
               <BlurIn delay={0.2}>
-                <p className="text-white/60 text-base leading-relaxed">
+                <p className="text-[#0c0b1e]/60 text-base leading-relaxed">
                   I started Grady Digital because most business websites I saw
                   were leaving real money on the table. Not because the owners
                   weren&apos;t great at what they do. Because their sites
@@ -113,7 +172,7 @@ export default function AboutPage() {
                 </p>
               </BlurIn>
               <BlurIn delay={0.25}>
-                <p className="text-white/60 text-base leading-relaxed">
+                <p className="text-[#0c0b1e]/60 text-base leading-relaxed">
                   The web is changing fast. Most business owners don&apos;t have
                   time to keep up with all of it. That&apos;s what Grady Digital
                   is for. We build and manage your website so it keeps working
@@ -126,51 +185,37 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* How We Build */}
-      <SectionWrapper className="bg-white/[0.02] border-y border-white/[0.08]">
+      <SectionWrapper className="bg-white/50 backdrop-blur-sm border-y border-black/10">
         <div className="text-center max-w-3xl mx-auto">
           <BlurIn>
-            <h2 className="text-3xl md:text-4xl font-medium text-white">
+            <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight">
               Custom design. Clean code. You approve.
             </h2>
           </BlurIn>
           <BlurIn delay={0.1}>
-            <p className="text-white/60 text-base leading-relaxed mt-4">
+            <p className="text-[#0c0b1e]/60 text-base leading-relaxed mt-4">
               Nothing goes live until you&apos;re happy with it. We walk through
               the site together and make any final adjustments before launch.
             </p>
           </BlurIn>
         </div>
         <StaggerParent className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-          {[
-            {
-              icon: Paintbrush,
-              title: "Designed for you",
-              body: "Custom layouts and copy built around your business, not a generic template.",
-            },
-            {
-              icon: Code,
-              title: "Engineer-built",
-              body: "Clean code, fast load times, and a site that works on every device.",
-            },
-            {
-              icon: Eye,
-              title: "You approve",
-              body: "Preview your site, request changes, and launch when you're ready.",
-            },
-          ].map((item) => {
+          {buildCards.map((item) => {
             const Icon = item.icon;
             return (
               <StaggerChild
                 key={item.title}
-                className="bg-card border border-card-border rounded-2xl p-6 text-center"
+                className="bg-white border border-black/[0.08] rounded-2xl p-6 text-center shadow-sm"
               >
-                <div className="rounded-xl bg-accent/10 p-3 w-fit mx-auto">
-                  <Icon className="w-6 h-6 text-accent-light" />
+                <div
+                  className={`grid place-items-center w-12 h-12 rounded-xl border ${item.ring} mx-auto`}
+                >
+                  <Icon className={`w-6 h-6 ${item.color}`} />
                 </div>
-                <h3 className="text-lg font-medium text-white mt-4">
+                <h3 className="text-lg font-medium text-[#0c0b1e] mt-4">
                   {item.title}
                 </h3>
-                <p className="text-white/60 text-sm leading-relaxed mt-2">
+                <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-2">
                   {item.body}
                 </p>
               </StaggerChild>
@@ -183,47 +228,28 @@ export default function AboutPage() {
       <SectionWrapper>
         <div className="text-center mb-12">
           <BlurIn>
-            <h2 className="text-3xl md:text-4xl font-medium text-white">
+            <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight">
               Our Mission
             </h2>
           </BlurIn>
         </div>
         <StaggerParent className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            {
-              icon: Target,
-              title: "Conversion-Focused",
-              body: "Every site is built to turn visitors into leads, calls, and customers.",
-            },
-            {
-              icon: DollarSign,
-              title: "No Hidden Costs",
-              body: "No long-term contracts. Transparent pricing. No tech headaches.",
-            },
-            {
-              icon: Wrench,
-              title: "Built and Managed For You",
-              body: "We handle design, development, hosting, and ongoing updates.",
-            },
-            {
-              icon: Search,
-              title: "Built to Be Found",
-              body: "Optimized from day one so customers can find you online.",
-            },
-          ].map((item) => {
+          {missionCards.map((item) => {
             const Icon = item.icon;
             return (
               <StaggerChild
                 key={item.title}
-                className="bg-card border border-card-border rounded-2xl p-6 text-center"
+                className="bg-white border border-black/[0.08] rounded-2xl p-6 text-center shadow-sm"
               >
-                <div className="rounded-xl bg-accent/10 p-3 w-fit mx-auto">
-                  <Icon className="w-6 h-6 text-accent-light" />
+                <div
+                  className={`grid place-items-center w-12 h-12 rounded-xl border ${item.ring} mx-auto`}
+                >
+                  <Icon className={`w-6 h-6 ${item.color}`} />
                 </div>
-                <h3 className="text-lg font-medium text-white mt-4">
+                <h3 className="text-lg font-medium text-[#0c0b1e] mt-4">
                   {item.title}
                 </h3>
-                <p className="text-white/60 text-sm leading-relaxed mt-2">
+                <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-2">
                   {item.body}
                 </p>
               </StaggerChild>
@@ -235,21 +261,31 @@ export default function AboutPage() {
       {/* CTA Banner */}
       <SectionWrapper>
         <BlurIn>
-          <div className="bg-accent/90 rounded-2xl px-8 py-16 text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-medium text-white">
-              Professional website. Managed for you.
-            </h2>
-            <p className="text-white/80 text-base leading-relaxed max-w-xl mx-auto mt-4">
-              Book a short call. We&apos;ll build your website and walk through
-              it together. Launch when you&apos;re ready.
-            </p>
-            <Link
-              href="/start"
-              className="inline-flex items-center gap-2 rounded-full px-6 py-3 bg-white text-background font-medium text-sm hover:bg-white/90 transition-colors duration-200 mt-8"
-            >
-              Get Started
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+          <div className="relative overflow-hidden rounded-3xl px-8 py-16 text-center max-w-4xl mx-auto bg-gradient-to-br from-cyan via-accent to-violet shadow-xl shadow-accent/30">
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-[0.12] mix-blend-overlay"
+              style={{
+                backgroundImage:
+                  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+              }}
+            />
+            <div className="relative">
+              <h2 className="text-3xl md:text-4xl font-medium text-white tracking-tight">
+                Professional website. Managed for you.
+              </h2>
+              <p className="text-white/80 text-base leading-relaxed max-w-xl mx-auto mt-4">
+                Book a short call. We&apos;ll build your website and walk through
+                it together. Launch when you&apos;re ready.
+              </p>
+              <Link
+                href="/start"
+                className="group inline-flex items-center gap-2 rounded-full px-6 py-3.5 bg-white text-[#0c0b1e] font-medium text-sm hover:bg-white/90 transition-colors duration-200 mt-8 shadow-lg"
+              >
+                Get Started
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </Link>
+            </div>
           </div>
         </BlurIn>
       </SectionWrapper>

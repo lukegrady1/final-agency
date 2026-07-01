@@ -38,8 +38,11 @@ export default function CaseStudies() {
           <SectionLabel>Our Work</SectionLabel>
         </BlurIn>
         <BlurIn delay={0.1}>
-          <h2 className="text-3xl md:text-4xl font-medium text-white mt-4">
-            Sites we&apos;ve built for businesses like yours
+          <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
+            Sites we&apos;ve built for{" "}
+            <span className="grow-gradient-text font-display italic">
+              businesses like yours
+            </span>
           </h2>
         </BlurIn>
       </div>
@@ -48,9 +51,9 @@ export default function CaseStudies() {
         {projects.map((project) => (
           <StaggerChild
             key={project.name}
-            className="bg-card border border-card-border rounded-2xl overflow-hidden"
+            className="bg-white border border-black/[0.08] rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
           >
-            <div className="relative aspect-[16/10] bg-[#1a1730]">
+            <div className="relative aspect-[16/10] bg-[#eef0f7]">
               <Image
                 src={project.image}
                 alt={`${project.name} website by Grady Digital`}
@@ -59,10 +62,10 @@ export default function CaseStudies() {
               />
             </div>
             <div className="p-6">
-              <span className="text-xs font-medium text-accent-light uppercase tracking-wider">
+              <span className="text-xs font-medium text-accent uppercase tracking-wider">
                 {project.type}
               </span>
-              <h3 className="text-lg font-medium text-white mt-1">
+              <h3 className="text-lg font-medium text-[#0c0b1e] mt-1">
                 {project.name}
               </h3>
             </div>
@@ -73,7 +76,7 @@ export default function CaseStudies() {
       <div className="text-center mt-12">
         <Link
           href="/work"
-          className="text-accent-light text-sm hover:underline"
+          className="inline-flex items-center gap-1 text-accent text-sm font-medium hover:gap-2 transition-all"
         >
           View all projects &rarr;
         </Link>

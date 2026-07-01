@@ -3,7 +3,7 @@ import { Linkedin, Instagram, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-background">
+    <footer className="border-t border-black/10 bg-white/50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10 md:py-16">
         {/* Desktop: 4-column grid — Mobile: compact stacked layout */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -11,11 +11,11 @@ export default function Footer() {
           <div>
             <Link
               href="/"
-              className="font-['Playfair_Display'] italic text-xl text-white"
+              className="font-['Playfair_Display'] italic text-xl text-[#0c0b1e]"
             >
               Grady Digital
             </Link>
-            <p className="text-white/60 text-sm leading-relaxed mt-4">
+            <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-4">
               Custom website, Google presence, reviews, SEO, and an all-in-one
             inbox, built
               and managed for local businesses. Plans from $97/month, no setup
@@ -25,14 +25,14 @@ export default function Footer() {
             <div className="flex flex-col gap-2 mt-4">
               <a
                 href="tel:+19787982870"
-                className="inline-flex items-center gap-2 text-white/60 text-sm hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-[#0c0b1e]/60 text-sm hover:text-[#0c0b1e] transition-colors"
               >
                 <Phone className="w-3.5 h-3.5" />
                 (978) 798-2870
               </a>
               <a
                 href="mailto:luke@gradydigital.com"
-                className="inline-flex items-center gap-2 text-white/60 text-sm hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-[#0c0b1e]/60 text-sm hover:text-[#0c0b1e] transition-colors"
               >
                 <Mail className="w-3.5 h-3.5" />
                 luke@gradydigital.com
@@ -45,7 +45,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-white/40 hover:text-white transition-colors"
+                className="text-[#0c0b1e]/40 hover:text-[#0c0b1e] transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
@@ -54,7 +54,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="text-white/40 hover:text-white transition-colors"
+                className="text-[#0c0b1e]/40 hover:text-[#0c0b1e] transition-colors"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -63,7 +63,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Google Business Profile"
-                className="text-white/40 hover:text-white transition-colors"
+                className="text-[#0c0b1e]/40 hover:text-[#0c0b1e] transition-colors"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" />
@@ -74,14 +74,14 @@ export default function Footer() {
               </a>
             </div>
 
-            <p className="text-white/40 text-xs mt-4">
+            <p className="text-[#0c0b1e]/40 text-xs mt-4">
               &copy; 2026 Grady Digital. All rights reserved.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-medium text-white mb-4">
+            <h3 className="text-sm font-medium text-[#0c0b1e] mb-4">
               Quick Links
             </h3>
             <ul className="flex flex-col gap-2">
@@ -93,7 +93,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white/60 text-sm hover:text-white transition-colors"
+                    className="text-[#0c0b1e]/60 text-sm hover:text-[#0c0b1e] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -104,14 +104,14 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="text-sm font-medium text-white mb-4">
+            <h3 className="text-sm font-medium text-[#0c0b1e] mb-4">
               Legal
             </h3>
             <ul className="flex flex-col gap-2">
               <li>
                 <Link
                   href="/privacy"
-                  className="text-white/60 text-sm hover:text-white transition-colors"
+                  className="text-[#0c0b1e]/60 text-sm hover:text-[#0c0b1e] transition-colors"
                 >
                   Privacy Policy
                 </Link>
@@ -119,7 +119,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/terms"
-                  className="text-white/60 text-sm hover:text-white transition-colors"
+                  className="text-[#0c0b1e]/60 text-sm hover:text-[#0c0b1e] transition-colors"
                 >
                   Terms of Service
                 </Link>
@@ -129,12 +129,12 @@ export default function Footer() {
 
           {/* Contact CTA */}
           <div>
-            <h3 className="text-sm font-medium text-white mb-4">
+            <h3 className="text-sm font-medium text-[#0c0b1e] mb-4">
               Ready to grow?
             </h3>
             <Link
               href="/start"
-              className="inline-flex items-center rounded-full px-5 py-3 bg-foreground text-background font-medium text-sm hover:bg-white/90 transition-colors duration-200"
+              className="inline-flex items-center rounded-full px-5 py-3 text-white bg-gradient-to-r from-cyan via-accent to-violet font-medium text-sm hover:opacity-90 transition-opacity shadow-lg shadow-accent/25"
             >
               Get Started
             </Link>
@@ -146,7 +146,7 @@ export default function Footer() {
           <div className="flex items-center justify-between">
             <Link
               href="/"
-              className="font-['Playfair_Display'] italic text-xl text-white"
+              className="font-['Playfair_Display'] italic text-xl text-[#0c0b1e]"
             >
               Grady Digital
             </Link>
@@ -156,7 +156,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-white/40 hover:text-white transition-colors"
+                className="text-[#0c0b1e]/40 hover:text-[#0c0b1e] transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
@@ -165,7 +165,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="text-white/40 hover:text-white transition-colors"
+                className="text-[#0c0b1e]/40 hover:text-[#0c0b1e] transition-colors"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -174,7 +174,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Google Business Profile"
-                className="text-white/40 hover:text-white transition-colors"
+                className="text-[#0c0b1e]/40 hover:text-[#0c0b1e] transition-colors"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" />
@@ -186,7 +186,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <p className="text-white/60 text-sm leading-relaxed">
+          <p className="text-[#0c0b1e]/60 text-sm leading-relaxed">
             Custom website, Google presence, reviews, SEO, and an all-in-one
             inbox, built
             and managed for local businesses. Plans from $97/month, no setup
@@ -205,7 +205,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-white/60 text-sm hover:text-white transition-colors"
+                className="text-[#0c0b1e]/60 text-sm hover:text-[#0c0b1e] transition-colors"
               >
                 {link.label}
               </Link>
@@ -217,14 +217,14 @@ export default function Footer() {
             <div className="flex flex-col gap-1">
               <a
                 href="tel:+19787982870"
-                className="inline-flex items-center gap-2 text-white/60 text-sm hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-[#0c0b1e]/60 text-sm hover:text-[#0c0b1e] transition-colors"
               >
                 <Phone className="w-3.5 h-3.5" />
                 (978) 798-2870
               </a>
               <a
                 href="mailto:luke@gradydigital.com"
-                className="inline-flex items-center gap-2 text-white/60 text-sm hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-[#0c0b1e]/60 text-sm hover:text-[#0c0b1e] transition-colors"
               >
                 <Mail className="w-3.5 h-3.5" />
                 luke@gradydigital.com
@@ -232,25 +232,25 @@ export default function Footer() {
             </div>
             <Link
               href="/start"
-              className="inline-flex items-center rounded-full px-5 py-3 bg-foreground text-background font-medium text-sm hover:bg-white/90 transition-colors duration-200"
+              className="inline-flex items-center rounded-full px-5 py-3 text-white bg-gradient-to-r from-cyan via-accent to-violet font-medium text-sm hover:opacity-90 transition-opacity shadow-lg shadow-accent/25"
             >
               Get Started
             </Link>
           </div>
 
-          <p className="text-white/40 text-xs">
+          <p className="text-[#0c0b1e]/40 text-xs">
             &copy; 2026 Grady Digital. All rights reserved.
           </p>
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-black/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
-          <span className="text-white/40 text-xs">
+          <span className="text-[#0c0b1e]/40 text-xs">
             &copy; 2026 Grady Digital
           </span>
-          <span className="text-white/40 text-xs">
+          <span className="text-[#0c0b1e]/40 text-xs">
             Websites &amp; SEO for local businesses.
           </span>
         </div>

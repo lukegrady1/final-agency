@@ -150,7 +150,7 @@ export default function RootLayout({
       name: "United States",
     },
     description:
-      "Three plans for local businesses. The Website plan ($97/month) is a custom website with hosting and an all-in-one inbox to manage leads. Website + Reviews ($147/month) is the most popular plan: it adds a review engine that fills your Google profile with 5-star reviews, written responses, and challenges to old unfair reviews. The Growth System ($297/month) adds Google Business Profile optimization with posting and cross-posting to Instagram, Facebook, and YouTube and ongoing SEO. Built and managed for you, live in 10 business days, no setup fee.",
+      "Three plans for local businesses. The Website plan ($97/month) is a custom website with hosting and an all-in-one inbox to manage leads. The Reputation System ($147/month) is the most popular plan: it adds a review engine that fills your Google profile with 5-star reviews, written responses, and challenges to old unfair reviews. The Growth System ($297/month) adds Google Business Profile optimization with posting and cross-posting to Instagram, Facebook, and YouTube and ongoing SEO. Built and managed for you, live in 10 business days, no setup fee.",
     offers: [
       {
         "@type": "Offer",
@@ -169,7 +169,7 @@ export default function RootLayout({
       },
       {
         "@type": "Offer",
-        name: "Website + Reviews",
+        name: "The Reputation System",
         url: "https://gradydigital.com/start",
         availability: "https://schema.org/InStock",
         price: "147",
@@ -277,7 +277,10 @@ export default function RootLayout({
           />
         </noscript>
       </head>
-      <body className={dmSans.className} style={{ backgroundColor: "#070612" }}>
+      <body
+        className={dmSans.className}
+        style={{ backgroundColor: "#f4f5fb", color: "#0c0b1e" }}
+      >
         <Navbar />
         {children}
         <Footer />

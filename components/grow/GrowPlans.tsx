@@ -3,69 +3,47 @@ import { Check, Monitor, Star, TrendingUp, Plus } from "lucide-react";
 import type { ComponentType } from "react";
 import Reveal from "./Reveal";
 import AuroraBackdrop from "./AuroraBackdrop";
+import { plans as planData, inheritsFrom, type PlanId } from "@/lib/plans";
 
-type Plan = {
-  name: string;
-  price: string;
-  blurb: string;
-  features: string[];
+type PlanStyle = {
   icon: ComponentType<{ className?: string; strokeWidth?: number }>;
   header: string;
   title: string;
   check: string;
-  featured?: boolean;
 };
 
-const plans: Plan[] = [
-  {
-    name: "Website",
-    price: "97",
-    blurb:
-      "A fast, professional website built and managed for you, with one inbox for every lead.",
-    features: [
-      "A fast custom website that turns visitors into calls",
-      "All-in-one inbox for every call, text, and lead",
-      "Hosting, updates, security, and speed, all handled",
-    ],
+// Visual treatment per rung — copy/prices/features come from lib/plans.ts.
+const planStyles: Record<PlanId, PlanStyle> = {
+  website: {
     icon: Monitor,
     header: "from-[#8b5cf6] to-[#6366f1]",
     title: "text-[#7c3aed]",
     check: "text-[#7c3aed]",
   },
-  {
-    name: "Website + Reviews",
-    price: "147",
-    blurb:
-      "Your website plus a review engine that fills your Google profile with 5-star reviews.",
-    features: [
-      "Everything in Website, plus:",
-      "More 5-star reviews, with replies in your voice",
-      "Old, unfair reviews challenged on your behalf",
-      "A steady stream of fresh reviews that wins clicks",
-    ],
+  "website-reviews": {
     icon: Star,
     header: "from-[#ec4899] to-[#a855f7]",
     title: "text-[#db2777]",
     check: "text-[#db2777]",
-    featured: true,
   },
-  {
-    name: "The Growth System",
-    price: "297",
-    blurb:
-      "Everything you need to get found on Google, win trust, and turn clicks into calls.",
-    features: [
-      "Everything in Website + Reviews, plus:",
-      "Google profile posted weekly + cross-posted to social",
-      "Ongoing local SEO so you keep showing up in search",
-      "A simple monthly report tied to real results",
-    ],
+  "growth-system": {
     icon: TrendingUp,
     header: "from-[#2dd4bf] to-[#22b8cf]",
     title: "text-[#0d9488]",
     check: "text-[#0d9488]",
   },
-];
+};
+
+const plans = planData.map((p, i) => {
+  const prev = inheritsFrom(i);
+  return {
+    ...p,
+    ...planStyles[p.id],
+    price: String(p.price),
+    blurb: p.tagline,
+    features: prev ? [`Everything in ${prev}, plus:`, ...p.adds] : p.adds,
+  };
+});
 
 // White wave divider that sits at the bottom of the colored header.
 function Wave() {
@@ -171,6 +149,9 @@ export default function GrowPlans() {
                     p.featured ? "px-7 lg:px-9 pt-4 pb-9" : "px-7 pt-4 pb-9"
                   }`}
                 >
+                  <p className="text-[11px] font-medium uppercase tracking-wide text-[#0c0b1e]/45 mb-2">
+                    {p.bestFor}
+                  </p>
                   <h3
                     className={`font-bold uppercase tracking-[0.18em] ${p.title} ${
                       p.featured ? "text-2xl" : "text-lg"

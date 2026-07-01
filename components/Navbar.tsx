@@ -30,24 +30,16 @@ export default function Navbar() {
   // Post-booking confirmation page is a distraction-free funnel — no nav.
   if (pathname === "/booked") return null;
 
-  // /grow uses a light theme — flip the nav to dark-on-light there.
-  const isLight = pathname === "/grow";
-
+  // The whole site now uses the light Grow aesthetic — dark-on-light nav.
   const barClass = scrolled
-    ? isLight
-      ? "bg-white/80 backdrop-blur-md border-b border-black/10"
-      : "bg-[rgba(7,6,18,0.85)] backdrop-blur-md border-b border-white/10"
+    ? "bg-white/80 backdrop-blur-md border-b border-black/10 shadow-sm"
     : "bg-transparent";
 
-  const logoClass = isLight ? "text-[#0c0b1e]" : "text-white";
-  const linkActive = isLight ? "text-[#0c0b1e] font-medium" : "text-white font-medium";
-  const linkIdle = isLight
-    ? "text-[#0c0b1e]/60 hover:text-[#0c0b1e]"
-    : "text-white/70 hover:text-white";
-  const ctaClass = isLight
-    ? "bg-[#0c0b1e] text-white hover:bg-[#0c0b1e]/90"
-    : "bg-foreground text-background hover:bg-white/90";
-  const iconClass = isLight ? "text-[#0c0b1e]" : "text-white";
+  const logoClass = "text-[#0c0b1e]";
+  const linkActive = "text-[#0c0b1e] font-medium";
+  const linkIdle = "text-[#0c0b1e]/60 hover:text-[#0c0b1e]";
+  const ctaClass = "bg-[#0c0b1e] text-white hover:bg-[#0c0b1e]/90";
+  const iconClass = "text-[#0c0b1e]";
 
   return (
     <nav
@@ -109,11 +101,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className={`md:hidden overflow-hidden backdrop-blur-md border-b ${
-              isLight
-                ? "bg-white/95 border-black/10"
-                : "bg-[rgba(7,6,18,0.95)] border-white/10"
-            }`}
+            className="md:hidden overflow-hidden backdrop-blur-md border-b bg-white/95 border-black/10"
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (

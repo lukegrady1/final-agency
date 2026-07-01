@@ -6,6 +6,7 @@ import SectionLabel from "@/components/SectionLabel";
 import BlurIn from "@/components/BlurIn";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import CTABanner from "@/components/CTABanner";
+import AuroraBackdrop from "@/components/grow/AuroraBackdrop";
 
 export const metadata: Metadata = {
   title: "Our Work — Local Business Websites We've Built",
@@ -48,13 +49,20 @@ const projects = [
 
 export default function WorkPage() {
   return (
-    <main className="bg-background text-foreground">
-      <section className="relative pt-40 pb-16 overflow-hidden">
+    <main className="bg-[#f4f5fb] text-[#0c0b1e] overflow-x-clip">
+      <section className="relative pt-40 pb-16 overflow-hidden grain-overlay">
+        <AuroraBackdrop tone="indigo-cyan" />
         <div
-          className="absolute inset-0 opacity-50"
+          aria-hidden
+          className="absolute inset-0 -z-10 opacity-[0.5]"
           style={{
-            background:
-              "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(108,106,246,0.18) 0%, transparent 70%)",
+            backgroundImage:
+              "linear-gradient(rgba(12,11,30,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(12,11,30,0.04) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+            maskImage:
+              "radial-gradient(70% 60% at 50% 20%, black, transparent 80%)",
+            WebkitMaskImage:
+              "radial-gradient(70% 60% at 50% 20%, black, transparent 80%)",
           }}
         />
         <div className="relative max-w-5xl mx-auto px-6 lg:px-12 text-center">
@@ -62,12 +70,15 @@ export default function WorkPage() {
             <SectionLabel>Our Work</SectionLabel>
           </BlurIn>
           <BlurIn delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight text-white mt-6">
-              Local business websites we&apos;ve built
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight text-[#0c0b1e] mt-6">
+              Local business websites{" "}
+              <span className="grow-gradient-text font-display italic">
+                we&apos;ve built
+              </span>
             </h1>
           </BlurIn>
           <BlurIn delay={0.2}>
-            <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
+            <p className="text-[#0c0b1e]/60 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
               Real websites we&apos;ve built for real businesses.
             </p>
           </BlurIn>
@@ -77,7 +88,7 @@ export default function WorkPage() {
       <SectionWrapper>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <BlurIn>
-            <div className="bg-card border border-card-border rounded-2xl overflow-hidden">
+            <div className="bg-white border border-black/[0.08] rounded-2xl overflow-hidden shadow-sm">
               <BeforeAfterSlider
                 beforeSrc="/white_springs_before.webp"
                 afterSrc="/white_springs_after.webp"
@@ -85,10 +96,10 @@ export default function WorkPage() {
                 afterAlt="White Springs website after Grady Digital redesign"
               />
               <div className="p-6">
-                <h2 className="text-lg font-medium text-white">
+                <h2 className="text-lg font-medium text-[#0c0b1e]">
                   White Springs
                 </h2>
-                <p className="text-white/60 text-sm leading-relaxed mt-2">
+                <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-2">
                   A complete redesign that transformed an outdated site into a
                   modern, conversion-focused experience. Drag the slider to
                   compare.
@@ -97,7 +108,7 @@ export default function WorkPage() {
                   href="https://whitespringsfl-us.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1 text-accent-light text-sm mt-4 hover:gap-2 transition-all"
+                  className="group inline-flex items-center gap-1 text-accent text-sm mt-4 hover:gap-2 transition-all"
                 >
                   Visit live site
                   <ArrowUpRight className="w-4 h-4" />
@@ -106,7 +117,7 @@ export default function WorkPage() {
             </div>
           </BlurIn>
           <BlurIn delay={0.1}>
-            <div className="bg-card border border-card-border rounded-2xl overflow-hidden">
+            <div className="bg-white border border-black/[0.08] rounded-2xl overflow-hidden shadow-sm">
               <BeforeAfterSlider
                 beforeSrc="/site_before.webp"
                 afterSrc="/site_after.webp"
@@ -114,10 +125,10 @@ export default function WorkPage() {
                 afterAlt="Imagine Construction website after Grady Digital redesign"
               />
               <div className="p-6">
-                <h2 className="text-lg font-medium text-white">
+                <h2 className="text-lg font-medium text-[#0c0b1e]">
                   Imagine Construction
                 </h2>
-                <p className="text-white/60 text-sm leading-relaxed mt-2">
+                <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-2">
                   A professional site that generates calls and estimate requests
                   for a growing construction company. Drag the slider to
                   compare.
@@ -126,7 +137,7 @@ export default function WorkPage() {
             </div>
           </BlurIn>
           <BlurIn delay={0.2}>
-            <div className="bg-card border border-card-border rounded-2xl overflow-hidden">
+            <div className="bg-white border border-black/[0.08] rounded-2xl overflow-hidden shadow-sm">
               <BeforeAfterSlider
                 beforeSrc="/garabedian_before.webp"
                 afterSrc="/garabedian_after.webp"
@@ -134,10 +145,10 @@ export default function WorkPage() {
                 afterAlt="Garabedian Plumbing & Heating website after Grady Digital redesign"
               />
               <div className="p-6">
-                <h2 className="text-lg font-medium text-white">
+                <h2 className="text-lg font-medium text-[#0c0b1e]">
                   Garabedian Plumbing &amp; Heating
                 </h2>
-                <p className="text-white/60 text-sm leading-relaxed mt-2">
+                <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-2">
                   A century-old, family-owned plumbing and heating company gets a
                   bold, modern site built to win local jobs. Drag the slider to
                   compare.
@@ -151,9 +162,9 @@ export default function WorkPage() {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block bg-card border border-card-border rounded-2xl overflow-hidden transition-colors hover:border-white/20"
+                className="group block bg-white border border-black/[0.08] rounded-2xl overflow-hidden shadow-sm transition-colors hover:border-black/20 hover:shadow-md"
               >
-                <div className="relative aspect-[16/10] bg-[#1a1730]">
+                <div className="relative aspect-[16/10] bg-[#f4f5fb]">
                   <Image
                     src={project.image}
                     alt={`${project.name} website by Grady Digital`}
@@ -162,13 +173,13 @@ export default function WorkPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h2 className="text-lg font-medium text-white">
+                  <h2 className="text-lg font-medium text-[#0c0b1e]">
                     {project.name}
                   </h2>
-                  <p className="text-white/60 text-sm leading-relaxed mt-2">
+                  <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-2">
                     {project.description}
                   </p>
-                  <span className="inline-flex items-center gap-1 text-accent-light text-sm mt-4 group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 text-accent text-sm mt-4 group-hover:gap-2 transition-all">
                     Visit live site
                     <ArrowUpRight className="w-4 h-4" />
                   </span>
