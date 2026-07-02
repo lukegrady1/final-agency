@@ -5,6 +5,7 @@ import { ArrowRight, Paintbrush, Code, Eye, Target, DollarSign, Wrench, Search }
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionLabel from "@/components/SectionLabel";
 import BlurIn from "@/components/BlurIn";
+import Parallax from "@/components/Parallax";
 import { StaggerParent, StaggerChild } from "@/components/StaggerParent";
 import AuroraBackdrop from "@/components/grow/AuroraBackdrop";
 
@@ -80,7 +81,7 @@ const missionCards = [
 
 export default function AboutPage() {
   return (
-    <main className="bg-[#f4f5fb] text-[#0c0b1e] overflow-x-clip">
+    <main className="bg-transparent text-[#0c0b1e] overflow-x-clip">
       {/* Hero — two column */}
       <section className="relative pt-40 pb-24 overflow-hidden grain-overlay">
         <AuroraBackdrop tone="indigo-cyan" />
@@ -112,12 +113,14 @@ export default function AboutPage() {
                     "drop-shadow(0 24px 44px rgba(12,11,30,0.14))",
                 }}
               >
-                <Image
-                  src="/site_after.webp"
-                  alt="Example website build by Grady Digital"
-                  fill
-                  className="object-contain object-center"
-                />
+                <Parallax className="absolute inset-[-12%]">
+                  <Image
+                    src="/site_after.webp"
+                    alt="Example website build by Grady Digital"
+                    fill
+                    className="object-contain object-center"
+                  />
+                </Parallax>
                 <p className="absolute bottom-3 left-0 right-0 text-center text-[#0c0b1e]/40 text-xs">
                   Example build preview
                 </p>
@@ -133,12 +136,14 @@ export default function AboutPage() {
           <BlurIn>
             <div className="flex flex-col gap-4">
               <div className="relative w-48 h-48 rounded-2xl overflow-hidden bg-white border border-black/10 shadow-sm">
-                <Image
-                  src="/headshot.webp"
-                  alt="Luke Grady"
-                  fill
-                  className="object-cover object-[center_25%]"
-                />
+                <Parallax className="absolute inset-[-12%]">
+                  <Image
+                    src="/headshot.webp"
+                    alt="Luke Grady"
+                    fill
+                    className="object-cover object-[center_25%]"
+                  />
+                </Parallax>
               </div>
             </div>
           </BlurIn>

@@ -149,7 +149,7 @@ const included = [
 
 export default function BookedPage() {
   return (
-    <main className="bg-[#f4f5fb] text-[#0c0b1e]">
+    <main className="bg-transparent text-[#0c0b1e]">
       {/* SECTION 1 — HERO */}
       <Suspense fallback={<div className="pt-24 lg:pt-28 pb-10" />}>
         <BookedHero />

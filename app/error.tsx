@@ -9,7 +9,7 @@ export default function Error({
   reset: () => void;
 }) {
   return (
-    <main className="relative min-h-screen flex items-center justify-center overflow-hidden grain-overlay bg-[#f4f5fb] text-[#0c0b1e]">
+    <main className="relative min-h-screen flex items-center justify-center overflow-hidden grain-overlay bg-transparent text-[#0c0b1e]">
       <AuroraBackdrop tone="violet" />
       <div className="relative text-center px-6">
         <h1 className="text-6xl font-['Playfair_Display'] italic grow-gradient-text">

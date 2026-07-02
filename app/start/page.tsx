@@ -82,7 +82,7 @@ const startFAQ = [
 
 export default function StartPage() {
   return (
-    <main className="bg-[#f4f5fb] text-[#0c0b1e]">
+    <main className="bg-transparent text-[#0c0b1e]">
       {/* HERO */}
       <section className="relative pt-40 pb-24 lg:pb-32 overflow-hidden grain-overlay">
         <AuroraBackdrop tone="indigo-cyan" />

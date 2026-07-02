@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Magnetic from "./Magnetic";
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -75,12 +76,14 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:block">
-          <Link
-            href="/start"
-            className={`inline-flex items-center rounded-full px-4 py-2 font-medium text-sm transition-colors duration-200 ${ctaClass}`}
-          >
-            Get Started
-          </Link>
+          <Magnetic strength={0.5}>
+            <Link
+              href="/start"
+              className={`inline-flex items-center rounded-full px-4 py-2 font-medium text-sm transition-colors duration-200 ${ctaClass}`}
+            >
+              Get Started
+            </Link>
+          </Magnetic>
         </div>
 
         {/* Mobile hamburger */}

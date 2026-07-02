@@ -12,43 +12,16 @@ const stats = [
 
 export default function SocialProofStats() {
   return (
-    <section className="bg-white/50 backdrop-blur-sm border-y border-black/10 py-12 lg:py-16">
-      {/* Mobile: single-line auto-sliding ticker */}
-      <div className="md:hidden overflow-hidden">
-        <div className="flex w-max animate-marquee">
-          {[0, 1].map((group) => (
-            <div
-              key={group}
-              className="flex shrink-0 gap-10 pr-10"
-              aria-hidden={group === 1}
-            >
-              {stats.map((stat) => (
-                <div
-                  key={stat.value}
-                  className="flex flex-col items-center text-center shrink-0"
-                >
-                  <span className="text-3xl font-medium text-[#0c0b1e] whitespace-nowrap">
-                    {stat.value}
-                  </span>
-                  <span className="text-sm text-[#0c0b1e]/60 mt-1 whitespace-nowrap">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Desktop: centered row */}
-      <div className="hidden md:block max-w-7xl mx-auto px-6 lg:px-12">
-        <StaggerParent className="flex flex-wrap items-start justify-center gap-8 lg:gap-12">
+    <section className="hidden md:block bg-white/50 backdrop-blur-sm border-y border-black/10 py-12 lg:py-16">
+      {/* Desktop only — hidden on mobile. */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <StaggerParent className="flex flex-wrap items-start justify-center gap-x-8 gap-y-7 sm:gap-x-10 lg:gap-x-14">
           {stats.map((stat) => (
             <StaggerChild
               key={stat.value}
               className="flex flex-col items-center text-center"
             >
-              <span className="text-3xl lg:text-4xl font-medium text-[#0c0b1e]">
+              <span className="text-2xl sm:text-3xl lg:text-4xl font-medium text-[#0c0b1e] whitespace-nowrap">
                 {stat.value}
               </span>
               <span className="text-sm text-[#0c0b1e]/60 mt-1 max-w-[140px]">

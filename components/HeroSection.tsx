@@ -1,11 +1,46 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import AuroraBackdrop from "./grow/AuroraBackdrop";
+import CursorSpotlight from "./CursorSpotlight";
+import Magnetic from "./Magnetic";
+import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
 export default function HeroSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const content = contentRef.current;
+    if (!section || !content || prefersReducedMotion()) return;
+
+    const ctx = gsap.context(() => {
+      gsap.to(content, {
+        yPercent: -18,
+        opacity: 0.12,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    }, section);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative overflow-hidden grain-overlay flex items-center min-h-[92vh] pt-36 pb-20 lg:pt-44 lg:pb-28">
+    <section
+      ref={sectionRef}
+      className="relative isolate overflow-hidden grain-overlay flex items-center min-h-[92vh] pt-36 pb-20 lg:pt-44 lg:pb-28"
+    >
       <AuroraBackdrop tone="indigo-cyan" />
+      <CursorSpotlight />
       {/* Subtle grid lines, masked toward center */}
       <div
         aria-hidden
@@ -21,23 +56,18 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative z-20 w-full max-w-4xl mx-auto px-6 lg:px-12 text-center flex flex-col items-center gap-7">
-        <span
-          data-reveal-load
-          className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 backdrop-blur-sm px-3 py-1.5 text-xs font-medium text-[#0c0b1e]/70 shadow-sm"
-        >
-          <Sparkles className="w-3.5 h-3.5 text-accent" />
-          Websites, SEO &amp; reviews for local businesses
-        </span>
-
+      <div
+        ref={contentRef}
+        className="relative z-20 w-full max-w-6xl mx-auto px-6 lg:px-12 text-center flex flex-col items-center gap-7"
+      >
         <h1
           data-reveal-load
-          style={{ ["--reveal-delay" as string]: "100ms" }}
-          className="text-[2.7rem] leading-[1.05] sm:text-6xl lg:text-[4.2rem] font-medium text-[#0c0b1e] tracking-tight"
+          className="text-[2.5rem] leading-[1.12] sm:text-5xl lg:text-[3.9rem] lg:leading-[1.1] font-medium text-[#0c0b1e] tracking-tight text-balance"
         >
-          More customers, better rankings,
+          More customers. Better rankings.
           <br />
-          one place to{" "}
+          One place to{" "}
+          <br className="sm:hidden" />
           <span
             className="grow-gradient-text font-display italic"
             style={{ paddingRight: "0.1em" }}
@@ -61,19 +91,23 @@ export default function HeroSection() {
           style={{ ["--reveal-delay" as string]: "400ms" }}
           className="flex items-center gap-3 flex-wrap justify-center"
         >
-          <Link
-            href="/start"
-            className="group inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-medium text-sm text-white bg-gradient-to-r from-cyan via-accent to-violet hover:opacity-90 transition-opacity shadow-lg shadow-accent/25"
-          >
-            Get Started
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-          </Link>
-          <Link
-            href="/work"
-            className="inline-flex items-center rounded-full px-6 py-3.5 font-medium text-sm text-[#0c0b1e] border border-black/10 bg-white hover:bg-black/[0.03] hover:border-black/20 transition-colors shadow-sm"
-          >
-            See Our Work
-          </Link>
+          <Magnetic strength={0.4}>
+            <Link
+              href="/start"
+              className="group inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-medium text-sm text-white bg-gradient-to-r from-cyan via-accent to-violet hover:opacity-90 transition-opacity shadow-lg shadow-accent/25"
+            >
+              Get Started
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </Magnetic>
+          <Magnetic strength={0.4}>
+            <Link
+              href="/work"
+              className="inline-flex items-center rounded-full px-6 py-3.5 font-medium text-sm text-[#0c0b1e] border border-black/10 bg-white hover:bg-black/[0.03] hover:border-black/20 transition-colors shadow-sm"
+            >
+              See Our Work
+            </Link>
+          </Magnetic>
         </div>
 
         <div
@@ -83,15 +117,17 @@ export default function HeroSection() {
         >
           <div className="flex -space-x-2">
             {[
-              "from-cyan to-accent",
-              "from-violet to-accent",
-              "from-amber to-violet",
-              "from-accent to-cyan",
-            ].map((g, i) => (
+              { g: "from-cyan to-accent", initial: "M" },
+              { g: "from-violet to-accent", initial: "R" },
+              { g: "from-amber to-violet", initial: "J" },
+              { g: "from-accent to-cyan", initial: "G" },
+            ].map((a, i) => (
               <span
                 key={i}
-                className={`w-7 h-7 rounded-full bg-gradient-to-br ${g} border-2 border-[#f4f5fb]`}
-              />
+                className={`grid place-items-center w-7 h-7 rounded-full bg-gradient-to-br ${a.g} border-2 border-[#f4f5fb] text-white text-[10px] font-semibold`}
+              >
+                {a.initial}
+              </span>
             ))}
           </div>
           <span className="text-[#0c0b1e]/50 text-sm">

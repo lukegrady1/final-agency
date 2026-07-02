@@ -5,6 +5,7 @@ import Link from "next/link";
 import SectionWrapper from "./SectionWrapper";
 import SectionLabel from "./SectionLabel";
 import BlurIn from "./BlurIn";
+import Parallax from "./Parallax";
 import { StaggerParent, StaggerChild } from "./StaggerParent";
 
 const projects = [
@@ -53,13 +54,15 @@ export default function CaseStudies() {
             key={project.name}
             className="bg-white border border-black/[0.08] rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
           >
-            <div className="relative aspect-[16/10] bg-[#eef0f7]">
-              <Image
-                src={project.image}
-                alt={`${project.name} website by Grady Digital`}
-                fill
-                className="object-contain object-center"
-              />
+            <div className="relative aspect-[16/10] bg-[#eef0f7] overflow-hidden">
+              <Parallax className="absolute inset-[-12%]">
+                <Image
+                  src={project.image}
+                  alt={`${project.name} website by Grady Digital`}
+                  fill
+                  className="object-contain object-center"
+                />
+              </Parallax>
             </div>
             <div className="p-6">
               <span className="text-xs font-medium text-accent uppercase tracking-wider">

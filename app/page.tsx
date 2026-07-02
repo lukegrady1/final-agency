@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
+import TrustBar from "@/components/TrustBar";
 import SocialProofStats from "@/components/SocialProofStats";
 import ServicesOverview from "@/components/ServicesOverview";
 import OrganicVsAds from "@/components/OrganicVsAds";
@@ -45,12 +46,13 @@ const faqSchema = {
 
 export default function Home() {
   return (
-    <main className="bg-[#f4f5fb] text-[#0c0b1e] overflow-x-clip">
+    <main className="bg-transparent text-[#0c0b1e] overflow-x-clip">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <HeroSection />
+      <TrustBar />
       <SocialProofStats />
       <ServicesOverview />
       <OrganicVsAds />

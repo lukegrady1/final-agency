@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="bg-[#f4f5fb] text-[#0c0b1e]">
+    <main className="bg-transparent text-[#0c0b1e]">
       <SectionWrapper className="pt-40">
         <article className="prose prose-neutral max-w-3xl mx-auto prose-headings:text-[#0c0b1e] prose-headings:font-medium prose-p:text-[#0c0b1e]/70 prose-a:text-accent prose-strong:text-[#0c0b1e]">
           <h1 className="tracking-tight">

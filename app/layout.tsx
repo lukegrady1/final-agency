@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AmbientBackground from "@/components/AmbientBackground";
+import ScrollGuide from "@/components/ScrollGuide";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -281,9 +284,16 @@ export default function RootLayout({
         className={dmSans.className}
         style={{ backgroundColor: "#f4f5fb", color: "#0c0b1e" }}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <AmbientBackground />
+        <SmoothScroll />
+        <div className="relative isolate">
+          <ScrollGuide />
+          <div className="relative z-10">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
+        </div>
       </body>
     </html>
   );

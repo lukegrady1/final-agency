@@ -5,6 +5,7 @@ import SectionWrapper from "@/components/SectionWrapper";
 import SectionLabel from "@/components/SectionLabel";
 import BlurIn from "@/components/BlurIn";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import Parallax from "@/components/Parallax";
 import CTABanner from "@/components/CTABanner";
 import AuroraBackdrop from "@/components/grow/AuroraBackdrop";
 
@@ -49,7 +50,7 @@ const projects = [
 
 export default function WorkPage() {
   return (
-    <main className="bg-[#f4f5fb] text-[#0c0b1e] overflow-x-clip">
+    <main className="bg-transparent text-[#0c0b1e] overflow-x-clip">
       <section className="relative pt-40 pb-16 overflow-hidden grain-overlay">
         <AuroraBackdrop tone="indigo-cyan" />
         <div
@@ -164,13 +165,15 @@ export default function WorkPage() {
                 rel="noopener noreferrer"
                 className="group block bg-white border border-black/[0.08] rounded-2xl overflow-hidden shadow-sm transition-colors hover:border-black/20 hover:shadow-md"
               >
-                <div className="relative aspect-[16/10] bg-[#f4f5fb]">
-                  <Image
-                    src={project.image}
-                    alt={`${project.name} website by Grady Digital`}
-                    fill
-                    className="object-contain object-center"
-                  />
+                <div className="relative aspect-[16/10] bg-[#f4f5fb] overflow-hidden">
+                  <Parallax className="absolute inset-[-12%]">
+                    <Image
+                      src={project.image}
+                      alt={`${project.name} website by Grady Digital`}
+                      fill
+                      className="object-contain object-center"
+                    />
+                  </Parallax>
                 </div>
                 <div className="p-6">
                   <h2 className="text-lg font-medium text-[#0c0b1e]">

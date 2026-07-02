@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function GrowPage() {
   return (
-    <main className="bg-[#f4f5fb] text-[#0c0b1e] overflow-x-clip">
+    <main className="bg-transparent text-[#0c0b1e] overflow-x-clip">
       <GrowHero />
       <GrowFeatureStrip />
       <div id="how">

@@ -4,7 +4,7 @@ import AuroraBackdrop from "@/components/grow/AuroraBackdrop";
 
 export default function NotFound() {
   return (
-    <main className="relative min-h-screen flex items-center justify-center overflow-hidden grain-overlay bg-[#f4f5fb] text-[#0c0b1e]">
+    <main className="relative min-h-screen flex items-center justify-center overflow-hidden grain-overlay bg-transparent text-[#0c0b1e]">
       <AuroraBackdrop tone="indigo-cyan" />
       <div className="relative text-center px-6">
         <h1 className="text-8xl font-['Playfair_Display'] italic grow-gradient-text">

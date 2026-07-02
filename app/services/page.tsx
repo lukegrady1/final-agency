@@ -89,7 +89,7 @@ const pillars = [
 
 export default function ServicesPage() {
   return (
-    <main className="bg-[#f4f5fb] text-[#0c0b1e] overflow-x-clip">
+    <main className="bg-transparent text-[#0c0b1e] overflow-x-clip">
       {/* Page Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden grain-overlay">
         <AuroraBackdrop tone="indigo-cyan" />
