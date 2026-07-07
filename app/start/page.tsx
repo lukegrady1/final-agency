@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Check, X, Sparkles } from "lucide-react";
+import { ArrowRight, Check, X } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
-import SectionLabel from "@/components/SectionLabel";
 import BlurIn from "@/components/BlurIn";
 import CTABanner from "@/components/CTABanner";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -87,12 +86,6 @@ export default function StartPage() {
       <section className="relative pt-40 pb-24 lg:pb-32 overflow-hidden grain-overlay">
         <AuroraBackdrop tone="indigo-cyan" />
         <div className="relative max-w-5xl mx-auto px-6 lg:px-12 text-center">
-          <BlurIn>
-            <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 backdrop-blur-sm px-3 py-1.5 text-xs text-[#0c0b1e]/70 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-accent" />
-              Now booking new builds
-            </span>
-          </BlurIn>
           <BlurIn delay={0.15}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight lg:leading-[1.1] text-[#0c0b1e] tracking-tight mt-6">
               Stop losing clients to competitors with{" "}
@@ -136,9 +129,6 @@ export default function StartPage() {
       {/* THE SHORT VERSION */}
       <SectionWrapper className="!pt-0">
         <div className="max-w-3xl mx-auto text-center">
-          <BlurIn>
-            <SectionLabel>The Short Version</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
               How we build websites that actually generate{" "}
@@ -177,9 +167,6 @@ export default function StartPage() {
       {/* THE PROBLEM */}
       <SectionWrapper className="bg-white/50 backdrop-blur-sm border-y border-black/10">
         <div className="text-center mb-12">
-          <BlurIn>
-            <SectionLabel>The Problem</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4 max-w-3xl mx-auto">
               Your website is costing you{" "}
@@ -196,14 +183,14 @@ export default function StartPage() {
             </p>
           </BlurIn>
         </div>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-4xl mx-auto">
           {problems.map((p, i) => (
             <BlurIn key={i} delay={i * 0.05} className={i === problems.length - 1 ? "md:col-span-2 flex justify-center" : ""}>
-              <li className={`bg-white border border-black/[0.08] shadow-sm rounded-2xl p-5 flex items-start gap-3${i === problems.length - 1 ? " md:max-w-md w-full" : ""}`}>
-                <span className="w-7 h-7 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-xs font-medium text-accent shrink-0">
+              <li className={`bg-white border border-black/[0.08] shadow-sm rounded-2xl p-4 md:p-5 flex items-start gap-3${i === problems.length - 1 ? " md:max-w-md w-full" : ""}`}>
+                <span className="w-6 h-6 md:w-7 md:h-7 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-xs font-medium text-accent shrink-0">
                   {i + 1}
                 </span>
-                <span className="text-[#0c0b1e]/80 text-sm leading-relaxed">
+                <span className="text-[#0c0b1e]/80 text-xs md:text-sm leading-snug md:leading-relaxed">
                   {p}
                 </span>
               </li>
@@ -215,9 +202,6 @@ export default function StartPage() {
       {/* THE SOLUTION */}
       <SectionWrapper>
         <div className="text-center mb-16">
-          <BlurIn>
-            <SectionLabel>The Grady Digital Solution</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
               We build it. We manage it. You{" "}
@@ -250,14 +234,16 @@ export default function StartPage() {
             },
           ].map((item, i) => (
             <BlurIn key={item.title} delay={i * 0.1}>
-              <div className="bg-white border border-black/[0.08] shadow-sm rounded-2xl p-6 h-full">
-                <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent">
-                  <Check className="w-5 h-5" />
+              <div className="bg-white border border-black/[0.08] shadow-sm rounded-2xl p-4 md:p-6 h-full">
+                <div className="flex items-center gap-3 md:block">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
+                    <Check className="w-4 h-4 md:w-5 md:h-5" />
+                  </div>
+                  <h3 className="text-base md:text-lg font-medium text-[#0c0b1e] md:mt-4">
+                    {item.title}
+                  </h3>
                 </div>
-                <h3 className="text-lg font-medium text-[#0c0b1e] mt-4">
-                  {item.title}
-                </h3>
-                <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-2">
+                <p className="text-[#0c0b1e]/60 text-xs md:text-sm leading-snug md:leading-relaxed mt-2">
                   {item.body}
                 </p>
               </div>
@@ -269,9 +255,6 @@ export default function StartPage() {
       {/* TESTIMONIALS */}
       <SectionWrapper className="bg-white/50 backdrop-blur-sm border-y border-black/10">
         <div className="text-center mb-16">
-          <BlurIn>
-            <SectionLabel>What Clients Say</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
               Don&apos;t take our word for it. Hear it from{" "}
@@ -287,9 +270,6 @@ export default function StartPage() {
       {/* SITE COMPARISON */}
       <SectionWrapper>
         <div className="text-center mb-12">
-          <BlurIn>
-            <SectionLabel>The Transformation</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
               See the{" "}
@@ -311,9 +291,6 @@ export default function StartPage() {
       {/* PRICING */}
       <SectionWrapper id="pricing" className="bg-white/50 backdrop-blur-sm border-y border-black/10">
         <div className="text-center mb-16">
-          <BlurIn>
-            <SectionLabel>Pricing</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
               Simple, no-contract{" "}
@@ -340,9 +317,6 @@ export default function StartPage() {
       {/* HOW IT WORKS */}
       <SectionWrapper>
         <div className="text-center mb-16">
-          <BlurIn>
-            <SectionLabel>How It Works</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
               Three steps to a site that{" "}
@@ -372,16 +346,18 @@ export default function StartPage() {
             },
           ].map((step, i) => (
             <BlurIn key={step.n} delay={i * 0.1}>
-              <div className="bg-white border border-black/[0.08] shadow-sm rounded-2xl p-6 h-full">
-                <span className="text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-br from-black/[0.14] to-black/[0.04]">
+              <div className="bg-white border border-black/[0.08] shadow-sm rounded-2xl p-4 md:p-6 h-full flex items-start gap-4 md:block">
+                <span className="text-3xl md:text-5xl leading-none font-medium text-transparent bg-clip-text bg-gradient-to-br from-black/[0.14] to-black/[0.04] shrink-0">
                   {step.n}
                 </span>
-                <h3 className="text-lg font-medium text-[#0c0b1e] mt-2">
-                  {step.t}
-                </h3>
-                <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-2">
-                  {step.b}
-                </p>
+                <div>
+                  <h3 className="text-base md:text-lg font-medium text-[#0c0b1e] md:mt-2">
+                    {step.t}
+                  </h3>
+                  <p className="text-[#0c0b1e]/60 text-xs md:text-sm leading-snug md:leading-relaxed mt-1 md:mt-2">
+                    {step.b}
+                  </p>
+                </div>
               </div>
             </BlurIn>
           ))}
@@ -395,9 +371,6 @@ export default function StartPage() {
       >
         <AuroraBackdrop tone="indigo-cyan" />
         <div className="text-center mb-10">
-          <BlurIn>
-            <SectionLabel>Book Your Call</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h3 className="text-2xl md:text-3xl font-medium text-[#0c0b1e] tracking-tight mt-4">
               Pick a time that{" "}
@@ -421,9 +394,6 @@ export default function StartPage() {
       {/* WHO BUILDS YOUR SITE */}
       <SectionWrapper className="bg-white/50 backdrop-blur-sm border-y border-black/10">
         <div className="max-w-3xl mx-auto text-center">
-          <BlurIn>
-            <SectionLabel>Who Builds Your Site</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
               Built by an engineer who thinks like a{" "}
@@ -462,9 +432,6 @@ export default function StartPage() {
       {/* WHY US vs THEM (small extra comparison table tying back to siterabbits idea) */}
       <SectionWrapper>
         <div className="text-center mb-16">
-          <BlurIn>
-            <SectionLabel>Why Us</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
               Grady Digital vs. the typical{" "}
@@ -476,14 +443,14 @@ export default function StartPage() {
         </div>
         <BlurIn>
           <div className="max-w-4xl mx-auto bg-white border border-black/[0.08] shadow-sm rounded-2xl overflow-hidden">
-            <div className="grid grid-cols-3 text-sm">
-              <div className="px-6 py-4 border-b border-black/[0.08] text-[#0c0b1e]/60">
+            <div className="grid grid-cols-[1.6fr_1fr_1fr] md:grid-cols-3 text-xs md:text-sm">
+              <div className="px-3 py-2.5 md:px-6 md:py-4 border-b border-black/[0.08] text-[#0c0b1e]/60">
                 Feature
               </div>
-              <div className="px-6 py-4 border-b border-l border-black/[0.08] text-accent font-medium">
+              <div className="px-3 py-2.5 md:px-6 md:py-4 border-b border-l border-black/[0.08] text-accent font-medium">
                 Grady Digital
               </div>
-              <div className="px-6 py-4 border-b border-l border-black/[0.08] text-[#0c0b1e]/60">
+              <div className="px-3 py-2.5 md:px-6 md:py-4 border-b border-l border-black/[0.08] text-[#0c0b1e]/60">
                 Typical agency
               </div>
               {[
@@ -495,21 +462,21 @@ export default function StartPage() {
                 ["Hands-off after launch", false, true],
               ].map((row, i) => (
                 <div className="contents" key={i}>
-                  <div className="px-6 py-4 border-b border-black/[0.08] text-[#0c0b1e]/80">
+                  <div className="px-3 py-2.5 md:px-6 md:py-4 border-b border-black/[0.08] text-[#0c0b1e]/80">
                     {row[0]}
                   </div>
-                  <div className="px-6 py-4 border-b border-l border-black/[0.08]">
+                  <div className="px-3 py-2.5 md:px-6 md:py-4 border-b border-l border-black/[0.08]">
                     {row[1] ? (
-                      <Check className="w-5 h-5 text-accent" />
+                      <Check className="w-4 h-4 md:w-5 md:h-5 text-accent" />
                     ) : (
-                      <X className="w-5 h-5 text-[#0c0b1e]/30" />
+                      <X className="w-4 h-4 md:w-5 md:h-5 text-[#0c0b1e]/30" />
                     )}
                   </div>
-                  <div className="px-6 py-4 border-b border-l border-black/[0.08]">
+                  <div className="px-3 py-2.5 md:px-6 md:py-4 border-b border-l border-black/[0.08]">
                     {row[2] ? (
-                      <Check className="w-5 h-5 text-[#0c0b1e]/50" />
+                      <Check className="w-4 h-4 md:w-5 md:h-5 text-[#0c0b1e]/50" />
                     ) : (
-                      <X className="w-5 h-5 text-[#0c0b1e]/30" />
+                      <X className="w-4 h-4 md:w-5 md:h-5 text-[#0c0b1e]/30" />
                     )}
                   </div>
                 </div>
@@ -522,9 +489,6 @@ export default function StartPage() {
       {/* FAQ */}
       <SectionWrapper className="bg-white/50 backdrop-blur-sm border-y border-black/10">
         <div className="text-center mb-16">
-          <BlurIn>
-            <SectionLabel>Common Questions</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
               Everything you need to{" "}

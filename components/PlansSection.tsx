@@ -1,5 +1,4 @@
 import SectionWrapper from "./SectionWrapper";
-import SectionLabel from "./SectionLabel";
 import BlurIn from "./BlurIn";
 import PricingPlans from "./PricingPlans";
 
@@ -13,9 +12,6 @@ export default function PlansSection({ className }: PlansSectionProps) {
   return (
     <SectionWrapper id="plans" className={className}>
       <div className="text-center mb-16">
-        <BlurIn>
-          <SectionLabel>Simple Plans</SectionLabel>
-        </BlurIn>
         <BlurIn delay={0.1}>
           <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
             Three plans.{" "}

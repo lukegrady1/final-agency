@@ -26,14 +26,6 @@ export default function GrowHero() {
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-10 items-center">
           {/* Left: copy */}
           <div>
-            <span
-              data-reveal-load
-              className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 backdrop-blur-sm px-3 py-1.5 text-xs font-medium text-[#0c0b1e]/70 shadow-sm"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan grow-pulse" />
-              Your local growth engine
-            </span>
-
             <h1
               data-reveal-load
               style={{ ["--reveal-delay" as string]: "100ms" }}

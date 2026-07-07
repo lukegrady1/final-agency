@@ -3,16 +3,12 @@
 import Link from "next/link";
 import { ShieldOff, Zap, Clock } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
-import SectionLabel from "./SectionLabel";
 import BlurIn from "./BlurIn";
 
 export default function AboutSnippet() {
   return (
     <SectionWrapper>
       <div className="max-w-3xl">
-        <BlurIn>
-          <SectionLabel>About Grady Digital</SectionLabel>
-        </BlurIn>
         <BlurIn delay={0.1}>
           <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4 leading-tight">
             Built by an engineer who thinks like a{" "}

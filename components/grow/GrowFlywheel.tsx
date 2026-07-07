@@ -38,7 +38,7 @@ export default function GrowFlywheel() {
         </div>
 
         {/* Flywheel track */}
-        <div className="relative mt-16">
+        <div className="relative mt-10 md:mt-16">
           {/* Connecting gradient line (desktop) */}
           <div
             aria-hidden
@@ -49,7 +49,7 @@ export default function GrowFlywheel() {
             }}
           />
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-10 gap-x-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-6 md:gap-y-10 gap-x-4">
             {steps.map((s, i) => (
               <Reveal
                 key={s.label}
@@ -57,23 +57,23 @@ export default function GrowFlywheel() {
                 className="relative flex flex-col items-center text-center"
               >
                 <span
-                  className={`relative z-10 grid place-items-center w-16 h-16 rounded-2xl bg-gradient-to-br ${s.color} shadow-lg shadow-black/30`}
+                  className={`relative z-10 grid place-items-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br ${s.color} shadow-lg shadow-black/30`}
                 >
-                  <s.icon className="w-7 h-7 text-white" />
+                  <s.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                   <span className="absolute -top-2 -right-2 grid place-items-center w-6 h-6 rounded-full bg-white border border-black/10 text-[11px] font-semibold text-[#0c0b1e]/60 shadow-sm">
                     {i + 1}
                   </span>
                 </span>
-                <div className="mt-4 text-[#0c0b1e] font-medium text-sm">
+                <div className="mt-2.5 md:mt-4 text-[#0c0b1e] font-medium text-sm">
                   {s.label}
                 </div>
-                <div className={`mt-1 text-xs ${s.text}`}>{s.sub}</div>
+                <div className={`mt-0.5 md:mt-1 text-xs ${s.text}`}>{s.sub}</div>
               </Reveal>
             ))}
           </div>
         </div>
 
-        <p className="mt-14 text-center text-[#0c0b1e]/50 text-sm">
+        <p className="mt-8 md:mt-14 text-center text-[#0c0b1e]/50 text-sm">
           You keep running the business.{" "}
           <span className="text-[#0c0b1e]/80 font-medium">
             I keep the wheel turning.

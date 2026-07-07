@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Paintbrush, MapPin, Star, TrendingUp, Smartphone, ArrowRight } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
-import SectionLabel from "@/components/SectionLabel";
 import BlurIn from "@/components/BlurIn";
 import { StaggerParent, StaggerChild } from "@/components/StaggerParent";
 import ProcessSection from "@/components/ProcessSection";
@@ -108,9 +107,6 @@ export default function ServicesPage() {
           }}
         />
         <div className="relative max-w-5xl mx-auto px-6 lg:px-12 text-center">
-          <BlurIn>
-            <SectionLabel>Our Services</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight text-[#0c0b1e] mt-6">
               Everything your business needs to{" "}
@@ -136,21 +132,21 @@ export default function ServicesPage() {
 
       {/* Core Services */}
       <SectionWrapper>
-        <StaggerParent className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <StaggerParent className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 max-w-4xl mx-auto">
           {pillars.map((pillar) => {
             const Icon = pillar.icon;
             return (
               <StaggerChild
                 key={pillar.title}
-                className="bg-white border border-black/[0.08] rounded-2xl p-8 shadow-sm"
+                className="bg-white border border-black/[0.08] rounded-2xl p-5 md:p-8 shadow-sm"
               >
                 <div
-                  className={`grid place-items-center w-12 h-12 rounded-xl border ${pillar.accent.ring}`}
+                  className={`grid place-items-center w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl border ${pillar.accent.ring}`}
                 >
-                  <Icon className={`w-6 h-6 ${pillar.accent.icon}`} />
+                  <Icon className={`w-5 h-5 md:w-6 md:h-6 ${pillar.accent.icon}`} />
                 </div>
-                <div className="flex items-center gap-3 mt-5 flex-wrap">
-                  <h2 className="text-xl font-medium text-[#0c0b1e]">
+                <div className="flex items-center gap-3 mt-3.5 md:mt-5 flex-wrap">
+                  <h2 className="text-lg md:text-xl font-medium text-[#0c0b1e]">
                     {pillar.title}
                   </h2>
                   <span
@@ -165,14 +161,14 @@ export default function ServicesPage() {
                     {pillar.plan}
                   </span>
                 </div>
-                <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-3">
+                <p className="text-[#0c0b1e]/60 text-xs md:text-sm leading-snug md:leading-relaxed mt-2.5 md:mt-3">
                   {pillar.description}
                 </p>
-                <ul className="mt-5 space-y-2">
+                <ul className="mt-3.5 md:mt-5 space-y-1.5 md:space-y-2">
                   {pillar.bullets.map((b) => (
                     <li
                       key={b}
-                      className="flex items-start gap-2 text-[#0c0b1e]/70 text-sm"
+                      className="flex items-start gap-2 text-[#0c0b1e]/70 text-xs md:text-sm"
                     >
                       <span className="text-accent mt-1 shrink-0">&bull;</span>
                       {b}
@@ -186,20 +182,20 @@ export default function ServicesPage() {
 
         {/* Inbox — included */}
         <BlurIn delay={0.2}>
-          <div className="max-w-4xl mx-auto mt-6 bg-white border border-black/[0.08] rounded-2xl p-6 flex items-start gap-5 shadow-sm">
-            <div className="grid place-items-center w-12 h-12 rounded-xl border border-accent/20 bg-accent/10 shrink-0">
-              <Smartphone className="w-6 h-6 text-accent" />
+          <div className="max-w-4xl mx-auto mt-3 md:mt-6 bg-white border border-black/[0.08] rounded-2xl p-5 md:p-6 flex items-start gap-4 md:gap-5 shadow-sm">
+            <div className="grid place-items-center w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl border border-accent/20 bg-accent/10 shrink-0">
+              <Smartphone className="w-5 h-5 md:w-6 md:h-6 text-accent" />
             </div>
             <div>
               <div className="flex items-center gap-3 flex-wrap">
-                <h3 className="text-lg font-medium text-[#0c0b1e]">
+                <h3 className="text-base md:text-lg font-medium text-[#0c0b1e]">
                   All Your Leads in One Inbox
                 </h3>
                 <span className="rounded-full px-2.5 py-0.5 text-xs font-medium border border-black/15 text-[#0c0b1e]/60">
                   All plans
                 </span>
               </div>
-              <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-1">
+              <p className="text-[#0c0b1e]/60 text-xs md:text-sm leading-snug md:leading-relaxed mt-1">
                 An all-in-one inbox is one place where every call, text, and
                 lead from your website lands, so nothing slips through the
                 cracks. All plans include it on web and phone, and we set it

@@ -23,16 +23,16 @@ function Card({
   return (
     <Reveal
       delay={index * 110}
-      className={`group flex flex-col rounded-3xl border border-black/[0.07] bg-white p-6 lg:p-7 shadow-xl shadow-[#0c0b1e]/[0.05] transition-all duration-300 hover:-translate-y-1 hover:border-black/15 ${glow}`}
+      className={`group flex flex-col rounded-2xl md:rounded-3xl border border-black/[0.07] bg-white p-4 md:p-6 lg:p-7 shadow-xl shadow-[#0c0b1e]/[0.05] transition-all duration-300 hover:-translate-y-1 hover:border-black/15 ${glow}`}
     >
       <span
         className={`text-xs font-semibold uppercase tracking-wide ${eyebrowColor}`}
       >
         {eyebrow}
       </span>
-      <h3 className="mt-2 text-xl font-medium text-[#0c0b1e]">{title}</h3>
-      <p className="mt-2 text-[#0c0b1e]/60 text-sm leading-relaxed">{body}</p>
-      <div className="mt-6 flex-1 flex items-end">{children}</div>
+      <h3 className="mt-1.5 md:mt-2 text-lg md:text-xl font-medium text-[#0c0b1e]">{title}</h3>
+      <p className="mt-1.5 md:mt-2 text-[#0c0b1e]/60 text-xs md:text-sm leading-snug md:leading-relaxed">{body}</p>
+      <div className="mt-4 md:mt-6 flex-1 flex items-end">{children}</div>
     </Reveal>
   );
 }
@@ -60,7 +60,7 @@ export default function GrowUnderHood() {
           </p>
         </div>
 
-        <div className="mt-14 grid md:grid-cols-3 gap-6">
+        <div className="mt-8 md:mt-14 grid md:grid-cols-3 gap-3 md:gap-6">
           {/* Card 1 — SMS review request */}
           <Card
             index={0}

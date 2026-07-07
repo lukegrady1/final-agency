@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import type { ComponentType } from "react";
 import SectionWrapper from "./SectionWrapper";
-import SectionLabel from "./SectionLabel";
 import BlurIn from "./BlurIn";
 import { StaggerParent, StaggerChild } from "./StaggerParent";
 import {
@@ -52,10 +51,7 @@ function planTagClass(tag: CapabilityPlanTag) {
 export default function ServicesOverview() {
   return (
     <SectionWrapper>
-      <div className="text-center mb-16">
-        <BlurIn>
-          <SectionLabel>What We Do</SectionLabel>
-        </BlurIn>
+      <div className="text-center mb-10 md:mb-16">
         <BlurIn delay={0.1}>
           <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
             One system to{" "}
@@ -65,7 +61,7 @@ export default function ServicesOverview() {
           </h2>
         </BlurIn>
         <BlurIn delay={0.2}>
-          <p className="text-[#0c0b1e]/60 text-lg leading-relaxed max-w-2xl mx-auto mt-4">
+          <p className="text-[#0c0b1e]/60 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mt-4">
             Everything below is built and managed for you. It comes in three
             simple plans — start with a website at $97 a month, add the review
             engine at $147, or run the full Growth System at $297. Each tag
@@ -74,32 +70,32 @@ export default function ServicesOverview() {
         </BlurIn>
       </div>
 
-      <StaggerParent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <StaggerParent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
         {capabilities.map((cap, i) => {
           const Icon = iconMap[cap.iconKey];
           return (
             <StaggerChild
               key={cap.title}
-              className="bg-white border border-black/[0.08] rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+              className="bg-white border border-black/[0.08] rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
             >
               <div className="flex items-start justify-between gap-3">
                 <div
-                  className={`grid place-items-center w-11 h-11 rounded-xl border ${chipStyles[i]}`}
+                  className={`grid place-items-center w-9 h-9 md:w-11 md:h-11 rounded-lg md:rounded-xl border ${chipStyles[i]}`}
                 >
-                  <Icon className="w-5 h-5" />
+                  <Icon className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
                 <span
-                  className={`rounded-full px-2.5 py-0.5 text-[11px] font-medium border ${planTagClass(
+                  className={`rounded-full px-2.5 py-0.5 text-[10px] md:text-[11px] font-medium border ${planTagClass(
                     cap.planTag,
                   )}`}
                 >
                   {cap.planTag}
                 </span>
               </div>
-              <h3 className="text-lg font-medium text-[#0c0b1e] mt-4 mb-2">
+              <h3 className="text-base md:text-lg font-medium text-[#0c0b1e] mt-3 md:mt-4 mb-1.5 md:mb-2">
                 {cap.title}
               </h3>
-              <p className="text-[#0c0b1e]/60 text-sm leading-relaxed">
+              <p className="text-[#0c0b1e]/60 text-xs md:text-sm leading-snug md:leading-relaxed">
                 {cap.body}
               </p>
             </StaggerChild>

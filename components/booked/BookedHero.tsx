@@ -27,12 +27,6 @@ export default function BookedHero() {
     <section className="relative pt-24 lg:pt-28 pb-10 lg:pb-12 overflow-hidden grain-overlay">
       <AuroraBackdrop tone="indigo-cyan" />
       <div className="relative max-w-4xl mx-auto px-6 lg:px-12 text-center">
-        <BlurIn>
-          <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 backdrop-blur-sm px-4 py-1.5 text-xs text-accent font-medium shadow-sm">
-            <CalendarCheck className="w-3.5 h-3.5" />
-            Your Roadmap Call is Confirmed
-          </span>
-        </BlurIn>
         <BlurIn delay={0.15}>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight lg:leading-[1.1] text-[#0c0b1e] tracking-tight mt-6">
             You&apos;re Booked.

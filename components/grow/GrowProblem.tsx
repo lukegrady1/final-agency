@@ -204,12 +204,12 @@ export default function GrowProblem() {
               </div>
             </div>
 
-            {/* Story cards — all shown together */}
-            <div className="space-y-5">
+            {/* Story cards — all shown together, compact on mobile */}
+            <div className="space-y-3 md:space-y-5">
               {stories.map((s) => (
                 <div
                   key={s.n}
-                  className={`rounded-3xl border border-black/[0.07] bg-white p-7 shadow-xl ${s.glow}`}
+                  className={`rounded-2xl md:rounded-3xl border border-black/[0.07] bg-white p-4 md:p-7 shadow-xl ${s.glow}`}
                 >
                   <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide">
                     <span className={`w-2 h-2 rounded-full ${s.dot}`} />
@@ -217,10 +217,10 @@ export default function GrowProblem() {
                       {s.n} / {s.tag}
                     </span>
                   </div>
-                  <h3 className="mt-3 text-2xl font-medium leading-snug text-[#0c0b1e]">
+                  <h3 className="mt-2 md:mt-3 text-lg md:text-2xl font-medium leading-snug text-[#0c0b1e]">
                     {s.title}
                   </h3>
-                  <p className="mt-3 text-[#0c0b1e]/60 leading-relaxed">
+                  <p className="mt-1.5 md:mt-3 text-[#0c0b1e]/60 text-xs md:text-base leading-snug md:leading-relaxed">
                     {s.body}
                   </p>
                 </div>

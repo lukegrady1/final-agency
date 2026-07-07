@@ -14,7 +14,6 @@ import {
   UserRound,
 } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
-import SectionLabel from "@/components/SectionLabel";
 import BlurIn from "@/components/BlurIn";
 import FAQAccordion from "@/components/FAQAccordion";
 import BookedHero from "@/components/booked/BookedHero";
@@ -167,9 +166,6 @@ export default function BookedPage() {
               }}
             />
             <div className="relative text-center">
-              <span className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-3 py-1.5 text-xs text-accent font-medium">
-                Step 1 — Do this before our call
-              </span>
               <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-5">
                 Run your free Google Profile audit
               </h2>
@@ -214,9 +210,6 @@ export default function BookedPage() {
       {/* SECTION 3.5 — STEP 2: SHOW UP READY */}
       <SectionWrapper className="!pt-0">
         <div className="max-w-2xl mx-auto text-center">
-          <BlurIn>
-            <SectionLabel>Step 2</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.2}>
             <h2 className="font-display italic text-3xl md:text-4xl text-[#0c0b1e] mt-6">
               Show Up Ready
@@ -254,9 +247,6 @@ export default function BookedPage() {
       {/* SECTION 4 — FAQ */}
       <SectionWrapper className="bg-white/50 backdrop-blur-sm border-y border-black/10">
         <div className="text-center mb-12">
-          <BlurIn>
-            <SectionLabel>Before the Call</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
               Questions you might be wondering
@@ -275,9 +265,6 @@ export default function BookedPage() {
       {/* SECTION 5 — THE WORK (proof) */}
       <SectionWrapper>
         <div className="text-center mb-12">
-          <BlurIn>
-            <SectionLabel>The Work</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
               Sites I&apos;ve built for businesses like yours
@@ -302,7 +289,7 @@ export default function BookedPage() {
                     className="object-contain object-center"
                   />
                 </div>
-                <div className="p-6 flex items-center justify-between gap-4">
+                <div className="p-4 md:p-6 flex items-center justify-between gap-4">
                   <div>
                     <h3 className="text-lg font-medium text-[#0c0b1e]">
                       {project.name}
@@ -342,10 +329,7 @@ export default function BookedPage() {
 
       {/* SECTION 6 — HOW IT WORKS */}
       <SectionWrapper className="bg-white/50 backdrop-blur-sm border-y border-black/10">
-        <div className="text-center mb-16">
-          <BlurIn>
-            <SectionLabel>How It Works</SectionLabel>
-          </BlurIn>
+        <div className="text-center mb-10 md:mb-16">
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
               From Roadmap Call to live in 10 days
@@ -357,19 +341,21 @@ export default function BookedPage() {
             </p>
           </BlurIn>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-6">
           {howItWorks.map((step, i) => (
             <BlurIn key={step.n} delay={i * 0.1}>
-              <div className="bg-white border border-black/[0.08] rounded-2xl p-6 h-full shadow-sm">
-                <span className="text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-br from-black/[0.12] to-black/[0.04]">
+              <div className="bg-white border border-black/[0.08] rounded-2xl p-4 md:p-6 h-full shadow-sm flex items-start gap-4 md:block">
+                <span className="text-3xl md:text-5xl leading-none font-medium text-transparent bg-clip-text bg-gradient-to-br from-black/[0.12] to-black/[0.04] shrink-0">
                   {step.n}
                 </span>
-                <h3 className="text-lg font-medium text-[#0c0b1e] mt-2">
-                  {step.t}
-                </h3>
-                <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-2">
-                  {step.b}
-                </p>
+                <div>
+                  <h3 className="text-base md:text-lg font-medium text-[#0c0b1e] md:mt-2">
+                    {step.t}
+                  </h3>
+                  <p className="text-[#0c0b1e]/60 text-xs md:text-sm leading-snug md:leading-relaxed mt-1 md:mt-2">
+                    {step.b}
+                  </p>
+                </div>
               </div>
             </BlurIn>
           ))}
@@ -378,10 +364,7 @@ export default function BookedPage() {
 
       {/* SECTION 7 — WHAT'S INCLUDED */}
       <SectionWrapper>
-        <div className="text-center mb-16">
-          <BlurIn>
-            <SectionLabel>What&apos;s Included</SectionLabel>
-          </BlurIn>
+        <div className="text-center mb-10 md:mb-16">
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
               The full Growth System — $297/mo
@@ -397,17 +380,19 @@ export default function BookedPage() {
             </p>
           </BlurIn>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {included.map((item, i) => (
             <BlurIn key={item.title} delay={i * 0.08}>
-              <div className="bg-white border border-black/[0.08] rounded-2xl p-6 h-full shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent">
-                  <item.icon className="w-5 h-5" />
+              <div className="bg-white border border-black/[0.08] rounded-2xl p-4 md:p-6 h-full shadow-sm">
+                <div className="flex items-center gap-3 md:block">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
+                    <item.icon className="w-4 h-4 md:w-5 md:h-5" />
+                  </div>
+                  <h3 className="text-base md:text-lg font-medium text-[#0c0b1e] md:mt-4">
+                    {item.title}
+                  </h3>
                 </div>
-                <h3 className="text-lg font-medium text-[#0c0b1e] mt-4">
-                  {item.title}
-                </h3>
-                <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-2">
+                <p className="text-[#0c0b1e]/60 text-xs md:text-sm leading-snug md:leading-relaxed mt-2">
                   {item.body}
                 </p>
               </div>
@@ -419,9 +404,6 @@ export default function BookedPage() {
       {/* SECTION 8 — GET EXCITED / CHECK YOUR EMAIL */}
       <SectionWrapper className="bg-white/50 backdrop-blur-sm border-t border-black/10">
         <div className="max-w-3xl mx-auto text-center">
-          <BlurIn>
-            <SectionLabel>You&apos;re All Set</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
               See you on the call

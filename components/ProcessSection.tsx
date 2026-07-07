@@ -1,7 +1,6 @@
 "use client";
 
 import SectionWrapper from "./SectionWrapper";
-import SectionLabel from "./SectionLabel";
 import { StaggerParent, StaggerChild } from "./StaggerParent";
 import BlurIn from "./BlurIn";
 
@@ -31,26 +30,27 @@ const steps = [
 export default function ProcessSection() {
   return (
     <SectionWrapper>
-      <div className="text-center mb-16">
-        <BlurIn>
-          <SectionLabel>How It Works</SectionLabel>
-        </BlurIn>
+      <div className="text-center mb-10 md:mb-16">
         <BlurIn delay={0.1}>
           <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
             From call to launch in 10 business days
           </h2>
         </BlurIn>
       </div>
-      <StaggerParent className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      {/* Mobile: compact number-beside-text rows so all four steps fit one
+          screen. Desktop: the original four-column cards. */}
+      <StaggerParent className="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-6">
         {steps.map((step, i) => (
-          <StaggerChild key={step.number} className="relative bg-white border border-black/[0.08] rounded-2xl p-6 shadow-sm">
-            <div className="text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-br from-black/[0.12] to-black/[0.04]">
+          <StaggerChild key={step.number} className="relative bg-white border border-black/[0.08] rounded-2xl p-4 md:p-6 shadow-sm flex items-start gap-4 md:block">
+            <div className="text-3xl md:text-5xl leading-none font-medium text-transparent bg-clip-text bg-gradient-to-br from-black/[0.12] to-black/[0.04] shrink-0">
               {step.number}
             </div>
-            <h3 className="text-lg font-medium text-[#0c0b1e] mt-2">
-              {step.title}
-            </h3>
-            <p className="text-sm text-[#0c0b1e]/60 mt-2">{step.body}</p>
+            <div>
+              <h3 className="text-base md:text-lg font-medium text-[#0c0b1e] md:mt-2">
+                {step.title}
+              </h3>
+              <p className="text-xs md:text-sm text-[#0c0b1e]/60 mt-1 md:mt-2">{step.body}</p>
+            </div>
             {i < steps.length - 1 && (
               <span className="hidden md:block absolute top-6 -right-3 text-2xl text-[#0c0b1e]/20">
                 &rarr;

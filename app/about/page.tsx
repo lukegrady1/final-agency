@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Paintbrush, Code, Eye, Target, DollarSign, Wrench, Search } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
-import SectionLabel from "@/components/SectionLabel";
 import BlurIn from "@/components/BlurIn";
 import Parallax from "@/components/Parallax";
 import { StaggerParent, StaggerChild } from "@/components/StaggerParent";
@@ -148,9 +147,6 @@ export default function AboutPage() {
             </div>
           </BlurIn>
           <div>
-            <BlurIn>
-              <SectionLabel>Who&apos;s behind Grady Digital</SectionLabel>
-            </BlurIn>
             <BlurIn delay={0.1}>
               <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">
                 Hey, I&apos;m Luke.
@@ -204,25 +200,27 @@ export default function AboutPage() {
             </p>
           </BlurIn>
         </div>
-        <StaggerParent className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        <StaggerParent className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mt-8 md:mt-12">
           {buildCards.map((item) => {
             const Icon = item.icon;
             return (
               <StaggerChild
                 key={item.title}
-                className="bg-white border border-black/[0.08] rounded-2xl p-6 text-center shadow-sm"
+                className="bg-white border border-black/[0.08] rounded-2xl p-4 md:p-6 text-left md:text-center shadow-sm flex items-start gap-4 md:block"
               >
                 <div
-                  className={`grid place-items-center w-12 h-12 rounded-xl border ${item.ring} mx-auto`}
+                  className={`grid place-items-center w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl border ${item.ring} md:mx-auto shrink-0`}
                 >
-                  <Icon className={`w-6 h-6 ${item.color}`} />
+                  <Icon className={`w-5 h-5 md:w-6 md:h-6 ${item.color}`} />
                 </div>
-                <h3 className="text-lg font-medium text-[#0c0b1e] mt-4">
-                  {item.title}
-                </h3>
-                <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-2">
-                  {item.body}
-                </p>
+                <div>
+                  <h3 className="text-base md:text-lg font-medium text-[#0c0b1e] md:mt-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-[#0c0b1e]/60 text-xs md:text-sm leading-snug md:leading-relaxed mt-1 md:mt-2">
+                    {item.body}
+                  </p>
+                </div>
               </StaggerChild>
             );
           })}
@@ -238,25 +236,27 @@ export default function AboutPage() {
             </h2>
           </BlurIn>
         </div>
-        <StaggerParent className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StaggerParent className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
           {missionCards.map((item) => {
             const Icon = item.icon;
             return (
               <StaggerChild
                 key={item.title}
-                className="bg-white border border-black/[0.08] rounded-2xl p-6 text-center shadow-sm"
+                className="bg-white border border-black/[0.08] rounded-2xl p-4 md:p-6 text-left md:text-center shadow-sm flex items-start gap-4 md:block"
               >
                 <div
-                  className={`grid place-items-center w-12 h-12 rounded-xl border ${item.ring} mx-auto`}
+                  className={`grid place-items-center w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl border ${item.ring} md:mx-auto shrink-0`}
                 >
-                  <Icon className={`w-6 h-6 ${item.color}`} />
+                  <Icon className={`w-5 h-5 md:w-6 md:h-6 ${item.color}`} />
                 </div>
-                <h3 className="text-lg font-medium text-[#0c0b1e] mt-4">
-                  {item.title}
-                </h3>
-                <p className="text-[#0c0b1e]/60 text-sm leading-relaxed mt-2">
-                  {item.body}
-                </p>
+                <div>
+                  <h3 className="text-base md:text-lg font-medium text-[#0c0b1e] md:mt-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-[#0c0b1e]/60 text-xs md:text-sm leading-snug md:leading-relaxed mt-1 md:mt-2">
+                    {item.body}
+                  </p>
+                </div>
               </StaggerChild>
             );
           })}

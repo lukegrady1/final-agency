@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import BlurIn from "@/components/BlurIn";
-import SectionLabel from "@/components/SectionLabel";
 import Breadcrumbs from "./Breadcrumbs";
 
 interface BreadcrumbItem {
@@ -40,9 +39,6 @@ export default function ProgrammaticHero({
           <Breadcrumbs items={breadcrumbs} />
         </BlurIn>
         <div className="mt-8">
-          <BlurIn delay={0.05}>
-            <SectionLabel>{label}</SectionLabel>
-          </BlurIn>
           <BlurIn delay={0.1}>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white mt-6 leading-tight lg:leading-[1.2]">
               {h1}
