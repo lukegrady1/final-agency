@@ -4,109 +4,164 @@ import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
 
-// A thread that meanders down the full height of the page in the background.
-// An arrow rides it, anchored near the visitor's reading line so it keeps pace
-// with the scroll (never lags), rotating to follow the curve. The traveled
-// portion draws in; a faint dotted track shows the path ahead. Sits behind the
-// content and never intercepts clicks.
+// A downward arrow that guides the visitor through the page, but only ever
+// travels through the whitespace *between* sections — never over content. As
+// the reading line moves through a gap the arrow advances; when it reaches the
+// content it parks at the gap's edge (staying visible), and it resumes from the
+// exact same spot in the next gap, so the motion reads as continuous rather
+// than jumping. Homepage only; behind content; never intercepts clicks.
 
-const AMP_RATIO = 0.26;
-const AMP_MAX = 300;
-const WAVELENGTH = 1150; // px of page per left-right swing
 const ANCHOR = 0.44; // arrow's resting height in the viewport (fraction)
+const WAVELENGTH = 380; // px of traveled distance per left/right swing
+const TAIL = 120; // px of trailing ribbon behind the arrow
 
-function buildPath(w: number, h: number): string {
-  const cx = w * 0.5;
-  const amp = Math.min(w * AMP_RATIO, AMP_MAX);
-  const waves = Math.max(2, Math.round(h / WAVELENGTH));
-  const k = (waves * Math.PI * 2) / Math.max(h, 1);
-  let d = "";
-  for (let y = 0; y <= h; y += 16) {
-    const x = cx + amp * Math.sin(y * k);
-    d += (y === 0 ? "M" : "L") + `${x.toFixed(1)} ${y.toFixed(1)} `;
-  }
-  return d.trim();
-}
+const clamp01 = (n: number) => Math.min(Math.max(n, 0), 1);
 
 export default function ScrollGuide() {
   const wrapRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
-  const trackRef = useRef<SVGPathElement>(null);
-  const drawnRef = useRef<SVGPathElement>(null);
   const arrowRef = useRef<SVGGElement>(null);
+  const tailRef = useRef<SVGPathElement>(null);
   const pathname = usePathname();
 
   useEffect(() => {
     if (pathname !== "/") return;
     const wrap = wrapRef.current;
     const svg = svgRef.current;
-    const track = trackRef.current;
-    const drawn = drawnRef.current;
     const arrow = arrowRef.current;
-    if (!wrap || !svg || !track || !drawn || !arrow) return;
+    const tail = tailRef.current;
+    if (!wrap || !svg || !arrow || !tail) return;
 
-    let tl: gsap.core.Timeline | null = null;
     let st: ScrollTrigger | null = null;
-    let pageH = 1;
+    // Gap bands between sections, in page-Y, plus derived geometry.
+    let bands: [number, number][] = [];
+    let cx = 0;
+    let amp = 0;
+    const k = (Math.PI * 2) / WAVELENGTH;
     let heroBottom = 1;
 
-    // Tie the arrow's progress to the reading line so it keeps pace with the
-    // scroll instead of crawling by arc-length on tall pages. The whole guide
-    // fades in only once the visitor has scrolled off the hero.
+    // Gentle primary swing plus a whisper of second harmonic for a soft,
+    // S-curving route that leans through each gap rather than darting across it.
+    const meanderX = (t: number) =>
+      cx + amp * Math.sin(t * k) + amp * 0.12 * Math.sin(t * k * 2);
+
     const update = () => {
-      if (!tl) return;
+      const vh = window.innerHeight;
       const y = window.scrollY;
-      const f = Math.min(Math.max((y + window.innerHeight * ANCHOR) / pageH, 0), 1);
-      tl.progress(f);
-      const fade = Math.min(
-        Math.max((y - heroBottom * 0.7) / (heroBottom * 0.3), 0),
-        1,
-      );
-      gsap.set(wrap, { opacity: fade });
+
+      // Fade the whole guide in only once past the hero.
+      gsap.set(wrap, {
+        opacity: clamp01((y - heroBottom * 0.7) / (heroBottom * 0.3)),
+      });
+      if (bands.length === 0) return;
+
+      const readingY = y + vh * ANCHOR;
+      let arrowY = bands[0][0];
+      let traveled = 0; // distance along the "gaps-only" path
+      let gapTop = bands[0][0];
+      let gapBase = 0; // traveled at the top of the current gap
+      let visible = false;
+      let cumulative = 0;
+      let prevBottom: number | null = null;
+      let matched = false;
+
+      for (let i = 0; i < bands.length; i++) {
+        const [s, e] = bands[i];
+        if (readingY < s) {
+          // In content above this band — park at the previous gap's edge.
+          if (prevBottom === null) {
+            visible = false;
+            arrowY = s;
+            traveled = 0;
+          } else {
+            visible = true;
+            arrowY = prevBottom;
+            traveled = cumulative;
+            gapTop = bands[i - 1][0];
+            gapBase = cumulative - (bands[i - 1][1] - bands[i - 1][0]);
+          }
+          matched = true;
+          break;
+        }
+        if (readingY <= e) {
+          // Travelling through this gap.
+          visible = true;
+          arrowY = readingY;
+          traveled = cumulative + (readingY - s);
+          gapTop = s;
+          gapBase = cumulative;
+          matched = true;
+          break;
+        }
+        cumulative += e - s;
+        prevBottom = e;
+      }
+
+      if (!matched) {
+        // Past every gap — park at the final gap's edge.
+        visible = prevBottom !== null;
+        arrowY = prevBottom ?? bands[bands.length - 1][1];
+        traveled = cumulative;
+        gapTop = bands[bands.length - 1][0];
+        gapBase = cumulative - (bands[bands.length - 1][1] - bands[bands.length - 1][0]);
+      }
+
+      const x = meanderX(traveled);
+      gsap.set(arrow, { x, y: arrowY, opacity: visible ? 1 : 0 });
+
+      // Curved trailing ribbon that follows the same meander, clipped to the
+      // current gap so it never spills into the content above. Sampling the
+      // path (rather than a straight chord) is what makes the S visible.
+      const tailTopY = Math.max(gapTop, arrowY - TAIL);
+      const STEPS = 16;
+      let d = "";
+      for (let i = 0; i <= STEPS; i++) {
+        const yy = tailTopY + ((arrowY - tailTopY) * i) / STEPS;
+        const tt = gapBase + (yy - gapTop);
+        d += `${i === 0 ? "M" : "L"} ${meanderX(tt).toFixed(1)} ${yy.toFixed(1)} `;
+      }
+      tail.setAttribute("d", d.trim());
+      tail.style.opacity = visible ? "1" : "0";
     };
 
     const setup = () => {
       const w = wrap.clientWidth || document.documentElement.clientWidth;
       const h = wrap.offsetHeight || document.body.offsetHeight;
-      pageH = h;
+      cx = w * 0.5;
+      amp = Math.min(w * 0.06, 54); // gentle lean; scales down on narrow screens
+      svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+
+      const sy = window.scrollY;
       const hero = document.querySelector("main section");
       heroBottom = hero
-        ? hero.getBoundingClientRect().bottom + window.scrollY
+        ? hero.getBoundingClientRect().bottom + sy
         : window.innerHeight;
-      gsap.set(wrap, { opacity: 0 });
-      svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
-      const d = buildPath(w, h);
-      track.setAttribute("d", d);
-      drawn.setAttribute("d", d);
-      const len = drawn.getTotalLength();
-      gsap.set(drawn, { strokeDasharray: len, strokeDashoffset: len });
 
-      tl?.kill();
+      const sections = Array.from(document.querySelectorAll("main section"))
+        .map((el) => {
+          const r = el.getBoundingClientRect();
+          return { top: r.top + sy, bottom: r.bottom + sy, height: r.height };
+        })
+        .filter((s) => s.height > 4)
+        .sort((a, b) => a.top - b.top);
+
+      const HALF = 92; // half-height of each gap band (how far the arrow travels)
+      bands = [];
+      for (let i = 0; i < sections.length - 1; i++) {
+        const boundary = (sections[i].bottom + sections[i + 1].top) / 2;
+        bands.push([boundary - HALF, boundary + HALF]);
+      }
+
       st?.kill();
+      gsap.set(wrap, { opacity: 0 });
 
       if (prefersReducedMotion()) {
-        gsap.set(drawn, { strokeDashoffset: len * 0.5 });
         gsap.set(arrow, { opacity: 0 });
-        tl = null;
+        tail.style.opacity = "0";
         st = null;
         return;
       }
 
-      gsap.set(arrow, { opacity: 1 });
-      tl = gsap.timeline({ paused: true });
-      tl.to(drawn, { strokeDashoffset: 0, ease: "none" }, 0).to(
-        arrow,
-        {
-          motionPath: {
-            path: drawn,
-            align: drawn,
-            alignOrigin: [0.5, 0.5],
-            autoRotate: true,
-          },
-          ease: "none",
-        },
-        0,
-      );
       st = ScrollTrigger.create({ start: 0, end: "max", onUpdate: update });
       update();
     };
@@ -131,12 +186,10 @@ export default function ScrollGuide() {
       window.clearTimeout(debounce);
       window.removeEventListener("resize", relayout);
       ro.disconnect();
-      tl?.kill();
       st?.kill();
     };
   }, [pathname]);
 
-  // The scroll-guide arrow only runs on the homepage.
   if (pathname !== "/") return null;
 
   return (
@@ -153,52 +206,50 @@ export default function ScrollGuide() {
         fill="none"
       >
         <defs>
-          <linearGradient id="guideGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#12b5c9" />
-            <stop offset="45%" stopColor="#6c6af6" />
-            <stop offset="100%" stopColor="#9333ea" />
-          </linearGradient>
-          <filter id="guideGlow" x="-60%" y="-60%" width="220%" height="220%">
-            <feGaussianBlur stdDeviation="3" result="b" />
+          <filter id="guideGlow" x="-70%" y="-70%" width="240%" height="240%">
+            <feGaussianBlur stdDeviation="4" result="b" />
             <feMerge>
               <feMergeNode in="b" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
+          {/* comet fade: transparent at the top of the trail, solid at the arrow */}
+          <linearGradient id="guideTail" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#6c6af6" stopOpacity="0" />
+            <stop offset="1" stopColor="#6c6af6" stopOpacity="0.55" />
+          </linearGradient>
         </defs>
 
-        {/* faint full-journey track */}
+        {/* curved trailing ribbon behind the arrow */}
         <path
-          ref={trackRef}
-          d=""
-          stroke="#6c6af6"
-          strokeWidth={1.75}
+          ref={tailRef}
+          fill="none"
+          stroke="url(#guideTail)"
+          strokeWidth={2.5}
           strokeLinecap="round"
-          strokeDasharray="1 12"
-          opacity={0.16}
+          strokeLinejoin="round"
+          opacity={0}
         />
-        {/* traveled portion */}
-        <path
-          ref={drawnRef}
-          d=""
-          stroke="url(#guideGrad)"
-          strokeWidth={2.75}
-          strokeLinecap="round"
-          opacity={0.5}
-          filter="url(#guideGlow)"
-        />
-        {/* the arrow the visitor follows */}
+
+        {/* the down-arrow marker */}
         <g ref={arrowRef} opacity={0} filter="url(#guideGlow)">
-          <circle r={21} fill="#6c6af6" opacity={0.1} />
-          <circle r={13} fill="#ffffff" opacity={0.92} />
+          <circle r={19} fill="#6c6af6" opacity={0.14} />
+          <circle r={12} fill="#ffffff" opacity={0.96} />
           <circle
-            r={13}
+            r={12}
             fill="none"
             stroke="#6c6af6"
             strokeWidth={1.25}
-            opacity={0.4}
+            opacity={0.5}
           />
-          <path d="M -6 -8 L 11 0 L -6 8 Z" fill="#6c6af6" opacity={0.85} />
+          <path
+            d="M -5 -3 L 0 4 L 5 -3"
+            fill="none"
+            stroke="#6c6af6"
+            strokeWidth={2.4}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </g>
       </svg>
     </div>
