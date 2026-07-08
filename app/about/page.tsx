@@ -112,14 +112,12 @@ export default function AboutPage() {
                     "drop-shadow(0 24px 44px rgba(12,11,30,0.14))",
                 }}
               >
-                <Parallax className="absolute inset-[-12%]">
-                  <Image
-                    src="/site_after.webp"
-                    alt="Example website build by Grady Digital"
-                    fill
-                    className="object-contain object-center"
-                  />
-                </Parallax>
+                <Image
+                  src="/site_after.webp"
+                  alt="Example website build by Grady Digital"
+                  fill
+                  className="object-contain object-top p-3"
+                />
                 <p className="absolute bottom-3 left-0 right-0 text-center text-[#0c0b1e]/40 text-xs">
                   Example build preview
                 </p>
