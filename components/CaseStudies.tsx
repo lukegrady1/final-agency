@@ -24,7 +24,7 @@ export default function CaseStudies() {
           include={[
             "Imagine Construction",
             "Garabedian Plumbing & Heating",
-            "MJP Auto Detailing",
+            "Tee's Deli & Catering",
           ]}
         />
       </BlurIn>

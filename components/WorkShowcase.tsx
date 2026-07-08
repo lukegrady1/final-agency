@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
@@ -46,6 +46,22 @@ const projects: Project[] = [
     before: "/garabedian_before.webp",
   },
   {
+    name: "Tee's Deli & Catering",
+    category: "Deli & Catering",
+    description:
+      "A dated template site becomes a clean, modern home for a West Boylston deli and full-service caterer — built to win catering quotes and online orders. Drag the slider to compare.",
+    image: "/tees-deli-website-hero-section.webp",
+    before: "/tees-deli-website-hero-section-before.webp",
+    url: "https://teesdeli.com/",
+  },
+  {
+    name: "Greg's Cuts",
+    category: "Barber Shop",
+    description:
+      "A bold, no-nonsense site for a Gardner barbershop that drives calls and walk-ins with a clear, high-contrast design.",
+    image: "/greg-cuts-website-hero-section.webp",
+  },
+  {
     name: "MJP Auto Detailing",
     category: "Auto Detailing",
     description:
@@ -81,12 +97,34 @@ export default function WorkShowcase({ include }: WorkShowcaseProps) {
     ? projects.filter((p) => include.includes(p.name))
     : projects;
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
   const p = items[active];
   const prev = () => setActive((active + items.length - 1) % items.length);
   const next = () => setActive((active + 1) % items.length);
 
+  // Auto-advance through the sites so the whole portfolio plays without a click.
+  // Pauses on hover/focus, and respects prefers-reduced-motion.
+  useEffect(() => {
+    if (paused || items.length <= 1) return;
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+    const id = window.setInterval(() => {
+      setActive((a) => (a + 1) % items.length);
+    }, 5000);
+    return () => window.clearInterval(id);
+  }, [paused, items.length, active]);
+
   return (
-    <div>
+    <div
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={() => setPaused(false)}
+    >
       {/* Filmstrip — every site visible at a glance */}
       <div
         className={`grid gap-2 md:gap-3 ${
