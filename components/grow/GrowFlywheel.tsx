@@ -61,7 +61,7 @@ export default function GrowFlywheel() {
           </div>
 
           {/* Flywheel — the six steps arranged around a turning wheel */}
-          <div className="relative mt-10 md:mt-16 lg:mt-0 mx-auto w-full max-w-[320px] sm:max-w-[440px] lg:max-w-[520px] aspect-square">
+          <div className="relative mt-2 md:mt-16 lg:mt-0 mx-auto w-full max-w-[400px] sm:max-w-[460px] lg:max-w-[520px] aspect-square">
           {/* Static rail */}
           <div
             aria-hidden
