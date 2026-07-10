@@ -68,31 +68,31 @@ function Pin({
 export default function GrowProblem() {
   return (
     <section className="relative">
-      <div className="relative grain-overlay py-24 lg:py-32">
+      <div className="relative grain-overlay py-14 lg:py-32">
         <AuroraBackdrop tone="cyan" />
 
         <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             {/* Left: header + map comparison */}
             <div>
               <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[#0e8090]">
                 <span className="w-6 h-px bg-cyan" />
                 The problem
               </span>
-              <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.05] text-[#0c0b1e]">
+              <h2 className="mt-3 lg:mt-4 text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.05] text-[#0c0b1e]">
                 Your next customer is{" "}
                 <span className="grow-gradient-text font-display italic">
                   already searching.
                 </span>
               </h2>
-              <p className="mt-6 text-[#0c0b1e]/60 text-lg leading-relaxed max-w-md">
+              <p className="mt-4 lg:mt-6 text-[#0c0b1e]/60 text-base sm:text-lg leading-relaxed max-w-md">
                 The only question is whether Google sends them to you — or to the
                 competitor with more reviews, a stronger profile, and a head
                 start.
               </p>
 
               {/* Search → map → ranking card */}
-              <div className="relative mt-10 rounded-[28px] border border-black/[0.07] bg-white shadow-2xl shadow-[#0c0b1e]/10 p-5 sm:p-6">
+              <div className="relative mt-6 lg:mt-10 rounded-[28px] border border-black/[0.07] bg-white shadow-2xl shadow-[#0c0b1e]/10 p-5 sm:p-6">
                 <div
                   aria-hidden
                   className="absolute -inset-px rounded-[28px] -z-10 opacity-70 blur-xl"

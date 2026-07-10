@@ -35,22 +35,22 @@ export default function GrowFeatureStrip() {
   return (
     <section className="border-y border-black/10 bg-white/50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-black/[0.07]">
+        <div className="grid grid-cols-4 divide-x divide-black/[0.07]">
           {items.map(({ icon: Icon, title, label, color, ring }) => (
             <div
               key={title}
-              className="flex flex-col items-center text-center gap-3 px-4 py-8 lg:py-10"
+              className="flex flex-col items-center text-center gap-2 px-1.5 py-6 lg:gap-3 lg:px-4 lg:py-10"
             >
               <span
-                className={`grid place-items-center w-10 h-10 rounded-xl border ${ring}`}
+                className={`grid place-items-center w-9 h-9 lg:w-10 lg:h-10 rounded-xl border ${ring}`}
               >
-                <Icon className={`w-5 h-5 ${color}`} />
+                <Icon className={`w-4 h-4 lg:w-5 lg:h-5 ${color}`} />
               </span>
               <div>
-                <div className="text-[#0c0b1e] font-medium text-sm sm:text-base">
+                <div className="text-[#0c0b1e] font-medium text-[11px] leading-tight sm:text-sm lg:text-base">
                   {title}
                 </div>
-                <div className="text-[10px] sm:text-xs uppercase tracking-wide text-[#0c0b1e]/40 mt-1">
+                <div className="hidden lg:block text-[10px] sm:text-xs uppercase tracking-wide text-[#0c0b1e]/40 mt-1">
                   {label}
                 </div>
               </div>

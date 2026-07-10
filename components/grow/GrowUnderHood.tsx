@@ -39,7 +39,7 @@ function Card({
 
 export default function GrowUnderHood() {
   return (
-    <section className="relative overflow-hidden grain-overlay py-24 lg:py-32 border-t border-black/10">
+    <section className="relative overflow-hidden grain-overlay py-14 lg:py-32 border-t border-black/10">
       <AuroraBackdrop tone="indigo" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
@@ -48,13 +48,13 @@ export default function GrowUnderHood() {
             <span className="w-6 h-px bg-violet" />
             A look under the hood
           </span>
-          <h2 className="mt-4 text-4xl sm:text-5xl font-medium tracking-tight leading-[1.05] text-[#0c0b1e]">
+          <h2 className="mt-3 lg:mt-4 text-3xl sm:text-5xl font-medium tracking-tight leading-[1.05] text-[#0c0b1e]">
             Automation that still{" "}
             <span className="grow-gradient-text font-display italic">
               feels human.
             </span>
           </h2>
-          <p className="mt-5 text-[#0c0b1e]/60 text-lg leading-relaxed">
+          <p className="mt-4 lg:mt-5 text-[#0c0b1e]/60 text-base sm:text-lg leading-relaxed">
             The system does the heavy lifting in the background, but every
             message still sounds like you wrote it yourself.
           </p>

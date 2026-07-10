@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 
 export default function GrowFinalCTA() {
   return (
-    <section className="relative overflow-hidden grain-overlay py-28 lg:py-40 border-t border-black/10">
+    <section className="relative overflow-hidden grain-overlay py-16 lg:py-40 border-t border-black/10">
       {/* Concentric rings backdrop */}
       <div aria-hidden className="absolute inset-0 -z-10 grid place-items-center">
         <div className="grow-spin-slow">
@@ -40,7 +40,7 @@ export default function GrowFinalCTA() {
         <Reveal
           as="h2"
           delay={80}
-          className="mt-5 text-5xl sm:text-6xl font-medium tracking-tight leading-[1.03] text-[#0c0b1e]"
+          className="mt-4 lg:mt-5 text-4xl sm:text-6xl font-medium tracking-tight leading-[1.03] text-[#0c0b1e]"
         >
           Own more of your{" "}
           <span className="grow-gradient-text font-display italic">
@@ -51,7 +51,7 @@ export default function GrowFinalCTA() {
         <Reveal
           as="p"
           delay={160}
-          className="mt-6 text-[#0c0b1e]/70 text-lg leading-relaxed max-w-xl mx-auto"
+          className="mt-4 lg:mt-6 text-[#0c0b1e]/70 text-base sm:text-lg leading-relaxed max-w-xl mx-auto"
         >
           Let&apos;s look at your current Google presence together and map the
           simplest path to more reviews, better rankings, and more calls. Free,
@@ -60,7 +60,7 @@ export default function GrowFinalCTA() {
 
         <Reveal
           delay={240}
-          className="mt-10 flex flex-wrap items-center justify-center gap-3"
+          className="mt-7 lg:mt-10 flex flex-wrap items-center justify-center gap-3"
         >
           <Link
             href="/start#book"

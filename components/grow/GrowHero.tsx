@@ -5,7 +5,7 @@ import AuroraBackdrop from "./AuroraBackdrop";
 
 export default function GrowHero() {
   return (
-    <section className="relative overflow-hidden grain-overlay pt-36 pb-20 lg:pt-44 lg:pb-28">
+    <section className="relative overflow-hidden grain-overlay pt-28 pb-12 lg:pt-44 lg:pb-28">
       <AuroraBackdrop tone="indigo-cyan" />
       {/* Subtle grid lines, masked toward center */}
       <div
@@ -23,13 +23,13 @@ export default function GrowHero() {
       />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-10 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
           {/* Left: copy */}
           <div>
             <h1
               data-reveal-load
               style={{ ["--reveal-delay" as string]: "100ms" }}
-              className="mt-6 text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-[4.1rem] font-medium text-[#0c0b1e] tracking-tight"
+              className="mt-2 lg:mt-6 text-[2.35rem] leading-[1.05] sm:text-6xl lg:text-[4.1rem] font-medium text-[#0c0b1e] tracking-tight"
             >
               Make Google
               <br />
@@ -46,7 +46,7 @@ export default function GrowHero() {
             <p
               data-reveal-load
               style={{ ["--reveal-delay" as string]: "250ms" }}
-              className="mt-6 text-[#0c0b1e]/60 text-lg leading-relaxed max-w-md"
+              className="mt-4 lg:mt-6 text-[#0c0b1e]/60 text-base sm:text-lg leading-relaxed max-w-md"
             >
               I help local service businesses earn more 5-star reviews, climb the
               Google map pack, and turn nearby searches into real phone calls
@@ -57,7 +57,7 @@ export default function GrowHero() {
             <div
               data-reveal-load
               style={{ ["--reveal-delay" as string]: "400ms" }}
-              className="mt-9 flex flex-wrap items-center gap-3"
+              className="mt-6 lg:mt-9 flex flex-wrap items-center gap-3"
             >
               <Link
                 href="#how"
@@ -77,19 +77,21 @@ export default function GrowHero() {
             <div
               data-reveal-load
               style={{ ["--reveal-delay" as string]: "550ms" }}
-              className="mt-8 flex items-center gap-3"
+              className="mt-6 lg:mt-8 flex items-center gap-3"
             >
               <div className="flex -space-x-2">
                 {[
-                  "from-cyan to-accent",
-                  "from-violet to-accent",
-                  "from-amber to-violet",
-                  "from-accent to-cyan",
-                ].map((g, i) => (
+                  { g: "from-cyan to-accent", initial: "M" },
+                  { g: "from-violet to-accent", initial: "R" },
+                  { g: "from-amber to-violet", initial: "J" },
+                  { g: "from-accent to-cyan", initial: "G" },
+                ].map((a, i) => (
                   <span
                     key={i}
-                    className={`w-7 h-7 rounded-full bg-gradient-to-br ${g} border-2 border-[#f4f5fb]`}
-                  />
+                    className={`grid place-items-center w-7 h-7 rounded-full bg-gradient-to-br ${a.g} border-2 border-[#f4f5fb] text-white text-[10px] font-semibold`}
+                  >
+                    {a.initial}
+                  </span>
                 ))}
               </div>
               <span className="text-[#0c0b1e]/50 text-sm">
@@ -99,7 +101,7 @@ export default function GrowHero() {
           </div>
 
           {/* Right: animated mockup */}
-          <div className="relative">
+          <div className="relative w-full max-w-xs sm:max-w-sm mx-auto lg:max-w-none">
             <div
               style={{
                 transform:
