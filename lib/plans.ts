@@ -24,8 +24,6 @@ export interface Plan {
 
 /** Shared terms shown near pricing everywhere. */
 export const guaranteeTerms = "No setup fee · Month-to-month · Cancel anytime";
-export const liveGuarantee =
-  "Live in 10 business days, or your next month is free.";
 
 export const plans: Plan[] = [
   {

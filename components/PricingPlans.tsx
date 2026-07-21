@@ -9,7 +9,6 @@ import {
   plans,
   inheritsFrom,
   guaranteeTerms,
-  liveGuarantee,
   type PlanId,
 } from "@/lib/plans";
 
@@ -314,17 +313,6 @@ export default function PricingPlans({
           </div>
         ))}
       </div>
-
-      <BlurIn delay={0.4}>
-        <div className="mt-8 rounded-xl bg-accent/10 border border-accent/20 p-4 max-w-3xl mx-auto">
-          <p className="text-[#0c0b1e]/80 text-sm leading-relaxed text-center">
-            <span className="text-accent font-medium">{liveGuarantee}</span> No
-            big setup fee on any plan. Your first month gets your site built and
-            live. If I don&apos;t have you live within 10 business days, your
-            next month is on me.
-          </p>
-        </div>
-      </BlurIn>
 
       {showFootnote && (
         <BlurIn delay={0.5}>

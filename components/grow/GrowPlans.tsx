@@ -27,7 +27,7 @@ export default function GrowPlans() {
           </h2>
           <p className="mt-4 lg:mt-5 text-[#0c0b1e]/60 text-base sm:text-lg leading-relaxed">
             Three plans, month-to-month. No setup fee, no contract, cancel
-            anytime. Live within 10 business days — or your next month is free.
+            anytime.
           </p>
         </div>
 

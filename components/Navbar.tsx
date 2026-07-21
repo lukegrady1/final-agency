@@ -3,9 +3,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Magnetic from "./Magnetic";
+
+const PHONE_DISPLAY = "(978) 798-2870";
+const PHONE_HREF = "tel:+19787982870";
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -75,25 +78,45 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-5">
+          <a
+            href={PHONE_HREF}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0c0b1e]/70 hover:text-[#0c0b1e] transition-colors"
+          >
+            <Phone className="w-4 h-4 text-[#0e8090]" />
+            {PHONE_DISPLAY}
+          </a>
           <Magnetic strength={0.5}>
             <Link
-              href="/start"
+              href="/start#book"
               className={`inline-flex items-center rounded-full px-4 py-2 font-medium text-sm transition-colors duration-200 ${ctaClass}`}
             >
-              Get Started
+              Book a Free Call
             </Link>
           </Magnetic>
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className={`md:hidden ${iconClass}`}
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile: tap-to-call + hamburger */}
+        <div className="md:hidden flex items-center gap-4">
+          <a
+            href={PHONE_HREF}
+            className={iconClass}
+            aria-label={`Call ${PHONE_DISPLAY}`}
+          >
+            <Phone className="w-5 h-5" />
+          </a>
+          <button
+            className={iconClass}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -118,11 +141,18 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <a
+                href={PHONE_HREF}
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0c0b1e]/70"
+              >
+                <Phone className="w-4 h-4 text-[#0e8090]" />
+                {PHONE_DISPLAY}
+              </a>
               <Link
-                href="/start"
+                href="/start#book"
                 className={`inline-flex items-center justify-center rounded-full px-4 py-2 font-medium text-sm mt-2 ${ctaClass}`}
               >
-                Get Started
+                Book a Free Call
               </Link>
             </div>
           </motion.div>

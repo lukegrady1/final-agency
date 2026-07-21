@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
-import Reveal from "./Reveal";
+import Reveal from "../grow/Reveal";
 
-export default function GrowFinalCTA() {
+// Homepage closing CTA — the warmer /grow close, with the site-standard
+// "Book a Free Call" label and a tap-to-call number beside it.
+export default function HomeFinalCTA() {
   return (
     <section className="relative overflow-hidden grain-overlay py-16 lg:py-40 border-t border-black/10">
       {/* Concentric rings backdrop */}
@@ -66,7 +68,7 @@ export default function GrowFinalCTA() {
             href="/start#book"
             className="group inline-flex items-center gap-2 rounded-full px-7 py-4 font-medium text-sm text-white bg-gradient-to-r from-cyan via-accent to-violet hover:opacity-90 transition-opacity shadow-lg shadow-accent/30"
           >
-            Book your free call
+            Book a Free Call
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </Link>
           <a

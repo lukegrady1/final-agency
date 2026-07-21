@@ -14,7 +14,7 @@ import AuroraBackdrop from "@/components/grow/AuroraBackdrop";
 export const metadata: Metadata = {
   title: "Start Your Build — Plans from $97/Month",
   description:
-    "A custom website from $97/month, or the full growth system with Google presence, reviews, SEO, and an all-in-one inbox for $297/month. No setup fee. Live in 10 business days, cancel anytime.",
+    "A custom website from $97/month, or the full growth system with Google presence, reviews, SEO, and an all-in-one inbox for $297/month. No setup fee, cancel anytime.",
   keywords: [
     "get a business website",
     "local business website design",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Start Your Build",
     description:
-      "A custom website from $97/month, or the full growth system with Google presence, reviews, SEO, and an all-in-one inbox for $297/month. No setup fee. Live in 10 business days, cancel anytime.",
+      "A custom website from $97/month, or the full growth system with Google presence, reviews, SEO, and an all-in-one inbox for $297/month. No setup fee, cancel anytime.",
   },
 };
 
@@ -55,7 +55,7 @@ const startFAQ = [
   {
     question: "How long does it take?",
     answer:
-      "Your site is live within 10 business days of you signing up and getting me what I need. If I miss that, your next month is free.",
+      "Most sites are live within a couple of weeks of you signing up and getting me what I need.",
   },
   {
     question: "What if I already have a website?",

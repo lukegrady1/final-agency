@@ -133,10 +133,10 @@ export default function Footer() {
               Ready to grow?
             </h3>
             <Link
-              href="/start"
+              href="/start#book"
               className="inline-flex items-center rounded-full px-5 py-3 text-white bg-gradient-to-r from-cyan via-accent to-violet font-medium text-sm hover:opacity-90 transition-opacity shadow-lg shadow-accent/25"
             >
-              Get Started
+              Book a Free Call
             </Link>
           </div>
         </div>
@@ -231,10 +231,10 @@ export default function Footer() {
               </a>
             </div>
             <Link
-              href="/start"
+              href="/start#book"
               className="inline-flex items-center rounded-full px-5 py-3 text-white bg-gradient-to-r from-cyan via-accent to-violet font-medium text-sm hover:opacity-90 transition-opacity shadow-lg shadow-accent/25"
             >
-              Get Started
+              Book a Free Call
             </Link>
           </div>
 

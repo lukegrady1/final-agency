@@ -84,7 +84,7 @@ export default function CTABanner() {
         </Reveal>
 
         <Reveal as="p" delay={320} className="mt-6 text-[#0c0b1e]/40 text-xs">
-          Fully managed — we handle everything. Live in 10 business days.
+          Fully managed — we handle everything.
         </Reveal>
       </div>
     </section>

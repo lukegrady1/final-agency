@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ShieldOff, Zap, Clock } from "lucide-react";
+import { ShieldOff, Zap } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import BlurIn from "./BlurIn";
 
@@ -50,10 +50,6 @@ export default function AboutSnippet() {
             <div className="flex items-center gap-2 text-sm text-[#0c0b1e]/80">
               <ShieldOff className="w-4 h-4 text-accent" />
               No Contracts — month-to-month
-            </div>
-            <div className="flex items-center gap-2 text-sm text-[#0c0b1e]/80">
-              <Clock className="w-4 h-4 text-[#0e8090]" />
-              Live in 10 business days, or your next month is free
             </div>
             <div className="flex items-center gap-2 text-sm text-[#0c0b1e]/80">
               <Zap className="w-4 h-4 text-[#b45309]" />

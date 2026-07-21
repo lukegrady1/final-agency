@@ -4,7 +4,6 @@ import { StaggerParent, StaggerChild } from "./StaggerParent";
 
 const stats = [
   { value: "From $97/mo", label: "no setup fee, cancel anytime" },
-  { value: "10 days", label: "to live, or your next month is free" },
   { value: "100%", label: "custom, no templates" },
   { value: "Reviews + SEO", label: "and social, handled monthly" },
   { value: "1 Inbox", label: "all your leads in one place" },

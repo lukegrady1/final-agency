@@ -124,7 +124,7 @@ export default function ServicesPage() {
               reviews. The Growth System is $297 a month and adds the rest of
               the growth engine on top — your Google Business Profile posted and
               cross-posted to social, and ongoing SEO. Built and managed for
-              you, live in 10 business days, no setup fee.
+              you, no setup fee.
             </p>
           </BlurIn>
         </div>

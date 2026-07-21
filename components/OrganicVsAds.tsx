@@ -2,53 +2,19 @@ import { Megaphone, Magnet, X, Check, ShieldCheck } from "lucide-react";
 import BlurIn from "./BlurIn";
 import AuroraBackdrop from "./grow/AuroraBackdrop";
 
-// The case against renting attention with ads. `short` is the condensed
-// mobile copy so both cards fit side by side on a phone; `full` shows on md+.
+// The case against renting attention with ads. Three points; the leaky-bucket
+// verdict below carries the rest of the argument.
 const adsPoints = [
-  {
-    full: "The moment you stop paying, the leads stop. You own nothing.",
-    short: "Stop paying and the leads stop. You own nothing.",
-  },
-  {
-    full: "Every click costs more as competitors keep bidding the price up.",
-    short: "Every click costs more as competitors bid up.",
-  },
-  {
-    full: "You interrupt people mid-scroll — lots of curiosity clicks and tire-kickers.",
-    short: "Interrupts people mid-scroll — tire-kickers.",
-  },
-  {
-    full: "You pay the same for a real buyer or a time-waster, and can't tell them apart.",
-    short: "Same price for a real buyer or a time-waster.",
-  },
-  {
-    full: "With no system to catch them, the leads you paid for land nowhere and slip away.",
-    short: "No system to catch leads — they slip away.",
-  },
+  "Stop paying and the leads stop — you own nothing.",
+  "Every click costs more as competitors bid the price up.",
+  "You pay the same for a real buyer or a tire-kicker.",
 ];
 
 // The case for ranking + owning your own system.
 const systemPoints = [
-  {
-    full: "Rank on Google once and the leads keep coming — even in months you don't spend a dollar more.",
-    short: "Rank once and the leads keep coming for free.",
-  },
-  {
-    full: "Higher-quality leads: people already searching for what you do, ready to hire.",
-    short: "Better leads: people already searching, ready to hire.",
-  },
-  {
-    full: "Every call, text, and form lands in one CRM inbox — a bucket with no holes.",
-    short: "Every call, text & form lands in one inbox.",
-  },
-  {
-    full: "Reviews and rankings compound, so each new lead gets cheaper over time.",
-    short: "Reviews & rankings compound — leads get cheaper.",
-  },
-  {
-    full: "You build equity in an asset you own, not rented clicks that vanish.",
-    short: "You own the asset, not rented clicks.",
-  },
+  "Rank once and the leads keep coming, free.",
+  "People already searching for what you do, ready to hire.",
+  "Every call, text, and form lands in one inbox.",
 ];
 
 export default function OrganicVsAds() {
@@ -94,11 +60,10 @@ export default function OrganicVsAds() {
               </div>
               <ul className="mt-4 md:mt-6 space-y-2.5 md:space-y-3 flex-1">
                 {adsPoints.map((p) => (
-                  <li key={p.full} className="flex items-start gap-2 md:gap-3">
+                  <li key={p} className="flex items-start gap-2 md:gap-3">
                     <X className="w-3.5 h-3.5 md:w-4 md:h-4 mt-0.5 shrink-0 text-[#e0492f]" />
                     <span className="text-[#0c0b1e]/70 text-xs md:text-sm leading-snug md:leading-relaxed">
-                      <span className="md:hidden">{p.short}</span>
-                      <span className="hidden md:inline">{p.full}</span>
+                      {p}
                     </span>
                   </li>
                 ))}
@@ -124,11 +89,10 @@ export default function OrganicVsAds() {
               </div>
               <ul className="mt-4 md:mt-6 space-y-2.5 md:space-y-3 flex-1">
                 {systemPoints.map((p) => (
-                  <li key={p.full} className="flex items-start gap-2 md:gap-3">
+                  <li key={p} className="flex items-start gap-2 md:gap-3">
                     <Check className="w-3.5 h-3.5 md:w-4 md:h-4 mt-0.5 shrink-0 text-accent" />
                     <span className="text-[#0c0b1e]/80 text-xs md:text-sm leading-snug md:leading-relaxed">
-                      <span className="md:hidden">{p.short}</span>
-                      <span className="hidden md:inline">{p.full}</span>
+                      {p}
                     </span>
                   </li>
                 ))}

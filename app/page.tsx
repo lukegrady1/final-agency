@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import HeroSection from "@/components/HeroSection";
+import HomeHero from "@/components/home/HomeHero";
 import TrustBar from "@/components/TrustBar";
-import SocialProofStats from "@/components/SocialProofStats";
-import ServicesOverview from "@/components/ServicesOverview";
-import OrganicVsAds from "@/components/OrganicVsAds";
-import PlansSection from "@/components/PlansSection";
+import Testimonials from "@/components/home/Testimonials";
+import HomeProblem from "@/components/home/HomeProblem";
+import HomeFlywheel from "@/components/home/HomeFlywheel";
+import GrowUnderHood from "@/components/grow/GrowUnderHood";
+import ReviewEngine from "@/components/home/ReviewEngine";
 import CaseStudies from "@/components/CaseStudies";
-import AboutSnippet from "@/components/AboutSnippet";
+import HomePlans from "@/components/home/HomePlans";
+import OrganicVsAds from "@/components/OrganicVsAds";
 import ProcessSection from "@/components/ProcessSection";
+import AboutSnippet from "@/components/AboutSnippet";
 import HomeFAQ from "@/components/HomeFAQ";
-import CTABanner from "@/components/CTABanner";
+import HomeFinalCTA from "@/components/home/HomeFinalCTA";
 import { faqItems } from "@/lib/faq-data";
 
 export const metadata: Metadata = {
@@ -17,7 +20,7 @@ export const metadata: Metadata = {
     absolute: "Grady Digital — Websites, SEO & Reviews for Local Businesses",
   },
   description:
-    "Custom website, Google Business Profile, reviews, SEO, and an all-in-one inbox for your leads, built and managed for local businesses. Plans from $97/month, no setup fee, cancel anytime.",
+    "One system for local businesses: your reviews win the click, your website wins the call, and every lead lands in one inbox. The Reputation System is $147/month — no setup fee, cancel anytime.",
   keywords: [
     "local business website design",
     "small business web design",
@@ -51,17 +54,40 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <HeroSection />
+
+      {/* 1 — Hero */}
+      <HomeHero />
+
+      {/* 2 — Social proof: logos + testimonials */}
       <TrustBar />
-      <SocialProofStats />
-      <ServicesOverview />
+      <Testimonials />
+
+      {/* 3–5 — The problem, the system, and the machine that runs it */}
+      <div id="how">
+        <HomeProblem />
+        <HomeFlywheel />
+        <GrowUnderHood />
+        <ReviewEngine />
+        <CaseStudies />
+      </div>
+
+      {/* 6 — Plans */}
+      <HomePlans />
+
+      {/* 7 — Ads rent attention; we build you an asset */}
       <OrganicVsAds />
-      <PlansSection />
-      <CaseStudies />
-      <AboutSnippet />
+
+      {/* 8 — Process */}
       <ProcessSection />
+
+      {/* 9 — About Luke / direct access */}
+      <AboutSnippet />
+
+      {/* 10 — FAQ */}
       <HomeFAQ />
-      <CTABanner />
+
+      {/* 11 — Final CTA */}
+      <HomeFinalCTA />
     </main>
   );
 }

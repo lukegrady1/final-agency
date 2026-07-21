@@ -2,22 +2,27 @@ export const faqItems = [
   {
     question: "How much does it cost?",
     answer:
-      "There are two plans. The Website plan is $97 a month — a custom website, hosting, and an all-in-one inbox where every call, text, and lead lands in one place. The Growth System is $297 a month and adds everything that gets you found and chosen: your Google Business Profile set up and posted to, social cross-posting, more and better reviews, and ongoing SEO. Both have no setup fee and no contract, and you can cancel anytime. Most businesses pick the Growth System, because a website on its own doesn't bring in new customers.",
+      "There are three plans, all month-to-month with no setup fee and no contract. The Website plan is $97 a month — a fast custom website, hosting, and one inbox where every call, text, and lead lands. The Reputation System is $147 a month and is the one most businesses pick: it's the full loop — your website plus a review engine that fills your Google profile with 5-star reviews, so your reviews win the click and your website wins the call. The Growth System is $297 a month and adds the whole managed Google presence — weekly Google Business Profile posts, social cross-posting, and ongoing local SEO.",
   },
   {
-    question: "What's the difference between the Website plan and the Growth System?",
+    question: "What's the difference between the plans?",
     answer:
-      "The $97 Website plan gets you a fast custom website with hosting and a single inbox for your leads — great if you just need to look professional online and capture the calls you already get. The $297 Growth System does that plus the work that actually brings in new customers: it gets your Google Business Profile found, posts to it and your social every week, grows your reviews, and works on your SEO every month. The website makes you look good; the Growth System makes the phone ring.",
+      "It's one system you can size up or down. The Reputation System ($147) is the full product: a website that wins the call plus a review engine that wins the click. The Website plan ($97) is that minus the review engine — great if you just need to look professional online and capture the calls you already get. The Growth System ($297) is the loaded version: everything in the Reputation System plus a fully managed Google presence — weekly profile posts, social cross-posting, and ongoing SEO that keeps bringing in new customers.",
+  },
+  {
+    question: "How do you actually get me more reviews?",
+    answer:
+      "Two ways, both built to remove friction. If you work in person, your customer just taps their phone to a Grady Digital review card when the job's done and lands on your review page instantly — no typing, no searching. If you're not client-facing, we connect to your CRM and a review request goes out by text shortly after each job. Either way it opens a custom review page built for your business: they pick a star rating, anything 1–3 stars comes straight to you as private feedback so you can make it right, and 4–5 stars gets a ready-to-post review — written with the keywords Google likes — that they copy and paste to Google in one tap. It takes about ten seconds, and they never have to think about what to write.",
   },
   {
     question: "Is there a setup fee?",
     answer:
-      "No. On either plan, your first month covers building your site and getting you live. No big check upfront.",
+      "No. On any plan, your first month covers building your site and getting you live. No big check upfront.",
   },
   {
     question: "How long does it take to build?",
     answer:
-      "Your site is live within 10 business days of you signing up and getting me what I need. If I miss that, your next month is free.",
+      "Most sites are live within a couple of weeks of you signing up and getting me what I need.",
   },
   {
     question: "Is there a long-term contract?",

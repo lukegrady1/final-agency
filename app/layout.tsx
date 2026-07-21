@@ -3,7 +3,6 @@ import { Playfair_Display, DM_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AmbientBackground from "@/components/AmbientBackground";
-import ScrollGuide from "@/components/ScrollGuide";
 import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
@@ -153,7 +152,7 @@ export default function RootLayout({
       name: "United States",
     },
     description:
-      "Three plans for local businesses. The Website plan ($97/month) is a custom website with hosting and an all-in-one inbox to manage leads. The Reputation System ($147/month) is the most popular plan: it adds a review engine that fills your Google profile with 5-star reviews, written responses, and challenges to old unfair reviews. The Growth System ($297/month) adds Google Business Profile optimization with posting and cross-posting to Instagram, Facebook, and YouTube and ongoing SEO. Built and managed for you, live in 10 business days, no setup fee.",
+      "Three plans for local businesses. The Website plan ($97/month) is a custom website with hosting and an all-in-one inbox to manage leads. The Reputation System ($147/month) is the most popular plan: it adds a review engine that fills your Google profile with 5-star reviews, written responses, and challenges to old unfair reviews. The Growth System ($297/month) adds Google Business Profile optimization with posting and cross-posting to Instagram, Facebook, and YouTube and ongoing SEO. Built and managed for you, no setup fee.",
     offers: [
       {
         "@type": "Offer",
@@ -287,7 +286,6 @@ export default function RootLayout({
         <AmbientBackground />
         <SmoothScroll />
         <div className="relative isolate">
-          <ScrollGuide />
           <div className="relative z-10">
             <Navbar />
             {children}

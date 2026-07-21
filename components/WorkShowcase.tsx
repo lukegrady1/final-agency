@@ -90,13 +90,18 @@ const projects: Project[] = [
 interface WorkShowcaseProps {
   /** Show only these projects (by name), e.g. a 3-site teaser on the homepage. */
   include?: string[];
+  /** Which project to show first on load (by name). Defaults to the first item. */
+  initialName?: string;
 }
 
-export default function WorkShowcase({ include }: WorkShowcaseProps) {
+export default function WorkShowcase({ include, initialName }: WorkShowcaseProps) {
   const items = include
     ? projects.filter((p) => include.includes(p.name))
     : projects;
-  const [active, setActive] = useState(0);
+  const initialIndex = initialName
+    ? Math.max(0, items.findIndex((p) => p.name === initialName))
+    : 0;
+  const [active, setActive] = useState(initialIndex);
   const [paused, setPaused] = useState(false);
   const p = items[active];
   const prev = () => setActive((active + items.length - 1) % items.length);

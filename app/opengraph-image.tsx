@@ -85,18 +85,6 @@ export default function Image() {
               fontSize: 28,
             }}
           >
-            Live in 10 business days
-          </div>
-          <div
-            style={{
-              display: "flex",
-              padding: "14px 28px",
-              borderRadius: 999,
-              border: "1px solid rgba(255,255,255,0.2)",
-              color: "#9e9cf8",
-              fontSize: 28,
-            }}
-          >
             gradydigital.com
           </div>
         </div>
