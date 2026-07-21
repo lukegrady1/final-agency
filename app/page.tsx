@@ -4,7 +4,6 @@ import TrustBar from "@/components/TrustBar";
 import Testimonials from "@/components/home/Testimonials";
 import HomeProblem from "@/components/home/HomeProblem";
 import HomeFlywheel from "@/components/home/HomeFlywheel";
-import GrowUnderHood from "@/components/grow/GrowUnderHood";
 import ReviewEngine from "@/components/home/ReviewEngine";
 import CaseStudies from "@/components/CaseStudies";
 import HomePlans from "@/components/home/HomePlans";
@@ -62,11 +61,10 @@ export default function Home() {
       <TrustBar />
       <Testimonials />
 
-      {/* 3–5 — The problem, the system, and the machine that runs it */}
+      {/* 3–5 — The problem, the system, and how the review engine works */}
       <div id="how">
         <HomeProblem />
         <HomeFlywheel />
-        <GrowUnderHood />
         <ReviewEngine />
         <CaseStudies />
       </div>

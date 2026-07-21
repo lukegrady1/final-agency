@@ -7,6 +7,17 @@ import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Magnetic from "./Magnetic";
 
+// Jump the window to the top. This page suppresses animated scrolling (native
+// "smooth", GSAP, and rAF tweens all silently no-op here — likely the Next
+// <Link> scroll handling), while an instant scrollTo() reliably sticks. We set
+// it now and again on the next frame in case the click's own scroll handling
+// runs a beat later and tries to override it.
+function scrollToTop() {
+  if (typeof window === "undefined" || window.scrollY <= 0) return;
+  window.scrollTo(0, 0);
+  requestAnimationFrame(() => window.scrollTo(0, 0));
+}
+
 const PHONE_DISPLAY = "(978) 798-2870";
 const PHONE_HREF = "tel:+19787982870";
 
@@ -53,9 +64,10 @@ export default function Navbar() {
         <Link
           href="/"
           onClick={(e) => {
+            setMobileOpen(false);
             if (pathname === "/") {
               e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              scrollToTop();
             }
           }}
           className={`font-['Playfair_Display'] italic text-xl ${logoClass}`}

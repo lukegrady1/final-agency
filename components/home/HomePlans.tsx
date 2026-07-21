@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Check, Star, Store, TrendingUp } from "lucide-react";
 import type { ComponentType } from "react";
 import Reveal from "../grow/Reveal";
@@ -41,7 +42,7 @@ const cards: HomePlan[] = [
     id: "foundation",
     name: "The Foundation Package",
     icon: Store,
-    subtitle: "Website + review engine · save $25/mo",
+    subtitle: "Reputation System + Custom Website · save $25/mo",
     price: 147,
     anchor: 172,
     featured: true,
@@ -166,6 +167,7 @@ export default function HomePlans() {
     0,
   );
   const [active, setActive] = useState(featuredIndex);
+  const reduceMotion = useReducedMotion();
 
   const offsetFor = (card: HTMLDivElement, track: HTMLDivElement) =>
     card.offsetLeft - (track.clientWidth - card.clientWidth) / 2;
@@ -276,23 +278,43 @@ export default function HomePlans() {
           </Reveal>
         </div>
 
-        {/* Mobile plan tabs — jump straight to any plan */}
-        <div className="lg:hidden flex items-center justify-center gap-2 mb-4">
-          {cards.map((p, i) => (
-            <button
-              key={p.id}
-              type="button"
-              onClick={() => centerCard(i)}
-              aria-pressed={active === i}
-              className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors ${
-                active === i
-                  ? "bg-[#0c0b1e] text-white"
-                  : "bg-white text-[#0c0b1e]/60 border border-black/10"
-              }`}
-            >
-              {shortName(p.name)}
-            </button>
-          ))}
+        {/* Mobile plan tabs — one segmented pill; the selection springs between
+            options on tap or swipe (shared-layout "magic move"). */}
+        <div className="lg:hidden mb-5">
+          <div className="mx-auto flex max-w-sm items-center rounded-full border border-black/10 bg-black/[0.05] p-1">
+            {cards.map((p, i) => {
+              const isActive = active === i;
+              return (
+                <button
+                  key={p.id}
+                  type="button"
+                  onClick={() => centerCard(i)}
+                  aria-pressed={isActive}
+                  className="relative flex-1 rounded-full px-2 py-1.5 text-xs font-medium"
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="planTabActive"
+                      aria-hidden
+                      className="absolute inset-0 rounded-full bg-[#0c0b1e] shadow-sm"
+                      transition={
+                        reduceMotion
+                          ? { duration: 0 }
+                          : { type: "spring", stiffness: 400, damping: 34, mass: 0.9 }
+                      }
+                    />
+                  )}
+                  <span
+                    className={`relative z-10 transition-colors duration-200 ${
+                      isActive ? "text-white" : "text-[#0c0b1e]/55"
+                    }`}
+                  >
+                    {shortName(p.name)}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Mobile: swipeable carousel with peeking neighbors */}

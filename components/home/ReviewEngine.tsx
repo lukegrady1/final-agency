@@ -216,7 +216,7 @@ export default function ReviewEngine() {
             </span>
           </h2>
           <p className="mt-4 lg:mt-5 text-[#0c0b1e]/60 text-base sm:text-lg leading-relaxed">
-            Reviews are what win you the click. So we make leaving one take about
+            Reviews are what wins you the click. So we make leaving one take about
             ten seconds &mdash; and quietly route them so your best experiences
             land on Google and the rough ones come straight to you.
           </p>
