@@ -2,12 +2,9 @@ import { Star } from "lucide-react";
 import Reveal from "../grow/Reveal";
 
 // ─────────────────────────────────────────────────────────────────────────
-// Testimonials for Grady Digital itself — the site's biggest social-proof gap.
-//
-// TODO (Luke): drop in 1–2 REAL quotes from clients (e.g. Garabedian Plumbing,
-// Reece Group, Tee's Deli). For each, set `placeholder: false` and fill in
-// `quote`, `name`, and `business`. Until then these render as clearly-marked
-// slots — we never fabricate a quote or attribute one to a real client.
+// Real client testimonials for Grady Digital. The `placeholder` flag renders
+// any not-yet-collected quote as a clearly-marked slot — we never fabricate a
+// quote or attribute one to a real client.
 // ─────────────────────────────────────────────────────────────────────────
 type Testimonial = {
   placeholder: boolean;

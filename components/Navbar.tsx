@@ -42,6 +42,16 @@ export default function Navbar() {
     setMobileOpen(false);
   }, [pathname]);
 
+  // Lock body scroll while the full-screen menu is open.
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [mobileOpen]);
+
   // Post-booking confirmation page is a distraction-free funnel — no nav.
   if (pathname === "/booked") return null;
 
@@ -57,10 +67,11 @@ export default function Navbar() {
   const iconClass = "text-[#0c0b1e]";
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${barClass}`}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50">
+      {/* Top bar has its own background/blur so the full-screen overlay below
+          isn't trapped by a backdrop-filter ancestor once the page is scrolled. */}
+      <div className={`relative z-10 transition-all duration-300 ${barClass}`}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
         <Link
           href="/"
           onClick={(e) => {
@@ -129,43 +140,66 @@ export default function Navbar() {
             )}
           </button>
         </div>
+        </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Full-screen mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden overflow-hidden backdrop-blur-md border-b bg-white/95 border-black/10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="md:hidden fixed inset-0 bg-white/95 backdrop-blur-xl"
           >
-            <div className="px-6 py-4 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`text-sm transition-colors ${
-                    pathname === link.href ? linkActive : linkIdle
-                  }`}
+            <div className="flex flex-col h-full px-6 pt-24 pb-10">
+              <nav className="flex flex-col">
+                {navLinks.map((link, i) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: 0.06 + i * 0.05,
+                      duration: 0.3,
+                      ease: "easeOut",
+                    }}
+                  >
+                    <Link
+                      href={link.href}
+                      className={`block py-3.5 text-3xl font-medium tracking-tight border-b border-black/[0.06] transition-colors ${
+                        pathname === link.href
+                          ? "text-[#0c0b1e]"
+                          : "text-[#0c0b1e]/55 hover:text-[#0c0b1e]"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </nav>
+
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.24, duration: 0.3, ease: "easeOut" }}
+                className="mt-auto flex flex-col gap-4"
+              >
+                <a
+                  href={PHONE_HREF}
+                  className="inline-flex items-center gap-2 text-base font-medium text-[#0c0b1e]/70"
                 >
-                  {link.label}
+                  <Phone className="w-5 h-5 text-[#0e8090]" />
+                  {PHONE_DISPLAY}
+                </a>
+                <Link
+                  href="/start"
+                  className={`inline-flex items-center justify-center rounded-full px-5 py-3.5 font-medium text-sm transition duration-200 ease-out active:scale-[0.97] ${ctaClass}`}
+                >
+                  Book a Free Call
                 </Link>
-              ))}
-              <a
-                href={PHONE_HREF}
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0c0b1e]/70"
-              >
-                <Phone className="w-4 h-4 text-[#0e8090]" />
-                {PHONE_DISPLAY}
-              </a>
-              <Link
-                href="/start"
-                className={`inline-flex items-center justify-center rounded-full px-4 py-2 font-medium text-sm mt-2 transition duration-200 ease-out active:scale-[0.97] ${ctaClass}`}
-              >
-                Book a Free Call
-              </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}

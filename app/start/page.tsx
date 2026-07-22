@@ -154,14 +154,8 @@ export default function StartPage() {
       <section className="relative pt-40 pb-20 lg:pb-28 overflow-hidden grain-overlay">
         <AuroraBackdrop tone="indigo-cyan" />
         <div className="relative max-w-4xl mx-auto px-6 lg:px-12 text-center">
-          <BlurIn delay={0.1}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 backdrop-blur-sm px-3.5 py-1.5 text-xs font-medium text-[#0c0b1e]/70 shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-cyan to-accent" />
-              For local business owners who are done feeling stuck
-            </span>
-          </BlurIn>
           <BlurIn delay={0.2}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.08] text-[#0c0b1e] tracking-tight mt-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.08] text-[#0c0b1e] tracking-tight">
               Your competitors aren&apos;t better than you.{" "}
               <span className="grow-gradient-text font-display italic">
                 They&apos;re just easier to find.
