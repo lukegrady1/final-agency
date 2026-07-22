@@ -59,7 +59,7 @@ export default function WorkPage() {
 
       <SectionWrapper className="!pt-10 lg:!pt-16">
         <BlurIn>
-          <WorkShowcase />
+          <WorkShowcase stageFirst />
         </BlurIn>
       </SectionWrapper>
 

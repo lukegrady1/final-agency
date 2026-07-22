@@ -18,16 +18,18 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    placeholder: true,
-    quote: "{{ Add a real 1–2 sentence quote from a client }}",
-    name: "{{ Client name }}",
-    business: "{{ Business }}",
+    placeholder: false,
+    quote:
+      "Luke built us a site that actually looks like us. We went from having nothing online to getting calls from people who found us through our website. Honestly didn't think it would make that kind of difference.",
+    name: "Matt Paharik",
+    business: "MJP Auto Detailing",
   },
   {
-    placeholder: true,
-    quote: "{{ Add a real 1–2 sentence quote from a client }}",
-    name: "{{ Client name }}",
-    business: "{{ Business }}",
+    placeholder: false,
+    quote:
+      "Before working with Luke, our website was basically a placeholder. Now when people call, they already know what we do and they're ready to book. It's been a game changer for us.",
+    name: "Anthony Reece",
+    business: "Reece Electric",
   },
 ];
 

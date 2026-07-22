@@ -92,9 +92,15 @@ interface WorkShowcaseProps {
   include?: string[];
   /** Which project to show first on load (by name). Defaults to the first item. */
   initialName?: string;
+  /** Put the big before/after stage on top and the thumbnail strip below. */
+  stageFirst?: boolean;
 }
 
-export default function WorkShowcase({ include, initialName }: WorkShowcaseProps) {
+export default function WorkShowcase({
+  include,
+  initialName,
+  stageFirst,
+}: WorkShowcaseProps) {
   const items = include
     ? projects.filter((p) => include.includes(p.name))
     : projects;
@@ -125,6 +131,7 @@ export default function WorkShowcase({ include, initialName }: WorkShowcaseProps
 
   return (
     <div
+      className={`flex ${stageFirst ? "flex-col-reverse" : "flex-col"} gap-4 md:gap-6`}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
@@ -183,7 +190,7 @@ export default function WorkShowcase({ include, initialName }: WorkShowcaseProps
       </div>
 
       {/* Stage — the selected site, big */}
-      <div className="mt-4 md:mt-6 bg-white border border-black/[0.08] rounded-2xl overflow-hidden shadow-sm">
+      <div className="bg-white border border-black/[0.08] rounded-2xl overflow-hidden shadow-sm">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={p.name}

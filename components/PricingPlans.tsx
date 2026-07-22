@@ -313,18 +313,6 @@ export default function PricingPlans({
           </div>
         ))}
       </div>
-
-      {showFootnote && (
-        <BlurIn delay={0.5}>
-          <p className="text-center text-[#0c0b1e]/50 text-xs leading-relaxed mt-6 max-w-2xl mx-auto">
-            The low monthly rate is the point. Agencies that charge thousands
-            upfront get paid no matter what happens next. I only keep getting
-            paid if you stay, which means I&apos;m earning it every month
-            instead of disappearing after one big check. Your results and my
-            paycheck are the same thing.
-          </p>
-        </BlurIn>
-      )}
     </div>
   );
 }

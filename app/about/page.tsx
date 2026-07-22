@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Paintbrush, Code, Eye, Target, DollarSign, Wrench, Search } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import BlurIn from "@/components/BlurIn";
-import Parallax from "@/components/Parallax";
 import { StaggerParent, StaggerChild } from "@/components/StaggerParent";
 import HomeFinalCTA from "@/components/home/HomeFinalCTA";
 import AuroraBackdrop from "@/components/grow/AuroraBackdrop";
@@ -130,21 +129,7 @@ export default function AboutPage() {
 
       {/* Who's Behind Grady Digital */}
       <SectionWrapper>
-        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-12 items-start max-w-5xl mx-auto">
-          <BlurIn>
-            <div className="flex flex-col gap-4">
-              <div className="relative w-48 h-48 rounded-2xl overflow-hidden bg-white border border-black/10 shadow-sm">
-                <Parallax className="absolute inset-[-12%]">
-                  <Image
-                    src="/headshot.webp"
-                    alt="Luke Grady"
-                    fill
-                    className="object-cover object-[center_25%]"
-                  />
-                </Parallax>
-              </div>
-            </div>
-          </BlurIn>
+        <div className="max-w-3xl mx-auto">
           <div>
             <BlurIn delay={0.1}>
               <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight mt-4">

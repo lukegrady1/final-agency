@@ -276,6 +276,13 @@ export default function HomePlans() {
             the call and a review engine that wins the click. Want just the
             reviews, or the whole managed Google presence? Size down or up.
           </Reveal>
+          <Reveal
+            as="p"
+            delay={200}
+            className="mt-5 text-sm font-medium text-[#0c0b1e]/50"
+          >
+            {guaranteeTerms}
+          </Reveal>
         </div>
 
         {/* Mobile plan tabs — one segmented pill; the selection springs between
@@ -345,35 +352,33 @@ export default function HomePlans() {
           ))}
         </div>
 
-        {/* Website-only downsell footnote */}
+        {/* Website-only — its own dark rectangle below the table */}
         <Reveal delay={180}>
-          <p className="mt-6 text-center text-sm text-[#0c0b1e]/60">
-            Just need a website?{" "}
+          <div className="mt-8 rounded-2xl border border-white/10 bg-[#0c0b1e] shadow-xl shadow-[#0c0b1e]/25 p-6 md:p-7 flex flex-col sm:flex-row sm:items-center gap-4 md:gap-6">
+            <div className="flex-1">
+              <div className="flex items-baseline gap-2.5 flex-wrap">
+                <h3 className="text-base md:text-lg font-medium text-white">
+                  Just need a website?
+                </h3>
+                <span className="flex items-baseline gap-1">
+                  <span className="text-xl font-semibold text-white">$97</span>
+                  <span className="text-sm text-white/50">/mo</span>
+                </span>
+              </div>
+              <p className="text-white/60 text-sm leading-relaxed mt-1.5">
+                A fast, custom site with every lead in one inbox &mdash; look
+                great online and never miss a call. Add the review engine
+                whenever you&apos;re ready.
+              </p>
+            </div>
             <Link
               href="/start"
-              className="inline-flex items-center gap-1 font-medium text-accent hover:gap-1.5 transition-all"
+              className="shrink-0 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-medium text-sm text-[#0c0b1e] bg-white hover:bg-white/90 transition duration-200 ease-out active:scale-[0.97] shadow-lg"
             >
-              A fast custom site is $97/month &mdash; let&apos;s talk
-              <ArrowRight className="w-3.5 h-3.5" />
+              Book a Free Call
+              <ArrowRight className="w-4 h-4" />
             </Link>
-          </p>
-        </Reveal>
-
-        <Reveal delay={220}>
-          <p className="mt-4 text-center text-sm font-medium text-[#0c0b1e]/50">
-            {guaranteeTerms}
-          </p>
-        </Reveal>
-
-        {/* Incentive-alignment paragraph (ported verbatim from /grow) */}
-        <Reveal delay={280}>
-          <p className="text-center text-[#0c0b1e]/50 text-xs leading-relaxed mt-6 max-w-2xl mx-auto">
-            The low monthly rate is the point. Agencies that charge thousands
-            upfront get paid no matter what happens next. I only keep getting paid
-            if you stay, which means I&apos;m earning it every month instead of
-            disappearing after one big check. Your results and my paycheck are the
-            same thing.
-          </p>
+          </div>
         </Reveal>
       </div>
     </section>

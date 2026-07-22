@@ -23,7 +23,7 @@ export interface Plan {
 }
 
 /** Shared terms shown near pricing everywhere. */
-export const guaranteeTerms = "No setup fee · Month-to-month · Cancel anytime";
+export const guaranteeTerms = "No setup fee · No contracts";
 
 export const plans: Plan[] = [
   {

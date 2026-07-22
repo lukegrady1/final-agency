@@ -12,6 +12,7 @@ import {
 import SectionWrapper from "@/components/SectionWrapper";
 import BlurIn from "@/components/BlurIn";
 import FAQAccordion from "@/components/FAQAccordion";
+import StartPricingTable from "@/components/start/StartPricingTable";
 import StartTestimonials from "@/components/start/StartTestimonials";
 import StartComparison from "@/components/start/StartComparison";
 import StartCalendar from "@/components/start/StartCalendar";
@@ -110,36 +111,6 @@ const stats = [
     value: "76%",
     label:
       "of people who search for something nearby on their phone call or visit a business within a day.",
-  },
-];
-
-const foundationIncludes = [
-  "A fast custom website built to turn visitors into calls",
-  "A review engine that fills your Google profile with 5-star reviews",
-  "Every review answered in your voice, unfair ones challenged",
-  "All your calls, texts, and leads in one simple inbox",
-  "Hosting, updates, security, and speed — all handled",
-  "Direct access to Luke, the engineer who builds it",
-];
-
-const otherPlans = [
-  {
-    name: "The Reputation System",
-    price: 97,
-    blurb:
-      "Just the review engine — a tap-to-review NFC card and more 5-star reviews on autopilot, each answered in your voice.",
-  },
-  {
-    name: "Website",
-    price: 97,
-    blurb:
-      "A fast custom site with every lead in one inbox. Look great online, never miss a call.",
-  },
-  {
-    name: "The Growth System",
-    price: 297,
-    blurb:
-      "Everything in Foundation, plus your whole managed Google presence — weekly posts, social, and ongoing local SEO.",
   },
 ];
 
@@ -418,7 +389,7 @@ export default function StartPage() {
         className="relative overflow-hidden grain-overlay bg-white/50 backdrop-blur-sm border-y border-black/10"
       >
         <AuroraBackdrop tone="indigo-cyan" />
-        <div className="relative text-center max-w-2xl mx-auto mb-10">
+        <div className="relative text-center max-w-2xl mx-auto mb-10 lg:mb-14">
           <BlurIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-medium text-[#0c0b1e] tracking-tight">
               Here&apos;s exactly what you{" "}
@@ -431,94 +402,46 @@ export default function StartPage() {
             <p className="text-[#0c0b1e]/60 text-base md:text-lg leading-relaxed mt-4">
               The Foundation Package does the heavy lifting for most businesses
               &mdash; but there&apos;s a fit for wherever you&apos;re starting.
-              No setup fee, month-to-month, cancel anytime.
+            </p>
+          </BlurIn>
+          <BlurIn delay={0.3}>
+            <p className="mt-5 text-sm font-medium text-[#0c0b1e]/50">
+              No setup fee &middot; No contracts
             </p>
           </BlurIn>
         </div>
 
-        <BlurIn delay={0.2}>
-          <div className="relative max-w-lg mx-auto rounded-[1.75rem] bg-white border-2 border-accent p-6 md:p-8 shadow-[0_40px_90px_-40px_rgba(108,106,246,0.6)]">
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-lg shadow-accent/30">
-              Most popular
-            </span>
-            <h3 className="text-lg font-medium text-[#0c0b1e] mt-1">
-              The Foundation Package
-            </h3>
-            <p className="text-sm text-[#0c0b1e]/50 mt-1">
-              Website + review engine, working together
-            </p>
-            <div className="mt-4 flex items-baseline gap-2">
-              <span className="text-base text-[#0c0b1e]/40 line-through">
-                $194
-              </span>
-              <span className="text-4xl font-semibold text-[#0c0b1e] leading-none">
-                $147
-              </span>
-              <span className="text-sm text-[#0c0b1e]/45">/month</span>
-              <span className="ml-auto rounded-full bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent">
-                save $47/mo
-              </span>
+        {/* Pricing table — Foundation dominant on desktop, swipeable on mobile */}
+        <StartPricingTable />
+
+        {/* Website-only — its own rectangle below the table */}
+        <BlurIn delay={0.25}>
+          <div className="relative mt-6 md:mt-8 max-w-6xl mx-auto rounded-2xl border border-white/10 bg-[#0c0b1e] shadow-xl shadow-[#0c0b1e]/25 p-6 md:p-7 flex flex-col sm:flex-row sm:items-center gap-4 md:gap-6">
+            <div className="flex-1">
+              <div className="flex items-baseline gap-2.5 flex-wrap">
+                <h3 className="text-base md:text-lg font-medium text-white">
+                  Just need a website?
+                </h3>
+                <span className="flex items-baseline gap-1">
+                  <span className="text-xl font-semibold text-white">$97</span>
+                  <span className="text-sm text-white/50">/mo</span>
+                </span>
+              </div>
+              <p className="text-white/60 text-sm leading-relaxed mt-1.5">
+                A fast, custom site with every lead in one inbox &mdash; look
+                great online and never miss a call. Add the review engine
+                whenever you&apos;re ready.
+              </p>
             </div>
-
-            <ul className="mt-6 space-y-2.5">
-              {foundationIncludes.map((f) => (
-                <li key={f} className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 mt-0.5 shrink-0 text-accent" />
-                  <span className="text-sm text-[#0c0b1e]/75 leading-snug">
-                    {f}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
             <Link
               href="#book"
-              className="mt-7 flex items-center justify-center gap-2 w-full rounded-full px-5 py-3.5 font-medium text-sm text-white bg-accent hover:bg-accent/90 transition duration-200 ease-out active:scale-[0.97] shadow-lg shadow-accent/25"
+              className="shrink-0 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-medium text-sm text-[#0c0b1e] bg-white hover:bg-white/90 transition duration-200 ease-out active:scale-[0.97] shadow-lg"
             >
               Book a Free Call
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <p className="text-center text-xs text-[#0c0b1e]/45 mt-3">
-              No setup fee &middot; Month-to-month &middot; Cancel anytime
-            </p>
           </div>
         </BlurIn>
-
-        {/* The other plans */}
-        <div className="relative mt-10 md:mt-14 max-w-4xl mx-auto">
-          <BlurIn delay={0.1}>
-            <p className="text-center text-xs font-semibold uppercase tracking-wide text-[#0c0b1e]/40 mb-5">
-              Or start where it makes sense for you
-            </p>
-          </BlurIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5">
-            {otherPlans.map((p, i) => (
-              <BlurIn key={p.name} delay={0.1 + i * 0.08}>
-                <div className="flex flex-col h-full bg-white border border-black/[0.08] rounded-2xl p-5 shadow-sm transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-[#0c0b1e]/[0.06]">
-                  <h4 className="text-[15px] font-medium text-[#0c0b1e]">
-                    {p.name}
-                  </h4>
-                  <div className="mt-1.5 flex items-baseline gap-1">
-                    <span className="text-2xl font-semibold text-[#0c0b1e]">
-                      ${p.price}
-                    </span>
-                    <span className="text-sm text-[#0c0b1e]/45">/mo</span>
-                  </div>
-                  <p className="mt-3 text-sm text-[#0c0b1e]/60 leading-snug flex-1">
-                    {p.blurb}
-                  </p>
-                  <Link
-                    href="#book"
-                    className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent hover:gap-1.5 transition-all"
-                  >
-                    Book a Free Call
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </BlurIn>
-            ))}
-          </div>
-        </div>
       </SectionWrapper>
 
       {/* WHY BOOK NOW — risk reversal */}

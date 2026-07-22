@@ -279,10 +279,7 @@ export default function RootLayout({
           />
         </noscript>
       </head>
-      <body
-        className={dmSans.className}
-        style={{ backgroundColor: "#f4f5fb", color: "#0c0b1e" }}
-      >
+      <body className={dmSans.className}>
         <AmbientBackground />
         <SmoothScroll />
         <div className="relative isolate">
