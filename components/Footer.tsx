@@ -133,7 +133,7 @@ export default function Footer() {
               Ready to grow?
             </h3>
             <Link
-              href="/start#book"
+              href="/start"
               className="inline-flex items-center rounded-full px-5 py-3 text-white bg-gradient-to-r from-cyan via-accent to-violet font-medium text-sm hover:opacity-90 transition-opacity shadow-lg shadow-accent/25"
             >
               Book a Free Call
@@ -231,7 +231,7 @@ export default function Footer() {
               </a>
             </div>
             <Link
-              href="/start#book"
+              href="/start"
               className="inline-flex items-center rounded-full px-5 py-3 text-white bg-gradient-to-r from-cyan via-accent to-violet font-medium text-sm hover:opacity-90 transition-opacity shadow-lg shadow-accent/25"
             >
               Book a Free Call

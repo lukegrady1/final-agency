@@ -31,7 +31,7 @@ export default function GrowPlans() {
           </p>
         </div>
 
-        <PricingPlans ctaHref="/start#book" showFootnote />
+        <PricingPlans ctaHref="/start" showFootnote />
       </div>
     </section>
   );

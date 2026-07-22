@@ -205,7 +205,7 @@ function PlanCard({
 }
 
 export default function PricingPlans({
-  ctaHref = "/start#book",
+  ctaHref = "/start",
   showFootnote = false,
 }: PricingPlansProps) {
   const trackRef = useRef<HTMLDivElement>(null);

@@ -65,15 +65,15 @@ export default function HomeFinalCTA() {
           className="mt-7 lg:mt-10 flex flex-wrap items-center justify-center gap-3"
         >
           <Link
-            href="/start#book"
-            className="group inline-flex items-center gap-2 rounded-full px-7 py-4 font-medium text-sm text-white bg-gradient-to-r from-cyan via-accent to-violet hover:opacity-90 transition-opacity shadow-lg shadow-accent/30"
+            href="/start"
+            className="group inline-flex items-center gap-2 rounded-full px-7 py-4 font-medium text-sm text-white bg-gradient-to-r from-cyan via-accent to-violet hover:opacity-90 transition duration-200 ease-out active:scale-[0.97] shadow-lg shadow-accent/30"
           >
             Book a Free Call
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </Link>
           <a
             href="tel:+19787982870"
-            className="inline-flex items-center gap-2 rounded-full px-7 py-4 font-medium text-sm text-[#0c0b1e] border border-black/15 bg-white hover:bg-black/[0.03] hover:border-black/25 transition-colors shadow-sm"
+            className="inline-flex items-center gap-2 rounded-full px-7 py-4 font-medium text-sm text-[#0c0b1e] border border-black/15 bg-white hover:bg-black/[0.03] hover:border-black/25 transition duration-200 ease-out active:scale-[0.97] shadow-sm"
           >
             <Phone className="w-4 h-4 text-[#0e8090]" />
             (978) 798-2870

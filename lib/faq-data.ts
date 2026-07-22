@@ -47,7 +47,7 @@ export const faqItems = [
   {
     question: "What kind of businesses do you work with?",
     answer:
-      "Local businesses \u2014 contractors, electricians, auto detailers, restaurants, salons, car services, and similar industries. If you rely on local customers, we can help.",
+      "All kinds of local businesses. If you rely on local customers, we can help \u2014 contractors, electricians, auto detailers, restaurants, med spas, massage therapists, hair salons, barbers, car services, and plenty more.",
   },
   {
     question: "What makes Grady Digital different?",

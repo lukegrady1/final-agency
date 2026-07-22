@@ -31,9 +31,9 @@ const cards: HomePlan[] = [
     name: "The Reputation System",
     icon: Star,
     subtitle: "Fill your Google profile with 5-star reviews",
-    price: 75,
+    price: 97,
     bullets: [
-      "A review engine that brings in more 5-star reviews",
+      "A tap-to-review NFC card that brings in more 5-star reviews",
       "Every review answered in your voice",
       "Old, unfair reviews challenged for you",
     ],
@@ -42,9 +42,9 @@ const cards: HomePlan[] = [
     id: "foundation",
     name: "The Foundation Package",
     icon: Store,
-    subtitle: "Reputation System + Custom Website · save $25/mo",
+    subtitle: "Reputation System + Custom Website · save $47/mo",
     price: 147,
-    anchor: 172,
+    anchor: 194,
     featured: true,
     bullets: [
       "Everything in The Reputation System, plus:",
@@ -144,9 +144,9 @@ function PlanCard({ plan }: { plan: HomePlan }) {
       </ul>
 
       {/* Button pinned to bottom */}
-      <Link href="/start#book" className="mt-auto pt-6 block">
+      <Link href="/start" className="mt-auto pt-6 block">
         <span
-          className={`flex items-center justify-center w-full rounded-full px-5 py-3 font-medium text-sm transition-all duration-200 ${
+          className={`flex items-center justify-center w-full rounded-full px-5 py-3 font-medium text-sm transition duration-200 ease-out active:scale-[0.97] ${
             featured
               ? "text-white bg-accent hover:bg-accent/90 shadow-lg shadow-accent/25"
               : "text-[#0c0b1e] border border-black/15 bg-white hover:border-black/30 hover:bg-black/[0.02]"
@@ -350,7 +350,7 @@ export default function HomePlans() {
           <p className="mt-6 text-center text-sm text-[#0c0b1e]/60">
             Just need a website?{" "}
             <Link
-              href="/start#book"
+              href="/start"
               className="inline-flex items-center gap-1 font-medium text-accent hover:gap-1.5 transition-all"
             >
               A fast custom site is $97/month &mdash; let&apos;s talk

@@ -27,7 +27,7 @@ export default function PlansSection({ className }: PlansSectionProps) {
           </p>
         </BlurIn>
       </div>
-      <PricingPlans ctaHref="/start#book" />
+      <PricingPlans ctaHref="/start" />
     </SectionWrapper>
   );
 }

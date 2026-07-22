@@ -63,15 +63,15 @@ export default function HomeHero() {
               className="mt-6 lg:mt-9 flex flex-wrap items-center gap-3"
             >
               <Link
-                href="/start#book"
-                className="group inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-medium text-sm text-white bg-gradient-to-r from-cyan via-accent to-violet hover:opacity-90 transition-opacity shadow-lg shadow-accent/25"
+                href="/start"
+                className="group inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-medium text-sm text-white bg-gradient-to-r from-cyan via-accent to-violet hover:opacity-90 transition duration-200 ease-out active:scale-[0.97] shadow-lg shadow-accent/25"
               >
                 Book a Free Call
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
               <Link
                 href="#how"
-                className="inline-flex items-center rounded-full px-6 py-3.5 font-medium text-sm text-[#0c0b1e] border border-black/10 bg-white hover:bg-black/[0.03] hover:border-black/20 transition-colors shadow-sm"
+                className="inline-flex items-center rounded-full px-6 py-3.5 font-medium text-sm text-[#0c0b1e] border border-black/10 bg-white hover:bg-black/[0.03] hover:border-black/20 transition duration-200 ease-out active:scale-[0.97] shadow-sm"
               >
                 See how it works
               </Link>

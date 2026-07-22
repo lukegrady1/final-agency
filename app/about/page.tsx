@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, Paintbrush, Code, Eye, Target, DollarSign, Wrench, Search } from "lucide-react";
+import { Paintbrush, Code, Eye, Target, DollarSign, Wrench, Search } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import BlurIn from "@/components/BlurIn";
 import Parallax from "@/components/Parallax";
 import { StaggerParent, StaggerChild } from "@/components/StaggerParent";
+import HomeFinalCTA from "@/components/home/HomeFinalCTA";
 import AuroraBackdrop from "@/components/grow/AuroraBackdrop";
 
 export const metadata: Metadata = {
@@ -98,9 +98,10 @@ export default function AboutPage() {
               <BlurIn delay={0.15}>
                 <p className="text-[#0c0b1e]/60 text-lg leading-relaxed mt-6">
                   Most businesses either overpay thousands upfront, or end up
-                  with a template nobody manages. We built Grady Digital to
-                  change that: custom, conversion-focused websites built and
-                  managed for you at a flat monthly rate.
+                  with a template nobody manages. Grady Digital is the opposite:
+                  one system &mdash; a review engine that wins the click, a
+                  website that wins the call, and every lead in one inbox &mdash;
+                  built and managed for you at a flat monthly rate.
                 </p>
               </BlurIn>
             </div>
@@ -204,7 +205,7 @@ export default function AboutPage() {
             return (
               <StaggerChild
                 key={item.title}
-                className="bg-white border border-black/[0.08] rounded-2xl p-4 md:p-6 text-left md:text-center shadow-sm flex items-start gap-4 md:block"
+                className="bg-white border border-black/[0.08] rounded-2xl p-4 md:p-6 text-left md:text-center shadow-sm flex items-start gap-4 md:block transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-[#0c0b1e]/[0.06]"
               >
                 <div
                   className={`grid place-items-center w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl border ${item.ring} md:mx-auto shrink-0`}
@@ -240,7 +241,7 @@ export default function AboutPage() {
             return (
               <StaggerChild
                 key={item.title}
-                className="bg-white border border-black/[0.08] rounded-2xl p-4 md:p-6 text-left md:text-center shadow-sm flex items-start gap-4 md:block"
+                className="bg-white border border-black/[0.08] rounded-2xl p-4 md:p-6 text-left md:text-center shadow-sm flex items-start gap-4 md:block transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-[#0c0b1e]/[0.06]"
               >
                 <div
                   className={`grid place-items-center w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl border ${item.ring} md:mx-auto shrink-0`}
@@ -261,37 +262,8 @@ export default function AboutPage() {
         </StaggerParent>
       </SectionWrapper>
 
-      {/* CTA Banner */}
-      <SectionWrapper>
-        <BlurIn>
-          <div className="relative overflow-hidden rounded-3xl px-8 py-16 text-center max-w-4xl mx-auto bg-gradient-to-br from-cyan via-accent to-violet shadow-xl shadow-accent/30">
-            <div
-              aria-hidden
-              className="absolute inset-0 opacity-[0.12] mix-blend-overlay"
-              style={{
-                backgroundImage:
-                  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-              }}
-            />
-            <div className="relative">
-              <h2 className="text-3xl md:text-4xl font-medium text-white tracking-tight">
-                Professional website. Managed for you.
-              </h2>
-              <p className="text-white/80 text-base leading-relaxed max-w-xl mx-auto mt-4">
-                Book a short call. We&apos;ll build your website and walk through
-                it together. Launch when you&apos;re ready.
-              </p>
-              <Link
-                href="/start"
-                className="group inline-flex items-center gap-2 rounded-full px-6 py-3.5 bg-white text-[#0c0b1e] font-medium text-sm hover:bg-white/90 transition-colors duration-200 mt-8 shadow-lg"
-              >
-                Get Started
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </Link>
-            </div>
-          </div>
-        </BlurIn>
-      </SectionWrapper>
+      {/* Closing CTA */}
+      <HomeFinalCTA />
     </main>
   );
 }

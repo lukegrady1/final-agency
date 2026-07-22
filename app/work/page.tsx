@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import SectionWrapper from "@/components/SectionWrapper";
 import BlurIn from "@/components/BlurIn";
 import WorkShowcase from "@/components/WorkShowcase";
-import CTABanner from "@/components/CTABanner";
+import HomeFinalCTA from "@/components/home/HomeFinalCTA";
 import AuroraBackdrop from "@/components/grow/AuroraBackdrop";
 
 export const metadata: Metadata = {
   title: "Our Work — Local Business Websites We've Built",
   description:
-    "Real websites we've designed and built for local service businesses. See before-and-after results and live client sites.",
+    "Real websites we've designed and built for local service businesses — the half of the system that wins the call. See before-and-after results and live client sites.",
   keywords: [
     "local business website portfolio",
     "small business web design examples",
@@ -41,28 +41,29 @@ export default function WorkPage() {
         <div className="relative max-w-5xl mx-auto px-6 lg:px-12 text-center">
           <BlurIn delay={0.1}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight text-[#0c0b1e] mt-6">
-              Local business websites{" "}
+              The sites that{" "}
               <span className="grow-gradient-text font-display italic">
-                we&apos;ve built
+                win the call.
               </span>
             </h1>
           </BlurIn>
           <BlurIn delay={0.2}>
             <p className="text-[#0c0b1e]/60 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
-              Real websites we&apos;ve built for real businesses. Pick a site
-              below to take a closer look.
+              Reviews get people to your site; a fast, modern website gets them
+              to pick up the phone. Here&apos;s the half we build for real local
+              businesses &mdash; drag any before/after to see the difference.
             </p>
           </BlurIn>
         </div>
       </section>
 
-      <SectionWrapper className="!pt-0">
+      <SectionWrapper className="!pt-10 lg:!pt-16">
         <BlurIn>
           <WorkShowcase />
         </BlurIn>
       </SectionWrapper>
 
-      <CTABanner />
+      <HomeFinalCTA />
     </main>
   );
 }

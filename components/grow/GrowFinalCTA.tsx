@@ -63,7 +63,7 @@ export default function GrowFinalCTA() {
           className="mt-7 lg:mt-10 flex flex-wrap items-center justify-center gap-3"
         >
           <Link
-            href="/start#book"
+            href="/start"
             className="group inline-flex items-center gap-2 rounded-full px-7 py-4 font-medium text-sm text-white bg-gradient-to-r from-cyan via-accent to-violet hover:opacity-90 transition-opacity shadow-lg shadow-accent/30"
           >
             Book your free call

@@ -100,8 +100,8 @@ export default function Navbar() {
           </a>
           <Magnetic strength={0.5}>
             <Link
-              href="/start#book"
-              className={`inline-flex items-center rounded-full px-4 py-2 font-medium text-sm transition-colors duration-200 ${ctaClass}`}
+              href="/start"
+              className={`inline-flex items-center rounded-full px-4 py-2 font-medium text-sm transition duration-200 ease-out active:scale-[0.97] ${ctaClass}`}
             >
               Book a Free Call
             </Link>
@@ -161,8 +161,8 @@ export default function Navbar() {
                 {PHONE_DISPLAY}
               </a>
               <Link
-                href="/start#book"
-                className={`inline-flex items-center justify-center rounded-full px-4 py-2 font-medium text-sm mt-2 ${ctaClass}`}
+                href="/start"
+                className={`inline-flex items-center justify-center rounded-full px-4 py-2 font-medium text-sm mt-2 transition duration-200 ease-out active:scale-[0.97] ${ctaClass}`}
               >
                 Book a Free Call
               </Link>
