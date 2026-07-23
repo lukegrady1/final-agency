@@ -56,10 +56,10 @@ export default function CTABanner() {
           delay={160}
           className="mt-6 text-[#0c0b1e]/70 text-lg leading-relaxed max-w-2xl mx-auto"
         >
-          A custom website with one inbox for your leads at $97/month, The
-          Reputation System with a 5-star review engine at $147/month, or the
+          A custom website with one inbox for your leads at $147/month, The
+          Reputation System with a 5-star review engine at $197/month, or the
           full Growth System — Google presence and SEO too — at $297/month.
-          Built and managed for you. No setup fee, cancel anytime.
+          Built and managed for you. No setup fee on any plan, cancel anytime.
         </Reveal>
 
         <Reveal

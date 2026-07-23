@@ -95,7 +95,7 @@ export default function AuditGate({ children }: { children: React.ReactNode }) {
                 </div>
                 <p className="text-[#0c0b1e]/75 text-sm leading-relaxed mt-2">
                   The whole system runs{" "}
-                  <span className="font-semibold text-[#0c0b1e]">$147 a month</span>
+                  <span className="font-semibold text-[#0c0b1e]">$197 a month</span>
                   . For most local service businesses,{" "}
                   <span className="font-semibold text-[#0c0b1e]">
                     one extra job covers the entire year

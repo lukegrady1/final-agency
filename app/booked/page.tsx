@@ -41,7 +41,7 @@ const faqItems = [
   {
     question: "How much does it cost?",
     answer:
-      "Most owners go with the Reputation System at $147 a month — a custom website, one inbox for every lead, and a review engine that fills your Google profile with 5-star reviews and replies to every one. Just want the site and lead inbox? The Website plan is $97 a month. Want SEO and weekly Google posting to climb the rankings on top? The Growth System is $297 a month. No setup fee on any plan, cancel anytime. I'll help you pick the right one on the call.",
+      "Most owners go with the Reputation System at $197 a month — a custom website, one inbox for every lead, and a review engine that fills your Google profile with 5-star reviews and replies to every one, with the website's $299 setup fee waived. Just want the site and lead inbox? The Website plan is $147 a month plus a one-time $299 setup. Want SEO and weekly Google posting to climb the rankings on top? The Growth System is $297 a month. No setup fee on any plan, cancel anytime. I'll help you pick the right one on the call.",
   },
   {
     question: "How much work is this for me?",
@@ -83,7 +83,7 @@ const howItWorks = [
   },
 ];
 
-// The $147 Reputation System — the plan this page is built to convert to.
+// The $197 Reputation System — the plan this page is built to convert to.
 // Short tags keep every item scannable at a glance on mobile.
 const reputationStack = [
   { icon: Globe, title: "Custom Website", tag: "Built to book jobs" },
@@ -212,7 +212,7 @@ export default function BookedPage() {
           </div>
         </SectionWrapper>
 
-        {/* SECTION 5 — THE PLAN ($147) — one compact card, readable at a glance */}
+        {/* SECTION 5 — THE PLAN ($197) — one compact card, readable at a glance */}
         <SectionWrapper compact className="bg-white/50 backdrop-blur-sm border-y border-black/10">
           <BlurIn delay={0.1}>
             <div className="max-w-lg mx-auto rounded-3xl border-2 border-accent/25 bg-white shadow-xl shadow-accent/10 p-5 sm:p-8">
@@ -227,7 +227,7 @@ export default function BookedPage() {
                 </h2>
                 <div className="mt-1 flex items-baseline justify-center gap-1">
                   <span className="grow-gradient-text font-display italic text-4xl sm:text-5xl">
-                    $147
+                    $197
                   </span>
                   <span className="text-[#0c0b1e]/50 text-base font-medium">
                     /mo
@@ -279,7 +279,7 @@ export default function BookedPage() {
                 <p className="text-[#0c0b1e]/45 text-[11px] sm:text-xs leading-relaxed mt-2">
                   Also:{" "}
                   <span className="text-[#0c0b1e]/70 font-medium">
-                    Website $97/mo
+                    Website $147/mo (+$299 setup)
                   </span>{" "}
                   ·{" "}
                   <span className="text-[#0c0b1e]/70 font-medium">

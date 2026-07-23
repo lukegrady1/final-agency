@@ -25,6 +25,8 @@ type Plan = {
   price: number;
   anchor?: number;
   save?: number;
+  /** Show the "$299 website setup fee waived" line (bundles that include the site). */
+  setupWaived?: boolean;
   bullets: string[];
   featured?: boolean;
 };
@@ -45,9 +47,10 @@ const cards: Plan[] = [
     id: "foundation",
     name: "The Foundation Package",
     subtitle: "Website + review engine, working together",
-    price: 147,
-    anchor: 194,
+    price: 197,
+    anchor: 244,
     save: 47,
+    setupWaived: true,
     bullets: foundationIncludes,
     featured: true,
   },
@@ -56,6 +59,7 @@ const cards: Plan[] = [
     name: "The Growth System",
     subtitle: "Everything, plus marketing",
     price: 297,
+    setupWaived: true,
     bullets: [
       "Everything in Foundation, plus:",
       "Weekly Google posts, cross-posted to social",
@@ -63,6 +67,17 @@ const cards: Plan[] = [
     ],
   },
 ];
+
+// The waived one-time website setup fee — shows the math ($299 → waived).
+function SetupWaived() {
+  return (
+    <p className="mt-2.5 flex items-center gap-1.5 text-xs text-[#0c0b1e]/55">
+      <span className="line-through text-[#0c0b1e]/35">$299</span>
+      website setup fee
+      <span className="font-semibold text-accent">waived</span>
+    </p>
+  );
+}
 
 const shortName = (name: string) =>
   name.replace(/^The /, "").replace(/ (System|Package)$/, "");
@@ -90,6 +105,7 @@ function FeaturedCard() {
           save ${f.save}/mo
         </span>
       </div>
+      {f.setupWaived && <SetupWaived />}
       <ul className="mt-6 space-y-2.5">
         {f.bullets.map((b) => (
           <li key={b} className="flex items-start gap-2.5">
@@ -120,6 +136,7 @@ function SideCard({ plan }: { plan: Plan }) {
         </span>
         <span className="text-sm text-[#0c0b1e]/45">/mo</span>
       </div>
+      {plan.setupWaived && <SetupWaived />}
       <ul className="mt-6 space-y-3.5 flex-1">
         {plan.bullets.map((b, i) => {
           const inherit = i === 0 && b.startsWith("Everything");

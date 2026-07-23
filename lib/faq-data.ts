@@ -2,12 +2,12 @@ export const faqItems = [
   {
     question: "How much does it cost?",
     answer:
-      "There are three plans, all month-to-month with no setup fee and no contract. The Website plan is $97 a month — a fast custom website, hosting, and one inbox where every call, text, and lead lands. The Reputation System is $147 a month and is the one most businesses pick: it's the full loop — your website plus a review engine that fills your Google profile with 5-star reviews, so your reviews win the click and your website wins the call. The Growth System is $297 a month and adds the whole managed Google presence — weekly Google Business Profile posts, social cross-posting, and ongoing local SEO.",
+      "There are three plans, all month-to-month with no setup fee on any plan and no contract. The Website plan is $147 a month, plus a one-time $299 setup fee — a fast custom website, hosting, and one inbox where every call, text, and lead lands. The Reputation System is $197 a month and is the one most businesses pick: it's the full loop — your website plus a review engine that fills your Google profile with 5-star reviews, so your reviews win the click and your website wins the call, with the $299 website setup fee waived. The Growth System is $297 a month and adds the whole managed Google presence — weekly Google Business Profile posts, social cross-posting, and ongoing local SEO.",
   },
   {
     question: "What's the difference between the plans?",
     answer:
-      "It's one system you can size up or down. The Reputation System ($147) is the full product: a website that wins the call plus a review engine that wins the click. The Website plan ($97) is that minus the review engine — great if you just need to look professional online and capture the calls you already get. The Growth System ($297) is the loaded version: everything in the Reputation System plus a fully managed Google presence — weekly profile posts, social cross-posting, and ongoing SEO that keeps bringing in new customers.",
+      "It's one system you can size up or down. The Reputation System ($197) is the full product: a website that wins the call plus a review engine that wins the click. The Website plan ($147 a month plus a one-time $299 setup) is that minus the review engine — great if you just need to look professional online and capture the calls you already get. The Growth System ($297) is the loaded version: everything in the Reputation System plus a fully managed Google presence — weekly profile posts, social cross-posting, and ongoing SEO that keeps bringing in new customers.",
   },
   {
     question: "How do you actually get me more reviews?",
@@ -17,7 +17,7 @@ export const faqItems = [
   {
     question: "Is there a setup fee?",
     answer:
-      "No. On any plan, your first month covers building your site and getting you live. No big check upfront.",
+      "No setup fee on any plan. The only setup fee anywhere is a one-time $299 on a standalone Website plan — and it's waived the moment you add the review engine (the Reputation System) or go with Growth. No big check upfront.",
   },
   {
     question: "How long does it take to build?",

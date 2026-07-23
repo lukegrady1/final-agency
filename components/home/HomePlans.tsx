@@ -17,6 +17,8 @@ type HomePlan = {
   price: number;
   /** Anchor price shown struck through before `price` (Foundation only). */
   anchor?: number;
+  /** Show the "$299 website setup fee waived" line (bundles that include the site). */
+  setupWaived?: boolean;
   bullets: string[];
   featured?: boolean;
 };
@@ -43,8 +45,9 @@ const cards: HomePlan[] = [
     name: "The Foundation Package",
     icon: Store,
     subtitle: "Reputation System + Custom Website · save $47/mo",
-    price: 147,
-    anchor: 194,
+    price: 197,
+    anchor: 244,
+    setupWaived: true,
     featured: true,
     bullets: [
       "Everything in The Reputation System, plus:",
@@ -58,6 +61,7 @@ const cards: HomePlan[] = [
     icon: TrendingUp,
     subtitle: "Everything, plus marketing",
     price: 297,
+    setupWaived: true,
     bullets: [
       "Everything in The Foundation Package, plus:",
       "Google profile set up, posted weekly, cross-posted to social",
@@ -117,6 +121,15 @@ function PlanCard({ plan }: { plan: HomePlan }) {
         </span>
         <span className="text-sm text-[#0c0b1e]/45">/mo</span>
       </div>
+
+      {/* Waived one-time website setup fee — shows the math ($299 → waived) */}
+      {plan.setupWaived && (
+        <p className="mt-2 flex items-center gap-1.5 text-xs text-[#0c0b1e]/55">
+          <span className="line-through text-[#0c0b1e]/35">$299</span>
+          website setup fee
+          <span className="font-semibold text-accent">waived</span>
+        </p>
+      )}
 
       {/* Bullets */}
       <ul className="mt-5 space-y-2.5">
@@ -361,14 +374,17 @@ export default function HomePlans() {
                   Just need a website?
                 </h3>
                 <span className="flex items-baseline gap-1">
-                  <span className="text-xl font-semibold text-white">$97</span>
+                  <span className="text-xl font-semibold text-white">$147</span>
                   <span className="text-sm text-white/50">/mo</span>
+                </span>
+                <span className="text-sm text-white/50">
+                  + $299 one-time setup
                 </span>
               </div>
               <p className="text-white/60 text-sm leading-relaxed mt-1.5">
                 A fast, custom site with every lead in one inbox &mdash; look
-                great online and never miss a call. Add the review engine
-                whenever you&apos;re ready.
+                great online and never miss a call. The $299 setup is waived the
+                moment you bundle it into the Foundation or Growth plan.
               </p>
             </div>
             <Link

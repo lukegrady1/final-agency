@@ -23,13 +23,13 @@ export interface Plan {
 }
 
 /** Shared terms shown near pricing everywhere. */
-export const guaranteeTerms = "No setup fee · No contracts";
+export const guaranteeTerms = "No setup fee on any plan · No contracts";
 
 export const plans: Plan[] = [
   {
     id: "website",
     name: "Website",
-    price: 97,
+    price: 147,
     bestFor: "Best for businesses just starting out",
     tagline:
       "A fast, professional website built and managed for you, with one inbox for every lead. Perfect if you just need to look great online and never miss a call.",
@@ -43,7 +43,7 @@ export const plans: Plan[] = [
   {
     id: "website-reviews",
     name: "The Reputation System",
-    price: 147,
+    price: 197,
     featured: true,
     bestFor: "Best for businesses ready to grow",
     tagline:

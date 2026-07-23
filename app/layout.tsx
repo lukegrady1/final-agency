@@ -152,18 +152,18 @@ export default function RootLayout({
       name: "United States",
     },
     description:
-      "Three plans for local businesses. The Website plan ($97/month) is a custom website with hosting and an all-in-one inbox to manage leads. The Reputation System ($147/month) is the most popular plan: it adds a review engine that fills your Google profile with 5-star reviews, written responses, and challenges to old unfair reviews. The Growth System ($297/month) adds Google Business Profile optimization with posting and cross-posting to Instagram, Facebook, and YouTube and ongoing SEO. Built and managed for you, no setup fee.",
+      "Three plans for local businesses. The Website plan ($147/month, plus a one-time $299 setup fee) is a custom website with hosting and an all-in-one inbox to manage leads. The Reputation System ($197/month) is the most popular plan: it adds a review engine that fills your Google profile with 5-star reviews, written responses, and challenges to old unfair reviews — and waives the $299 website setup fee. The Growth System ($297/month) adds Google Business Profile optimization with posting and cross-posting to Instagram, Facebook, and YouTube and ongoing SEO. Built and managed for you, no setup fee on any plan.",
     offers: [
       {
         "@type": "Offer",
         name: "Website",
         url: "https://gradydigital.com/start",
         availability: "https://schema.org/InStock",
-        price: "97",
+        price: "147",
         priceCurrency: "USD",
         priceSpecification: {
           "@type": "UnitPriceSpecification",
-          price: "97",
+          price: "147",
           priceCurrency: "USD",
           unitCode: "MON",
           unitText: "month",
@@ -174,11 +174,11 @@ export default function RootLayout({
         name: "The Reputation System",
         url: "https://gradydigital.com/start",
         availability: "https://schema.org/InStock",
-        price: "147",
+        price: "197",
         priceCurrency: "USD",
         priceSpecification: {
           "@type": "UnitPriceSpecification",
-          price: "147",
+          price: "197",
           priceCurrency: "USD",
           unitCode: "MON",
           unitText: "month",

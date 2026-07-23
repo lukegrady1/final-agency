@@ -11,7 +11,7 @@ import AuroraBackdrop from "@/components/grow/AuroraBackdrop";
 export const metadata: Metadata = {
   title: "Website, Local SEO, Reviews & Leads — Three Simple Plans",
   description:
-    "One system for local businesses: reviews win the click, your website wins the call, and every lead lands in one inbox. The Foundation Package is $147/month — website + review engine. Built and managed for you, no setup fee.",
+    "One system for local businesses: reviews win the click, your website wins the call, and every lead lands in one inbox. The Foundation Package is $197/month — website + review engine. Built and managed for you, no setup fee.",
   keywords: [
     "local business website design",
     "local SEO services",
@@ -116,7 +116,7 @@ export default function ServicesPage() {
             <p className="text-[#0c0b1e]/70 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
               One system for local businesses: your reviews win the click, your
               website wins the call, and every lead lands in one inbox. The
-              Foundation Package is $147 a month &mdash; website and review
+              Foundation Package is $197 a month &mdash; website and review
               engine together. Built and managed for you, no setup fee.
             </p>
           </BlurIn>

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     absolute: "Grady Digital — Websites, SEO & Reviews for Local Businesses",
   },
   description:
-    "One system for local businesses: your reviews win the click, your website wins the call, and every lead lands in one inbox. The Reputation System is $147/month — no setup fee, cancel anytime.",
+    "One system for local businesses: your reviews win the click, your website wins the call, and every lead lands in one inbox. The Foundation Package is $197/month — no setup fee, cancel anytime.",
   keywords: [
     "local business website design",
     "small business web design",

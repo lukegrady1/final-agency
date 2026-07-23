@@ -21,7 +21,7 @@ import AuroraBackdrop from "@/components/grow/AuroraBackdrop";
 export const metadata: Metadata = {
   title: "Book a Free Call — Grow Your Local Business | Grady Digital",
   description:
-    "Book a free 30-minute call. We'll map the exact plan to fill your Google profile with 5-star reviews and turn your website into a phone that rings. The Foundation Package is $147/month — no setup fee, cancel anytime.",
+    "Book a free 30-minute call. We'll map the exact plan to fill your Google profile with 5-star reviews and turn your website into a phone that rings. The Foundation Package is $197/month — no setup fee, cancel anytime.",
   keywords: [
     "book a free call local business marketing",
     "local business website design",
@@ -123,12 +123,12 @@ const startFAQ = [
   {
     question: "How much does it cost?",
     answer:
-      "Most businesses pick The Foundation Package at $147 a month — a website that wins the call plus a review engine that wins the click — you save $47 a month versus buying them apart. Just want the reviews? That's $97 a month. Want the full managed Google presence — weekly posts, social cross-posting, and ongoing SEO? That's $297. Only need a website? $97. All month-to-month, no setup fee, cancel anytime. We'll settle on the right fit together on the call.",
+      "Most businesses pick The Foundation Package at $197 a month — a website that wins the call plus a review engine that wins the click — you save $47 a month versus buying them apart, and the website's $299 setup fee is waived. Just want the reviews? That's $97 a month. Want the full managed Google presence — weekly posts, social cross-posting, and ongoing SEO? That's $297. Only need a website? $147 a month plus a one-time $299 setup. All month-to-month, no setup fee on any plan, cancel anytime. We'll settle on the right fit together on the call.",
   },
   {
     question: "Is there a setup fee or a contract?",
     answer:
-      "Neither. No big check upfront, and no contract — it's month-to-month. If you're ever not happy, you cancel anytime. I'd rather earn your business every month than lock you in.",
+      "No setup fee on any plan, and no contract — it's month-to-month. The only setup fee anywhere is a one-time $299 on a standalone website, and even that's waived the moment you bundle the site into the Foundation or Growth plan. If you're ever not happy, you cancel anytime. I'd rather earn your business every month than lock you in.",
   },
   {
     question: "I don't have time to manage any of this.",
@@ -167,7 +167,7 @@ export default function StartPage() {
               The customers are already out there, searching right now. The
               Foundation Package fills your Google profile with 5-star reviews
               and turns your website into a phone that rings &mdash; so they find
-              you, trust you, and call you. Built and managed for you, $147 a
+              you, trust you, and call you. Built and managed for you, $197 a
               month, no setup fee.
             </p>
           </BlurIn>
@@ -400,7 +400,7 @@ export default function StartPage() {
           </BlurIn>
           <BlurIn delay={0.3}>
             <p className="mt-5 text-sm font-medium text-[#0c0b1e]/50">
-              No setup fee &middot; No contracts
+              No setup fee on any plan &middot; No contracts
             </p>
           </BlurIn>
         </div>
@@ -417,14 +417,17 @@ export default function StartPage() {
                   Just need a website?
                 </h3>
                 <span className="flex items-baseline gap-1">
-                  <span className="text-xl font-semibold text-white">$97</span>
+                  <span className="text-xl font-semibold text-white">$147</span>
                   <span className="text-sm text-white/50">/mo</span>
+                </span>
+                <span className="text-sm text-white/50">
+                  + $299 one-time setup
                 </span>
               </div>
               <p className="text-white/60 text-sm leading-relaxed mt-1.5">
                 A fast, custom site with every lead in one inbox &mdash; look
-                great online and never miss a call. Add the review engine
-                whenever you&apos;re ready.
+                great online and never miss a call. The $299 setup is waived the
+                moment you bundle it into the Foundation or Growth plan.
               </p>
             </div>
             <Link
@@ -461,7 +464,7 @@ export default function StartPage() {
             {
               icon: ShieldCheck,
               title: "Zero risk to find out",
-              body: "The call is free with no obligation. No setup fee, no contract, cancel anytime. You risk 30 minutes and walk away with a real plan either way.",
+              body: "The call is free with no obligation. No setup fee on any plan, no contract, cancel anytime. You risk 30 minutes and walk away with a real plan either way.",
             },
             {
               icon: Phone,

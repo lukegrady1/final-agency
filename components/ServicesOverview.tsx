@@ -63,8 +63,8 @@ export default function ServicesOverview() {
         <BlurIn delay={0.2}>
           <p className="text-[#0c0b1e]/60 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mt-4">
             Everything below is built and managed for you. It comes in three
-            simple plans — start with a website at $97 a month, add the review
-            engine at $147, or run the full Growth System at $297. Each tag
+            simple plans — start with a website at $147 a month, add the review
+            engine at $197, or run the full Growth System at $297. Each tag
             shows which plan a piece belongs to.
           </p>
         </BlurIn>

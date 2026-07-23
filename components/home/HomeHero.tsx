@@ -53,7 +53,7 @@ export default function HomeHero() {
             >
               Someone searches, your reviews win the click, your website wins the
               call, and every lead lands in one inbox. One system that turns
-              nearby searches into real customers &mdash; $147 a month, no setup
+              nearby searches into real customers &mdash; $197 a month, no setup
               fee.
             </p>
 
